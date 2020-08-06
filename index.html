@@ -27,9 +27,6 @@
             grid-template-rows: 40px auto;
             -ms-grid-columns: 150px auto;
             grid-template-columns: 150px auto;
-            -ms-grid-template-areas:
-            "A1 B1"
-            "A1 C1";
             grid-template-areas:
             "A1 B1"
             "A1 C1";
@@ -37,37 +34,36 @@
         }
 
         .a{
-            -ms-grid-area:A1;
+            -ms-grid-row:1; 
+            -ms-grid-column:2;
+            -ms-grid-row-span:2;
             grid-area:A1;
             background-color: #fc0;
         }
         .b{
-            -ms-grid-area:B1;
+            -ms-grid-row:1;
+            -ms-grid-column:2;
             grid-area:B1;
             background-color: #f00;         
         }
         .c{
             display: -ms-grid;
             display: grid;
-            -ms-grid-area:C1;
+            -ms-grid-row:2; 
+            -ms-grid-column:2;
             grid-area:C1;
+
             background-color: #00f;
             -ms-grid-rows: 480px auto;
             grid-template-rows: 480px auto;
             -ms-grid-columns: 750px auto;
             grid-template-columns: 750px auto;
-            -ms-grid-template-areas:
-                "video bet"
-                "road other";
             grid-template-areas:
                 "video bet"
                 "road other";
 
         }
         .nocard .c{
-            -ms-grid-template-areas:
-                "video other"
-                "road road";
             grid-template-areas:
                 "video other"
                 "road road";
@@ -76,22 +72,26 @@
 
 
         .video{
-            -ms-grid-area:video;
+            -ms-grid-row:1; 
+            -ms-grid-column:1;
             grid-area:video;
             background-color: #aff;
         }
         .bet{
-            -ms-grid-area:bet;
+            -ms-grid-row:2; 
+            -ms-grid-column:1;
             grid-area:bet;
             background-color: #faf;
         }
         .road{
-            -ms-grid-area:road;
+            -ms-grid-row:2; 
+            -ms-grid-column:1;
             grid-area:road;
             background-color: #fff;
         }
         .other{
-            -ms-grid-area:other;
+            -ms-grid-row:2; 
+            -ms-grid-column:2;
             grid-area:other;
             background-color: rgba(0, 0, 0, .5);
             color: #fff;
