@@ -34,9 +34,9 @@
         }
 
         .a{
-            -ms-grid-row:1; 
-            -ms-grid-column:2;
+            -ms-grid-row:1;
             -ms-grid-row-span:2;
+            -ms-grid-column:1;
             grid-area:A1;
             background-color: #fc0;
         }
@@ -54,16 +54,15 @@
             grid-area:C1;
 
             background-color: #00f;
-            -ms-grid-rows: 480px auto;
-            grid-template-rows: 480px auto;
-            -ms-grid-columns: 750px auto;
-            grid-template-columns: 750px auto;
+            -ms-grid-rows: 480px 1fr;
+            grid-template-rows: 480px 1fr;
+            -ms-grid-columns: 750px 1fr;
+            grid-template-columns: 750px 1fr;
             grid-template-areas:
                 "video bet"
                 "road other";
 
         }
-        .c *{display: none;}
         .nocard .c{
             grid-template-areas:
                 "video other"
@@ -79,8 +78,8 @@
             background-color: #aff;
         }
         .bet{
-            -ms-grid-row:2; 
-            -ms-grid-column:1;
+            -ms-grid-row:1; 
+            -ms-grid-column:2;
             grid-area:bet;
             background-color: #faf;
         }
