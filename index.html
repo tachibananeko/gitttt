@@ -63,14 +63,6 @@
                 "road other";
 
         }
-        .nocard .c{
-            grid-template-areas:
-                "video other"
-                "road road";
-        }
-        .nocard .bet{display: none;}
-
-
         .video{
             -ms-grid-row:1; 
             -ms-grid-column:1;
@@ -96,39 +88,65 @@
             background-color: rgba(0, 0, 0, .5);
             color: #fff;
         }
-        /*@media only screen and (max-width: 1023px) {
+
+
+        .nocard .c{
+            grid-template-areas:
+                "video other"
+                "road road";
+        }
+        .nocard .bet{display: none;}
+        .nocard .other{
+            -ms-grid-row:1; 
+            -ms-grid-column:2;
+        }
+        .nocard .road{
+            -ms-grid-row:2; 
+            -ms-grid-column:2;
+            -ms-grid-column-span:2;
+        }
+
+
+
+        @media only screen and (max-width: 1219px){
             .a{
                 display: none;
             }
+
             .home{
-                -ms-grid-template-areas:
+                grid-template-areas:
                 "B1 B1"
                 "C1 C1";
                 
             }
+        }
+
+        @media only screen and (max-width: 1023px) {
             .c{
-                -ms-grid-template:auto/100%;
+                -ms-grid-rows: 1fr 1fr 1fr;
+                grid-template-rows: 1fr 1fr 1fr;
+                -ms-grid-columns: 1fr;
+                grid-template-columns: 1fr;
             }
             .video,
             .other{
-                -ms-grid-area: 1 / 1 / 2 / 2;
+                grid-area: 1 / 1 / 2 / 2;
             }
             .bet{
-                -ms-grid-area: 2 / 1 / 3 / 2;
+                grid-area: 2 / 1 / 3 / 2;
             }
             .road{
-                -ms-grid-area: 3 / 1 / 4 / 2;
-                color: #f00;
+                grid-area: 3 / 1 / 4 / 2;
             }
             .nocard .road{
-                -ms-grid-row: 2 / 3;
+                grid-row: 2 / 3;
             }
-        }*/
+        }
 
     </style>
 </head>
 <body>
-        <div class="home">
+        <div class="home nocard">
             <div class="a">left menu</div>
             <div class="b">top menu</div>
             <div class="c">
