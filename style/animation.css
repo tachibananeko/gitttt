@@ -8,7 +8,7 @@
     height: 100%;
     overflow: hidden;
 }
-.active .bg_bubbles li {
+.bg_bubbles li {
     position: absolute;
     list-style: none;
     display: block;
@@ -20,6 +20,7 @@
     animation: square 9s infinite;
     -webkit-transition-timing-function: linear;
     transition-timing-function: linear;
+    opacity: 0;
     
 }
 .bg_bubbles li:nth-child(2n) {
@@ -92,6 +93,7 @@
     0% {
         -webkit-transform: translateY(0);
         transform: translateY(0);
+        opacity: 0;
     }
 
     100% {
@@ -104,11 +106,13 @@
     0% {
         -webkit-transform: translateY(0);
         transform: translateY(0);
+        opacity: 0;
     }
 
     100% {
         -webkit-transform: translateY(-700px) rotate(600deg);
         transform: translateY(-700px) rotate(600deg);
+        opacity: 1;
     }
 }
 /* 浮動粒子 下往上 */
