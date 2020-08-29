@@ -199,7 +199,7 @@ body{
 .banner_group{
 	width: 100%;
 	display: flex;
-	transform: /*0~-300%*/translateX(-100%);
+	transform: /*0~-300%*/translateX(-200%);
 }
 
 .banner_item{
@@ -328,7 +328,7 @@ img.pic_peopel4{
 
 .banner_item2 .banner_pic{
 	opacity: 0;
-	transition: all 300ms cubic-bezier(0.55, 0, 0.42, 1) 0s;
+	transition: all .6s cubic-bezier(0.55, 0, 0.42, 1) 0s;
 }
 .active.banner_item2 .banner_pic{
 	opacity: 1;	
@@ -352,7 +352,7 @@ img.pic_peopel4{
 .txt_icon li:nth-child(1){
 	background: url('../images/icon_b2_1.svg')no-repeat center/ 70%;
 	transform: translate(-70%, -100%);
-	transition: all 300ms cubic-bezier(0.55, 0, 0.42, 1) .6s;
+	transition: all .2s cubic-bezier(0.55, 0, 0.42, 1) ;
 }
 .active.banner_item2 .txt_icon li:nth-child(1){
 	transform: translate(0, 0);
@@ -361,7 +361,7 @@ img.pic_peopel4{
 .txt_icon li:nth-child(2){
 	background: url('../images/icon_b2_2.svg')no-repeat center/ 70%;
 	transform: translate(-70%, -100%);
-	transition: all 300ms cubic-bezier(0.55, 0, 0.42, 1) .8s;
+	transition: all .2s cubic-bezier(0.55, 0, 0.42, 1) .2s;
 }
 .active.banner_item2 .txt_icon li:nth-child(2){
 	transform: translate(0, 0);
@@ -370,7 +370,7 @@ img.pic_peopel4{
 .txt_icon li:nth-child(3){
 	background: url('../images/icon_b2_3.svg')no-repeat center/ 70%;
 	transform: translate(-70%, -100%);
-	transition: all 300ms cubic-bezier(0.55, 0, 0.42, 1) 1s;
+	transition: all .2s cubic-bezier(0.55, 0, 0.42, 1) .4s;
 }
 .active.banner_item2 .txt_icon li:nth-child(3){
 	transform: translate(0, 0);
@@ -379,7 +379,7 @@ img.pic_peopel4{
 .txt_icon li:nth-child(4){
 	background: url('../images/icon_b2_4.svg')no-repeat center/ 70%;
 	transform: translate(-70%, -100%);
-	transition: all 300ms cubic-bezier(0.55, 0, 0.42, 1) 1.2s;
+	transition: all .2s cubic-bezier(0.55, 0, 0.42, 1) .6s;
 }
 .active.banner_item2 .txt_icon li:nth-child(4){
 	transform: translate(0, 0);
@@ -388,7 +388,7 @@ img.pic_peopel4{
 .txt_icon li:nth-child(5){
 	background: url('../images/icon_b2_5.svg')no-repeat center/ 70%;
 	transform: translate(-70%, -100%);
-	transition: all 300ms cubic-bezier(0.55, 0, 0.42, 1) 1.4s;
+	transition: all .2s cubic-bezier(0.55, 0, 0.42, 1)  .8s;
 }
 .active.banner_item2 .txt_icon li:nth-child(5){
 	transform: translate(0, 0);
@@ -450,60 +450,42 @@ img.pic_cell4{
 	opacity: 1;
 }
 
-img.icon_poker1{
+img.icon_poker1,
+img.icon_poker2,
+img.icon_poker3,
+img.icon_poker4{
 	height: 45%;
-	top: 25%;
-	right: 31%;
+	top: 10%;
+	right: 30%;
     transform: rotate(0deg);
-	transform-origin: bottom right;
+	transform-origin: center bottom;
 	margin: 0;
-	transition: all 300ms cubic-bezier(0.55, 0, 0.42, 1) .3s;
+	transition: all .5s ease;
 
 }
-.active.banner_item3 img.icon_poker1{
+img.icon_poker1{
+	transition-delay: .2s;
+}
+.active img.icon_poker1{
     transform: rotate(35deg);
 }
 img.icon_poker2{
-	height: 45%;
-	transform: rotate(35deg);
-	transform-origin: bottom center;
-	top: 16%;
-    right: 29%;
-	margin: 0px;
-	opacity: 0;
-	transition: all 300ms cubic-bezier(0.55, 0, 0.42, 1) .6s;
+	transition-delay: .4s;
 }
-.active.banner_item3 img.icon_poker2{	
+.active img.icon_poker2{	
 	transform: rotate(45deg);
-	opacity: 1;
 }
 img.icon_poker3{
-	height: 45%;
-	transform: rotate(45deg);
-	transform-origin: bottom center;
-	top: 16%;
-    right: 29%;
-	margin: 0;
-	opacity: 0;
-	transition: all 300ms cubic-bezier(0.55, 0, 0.42, 1) .9s;
+	transition-delay: .6s;
 }
-.active.banner_item3 img.icon_poker3{
+.active img.icon_poker3{
 	transform: rotate(55deg);
-	opacity: 1;
 }
 img.icon_poker4{
-	height: 45%;
-	transform: rotate(55deg);
-	transform-origin: bottom center;
-	top: 16%;
-    right: 29%;
-	margin: 0;
-	opacity: 0;
-	transition: all 300ms cubic-bezier(0.55, 0, 0.42, 1) 1.2s;
+	transition-delay: .8s;
 }
-.active.banner_item3 img.icon_poker4{
+.active img.icon_poker4{
 	transform: rotate(65deg);
-	opacity: 1;
 }
 
 
