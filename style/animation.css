@@ -15,12 +15,11 @@
     width: 20px;
     height: 20px;
     background-color: rgba(255, 255, 255, 0.15);
-    bottom: 10%;
+    top: 100%;
     -webkit-animation: square 9s infinite;
     animation: square 9s infinite;
     -webkit-transition-timing-function: linear;
     transition-timing-function: linear;
-    /* opacity: 0; */
     
 }
 .bg_bubbles li:nth-child(2n) {
