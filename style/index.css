@@ -1604,6 +1604,9 @@ footer{
 		width: 30px;
 		height: 20px;
 	}
+	.start_box span:nth-child(2n){
+		display: none;
+	}
 }
 
 /* banner */

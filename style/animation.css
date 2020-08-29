@@ -227,7 +227,98 @@
     -webkit-animation-delay: 11s;
     animation-delay: 11s;
 }
+.bg_bubbles_in_out li:nth-child(11) {
+    left: 50%;
+    top: 5%;
+    -webkit-animation: ani_rl_bs 8s infinite;
+    animation: ani_rl_bs 8s infinite;
+}
+.bg_bubbles_in_out li:nth-child(12) {
+    left: 40%;
+    top: 20%;
+    width: 8px;
+    height: 8px;
+    -webkit-animation: ani_lr_sb 7s infinite;
+    animation: ani_lr_sb 7s infinite;
+}
+.bg_bubbles_in_out li:nth-child(13) {
+    left: 20%;
+    top: 10%;
+    -webkit-animation: ani_rl_bs 5s infinite;
+    animation: ani_rl_bs 5s infinite;
+}
+.bg_bubbles_in_out li:nth-child(14) {
+    top: 3%;
+    left: 10%;
+    width: 12px;
+    height: 12px;
+    -webkit-animation: ani_rl_bs2 5s infinite;
+    animation: ani_rl_bs2 5s infinite;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+}
 
+.bg_bubbles_in_out li:nth-child(15) {
+    top: 15%;
+    left: 35%;
+    width: 5px;
+    height: 5px;
+    -webkit-animation: ani_lr_bs2 7s infinite;
+    animation: ani_lr_bs2 7s infinite;
+    -webkit-animation-delay: 2s;
+    animation-delay: 2s;
+}
+.bg_bubbles_in_out li:nth-child(16) {
+    left: 62%;
+    bottom: 45%;
+    width: 15px;
+    height: 15px;
+    -webkit-animation: ani_lr_sb 7s infinite;
+    animation: ani_lr_sb 7s infinite;
+    -webkit-animation-delay: 3s;
+    animation-delay: 3s;
+}
+
+.bg_bubbles_in_out li:nth-child(17) {
+    left: 70%;
+    top: 2%;
+    width: 10px;
+    height: 10px;
+    -webkit-animation: ani_rl_sb3 9s infinite;
+    animation: ani_rl_sb3 9s infinite;
+    -webkit-animation-delay: 1.5s;
+    animation-delay: 1.5s;
+}
+
+.bg_bubbles_in_out li:nth-child(18) {
+    left: 5%;
+    top: 3%;
+    width: 5px;
+    height: 5px;
+    -webkit-animation: ani_lr_sb3 9s infinite;
+    animation: ani_lr_sb3 9s infinite;
+    opacity: 1;
+}
+.bg_bubbles_in_out li:nth-child(19) {
+    left: 32%;
+    top: 15%;
+    -webkit-animation: ani_lr_sb3 3s infinite;
+    animation: ani_lr_sb3 3s infinite;
+    -webkit-animation-delay: 5s;
+    animation-delay: 5s;
+}
+.bg_bubbles_in_out li:nth-child(20) {
+    left: 60%;
+    top: 3%;
+    width: 10px;
+    height: 10px;
+    -webkit-animation: ani_rl_sb3 7s infinite;
+    animation: ani_rl_sb3 7s infinite;
+    -webkit-transition-timing-function: linear;
+    transition-timing-function: linear;
+    -webkit-animation-delay: 11s;
+    animation-delay: 11s;
+}
 @-webkit-keyframes ani_rl_bs{
     0% {
         opacity: 0.1;
