@@ -1073,13 +1073,7 @@ footer{
 .partner_ul li:nth-child(4){animation: ani_partner .4s .4s linear forwards paused;}
 .active .partner_ul li{ animation-play-state: running;}
 
-.partner_ul li:hover{
-	bottom: 20px;
-}
-.partner_ul li:hover::before,
-.partner_ul li:hover::after{
-	transform: scale(1.1) translateY(-50%);
-}
+
 @-webkit-keyframes ani_partner{
 	0%{
 		opacity: 0;
@@ -1140,23 +1134,16 @@ footer{
 	margin-bottom: 30px;
 }
 .partner_ul li:nth-child(1)::after{
-	background: url('../images/icon_white.svg') no-repeat center ;
-	background-size: 60%;
+	background: url('../images/icon_white.svg') no-repeat center/50% ;
 }
 .partner_ul li:nth-child(2)::after{
-	background: url('../images/icon_open.svg') no-repeat center;
-	background-size: 60%;
+	background: url('../images/icon_open.svg') no-repeat center/50%;
 }
 .partner_ul li:nth-child(3)::after{
-	background: url('../images/icon_update.svg') no-repeat center;
-	background-size: 60%;
+	background: url('../images/icon_update.svg') no-repeat center/50%;
 }
 .partner_ul li:nth-child(4)::after{
-	background: url('../images/icon_line.svg') no-repeat center;
-	background-size: 60%;
-}
-.partner_ul li:nth-child(n):hover::after{
-	background-size: 70%; 
+	background: url('../images/icon_line.svg') no-repeat center/50%;
 }
 
 .partner_ul h1{
@@ -1784,6 +1771,13 @@ screen and (-ms-high-contrast: active), (-ms-high-contrast: none){
 	.game_list li:hover::before{
 		opacity: 1;
 	}
+	
+	.partner_ul li:hover{
+		bottom: 20px;
+	}
+	.partner_ul li:hover::after{
+		background-size: 60%; 
+	}
 }
 .banner_dots li:not(.on):active{
 	background: #fff;
@@ -1824,4 +1818,10 @@ screen and (-ms-high-contrast: active), (-ms-high-contrast: none){
 	background: linear-gradient(to bottom,  rgb(205, 181, 125) 0%,rgba(255,255,198,1) 100%); 
 	-webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.15) inset, 0 -1px 0 rgba(255,255,255,0.4) inset, 0 0 0 1px rgba(0,0,0,0.4), 0 1px 3px 1px rgba(0,0,0,0.6);
     box-shadow: 0 1px 0 rgba(0,0,0,0.15) inset, 0 -1px 0 rgba(255,255,255,0.4) inset, 0 0 0 1px rgba(0,0,0,0.4), 0 1px 3px 1px rgba(0,0,0,0.6);
+}
+.partner_ul li:active{
+	bottom: 20px;
+}
+.partner_ul li:active::after{
+	background-size: 60%; 
 }
