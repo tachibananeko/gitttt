@@ -2,16 +2,33 @@
     var list = $('.banner_group>div').length
     var banneStart;
     var count = 0
+
     $(document).ready(function(){
         $(`.banner_group>div:eq(0)`).addClass('active')
-        if(count == 0){goPlay();}  
+        if(count == 0){goPlay();} 
+        for(var x = 0;x<999;x++){
+            clearInterval(banneStart);
+        }  
     })	
     $('.banner_group,.banner_dots').mousemove(function() {
         count = 0
-        clearInterval(banneStart);    
+        for(var x = 0;x<999;x++){
+            clearInterval(banneStart);
+        }      
     });
+    $('.banner_group,.banner_dots').mouseenter(function(){
+        count = 0
+        for(var x = 0;x<999;x++){
+            clearInterval(banneStart);
+        } 
+    })
     $('.banner_group,.banner_dots').mouseout(function() {
-        if(count == 0){goPlay();}    
+        if(count == 0){goPlay();}
+        else{
+            for(var x = 0;x<999;x++){
+                clearInterval(banneStart);
+            }   
+        }
     });
   
     // 輪播計時器
@@ -29,6 +46,10 @@
 
     // 輪播按鍵點擊事件
     $('.banner_dots li').click(function(){
+        count = 0
+        for(var x = 0;x<999;x++){
+            clearInterval(banneStart);
+        } 
         $('.banner_dots li').removeClass('on')
         var find = $('.banner_dots li').index(this)
         if(move < 3){
