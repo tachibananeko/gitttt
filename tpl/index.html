@@ -53,7 +53,7 @@
 	<div class="banner">
 		<div class="banner_group">
 			<!-- banner 01 -->
-			<div class="banner_item banner_item1 active">
+			<div class="banner_item banner_item1">
 				<div class="banner_txtbox">
 					<div class="banner_bigtxt gradient" data-title="體育賽事">體育賽事</div>
 					<div class="banner_midtxt">各大遊戲知名品牌合作</div>
@@ -70,7 +70,7 @@
 				</div>
 			</div>
 			<!-- banner 02 -->
-			<div class="banner_item banner_item2 active">
+			<div class="banner_item banner_item2">
 				<div class="banner_txtbox">
 					<div class="banner_bigtxt gradient" data-title="頂尖科技  全新產品">
 						頂尖科技 全新產品</div>
@@ -103,7 +103,7 @@
 				</div>
 			</div>
 			<!-- banner 03 -->
-			<div class="banner_item banner_item3 active">
+			<div class="banner_item banner_item3">
 				<div class="banner_txtbox">
 					<div class="banner_bigtxt mod_font_en gradient" data-title="ABOUT">ABOUT</div>
 					<div class="banner_midtxt">關於我們</div>
@@ -121,7 +121,7 @@
 				</div>
 			</div>
 			<!-- banner 04 -->
-			<div class="banner_item banner_item4 active">
+			<div class="banner_item banner_item4">
 				<div class="banner_pic">
 					<img class="pic_cell03" src="../images/pic_cell03.png" alt="">
 					<img class="pic_cell02" src="../images/pic_cell02.png" alt="">
@@ -133,6 +133,23 @@
 						<div class="banner_midtxt">批量審核，自動派彩</div>
 					</span>
 					<div class="banner_minitxt">Icash線上平台，提供豐富的活動選擇：註冊送紅包、存款開寶箱、打碼玩拉霸、登錄簽到領彩金、註冊送、存就送...且支持自定義活動。Icash線上平台，提供豐富的活動選擇：註冊送紅包、存款開寶箱、打碼玩拉霸、登錄簽到領彩金、註冊送、存就送...且支持自定義活動。</div>
+				</div>
+			</div>
+			<!-- banner 01 -->
+			<div class="banner_item banner_item1">
+				<div class="banner_txtbox">
+					<div class="banner_bigtxt gradient" data-title="體育賽事">體育賽事</div>
+					<div class="banner_midtxt">各大遊戲知名品牌合作</div>
+					<div class="banner_minitxt">
+						我們提供行業領先的亞博體育、小金體育、IM體育場館,給玩家呈現最高賠率最流暢的投注體驗。我們提供行業領先的亞博體育、小金體育、IM體育場館,給玩家呈現最高賠率最流暢的投注體驗。我們提供行業領先的亞博體育、小金體育、IM體育場館,給玩家呈現最高賠率最流暢的投注體驗。我們提供行業領先的亞博體育、小金體育、IM體育場館,給玩家呈現最高賠率最流暢的投注體驗。
+					</div>
+				</div>
+				<div class="banner_pic">
+					<img class="pic_peopel4"src="../images/pic_peopel4.png" alt="">
+					
+					<img class="pic_peopel2" src="../images/pic_peopel2.png" alt=""> 
+					<img class="pic_peopel3"src="../images/pic_peopel3.png" alt="">
+					<img class="pic_peopel1" src="../images/pic_peopel1.png" alt="">
 				</div>
 			</div>
 
@@ -430,15 +447,7 @@
 	<footer>© 2020 ROYAL Gaming. All Rights Reserved.</footer>
 
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js'></script>
-	<script>
-		var scroll = $(window).scroll(function () {
-			for (var i = 1; i < 4; i++) {
-				if (scroll.scrollTop() > $(`#hm_${i}`).offset().top + $(`#hm_${i}`).height() / 3 * 2) {
-					$(`#hm_${i + 1}`).addClass('active')
-				}
-			}
-		})
-	</script>
+	<script src="../script/index.js"></script>
 </body>
 
 </html>

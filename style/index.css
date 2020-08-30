@@ -199,7 +199,8 @@ body{
 .banner_group{
 	width: 100%;
 	display: flex;
-	transform: /*0~-300%*/translateX(-200%);
+	transform: /*0~-300%*/translateX(0%);
+	transition: .8s;
 }
 
 .banner_item{
@@ -218,7 +219,7 @@ body{
 .banner_item3 .banner_bigtxt{
 	opacity: 0;
 	transform: translateY(-20px);
-	transition: all 300ms cubic-bezier(0.55, 0, 0.42, 1) 0s;
+	transition: all 300ms cubic-bezier(0.55, 0, 0.42, 1);
 }
 .active.banner_item1 .banner_bigtxt,
 .active.banner_item2 .banner_bigtxt,
@@ -231,7 +232,7 @@ body{
 .banner_item3 .banner_midtxt {
 	opacity: 0;
 	transform: translateY(-20px);
-	transition: all 300ms cubic-bezier(0.55, 0, 0.42, 1) .2s;
+	transition: all 300ms cubic-bezier(0.55, 0, 0.42, 1);
 }
 .active.banner_item1 .banner_midtxt,
 .active.banner_item2 .banner_midtxt ,
@@ -245,7 +246,7 @@ body{
 .banner_item3 .banner_minitxt {
 	opacity: 0;
 	transform: translateY(-20px);
-	transition: all 300ms cubic-bezier(0.55, 0, 0.42, 1) .4s;
+	transition: all 300ms cubic-bezier(0.55, 0, 0.42, 1);
 }
 .active.banner_item1 .banner_minitxt,
 .active.banner_item2 .banner_minitxt,
