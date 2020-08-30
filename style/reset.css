@@ -47,7 +47,8 @@ body {
 	color: #1D1A31;
 	touch-action: manipulation;
 	font-family: 'Noto Sans TC', sans-serif;
-	font-size: 13px;
+	font-size: 13px;	
+	scroll-behavior: smooth;
 }
 *:hover,
 *:focus,
