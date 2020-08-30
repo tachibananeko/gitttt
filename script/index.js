@@ -1,14 +1,17 @@
     var move = 0
-	var list = $('.banner_group>div').length
+    var list = $('.banner_group>div').length
+    var banneStart;
+    var count = 0
     $(document).ready(function(){
         $(`.banner_group>div:eq(0)`).addClass('active')
-        goPlay();
+        if(count == 0){goPlay();}  
     })	
     $('.banner_group,.banner_dots').mousemove(function() {
-        clearInterval(banneStart);
+        count = 0
+        clearInterval(banneStart);    
     });
     $('.banner_group,.banner_dots').mouseout(function() {
-        goPlay();
+        if(count == 0){goPlay();}    
     });
   
     // 輪播計時器
@@ -16,6 +19,8 @@
         banneStart = setInterval(banner, 4000)
     };
     function banner(){
+        count ++
+        console.log(count)
         move == list - 1? move = 1 : move++
         $('.banner_dots li').removeClass('on')
 		if(move>0 && move < list - 1){action_1()}
