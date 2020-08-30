@@ -59,7 +59,7 @@
     
     // 漢堡bar點擊menu 展開/關閉
     $('.menu_btn').click(function(){$(this).toggleClass('active')})
-
+    
 	var scroll = $(window).scroll(function () {
 		for (var i = 1; i < 4; i++) {
 			if (scroll.scrollTop() > $(`#hm_${i}`).offset().top + $(`#hm_${i}`).height() / 3 * 2) {
