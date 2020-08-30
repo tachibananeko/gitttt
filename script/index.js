@@ -26,9 +26,26 @@
     $('.banner_dots li').click(function(){
         $('.banner_dots li').removeClass('on')
         var find = $('.banner_dots li').index(this)
-        move = find
-        if(move>0 && move < list - 1){action_1()}
-        else if(move == 0){action_2()}	
+        if(move < 3){
+            move = find;
+            if(find>0 && find < list - 1){
+                move = find;
+                action_1();
+            }
+            else if(find == 0){      
+                action_2()
+            }	
+        } 
+        else if(move == 3){
+            if(find>0 && find < list - 1){
+                move = find;
+                action_1();
+            }
+            else if(find == 0){      
+                move = 4
+                action_2()
+            }	   
+        }
     })
  
     // ====== 函式區塊 ======
@@ -52,13 +69,17 @@
     function action_2(){
         goTransform(move, 0.5);
 		setTimeout(function(){goTransform(0, 0);},500);
-        setTimeout(function(){changeClass(1)},510)
+        setTimeout(function(){
+            changeClass(1)
+            move = 0
+        },510)
         $(`.banner_dots li:eq(0)`).addClass('on')
     }
 
     
     // 漢堡bar點擊menu 展開/關閉
     $('.menu_btn').click(function(){$(this).toggleClass('active')})
+    $('.menu li').click(function(){$('.menu_btn').removeClass('active')})
     
 	var scroll = $(window).scroll(function () {
 		for (var i = 1; i < 4; i++) {
