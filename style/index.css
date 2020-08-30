@@ -199,8 +199,7 @@ body{
 .banner_group{
 	width: 100%;
 	display: flex;
-	transform: /*0~-300%*/translateX(0%);
-	transition: .8s;
+	transform: translateX(0);/*0~-300%*/
 }
 
 .banner_item{
@@ -456,37 +455,29 @@ img.icon_poker2,
 img.icon_poker3,
 img.icon_poker4{
 	height: 45%;
-	top: 10%;
-	right: 30%;
+	top: 5%;
+	right: 32%;
     transform: rotate(0deg);
 	transform-origin: center bottom;
 	margin: 0;
-	transition: all .5s ease;
+	transition: all .5s ease .3s;
 
 }
-img.icon_poker1{
-	transition-delay: .2s;
+.active .icon_poker1{
+	height: 50%;
+    transform: rotate(30deg);
 }
-.active img.icon_poker1{
-    transform: rotate(35deg);
-}
-img.icon_poker2{
-	transition-delay: .4s;
-}
-.active img.icon_poker2{	
+.active .icon_poker2{
+	height: 50%;	
 	transform: rotate(45deg);
 }
-img.icon_poker3{
-	transition-delay: .6s;
+.active .icon_poker3{
+	height: 50%;
+	transform: rotate(60deg);
 }
-.active img.icon_poker3{
-	transform: rotate(55deg);
-}
-img.icon_poker4{
-	transition-delay: .8s;
-}
-.active img.icon_poker4{
-	transform: rotate(65deg);
+.active .icon_poker4{
+	height: 50%;
+	transform: rotate(75deg);
 }
 
 
@@ -564,9 +555,6 @@ img.icon_poker4{
 }
 
 
-.banner_item:nth-child(4) .banner_bigtxt {
-	margin-bottom: 0;
-}
 .banner_item:nth-child(4) .left_txt{
 	padding-right: 50px;
 }
@@ -806,15 +794,17 @@ img.icon_poker4{
 	text-align: center;
 	overflow: hidden;
 }
-.title{
+.contact_title,
+.contact_note{
 	display: inline-block;
 	font-size: 32px;
 	color: #fff;
 	margin-bottom: 30px;
 }
 
-.title.border {
+.contact_title {
 	border: 2px solid #fff;
+	font-weight: 700;
 	padding: 15px 25px;
 	opacity: 0;
 	transition: transform .6s ease, opacity .6s ease;
@@ -824,7 +814,7 @@ img.icon_poker4{
 	transition: transform .6s ease, opacity .6s ease;
 }
 
-.active .title.border,
+.active .contact_title,
 .active.contact .mod_minitxt {
 	opacity: 1;
 }
@@ -1650,11 +1640,7 @@ footer{
 	}
 	.banner_item:nth-child(4) .banner_minitxt{
 		width: 100%;
-	}
-	
-	.banner_item:nth-child(4) .banner_bigtxt{
-		margin-bottom: 20px;
-	}
+	}	
 	.pic_cell02{
 		left: 34%;
 		transition: all 500ms cubic-bezier(0.55, 0, 0.42, 1) 0s;
