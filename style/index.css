@@ -555,9 +555,6 @@ img.icon_poker4{
 }
 
 
-.banner_item:nth-child(4) .banner_bigtxt {
-	margin-bottom: 0;
-}
 .banner_item:nth-child(4) .left_txt{
 	padding-right: 50px;
 }
@@ -1643,11 +1640,7 @@ footer{
 	}
 	.banner_item:nth-child(4) .banner_minitxt{
 		width: 100%;
-	}
-	
-	.banner_item:nth-child(4) .banner_bigtxt{
-		margin-bottom: 20px;
-	}
+	}	
 	.pic_cell02{
 		left: 34%;
 		transition: all 500ms cubic-bezier(0.55, 0, 0.42, 1) 0s;
