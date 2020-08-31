@@ -8,16 +8,33 @@
         $(`.banner_group>div:eq(0)`).addClass('active') 
         if(bannePlay){goPlay();} 
     })	
-
     $('#move_about').mouseenter(function(evt){
         bannePlay = false;
         clearInterval(banneStart);
     })
-    
     $('#move_about').mouseleave(function(e) {
         bannePlay = true
         if(bannePlay){goPlay();}
     });
+
+
+    //禁止圖片拖動
+    $('#move_about img').mousedown(function(e){
+        e.preventDefault()
+    }) 
+    var downX,upX; 
+    $('#move_about').mousedown(function(e){
+       downX = e.clientX
+    })
+    $('#move_about').mouseup(function(e){
+        upX = e.clientX
+       if(downX - upX > 100){
+            move == list - 1? move = 1 : move++
+            $('.banner_dots li').removeClass('on')
+		    if(move>0 && move < list - 1){action_1()}
+            else if(move == list - 1){action_2()} 
+       }
+     })
 
     // 輪播計時器
     function goPlay() {

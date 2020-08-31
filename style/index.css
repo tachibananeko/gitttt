@@ -179,6 +179,11 @@ body{
 	overflow: hidden;
 	display: flex;
 	flex-direction: column;
+
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-o-user-select:none;
+	user-select:none;
 }
 .banner_bigtxt{
 	font-size: 38px;
