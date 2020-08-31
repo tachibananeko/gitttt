@@ -950,9 +950,15 @@ img.icon_poker4{
 	margin: auto 0;
 	vertical-align: middle;
 }
-.method li:nth-child(2)::before{background: url('../images/icon_wechat.svg') no-repeat}
-.method li:nth-child(3)::before{background: url('../images/icon_skype.svg') no-repeat}
-.method li:nth-child(4)::before{background: url('../images/icon_mail.svg') no-repeat}
+.method li:nth-child(2)::before{
+	background: url('../images/icon_wechat.svg') no-repeat center/contain;
+}
+.method li:nth-child(3)::before{
+	background: url('../images/icon_skype.svg') no-repeat center/contain;
+}
+.method li:nth-child(4)::before{
+	background: url('../images/icon_mail.svg') no-repeat center/contain;
+}
 
 
 footer{
