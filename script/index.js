@@ -75,23 +75,18 @@
     })
  
     // ====== 函式區塊 ======
-	// 輪播位移 (page , time) ==> (位移幾頁 , 時間)
-	// 只需填入位移多少頁，內部會位移 (頁數 * 100)%
 	function goTransform(page,time){
 		$('.banner_group').css('transform',`translateX(-${page * 100}%)`).css('transition',`${time}s`);
 	}
-	// 控制哪一個div需加上class ==> active
 	function changeClass(name){
 		$(`.banner_group>div`).removeClass('active')
 		$(`.banner_group>div:eq(${name-1})`).addClass('active')
     }
-    // 判斷動作1
     function action_1(){
         goTransform(move, 0.5);
         setTimeout(function(){changeClass(move+1)},500);
         $(`.banner_dots li:eq(${move})`).addClass('on')
     }
-    // 判斷動作2
     function action_2(){
         goTransform(move, 0.5);
 		setTimeout(function(){goTransform(0, 0);},500);
