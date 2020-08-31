@@ -199,7 +199,7 @@ body{
 .banner_group{
 	width: 100%;
 	display: flex;
-	transform: translateX(0);/*0~-300%*/
+	transform: translateX(0%);/*0~-300%*/
 }
 
 .banner_item{
@@ -646,26 +646,25 @@ img.icon_poker4{
 .game_list li {
 	position: relative;
 	width: calc(100% / 4);
-	padding-bottom: calc( 100% / 4 * 1.00985222);
+	padding-bottom: calc( 100% / 4 * 1.0);
 	background: #ccf;
 	transition: all 500ms cubic-bezier(.55,0,.42,1);
-	/* vertical-align: middle; */
 }
 .game_list li:nth-child(1){
 	background: url('../images/game-01.jpg')no-repeat center; 
-	background-size: 100%
+	background-size: 100% ;
 }
 .game_list li:nth-child(2){
 	background: url('../images/game-02.jpg')no-repeat center; 
-	background-size: 100%
+	background-size: 100% ;
 }
 .game_list li:nth-child(3){
 	background: url('../images/game-03.jpg')no-repeat center; 
-	background-size: 100%
+	background-size: 100% ;
 }
 .game_list li:nth-child(4){
 	background: url('../images/game-04.jpg')no-repeat center; 
-	background-size: 100%
+	background-size: 100% ;
 }
 
 
@@ -952,7 +951,7 @@ img.icon_poker4{
 	vertical-align: middle;
 }
 .method li:nth-child(2)::before{background: url('../images/icon_wechat.svg') no-repeat}
-.method li:nth-child(3)::before{background: url('../images/icon_skype.svg') no-repeat}
+.method li:nth-child(3)::before{background: url('../images/icon_sk.svg') no-repeat}
 .method li:nth-child(4)::before{background: url('../images/icon_mail.svg') no-repeat}
 
 
@@ -1253,7 +1252,7 @@ footer{
 	}
 	.scrvic{padding: 25px 50px 0;}
 	.sp_pic{height: 330px;}
-	.txt_box::before{width: 150px;}
+	.txt_box::before{width: 150px; right: 96%;}
 	.txt_box::after{
 		top: 95%;
 		width: 100px;
@@ -1424,7 +1423,7 @@ footer{
 		justify-content: center;
 	}
 	.game_list li{
-		flex: 0 0 90%;
+		flex: 0 0 45%;
 		padding-bottom: calc( 45% * 1.00985222);
 	}
 	
