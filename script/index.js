@@ -1,55 +1,43 @@
     var move = 0
     var list = $('.banner_group>div').length
     var banneStart;
-    var count = 0
+    var bannePlay = true
 
     $(document).ready(function(){
-        $(`.banner_group>div:eq(0)`).addClass('active')
-        if(count == 0){goPlay();} 
-        for(var x = 0;x<999;x++){
-            clearInterval(banneStart);
-        }  
+        bannePlay = true
+        $(`.banner_group>div:eq(0)`).addClass('active') 
+        if(bannePlay){goPlay();} 
     })	
-    $('.banner_group,.banner_dots').mousemove(function() {
-        count = 0
-        for(var x = 0;x<999;x++){
-            clearInterval(banneStart);
-        }      
-    });
-    $('.banner_group,.banner_dots').mouseenter(function(){
-        count = 0
-        for(var x = 0;x<999;x++){
-            clearInterval(banneStart);
-        } 
+
+    $('#move_about').mouseenter(function(evt){
+        bannePlay = false;
+        clearInterval(banneStart);
     })
-    $('.banner_group,.banner_dots').mouseout(function() {
-        if(count == 0){goPlay();}
-        else{
-            for(var x = 0;x<999;x++){
-                clearInterval(banneStart);
-            }   
-        }
+    
+    $('#move_about').mouseleave(function(e) {
+        bannePlay = true
+        if(bannePlay){goPlay();}
     });
-  
+
     // 輪播計時器
     function goPlay() {
-        banneStart = setInterval(banner, 4000)
+        if(bannePlay){
+            banneStart = setInterval(banner, 4000)
+        }      
     };
+
     function banner(){
-        count ++
-        console.log(count)
         move == list - 1? move = 1 : move++
         $('.banner_dots li').removeClass('on')
 		if(move>0 && move < list - 1){action_1()}
-		else if(move == list - 1){action_2()}	
+        else if(move == list - 1){action_2()}     
     }
 
     // 輪播按鍵點擊事件
     $('.banner_dots li').click(function(){
-        count = 0
-        for(var x = 0;x<999;x++){
-            clearInterval(banneStart);
-        } 
+        bannePlay = false;
+
+        console.log(bannePlay)
         $('.banner_dots li').removeClass('on')
         var find = $('.banner_dots li').index(this)
         if(move < 3){
