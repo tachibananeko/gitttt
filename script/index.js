@@ -1,3 +1,45 @@
+//  load讀取條 
+
+  var nowLoad = 0
+  var imgLength = $('img').length
+   $('img').each(function(){
+       var x = $('img').index(this)
+        $(this).ready(function(){
+            nowLoad += 100 / imgLength
+            $('.loading_box span').animate({'left':`${parseInt(nowLoad)}%`},80);
+        })
+   })
+
+   var barWidth = $('.loading_box').css('width')
+   var barTime = setInterval(() => {
+       var barLeft =  $('.loading_box span').css('left') 
+       var now = parseInt(parseFloat((parseInt(barLeft) / parseInt(barWidth))*102))  
+       $('.loading tt').text(now)
+       if(now >= 100){
+           clearInterval(barTime)
+           $('#load').fadeOut(1000);
+       }
+   },10);
+
+
+ // 登入彈窗控制
+   var signIn = false;
+   $('.menu li:eq(6)').click(function(){
+        signIn = true;
+        nowSignIn()
+   })
+
+   $('.login_close_btn').click(function(){
+        signIn = false;
+        nowSignIn()
+   })
+   function nowSignIn(){
+     if(signIn){ $('#signIn').fadeIn(500)}
+     else{ $('#signIn').fadeOut(500)} 
+   }
+
+
+    
     var move = 0
     var list = $('.banner_group>div').length
     var banneStart;
@@ -113,4 +155,5 @@
 				$(`#hm_${i + 1}`).addClass('active')
 			}
 		}
-	})
+    })
+    
