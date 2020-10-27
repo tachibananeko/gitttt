@@ -97,6 +97,7 @@
 .resume_icon{
 	width: 90px;
 	height: 90px;
+	margin: 8px 0;
 	vertical-align: middle;
 }
 ._mini_word{
@@ -126,21 +127,7 @@
 	background:url(../images/icon_line.svg) no-repeat center; 
 }
 
-/*RWD*/
-@media (pointer: coarse), (-moz-touch-enabled: 1){
-	
+/*share*/
+.mb0{
+	margin-bottom: 0!important;
 }
-@media only screen and (max-width:1023px){
-	
-}
-
-@media only screen and (max-width: 767px){
-	
-}
-
-@media only screen and (max-width: 599px){
-	
-
-}
-
-
