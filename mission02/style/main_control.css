@@ -5,6 +5,7 @@
 	height: 958px;
 	background: url(../images/img_top.png) no-repeat center/cover;
 	align-items: center;
+	flex-direction: column;
 	justify-content: center;
 }
 .top_main h1{
