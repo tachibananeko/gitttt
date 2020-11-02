@@ -1,0 +1,188 @@
+@charset "UTF-8";
+
+a{
+	width: 100%;
+	height: 100%;
+}
+a:hover{
+	opacity: 0.8;
+}
+/*index.html*/
+header{
+	display: flex;
+	padding: 30px 80px;
+	background-color: #AA0601;
+	align-items: center;
+	justify-content: space-between;
+}
+.header_logo{
+	width: 80px;
+}
+.header_menu{
+	display: inline-flex;
+	line-height: 30px;
+	color: #fff;
+	font-size: 20px;
+	justify-content: flex-end;
+}
+.header_menu li + li{
+	margin-left: 64px;
+}
+.top_bg{
+	height: 840px;
+	background:url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/week3/banner.png) center no-repeat;
+}
+.top_box{
+	display: flex;
+	height: 100%;
+	color: #650300;
+	font-weight: bold;
+	flex-direction: column;
+	align-items: flex-end;
+	justify-content: center;
+}
+.top_note{
+	line-height: 54px;
+	font-size: 36px;
+}
+.top_title{
+	line-height: 96px;
+	font-size: 64px;
+}
+.theme_box{
+	padding: 64px 0 80px;
+}
+.theme_box h1{
+	line-height: 72px;
+	color: #650300;
+	font-size: 48px;
+	text-align: center;
+	font-weight: bold;
+	margin-bottom: 60px;
+}
+.slogan_box{
+	display: flex;
+	justify-content: space-between;
+}
+.slogan_item{
+	max-width: 208px;
+}
+.slogan_item img{
+	max-width: 100px;
+	margin: auto auto 40px;
+}
+.slogan_item h2{
+	line-height: 36px;
+	color: #650300;
+	font-size: 24px;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 4px;
+}
+.slogan_txt{
+	line-height: 24px;
+	color: #000;
+}
+.symbol_item{
+	display: flex;
+	align-items: center;
+	margin-bottom: 32px;
+}
+.symbol_item img{
+	max-width: 635px;
+}
+.symbol_item h2{
+	display: flex;
+	padding: 0 30px;
+	line-height: 72px;
+	color: #AA0601;
+	font-size: 48px;
+	font-style: italic;
+	font-weight: 900;
+	align-items: center;
+	text-transform: uppercase;
+}
+.symbol_item:nth-child(2){
+	flex-direction: row-reverse;
+}
+.symbol_item h2:before{
+	content: '';
+	display: block;
+	width: 48px;
+	height: 48px;
+	background-repeat: no-repeat;
+	background-position:center;
+	margin-right: 8px;
+}
+.icon_diamond:before{
+	background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/4baf15e7aa2800a1e312de01435b7dbf6f654843/week3/icon-diamond.svg);
+}
+.icon_sun:before{
+	background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/4baf15e7aa2800a1e312de01435b7dbf6f654843/week3/icon-sun.svg);
+}
+.icon_thunder:before{
+	background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/4baf15e7aa2800a1e312de01435b7dbf6f654843/week3/icon-thunder.svg);
+}
+._bg_imgstyle{
+	background: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/week3/bg.png) center/cover no-repeat;
+}
+._bg_imgstyle h1{
+	color: #fff;
+}
+.design_box{
+	display: flex;
+	justify-content: space-between;
+}
+.design_item{
+	position: relative;
+	display: flex;
+	max-width: 540px;
+	align-items: center;
+	justify-content: center;
+}
+.design_item span{
+	position: absolute;
+	display: flex;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(255, 255, 255, .5);
+	color: #AA0601;
+	font-size: 72px;
+	align-items: center;
+	justify-content: center;
+	top: 0;
+	left: 0;
+}
+
+
+
+
+
+
+/*share*/
+._bg_pink{
+	background-color: #AA06010D;
+}
+._w1110{
+	max-width: 1110px;
+	margin: auto;
+}
+._mb24{
+	margin-bottom: 24px;
+}
+
+/*RWD*/
+@media only screen and (max-width:1023px){
+	
+}
+
+@media only screen and (max-width: 767px){
+	
+}
+
+@media only screen and (max-width: 599px){
+	
+
+}
+
+
