@@ -1,11 +1,9 @@
 @charset "UTF-8";
 
-a{
+a{	
+	display: inline-block;
 	width: 100%;
 	height: 100%;
-}
-a:hover{
-	opacity: 0.8;
 }
 /*index.html*/
 header{
@@ -19,22 +17,24 @@ header{
 	width: 80px;
 }
 .header_menu{
-	display: inline-flex;
-	line-height: 30px;
+	display: flex;
 	color: #fff;
-	font-size: 20px;
-	justify-content: flex-end;
+	font-size: 0;
+}
+.header_menu{
+	font-size: 20px;	
 }
 .header_menu li + li{
 	margin-left: 64px;
 }
 .top_bg{
 	height: 840px;
-	background:url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/week3/banner.png) center no-repeat;
+	background:url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/week3/banner.png) center/cover no-repeat;
 }
 .top_box{
 	display: flex;
 	height: 100%;
+	padding: 0 40px;
 	color: #650300;
 	font-weight: bold;
 	flex-direction: column;
@@ -50,7 +50,7 @@ header{
 	font-size: 64px;
 }
 .theme_box{
-	padding: 64px 0 80px;
+	padding: 64px 40px 80px;
 }
 .theme_box h1{
 	line-height: 72px;
@@ -63,12 +63,13 @@ header{
 .slogan_box{
 	display: flex;
 	justify-content: space-between;
+	flex-wrap: wrap;
 }
 .slogan_item{
 	max-width: 208px;
 }
-.slogan_item img{
-	max-width: 100px;
+.slogan_item>img{
+	width: 100px;
 	margin: auto auto 40px;
 }
 .slogan_item h2{
@@ -88,8 +89,8 @@ header{
 	align-items: center;
 	margin-bottom: 32px;
 }
-.symbol_item img{
-	max-width: 635px;
+.symbol_item>img{
+	width: 635px;
 }
 .symbol_item h2{
 	display: flex;
@@ -112,6 +113,7 @@ header{
 	height: 48px;
 	background-repeat: no-repeat;
 	background-position:center;
+	background-size: contain;
 	margin-right: 8px;
 }
 .icon_diamond:before{
@@ -132,6 +134,7 @@ header{
 .design_box{
 	display: flex;
 	justify-content: space-between;
+	flex-wrap: wrap;
 }
 .design_item{
 	position: relative;
@@ -140,19 +143,216 @@ header{
 	align-items: center;
 	justify-content: center;
 }
-.design_item span{
+.design_item>span{
 	position: absolute;
 	display: flex;
 	width: 100%;
 	height: 100%;
 	background-color: rgba(255, 255, 255, .5);
 	color: #AA0601;
+	font-weight: bold;
 	font-size: 72px;
 	align-items: center;
 	justify-content: center;
 	top: 0;
 	left: 0;
 }
+.recomm_box{
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+.recomm_item{
+	max-width: 255px;
+	padding-bottom: 15px;
+	border: 1px solid #DEE2E6;
+	color: #212529;
+}
+.recomm_item>img{
+	margin-bottom: 14px;
+}
+.recomm_item>div{
+	padding: 0 16px;
+}
+.recomm_name{
+	line-height: 21px;
+	font-size: 14px;
+	margin-bottom: 7px;
+}
+.recomm_txt{
+	line-height: 24px;
+	margin-bottom: 10px;
+}
+.recomm_date{
+	line-height: 21px;
+	color: #707070;
+	font-size: 14px;
+
+}
+.contact_box{
+	max-width: 730px;
+	margin: auto;
+}
+.contact_box h2{
+	line-height: 30px;
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+.contact_item{
+	position: relative;
+	display: block;
+	margin-bottom: 16px;
+}
+.contact_item>span{
+	line-height: 24px;
+}
+.contact_item>input,
+.contact_item>textarea{
+	width: 100%;
+	height: 50px;
+	padding: 0 16px;
+	border: 1px solid #000;
+	color: #000;
+}
+.contact_item>textarea{
+	height: 136px;
+	padding: 14px 16px;
+}
+.contact_checkbox{
+	display: flex;
+	align-items: center;
+	margin-bottom: 42px;
+}
+.contact_checkbox>input{
+	display: none;
+}
+.contact_checkbox>input + span{
+	position: relative;
+	display: block;
+	width: 24px;
+	height: 24px;
+	flex: none;
+	border: 1px solid #000;
+	margin-right: 4px;
+}
+.contact_checkbox>input:checked + span:before{
+	content: '';
+    position: absolute;
+    width: 6px;
+    height: 12px;
+    border-style: solid;
+    border-width: 3px;
+    border-color: transparent #AA0601 #AA0601 transparent;
+    transform: rotate(39deg);
+    top: -3px;
+    left: 5px;
+}
+.contact_btn{
+	display: block;
+	width: 350px;
+	height: 54px;
+	line-height: 54px;
+	background-color: #AA0601;
+	color: #fff;
+	text-align: center;
+	margin: auto;
+}
+footer{
+	padding: 48px 40px 40px;
+	background-color: #AA0601;
+	color: #fff;
+}
+.foot_box{
+	display: flex;
+	flex-wrap: wrap;
+}
+.foot_left{
+	width: calc(100% - 208px);
+	margin-bottom: 22px;
+}
+.foot_menu{
+	display: flex;
+	line-height: 24px;
+	margin-bottom: 32px;
+}
+.foot_menu li + li{
+	margin-left: 48px;
+}
+.foot_left>div{
+	display: flex;
+	line-height: 54px;
+	font-size: 36px;
+	align-items: center;
+}
+.foot_left>div:before{
+	content: '';
+	display: inline-block;
+	width: 48px;
+	height: 48px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	margin-right: 17px;
+}
+.foot_tel{
+	margin-bottom: 17px;
+}
+.foot_tel:before{
+	background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/4baf15e7aa2800a1e312de01435b7dbf6f654843/week3/icon-phone.svg);
+}
+.foot_mail:before{
+	background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/4baf15e7aa2800a1e312de01435b7dbf6f654843/week3/icon-mail.svg);
+}
+
+.foot_right{
+	display: flex;
+	flex: none;
+	width: 208px;
+	justify-content: space-between;
+}
+.foot_right>li{
+	width: 48px;
+	height: 48px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;	
+}
+.icon_fb{
+	background: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/4baf15e7aa2800a1e312de01435b7dbf6f654843/week3/icon-fb.svg);
+}
+.icon_ig{
+	background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/4baf15e7aa2800a1e312de01435b7dbf6f654843/week3/icon-ig.svg);
+}
+.icon_line{
+	background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/4baf15e7aa2800a1e312de01435b7dbf6f654843/week3/icon-line.svg);
+}
+.foot_copyright{
+	display: flex;
+	width: 100%;
+	padding-top: 24px;
+	border-top: 1px solid #FFF;	
+	align-items: center;
+	justify-content: space-between;
+
+}
+.foot_copytxt{
+	display: flex;
+	align-items: center;
+}
+.foot_copytxt>img{
+	width: 80px;
+	margin-right: 38px;
+}
+.foot_copylink{
+	display: flex;
+}
+.foot_copylink li + li{
+	margin-left: 64px;
+}
+
+
+
+
 
 
 
@@ -163,7 +363,10 @@ header{
 ._bg_pink{
 	background-color: #AA06010D;
 }
-._w1110{
+._word_black{
+	color: #000;
+}
+._container_w{
 	max-width: 1110px;
 	margin: auto;
 }
@@ -171,18 +374,281 @@ header{
 	margin-bottom: 24px;
 }
 
+[class*="_btn"],
+a,
+.contact_checkbox>input + span,
+.foot_right>li,
+.foot_copylink li{
+	cursor: pointer;
+	transition: color .3s linear, background-color .3s linear, opacity .3s linear, box-shadow .3s linear, border-color .3s linear;
+}
+[class*="_btn"]:hover,
+a:hover,
+.foot_right>li:hover,
+.foot_copylink li:hover{
+	opacity: 0.6;
+}
 /*RWD*/
-@media only screen and (max-width:1023px){
-	
+@media only screen and (max-width:992px){
+	header{
+		padding: 30px 40px;
+	}
+	.top_bg{
+		background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/week3/banner-sm.png);
+	}
+	.top_note{
+		line-height: 30px;
+		font-size: 20px;
+	}
+	.top_title{
+		line-height: 72px;
+		font-size: 48px;
+	}
+	.theme_box,
+	footer{
+		padding: 40px;
+	}
+	.theme_box h1{
+		line-height: 48px;
+		font-size: 32px;
+		margin-bottom: 32px;
+	}
+	.slogan_box._container_w{
+		max-width: 594px;
+	}
+	.slogan_item{
+		max-width: 237px;
+	}
+	.slogan_item h2{
+		line-height: 30px;
+		font-size: 20px;
+	}
+	.slogan_item:nth-child(1),
+	.slogan_item:nth-child(2){
+		margin-bottom: 40px;		
+	}
+	.slogan_item>img{
+		width: 80px;
+		margin-bottom: 16px;
+	}
+	.symbol_item{
+		margin-bottom: 8px;
+	}
+	.symbol_item>img{
+		width: 390px;
+	}
+	.symbol_item h2{
+		line-height: 42px;
+		font-size: 28px;
+	}
+	.symbol_item h2:before{
+		width: 32px;
+		height: 32px;
+	}
+	.symbol_item:nth-child(2){
+		flex-direction: row;
+	}
+	.design_item{
+		max-width: 330px;
+	}
+	.design_item>span{
+		line-height: 25px;
+		font-size: 32px;
+		font-weight: bold;
+	}
+	.recomm_item{
+		max-width: 330px;
+	}
+	.recomm_item:nth-child(1),
+	.recomm_item:nth-child(2){
+		margin-bottom: 30px;
+	}
+	.recomm_name,
+	.recomm_txt{
+		margin-bottom: 16px;
+	}
+	.contact_box{
+		max-width: 450px;
+	}
+	.contact_box h2{
+		line-height: 24px;
+		font-size: 16px;
+	}
+	.contact_item>span{
+		line-height: 21px;
+		font-size: 14px;
+	}
+	.contact_item>input,
+	.contact_item>textarea{
+		font-size: 14px;
+	}
+	.contact_checkbox{
+		align-items: flex-start;
+		line-height: 21px;
+		font-size: 14px;
+		margin-bottom: 20px;
+	}
+	.contact_btn{
+		width: 210px;
+	    height: 36px;
+	    line-height: 36px;
+	}
+	.foot_menu{
+		font-size: 16px;
+	}
+	.foot_left{
+		width: calc(100% - 120px);
+		margin-bottom: 24px;
+	}
+	.foot_left>div{
+		line-height: 30px;
+		font-size: 20px;
+	}
+	.foot_left>div:before{
+		width: 32px;
+		height: 32px;
+		margin-right: 8px;
+	}
+	.foot_tel{
+		margin-bottom: 8px;
+	}
+	.foot_right{
+		width: 120px;
+	}
+	.foot_right>li{
+		width: 24px;
+		height: 24px;
+	}
+	.foot_copytxt{
+		font-size: 16px;
+	}
+	.foot_copytxt>img{
+		display: none;
+	}
+	.foot_copylink li + li{
+		margin-left: 24px;
+	}
+
 }
 
 @media only screen and (max-width: 767px){
-	
-}
+	header{
+		padding: 0;
+		flex-direction: column;
+	}
+	.header_logo{
+		padding: 10px 0;
+	}
+	.header_menu{
+		width: 100%;
+		flex-wrap: wrap;
+	}
+	.header_menu>li{
+		width: 50%;
+		height: 44px;
+		line-height: 44px;
+		border: 1px solid #fff;
+		font-size: 20px;
+		text-align: center;
+	}
+	.header_menu li + li{
+		margin-left: 0;
+	}
+	.top_bg{
+		height: 394px;
+	}
+	.top_note{
+		font-size: 16px;
+	}
+	.top_title{
+		font-size: 32px;
+	}
+	.theme_box{
+		padding: 32px 15px;
+	}	
+	.theme_box h1{
+		line-height: 48px;
+		font-size: 20px;
+		margin-bottom: 20px;
+	}
+	.slogan_box{
+		justify-content: center;
+	}
+	.slogan_item h2{
+		line-height: 30px;
+		font-size: 20px;
+	}
+	.slogan_item{
+		margin-bottom: 40px;
+	}
+	.symbol_item{
+		position: relative;		
+	}
+	.symbol_item>img{
+		width: 100%;
+	}
+	.symbol_item h2{
+		position: absolute;
+		width: 100%;
+		color: #fff;
+		justify-content: center;
 
-@media only screen and (max-width: 599px){
+	}
+	.icon_diamond:before{
+		background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/4baf15e7aa2800a1e312de01435b7dbf6f654843/week3/icon-diamond-white.svg);
+	}
+	.icon_sun:before{
+		background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/4baf15e7aa2800a1e312de01435b7dbf6f654843/week3/icon-sun-white.svg);
+	}
+	.icon_thunder:before{
+		background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/4baf15e7aa2800a1e312de01435b7dbf6f654843/week3/icon-thunder-white.svg);
+	}
+	.design_item{
+		max-width: none;
+		margin-bottom: 16px;
+	}
+	.design_item:last-child{
+		margin-bottom: 0;
+	}
+	.recomm_item:not(:last-child){
+		margin-bottom: 16px;
+	}
+	footer{
+		padding: 24px 15px;
+	}
+	.foot_menu{
+		display: none;
+	}
+	.foot_left>div{
+		line-height: 30px;
+		font-size: 16px;
+	}
+	.foot_left>div:before{
+		width: 20px;
+		height: 20px;
+	}
+	.foot_copyright,
+	.foot_copylink{
+		position: relative;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	.foot_copytxt>img{
+		position: absolute;
+		display: block;
+		width: 46px;
+		margin-right: 0;
+		bottom: 0;
+		right: 0;
+	}
+	.foot_copytxt,
+	.foot_copylink li{
+		margin-bottom: 7px;
+	}
+	.foot_copylink li + li{
+		margin-left: 0;
+	}
 	
-
 }
 
 
