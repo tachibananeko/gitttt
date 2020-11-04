@@ -189,6 +189,10 @@ header{
 	font-size: 14px;
 
 }
+.theme_box .contact_title{
+	color: #000;
+	margin-bottom: 24px;
+}
 .contact_box{
 	max-width: 730px;
 	margin: auto;
@@ -229,8 +233,8 @@ header{
 .contact_checkbox>input + span{
 	position: relative;
 	display: block;
-	width: 24px;
-	height: 24px;
+	width: 20px;
+	height: 20px;
 	flex: none;
 	border: 1px solid #000;
 	margin-right: 4px;
@@ -238,8 +242,8 @@ header{
 .contact_checkbox>input:checked + span:before{
 	content: '';
     position: absolute;
-    width: 6px;
-    height: 12px;
+    width: 3px;
+    height: 11px;
     border-style: solid;
     border-width: 3px;
     border-color: transparent #AA0601 #AA0601 transparent;
@@ -610,8 +614,15 @@ a:hover,
 	.design_item:last-child{
 		margin-bottom: 0;
 	}
+	.recomm_box{
+		justify-content: center;
+	}
 	.recomm_item:not(:last-child){
 		margin-bottom: 16px;
+	}
+	.contact_btn{
+		width: 165px;
+		font-size: 14px;
 	}
 	footer{
 		padding: 24px 15px;
