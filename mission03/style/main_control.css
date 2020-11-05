@@ -355,6 +355,168 @@ footer{
 }
 
 
+/*optical.html*/
+.product01_menu{
+	display: flex;
+	height: 103px;
+	line-height: 103px;
+	justify-content: center;
+}
+.product01_menu li{
+	position: relative;
+	display: flex;
+	width: 462px;
+	border: 1px solid #DCDCDC;
+	font-size: 42px;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+}
+.product01_menu li + li{
+	border-left: none;
+}
+.product01_menu li.on:after,
+.product01_menu li:after{
+	content: '';
+	position: absolute;
+	width: 100%;
+	height: 16px;
+	background-color: #AA0601;
+	bottom: 0;
+	transition: width .25s;
+}
+.product01_menu li:after{
+	width: 0%;
+}
+.product01_menu li:before{
+	content: '';
+	display: block;
+	width: 48px;
+	height: 48px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: contain;
+	margin-right: 8px;
+}
+.menu_diamond:before{
+	background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/c7639be6b4ca9e758e4c0f8fc6cb52b44e94b323/week3/icon-diamond-black.svg);
+}
+.menu_sun:before{
+	background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/c7639be6b4ca9e758e4c0f8fc6cb52b44e94b323/week3/icon-sun-black.svg);
+}
+.menu_thunder:before{
+	background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/c7639be6b4ca9e758e4c0f8fc6cb52b44e94b323/week3/icon-thunder-black.svg);
+}
+.title_imgbox{
+	display: flex;
+	height: 309px;
+	justify-content: space-between;
+	margin-bottom: 88px;
+}
+.title_imgbox>span{
+	display: block;
+	width: calc(50% - 15px);
+	height: 100%;
+	background-position: center;
+	background-size: cover;
+}
+.title_img01{
+	background: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/week3/banner-1.png);
+}
+.title_img02{
+	background: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/week3/banner-2.png);
+}
+
+.title_img03{
+	background: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/week3/banner-3.png);
+}
+.title_img04{
+	background: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/week3/banner-3.png);
+}
+
+.product_title{
+	line-height: 63px;
+	font-size: 42px;
+	text-align: center;
+}
+.product_title span{
+	line-height: 48px;
+	font-size: 32px;
+	text-align: center;
+	margin-bottom: 40px;
+}
+.product01_box,
+.product02_box{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.product02_box{
+	padding-bottom: 192px;
+}
+.product_item{
+	width: calc(100% / 4 - 90px / 4);
+	margin-bottom: 100px;
+}
+.product02_box>.product_item{
+	width: calc(100% / 3 - 90px / 3);
+	margin-bottom: 112px;
+}
+.product_info{
+	display: flex;
+	line-height: 36px;
+	font-size: 24px;
+	text-transform: uppercase;
+	justify-content: space-between;
+}
+.product02_box .product_info{
+	line-height: 30px;
+	font-size: 18px;
+	flex-direction: column;
+}
+.info_money{
+	color: #AA0601;
+}
+.product_color{
+	display: flex;
+}
+.product_color li{
+	width: 24px;
+	height: 24px;
+	border-radius: 4px;
+}
+.product_color li + li{
+	margin-left: 8px;
+}
+.color_brown{
+	background-color: #5F3E2D;
+}
+.color_orange{
+	background-color: #B75929;
+}
+.page_box{
+	display: flex;
+	color: #555;
+	font-size: 18px;
+	justify-content: center;
+	margin-bottom: 156px;
+}
+.page_box li{
+	padding:10px 16px;
+	border: 1px solid #555;
+}
+.page_box li + li{
+	border-left: none;
+}
+.page_box li:first-child,
+.page_box li:last-child{
+	padding:10px 12px;
+	font-size: 19px;
+}
+.page_box li.on{
+	background-color: #000;
+	color: #fff;
+}
 
 
 
@@ -364,15 +526,15 @@ footer{
 
 
 /*share*/
+._container_w{
+	max-width: 1110px;
+	margin: auto;
+}
 ._bg_pink{
 	background-color: #AA06010D;
 }
 ._word_black{
 	color: #000;
-}
-._container_w{
-	max-width: 1110px;
-	margin: auto;
 }
 ._mb24{
 	margin-bottom: 24px;
@@ -382,15 +544,26 @@ footer{
 a,
 .contact_checkbox>input + span,
 .foot_right>li,
-.foot_copylink li{
+.foot_copylink li,
+.product01_menu li,
+.product_color li,
+.page_box li,
+.page_box li{
 	cursor: pointer;
 	transition: color .3s linear, background-color .3s linear, opacity .3s linear, box-shadow .3s linear, border-color .3s linear;
 }
 [class*="_btn"]:hover,
 a:hover,
 .foot_right>li:hover,
-.foot_copylink li:hover{
+.foot_copylink li:hover,
+.product_color li:hover{
 	opacity: 0.6;
+}
+.product01_menu li:hover:after{
+	width: 100%;
+}
+.page_box li:not(.on):hover{
+	background-color: #F2F2F2;	
 }
 /*RWD*/
 @media only screen and (max-width:992px){
@@ -533,6 +706,57 @@ a:hover,
 		margin-left: 24px;
 	}
 
+
+	/*optical.html*/
+	.product01_menu{
+		height: 69px;
+		line-height: 69px;
+	}
+	.product01_menu li{
+		width: calc(100% / 3);
+		font-size: 28px;
+	}
+	.product01_menu li:before{
+		width: 32px;
+		height: 32px;
+	}
+	.product01_menu li.on:after,
+	.product01_menu li:after{
+		height: 8px;
+	}
+	.title_imgbox>span{
+		width: 50%;
+	}
+	.title_imgbox{
+		margin-bottom: 40px;
+	}
+	.product_title{
+		line-height: 48px;
+		font-size: 32px;
+	}
+	.product_title span{
+		line-height: 36px;
+		font-size: 24px;
+		margin-bottom: 32px;
+	}
+	.product01_box,
+	.product02_box{
+		padding: 0 39px 33px;
+	}
+	.product_item,
+	.product02_box>.product_item{
+		width: calc(100% / 2 - 30px);
+		margin-bottom: 72px;
+	}
+	.product02_box .product_info{
+		font-size: 24px;
+		flex-direction: row;
+	}
+	.page_box{
+		margin-bottom: 104px;
+	}
+
+
 }
 
 @media only screen and (max-width: 767px){
@@ -659,7 +883,61 @@ a:hover,
 	.foot_copylink li + li{
 		margin-left: 0;
 	}
-	
+
+
+	/*optical.html*/
+	.product01_menu{
+		height: 35px;
+		line-height: 35px;
+	}
+	.product01_menu li{
+		font-size: 14px;
+	}
+	.product01_menu li:before{
+		width: 15px;
+		height: 15px;
+	}
+	.product01_menu li.on:after,
+	.product01_menu li:after{
+		height: 4px;
+	}
+	.title_imgbox{
+		height: 144px;
+	}
+	.product01_box{
+		padding: 0 16px 8px;
+	}
+	.product_title{
+		font-size: 20px;
+	}
+	.product_title span{
+		font-size: 16px;
+		margin-bottom: 20px;
+	}
+	.product01_box,
+	.product02_box {
+	    padding: 0 15px 8px;
+	}
+	.product_item,
+	.product02_box>.product_item{
+		width: 100%;
+		margin-bottom: 32px;
+	}
+	.product_info{
+		font-size: 16px;
+	}
+	.page_box{
+		margin-bottom: 56px;
+	}
+	.page_box,
+	.page_box li:first-child,
+	.page_box li:last-child{
+		font-size: 12px;
+	}
+	.page_box li{
+		padding: 10px;
+	}
+
 }
 
 
