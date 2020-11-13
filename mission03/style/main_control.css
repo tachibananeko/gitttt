@@ -355,7 +355,7 @@ footer{
 }
 
 
-/*optical.html*/
+/*product01~02.html*/
 .product01_menu{
 	display: flex;
 	height: 103px;
@@ -440,6 +440,7 @@ footer{
 	text-align: center;
 }
 .product_title span{
+	display: block;
 	line-height: 48px;
 	font-size: 32px;
 	text-align: center;
@@ -519,6 +520,131 @@ footer{
 }
 
 
+/*location.html*/
+.location_header{
+	display: flex;
+	height: 304px;
+	background: url(https://images.unsplash.com/photo-1511467094700-849a6a082fa2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80) center/cover no-repeat;
+	align-items: flex-end;
+}
+.location_title{
+	display: flex;
+	width: 100%;
+	line-height: 80px;
+	font-size: 64px;
+	font-weight: bold;
+	align-items: center;
+}
+.location_title:after{
+	content: '';
+	width: 40px;
+	height: 58px;
+	background: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/7059003f6d011be52053cb5e63d68f3999af01d7/week3/icon-location.svg) no-repeat center/cover;
+	margin-left: 24px;
+}
+.location_search{
+	display: flex;
+	line-height: 30px;
+	padding: 16px 0 32px;
+	font-size: 24px;
+	align-items: center;
+}
+.location_select{
+	position: relative;
+	width: 324px;
+	height: 45px;
+	border: 1px solid #CED4DA;
+	color: hsla(210, 9%, 31%, .75);
+	margin-left: 20px;
+}
+.location_select select{
+	width: 100%;
+	height: 100%;
+	padding: 0 19px;
+}
+.location_select:after{
+	position: absolute;
+	content: '\25BC';
+	height: 30px;
+	color: #373A3C;
+	font-size: 15px;
+	top: 0;
+	bottom: 0;
+	right: 10px;
+	margin: auto;
+	pointer-events: none;
+}
+.location_box{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	padding-bottom: 272px;
+}
+.location_item{
+	width: calc(100% / 3 - 20px);
+	margin-bottom: 32px;
+}
+.location_item h2{
+	padding: 0 24px;
+	line-height: 60px;
+	border: 1px solid #00000021;
+	font-size: 24px;
+}
+.location_list{
+	padding: 16px 24px;
+	border: 1px solid #00000021;
+}
+.location_list li{
+	display: flex;
+	line-height: 30px;
+	font-size: 20px;	
+}
+.location_list li:before{
+	content: '';
+	display: block;
+	width: 21px;
+	height: 30px;
+	background-position: left center;
+	background-repeat: no-repeat;
+	background-size: contain;
+	margin-right: 12px;
+}
+.icon_tel:before{
+	background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/7059003f6d011be52053cb5e63d68f3999af01d7/week3/icon-phone-black.svg);
+}
+.icon_time:before{
+	background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/7059003f6d011be52053cb5e63d68f3999af01d7/week3/icon-clock-black.svg);
+}
+.icon_address:before{
+	background-image: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/7059003f6d011be52053cb5e63d68f3999af01d7/week3/icon-map.svg);
+}
+.location_btn{
+	width: 100%;
+	height: 65px;
+	line-height: 65px;
+	background-color: #000;	
+	color: #fff;
+	font-size: 19px;
+	text-align: center;
+}
+
+/*location_detail.html*/
+._detail.location_box{
+	padding-bottom: 304px;
+}
+._detail .location_item{
+	width: 445px;
+	margin-bottom: 0;
+}
+.location_map{
+	background-color: #aaf;
+	width: calc(100% - 475px);
+	min-height: 465px;
+}
+
+
+
+
 
 
 
@@ -528,7 +654,7 @@ footer{
 /*share*/
 ._container_w{
 	max-width: 1110px;
-	margin: auto;
+	margin:0 auto;
 }
 ._bg_pink{
 	background-color: #AA06010D;
@@ -735,6 +861,7 @@ a:hover,
 		font-size: 32px;
 	}
 	.product_title span{
+		display: block;
 		line-height: 36px;
 		font-size: 24px;
 		margin-bottom: 32px;
@@ -754,6 +881,47 @@ a:hover,
 	}
 	.page_box{
 		margin-bottom: 104px;
+	}
+	/*location.html*/
+	.location_title{
+		padding: 0 39px;
+		font-size: 48px;
+	}
+	.location_search{
+		padding: 8px 39px 20px;
+		font-size: 16px;
+	}
+	.location_box{
+		padding: 0 39px 84px;
+	}
+	.location_item{
+		width: calc(100% / 2 - 15px);
+		margin-bottom: 20px;
+	}
+	.location_item h2{
+		line-height: 40px;
+		font-size: 16px;
+	}
+	.location_list li{
+		font-size: 14px;
+	}
+	/*location_detail.html*/
+	._detail.location_box{
+		padding-bottom: 104px;
+	}
+	._detail .location_item{
+		display: flex;
+		width: 100%;
+		align-items: center;
+		justify-content: space-between;
+		margin-bottom: 32px;
+	}
+	._detail .location_item img,
+	.location_item_info{
+		width: calc(100% / 2 - 15px);
+	}
+	.location_map{
+		width: 100%;
 	}
 
 
@@ -911,6 +1079,7 @@ a:hover,
 		font-size: 20px;
 	}
 	.product_title span{
+		display: block;
 		font-size: 16px;
 		margin-bottom: 20px;
 	}
@@ -936,6 +1105,22 @@ a:hover,
 	}
 	.page_box li{
 		padding: 10px;
+	}
+
+	/*location_detail.html*/
+	._detail.location_box{
+		padding-bottom: 56px;
+	}
+	._detail .location_item{
+		flex-direction: column;
+		margin-bottom: 16px;
+	}
+	._detail .location_item img,
+	.location_item_info{
+		width: 100%;
+	}
+	.location_map{
+		min-height: 227px;
 	}
 
 }
