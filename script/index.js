@@ -166,7 +166,7 @@
     $('.menu li').click(function(){$('.menu_btn').removeClass('active')})
     
 	var scroll = $(window).scroll(function () {
-		for (var i = 1; i < 5; i++) {
+		for (var i = 1; i < 6; i++) {
 			if (scroll.scrollTop() > $(`#hm_${i}`).offset().top + $(`#hm_${i}`).height() / 3 * 2) {
 				$(`#hm_${i + 1}`).addClass('active')
 			}

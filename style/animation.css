@@ -405,7 +405,7 @@
         opacity: 0.1;
     }
     50%{
-        opacity: 0.7;
+        opacity: 1;
     }
     100% {
         -webkit-transform: translate(-800px , -100px)  scale(1.5);
@@ -418,7 +418,7 @@
         opacity: 0.1;
     }
     50%{
-        opacity: 0.7;
+        opacity: 1;
     }
     100% {
         -webkit-transform: translate(-800px , -100px)  scale(1.5);
@@ -431,7 +431,7 @@
         opacity: 0.1;
     }
     50%{
-        opacity: 0.7;
+        opacity: 1;
     }
     100% {
         -webkit-transform: translate(1000px , -200px) scale(1.2) ;
@@ -444,7 +444,7 @@
         opacity: 0.1;
     }
     50%{
-        opacity: 0.7;
+        opacity: 1;
     }
     100% {
         -webkit-transform: translate(1000px , -200px) scale(1.2) ;
@@ -458,7 +458,7 @@
         opacity: 0.1;
     }
     50%{
-        opacity: 0.7;
+        opacity: 1;
     }
     100% {
         -webkit-transform: translate(-800px , -300px)  scale(1.9);
@@ -472,7 +472,7 @@
         opacity: 0.1;
     }
     50%{
-        opacity: 0.7;
+        opacity: 1;
     }
     100% {
         -webkit-transform: translate(-800px , -300px)  scale(1.9);
@@ -485,7 +485,7 @@
         opacity: 0.1;
     }
     50%{
-        opacity: 0.7;
+        opacity: 1;
     }
     100% {
         -webkit-transform: translate(1000px , -200px) scale(1.2) ;
@@ -498,7 +498,7 @@
         opacity: 0.1;
     }
     50%{
-        opacity: 0.7;
+        opacity: 1;
     }
     100% {
         -webkit-transform: translate(1000px , -200px) scale(1.2) ;
@@ -511,7 +511,7 @@
         opacity: 0.1;
     }
     50%{
-        opacity: 0.7;
+        opacity: 1;
     }
     100% {
         -webkit-transform: translate(-800px , 200px)  scale(1.5);
@@ -524,7 +524,7 @@
         opacity: 0.1;
     }
     50%{
-        opacity: 0.7;
+        opacity: 1;
     }
     100% {
         -webkit-transform: translate(-800px , 200px)  scale(1.5);
@@ -537,7 +537,7 @@
         opacity: 0.1;
     }
     50%{
-        opacity: 0.7;
+        opacity: 1;
     }
     100% {
         -webkit-transform: translate(800px , 200px)  scale(1.8);
@@ -550,7 +550,7 @@
         opacity: 0.1;
     }
     50%{
-        opacity: 0.7;
+        opacity: 1;
     }
     100% {
         -webkit-transform: translate(800px , 200px)  scale(1.8);
