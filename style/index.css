@@ -2411,6 +2411,9 @@ footer{
 		height: 260px;
 		background-size: 80%;
 	}
+	.service_pic::after{
+		background-size: 80%;
+	}
 }
 
 @media (max-width: 360px){
