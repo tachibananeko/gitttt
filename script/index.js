@@ -51,7 +51,7 @@
     var bannePlay = true;
 
     $(document).ready(function(){
-        bannePlay = false
+        bannePlay = true
         $(`.banner_group>div:eq(0)`).addClass('active') 
         if(bannePlay){goPlay();} 
     })	
@@ -166,13 +166,12 @@
     $('.menu li').click(function(){$('.menu_btn').removeClass('active')})
     
 	var scroll = $(window).scroll(function () {
-		for (var i = 1; i < 5; i++) {
+		for (var i = 1; i < 6; i++) {
 			if (scroll.scrollTop() > $(`#hm_${i}`).offset().top + $(`#hm_${i}`).height() / 3 * 2) {
 				$(`#hm_${i + 1}`).addClass('active')
 			}
 		}
     })
-
 
 
     var recruitTime = 0
@@ -194,9 +193,6 @@
        
     },2000);
 
-    
-
     function recruit(page,time){
-        console.log(recruitTime)
         $('.recruit_group').css('transform',`translateY(-${page *100}%)`).css('transition',`${time}s`);  
     }
