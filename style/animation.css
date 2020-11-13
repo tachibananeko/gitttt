@@ -1217,7 +1217,11 @@
     animation:  tail 1000ms ease-in-out infinite,
                 shooting 1000ms ease-in-out infinite;
 }
-
+@media (max-width: 414px){
+    .shooting_star {
+        height: 1px;
+    }
+}
 .shooting_star:nth-child(2) {
     top: calc(50% - -97px);
     left: calc(50% - 54px);

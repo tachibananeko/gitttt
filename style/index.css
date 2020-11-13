@@ -2330,7 +2330,7 @@ footer{
 		padding: 50px 15px 0;
 	}
 	.service{
-		padding: 50px 0 150px;
+		padding: 0 0 150px;
 	}
 	.sp_btn_box{bottom: 0;}
 	.sp_btn{width: 100%;}
@@ -2408,7 +2408,8 @@ footer{
 		margin-top: 50px;
 	}
 	.service_pic{
-		height: 240px;
+		height: 260px;
+		background-size: 80%;
 	}
 }
 
