@@ -5,6 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<!-- <meta name="viewport" content="viewport-fit=cover"> -->
 	<title>I cash線上平台</title>
 	<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700;900&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
@@ -14,8 +15,9 @@
 </head>
 
 <body ontouchstart="">
+	<!-- 不能滑動 在body 加class="unScroll" -->
 	<!-- 最上列 -->
-	<div class="header" style="display: none;">
+	<div class="header">
 		<div class="logo logo_title"></div>
 		<!-- 手機版 打開menu在 .menu_btn + active -->
 		<div class="menu_btn">
@@ -25,22 +27,22 @@
 			<ul class="menu">
 				<li class="logo logo_title"></li>
 				<li>
-					<a href="#hm_5">首頁</a>
+					<a href="#hm_1">首頁</a>
 				</li>
 				<li>
 					<a href="#move_about">關於我們</a>
 				</li>
 				<li>
-					<a href="#hm_1">服務項目</a>
-				</li>
-				<li>
 					<a href="#hm_2">遊戲產品</a>
 				</li>
 				<li>
-					<a href="#hm_3">合作夥伴</a>
+					<a href="#hm_3">服務項目</a>
 				</li>
 				<li>
-					<a href="#hm_4">聯絡我們</a>
+					<a href="#hm_4">合作夥伴</a>
+				</li>
+				<li>
+					<a href="#hm_6">聯絡我們</a>
 				</li>
 				<li style="display: none">登入</li>
 				<!-- 打開第二層選單，在class 加 on -->
@@ -60,7 +62,8 @@
 	</div>
 	<!-- 最上列 -->
 	<!-- 首頁 -->
-	<div id="hm_5" class="sign" style="display: none;">
+	<!-- loading跑完 加active -->
+	<div id="hm_1" class="sign active">
 		<!-- 動畫 -->
 		<ul class="cloud_amimate">
 			<li></li>
@@ -86,11 +89,11 @@
 	<!-- 首頁 -->
 
 	<!-- banner -->
-	<div id="move_about" class="banner" style="display: none;">
+	<div id="move_about" class="banner">
 		<div class="banner_group">
 			<!-- banner 02 -->
 			<!-- 當前畫面在class 加active離開後active要拿掉 -->
-			<div class="banner_item banner_item2">
+			<div class="banner_item banner_item1">
 				<div class="banner_pic">
 					<img class="pic_cell1" src="../images/pic_cell1.png" alt="">
 					<img class="pic_cell2" src="../images/pic_cell2.png" alt="">
@@ -120,11 +123,11 @@
 			</div>
 			<!-- banner 03 -->
 			<!-- 當前畫面在class 加active離開後active要拿掉 -->
-			<div class="banner_item banner_item3">
+			<div class="banner_item banner_item2">
 				<div class="banner_txtbox">
-					<div class="banner_bigtxt txt_shadow" data-title="
+					<div class="banner_bigtxt" data-title="
 					關於我們">關於我們</div>
-					<div class="banner_minitxt txt_shadow">
+					<div class="banner_minitxt">
 						在遊戲產業的長久經驗。
 						iCash 以研發為宗旨的企業，總部有約500位員工，各分佈於馬尼拉、新加坡兩地，而其中研發部門、 技術企劃、網管部門是公司的三大核心。
 						每年推出旗艦款的競技遊戲，除了滿足平台的玩家喜好,也讓客戶每年都期待的心情。
@@ -142,7 +145,7 @@
 
 			<!-- banner 04 -->
 			<!-- 當前畫面在class 加active離開後active要拿掉 -->
-			<div class="banner_item banner_item4">
+			<div class="banner_item banner_item3">
 				<div class="banner_pic">
 					<img class="pic_cell03" src="../images/pic_cell03.png" alt="">
 					<img class="pic_cell02" src="../images/pic_cell02.png" alt="">
@@ -160,7 +163,7 @@
 
 			<!-- banner 01 -->
 			<!-- 當前畫面在class 加active離開後active要拿掉 -->
-			<div class="banner_item banner_item1">
+			<div class="banner_item banner_item4">
 				<div class="banner_txtbox">
 					<div class="banner_bigtxt" data-title="夥伴與忠誠的關係">夥伴與忠誠的關係</div>
 					<div class="banner_minitxt">
@@ -178,7 +181,7 @@
 
 			<!-- banner 02 -->
 			<!-- 當前畫面在class 加active離開後active要拿掉 -->
-			<div class="banner_item banner_item2">
+			<div class="banner_item banner_item1">
 				<div class="banner_pic">
 					<img class="pic_cell1" src="../images/pic_cell1.png" alt="">
 					<img class="pic_cell2" src="../images/pic_cell2.png" alt="">
@@ -220,10 +223,9 @@
 	<!-- banner -->
 
 	<!-- 產品服務 -->
-	<div id="hm_1" class="product active" style="display: none;">
+	<div id="hm_2" class="product">
 		<div class="product_inf bg_triangle_in_out">
 			<div class="product_txt">
-				<div class="mod_bigtxt mod_font_en">PRODUCT</div>
 				<div class="mod_midtxt">產品服務</div>
 				<div class="mod_minitxt">
 					iCash 創立至今，一直屹立於行業頂尖。作為遊戲系統供應商，以用戶全平台遊戲體驗為核心，提供最新的全方位技術支持，致力打造遊戲娛樂生態圈。 並與知名娛樂公司成為合作夥伴，在資源優勢上從系統結構、大數據分析、行業生態建設等多方面進行深度優化，完善產品技術和建立更成熟的運營團隊。
@@ -247,10 +249,10 @@
 	<!-- 產品服務 -->
 
 	<!-- 服務項目 -->
-	<div id="hm_2" class="service">
+	<div id="hm_3" class="service">
 		<div class="service_pic" >
 			<!-- 流星動畫 -->
-			<ul class="night">
+			<ul class="night" >
 				<li class="shooting_star"></li>
 				<li class="shooting_star"></li>
 				<li class="shooting_star"></li>
@@ -261,40 +263,38 @@
 			<!-- 流星動畫 -->
 		</div>
 		<div class="txt_box">
-			<div class="mod_bigtxt mod_font_en" data-title="SERVICE">SERVICE</div>
-			<div class="mod_midtxt">服務項目與流程</div>
+			<div class="mod_midtxt" data-title="SERVICE">服務項目與流程</div>
 			<div class="mod_minitxt">
 				iCash 提供全面的服務，不論在產品質量、服務管理以及技術支援，我們的專業團隊及技術人員都會為客人提供滿意及稱心之服務。防禦系統部分我們採用自家研發的CDN立體化防攻擊體系，24小時全面抵禦任何類型的DDoS或CC攻擊，並提供獨創防劫持技術，通過加密演算法和密鑰交換演算法加密建立安全連線確保信息傳輸。
 			</div>
 		</div>
 		
-		<!-- <div class="sp_btn_box"> -->
+		<div class="sp_btn_box">
 			<button class="sp_btn game_btn">
-				<!-- <div class="btn_inf">
+				<div class="btn_inf">
 					<i class="icon_btn icon_advantages"></i>
 					<span class="txt">
 						<tt class="zh_txt">遊戲試玩</tt>
 						<tt>Product advantages</tt>
 					</span>
-				</div> -->
+				</div>
 			</button>
 			<button class="sp_btn businese_btn">
-				<!-- <div class="btn_inf">
+				<div class="btn_inf">
 					<i class="icon_btn icon_process"></i>
 					<span class="txt">
 						<tt class="zh_txt">商務合作</tt>
 						<tt>Cooperation Process</tt>
 					</span>
-				</div> -->
+				</div>
 			</button>
-		<!-- </div> -->
+		</div>
 	</div>
 	<!-- 服務項目 -->
 	
 	<!-- 合作流程 -->
-	<div id="hm_3" class="partner" style="display: none;">
-		<div class="mod_bigtxt gradient mod_font_en" data-title="PARTNER">PARTNER</div>
-		<div class="mod_midtxt txt_shadow">合作流程</div>
+	<div id="hm_4" class="partner">
+		<div class="mod_midtxt">合作流程</div>
 		
 		<ul class="partner_ul">
 			<li>
@@ -363,7 +363,7 @@
 
 
 		<!-- 星星閃爍動畫 -->
-		<div class="start_box" style="display: none">
+		<div class="start_box">
 			<span></span>
 			<span></span>
 			<span></span>
@@ -425,33 +425,32 @@
 	<!-- 合作流程 -->
 
 	<!-- 人才招募 -->
-	<div class="recruit">
-
-		<!-- 粒子動畫 -->
-		<ul class="bg_bubbles_in_out" style="display:none1">
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-		</ul>
-		<!-- 粒子動畫 -->
+	<div id="hm_5" class="recruit">
 		<div class="recruit_l">
+			<!-- 粒子動畫 -->
+			<ul class="bg_bubbles_in_out" style="display:none1">
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+			</ul>
+			<!-- 粒子動畫 -->
 			<div class="txtbox">
 				<div class="mod_bigtxt txt_shadow">Recruitment</div>
 				<div class="mod_midtxt txt_shadow">人才招募</div>
@@ -493,7 +492,7 @@
 	<!-- 人才招募 -->
 
 	<!-- 聯絡我們 -->
-	<div id="hm_4" class="contact">
+	<div id="hm_6" class="contact">
 		<!-- 動畫 -->
 		<ul class="bg_bubbles">
 			<li></li>
@@ -547,7 +546,6 @@
 		<div class="input_box">
 			<div class="input_box_l">
 				<input type="text" class="inp_txt" placeholder="Name">
-				<!-- <input type="text" class="inp_txt" placeholder="Country"> -->
 				<label class="inp_txt mod_select">
 					<select >
 						<option>Country</option>
@@ -581,7 +579,7 @@
 
 	<footer>© 2020 I CASH Gaming. All Rights Reserved.</footer>
 	<!-- loading打開用 display:flex，動畫加上active -->
-	<div class="mask load active" id="load" style="display: none;">
+	<div class="mask load active" id="load" style="display: none1;">
 		<div class="circle_mask">
 			<div class="loading">
 				<div class="logo"></div>
