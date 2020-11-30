@@ -12,20 +12,42 @@
 
 	<body>
 
-		<div class="main_content">
+		<div class="main_outside">
 			<!-- menu -->
 			<div class="main_menu">
-				<div class="main_logo"></div>
-				<div class="menu_list">
-					<li class="dash_icon"><i></i><a href="">Dashboard</a></li>
-					<li class="qa_icon"><i></i><a href="">Question</a></li>
-					<li class="assign_icon"><i></i><a href="">Assignment</a></li>
-					<li class="course_icon"><i></i><a href="">Course</a></li>
-					<li class="admin_icon"><i></i><a href="">Admin</a></li>
-					<li class="set_icon"><i class="material-icons">face</i><a href="">Settings</a></li>
-				</div>
+				<ul class="menu_list">
+					<li>
+						<div class="main_logo"></div>
+					</li>
+					<li class="dash_icon">
+						<i class="material-icons">insert_chart</i>
+						Dashboard
+					</li>
+					<li class="qa_icon">
+						<i class="material-icons">question_answer</i>
+						Question
+					</li>
+					<li class="assign_icon on">
+						<i class="material-icons">assignment</i>
+						Assignment
+					</li>
+					<li class="course_icon">
+						<i class="material-icons">video_library</i>
+						Course
+					</li>
+					<li class="admin_icon">						
+						<i class="material-icons">supervisor_account</i>
+						Admin
+					</li>
+					<li class="set_icon">					
+						<i class="material-icons">settings</i>
+						Settings					
+					</li>
+				</ul>
 				<div class="main_myinfo">
-					<div class="myinfo_img"></div>
+					<div class="myinfo_img">
+						<img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/week5/andychen.jpeg" alt="">
+					</div>
 					<div class="myinfo_name">Andy Chen</div>
 					<div class="myinfo_mail">andy0401@mail.com</div>
 				</div>
@@ -35,36 +57,104 @@
 
 			<!-- content -->
 			<div class="main_content">
+				<!-- content head -->
 				<div class="main_content_head">
 					<h1>Assignment</h1>
-					<select name="" id="" class="select_box"></select>
-					<div class="search_box">
-						<input type="text">
-						<button class="search_btn"></button>
+					<div class="select_box">
+						<select>
+							<option value="">All Courses</option>
+						</select>
+						<i class="material-icons">keyboard_arrow_down</i>
 					</div>
-					<button class="notice_btn"></button>
+					<label class="search_box">
+						<button class="search_btn material-icons">search</button>
+						<input type="text">
+						
+					</label>
+					<button class="notice_btn material-icons">notifications_active</button>
 				</div>
+				<!-- content head end -->
 
 
 
+				<!-- content detail -->
 				<div class="main_content_box">
 					<div class="main_content_list">
-						<select name="" id="" class="select_box"></select>
+						<div class="select_box">
+							<select>
+								<option value="">All (4)</option>
+							</select>
+							<i class="material-icons">keyboard_arrow_down</i>
+						</div>
 						<ul class="content_list">
-							<li class="title"></li>
-							<li class="time"></li>
-							<li class="txt"></li>
-							<li class="name"></li>
+							<li class="title">Chapter Assignment 2</li>
+							<li class="time">4 hrs ago</li>
+							<li class="txt">Please check this file check this file</li>
+							<li class="name">Emily Wang</li>
 						</ul>
 					</div>
 
 
 
 					<div class="main_content_detail">
-						<div class="main_content_com"></div>
-						<div class="detail_title"></div>
+						<div class="detail_com" data-times="2">comments</div>
+						<div class="detail_box">
+							<h2 class="detail_title">
+								<span class="detail_sort">
+									Chapter Assignment 2 / HTML&CSS
+								</span>
+								<span class="detail_title">
+									Please check this file for me, thanks!
+								</span>
+								<button class="detail_btn material-icons">more_vert</button>
+							</h2>
+
+
+							<!-- model -->
+							<div class="detail_model">
+								<div class="detail_img">
+									<img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/week5/emilywang.jpeg" alt="">
+								</div>
+								<div class="detail_info">
+									<div class="detail_member">
+										<span class="name">
+											Emily Wang
+										</span>
+										<span class="time">
+											10:38 AM (4 hours ago)
+										</span>
+										<button class="favorite_btn material-icons">star_border</button>
+										<button class="edit_btn material-icons">edit</button>
+									</div>
+									<div class="detail_txtx">
+										Hi Teacher, the attached file is my homework of chapter 2. And here comes a question: Why in the following code the height of the div is bigger than the height of the img ? There is a gap below the image, but it doesn’t seems to be a padding/margin. What is the gap or extra space below image?
+									</div>
+									<button class="file_btn material-icons">attach_file</button>
+								</div>
+							</div>
+							<!-- model end -->
+
+
+
+							<!-- function -->
+							<div class="function_box">
+								<div class="page_box">
+									<button class="page_l_btn material-icons">chevron_left</button>
+									<button class="page_r_btn material-icons">chevron_right</button>
+								</div>
+
+
+
+								<div class="comm_box">
+									<button class="comm_mark_btn">Mark as read</button>
+									<button class="comm_reply_btn">Reply</button>
+								</div>
+							</div>
+							<!-- function end -->
+						</div>
 					</div>
 				</div>
+				<!-- content detail end -->
 			</div>
 			<!-- content end -->
 		</div>
