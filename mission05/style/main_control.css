@@ -1,12 +1,12 @@
 @charset "UTF-8";
 
 
-.main_outside{
+.outside{
 	display: flex;
 	width: 100%;
 	height: 100%;
 }
-.main_menu{
+.menu{
 	display: flex;
 	width: 296px;
 	height: 100%;
@@ -16,7 +16,15 @@
 	flex-direction: column;
 	justify-content: space-between;
 }
-.main_logo{
+.content{
+	width: calc(100% - 296px);
+	height: 100%;
+	padding-bottom: 32px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+}
+.logo{
 	width: 100%;
 	height: 40px;
 	background: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/085a62fb22df4bf21c605a180648c6c6e35c2b32/week5/logo-ANSWER.svg) no-repeat left center;
@@ -53,7 +61,7 @@
 .menu_list li.on:before{
 	opacity: 1;
 }
-.main_myinfo{
+.myinfo{
 	display: flex;
 	height: 40px;
 	flex-direction: column;
@@ -76,16 +84,241 @@
 	height: 50%;
 	color: #0000009A;
 }
-.main_content_head{
+.content_head{
 	display: flex;	
 	padding: 32px;
 	align-items: center;
 }
-.main_content_head h1{
+.content_head h1{
 	font-size: 24px;
 	font-weight: bold;
 	margin-right: 46px;
 }
+.content_box{
+	display: flex;
+	padding: 0 32px 32px;
+}
+.content_list_box{
+	width: 320px;
+	flex: none;
+	margin-right: 16px;
+}
+.content_list{
+	margin-top: 4px;
+
+}
+.content_list_item{
+	display: flex;
+	padding: 12px;
+	line-height: 24px;
+	flex-wrap: wrap;
+}
+.content_list_item:first-child{
+	border: 1px solid #CDDDCD;
+	border-radius: 2px 2px 0px 0px;
+}
+.content_list_item:last-child{
+	border-radius: 0px 0px 2px 2px;	
+}
+.content_list_item + .content_list_item{
+	border: 1px solid #CDDDCD;
+	border-top: none;
+}
+.content_list_item.on{
+	background-color: #EDF4EE;
+}
+.content_list_item li:nth-child(odd){
+	flex:1 1 calc(100% - 100px);
+}
+.content_list_item li:nth-child(even){
+	flex:0 0 100px;
+	text-align: right;
+}
+.content_list_item .txt{
+	font-weight: bold;
+	font-size: 16px;
+	white-space: nowrap;
+  	overflow: hidden;
+  	text-overflow: ellipsis;
+}
+.content_list_item .name{
+	color: #0000009A;
+}
+.detail_item{
+	border: 1px solid #CDDDCD;
+	border-radius: 2px;
+}
+.detail_com{
+	line-height: 19px;
+	color: #707070;
+	text-align: right;
+	margin-bottom: 8px;
+}
+.detail_com:before{
+	content: attr(data-times)'\00a0';
+}
+.detail_title{
+	position: relative;
+	display: flex;
+	line-height: 24px;
+	padding: 12px 16px;
+	background-color: #EDF4EE;
+	border-radius: 2px 2px 0px 0px;
+	border-bottom: 1px solid #CDDDCD;
+	flex-direction: column;
+}
+.detail_btn{
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	top: 0;
+	bottom: 0;
+	right: 16px;
+	margin: auto;
+}
+.detail_title .txt{
+	font-size: 16px;
+	font-weight: bold;
+}
+.detail_model{
+	position: relative;
+	display: flex;
+	padding: 16px;
+}
+.detail_model + .detail_model:before{
+	content: '';
+	position: absolute;
+	width: calc(100% - 80px);
+	height: 1px;
+	bottom: 100%;
+	right: 16px;
+	background-color: #CDDDCD;
+}
+.member_img{
+	width: 40px;
+	height: 40px;
+	flex: none;
+	border-radius: 50%;
+	overflow: hidden;
+}
+.member_info{
+	position: relative;
+	padding: 0 32px 0 8px;
+}
+.member_info .name{
+	line-height: 24px;
+	font-weight: bold;
+	font-size: 16px;
+}
+.member_info .time{
+	line-height: 24px;
+	color: #707070;
+}
+.member_info .function{
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.edit_btn{
+	margin-left: 24px;
+}
+.member_info .txt{
+	line-height: 21px;
+	padding: 16px 0;
+	font-size: 14px;
+}
+.file_btn{
+	display: flex;
+	padding: 8px 12px;
+	background-color: #EDF4EE;
+	border: 1px solid #CDDDCD;
+	border-radius: 2px;
+	font-weight: bold;
+	font-size: 16px;
+	align-items: center;
+}
+.file_btn>i{
+	margin-right: 8px;
+}
+.function_box{
+	display: flex;	
+	padding: 16px 0;
+	justify-content: space-between;
+}
+.page_btn{
+	width: 24px;
+	height: 24px;
+}
+.page_btn + .page_btn{
+	margin-left: 24px;
+}
+.comm_btn{
+	height: 35px;
+	padding: 0 32px;
+	border: 1px solid #2A8356;
+	border-radius: 2px;
+	color: #2A8356;
+	font-size: 16px;
+	font-weight: bold;
+}
+.comm_btn + .comm_btn{
+	margin-left: 16px;
+}
+.comm_btn.on{
+	background-color: #2A8356;
+	color: #fff;
+}
+
+/*admin.html*/
+.add_btn{
+	display: flex;
+	font-weight: bold;
+	font-size: 16px;
+	align-items: center;
+}
+.add_btn i{
+	color: #2A8356;
+	margin-right: 8px;
+}
+.table_box{
+	padding: 16px 32px 63px;
+}
+.table_model{
+	width: 100%;
+	font-size: 16px;
+}
+.table_model tr{
+	border-bottom: 1px solid #CDDDCD;
+}
+.table_model tr:first-child{
+	border-color: #121212;
+}
+.table_model th{
+	height: 24px;
+	font-weight: bold;
+}
+.table_model td{
+	height: 55px;
+}
+.sort_box{
+	display: flex;
+	align-items: center;
+}
+.sort_box i{
+	width: 18px;
+	height: 18px;
+	font-size: 18px;
+	color: #2A8356;
+	margin-left: 3px;
+}
+.intd_btn + .intd_btn{
+	margin-left: 24px;
+}
+
+
+
+
+/*share*/
 .select_box{
 	display: flex;
 	font-size: 16px;
@@ -120,37 +353,58 @@
 .notice_btn{
 	margin-left: 25px;
 }
-.main_content_box{
-	
+.page_box{
+	display: flex;
+	padding: 0 32px;
+	justify-content: flex-end;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.page_box li{
+	display: flex;
+	width: 32px;
+	height: 32px;
+	font-size: 16px;
+	border: 1px solid #2A8356;	
+	border-right: none;
+	align-items: center;
+	justify-content: center;
+}
+.page_box li:first-child,
+.page_box li:last-child{
+	border-radius: 2px 0px 0px 2px;
+	color: #2A8356;
+	font-size: 24px;
+}
+.page_box li:last-child{
+	border-radius: 0px 2px 2px 0px;
+	border-right: 1px solid #2A8356;
+}
+.page_box li + li{
+	border-left: 1px solid #2A8356;
+}
+.page_box li.on{
+	background-color: #2A8356;
+	color: #fff;
+}
+.txtl{text-align: left;}
+.txtr{text-align: right;}
+.txtc{text-align: center;}
 
 
 /*hand*/
 [class*="_btn"],
 .menu_list li,
-.search_box input{
-	
+.search_box input,
+.content_list_item,
+.table_model tr,
+.page_box li{	
 	transition: all .3s linear;
 }
 
 [class*="_btn"],
 .menu_list li,
-.select_box{
+.select_box,
+.content_list_item,
+.page_box li{
 	cursor: pointer;
 }
 
@@ -159,13 +413,21 @@
 @media (pointer: fine),
 (pointer: fine) and (-moz-touch-enabled: 0),
 screen and (-ms-high-contrast: active), (-ms-high-contrast: none){
+	[class*="_btn"]:hover,
 	.menu_list li:hover,
-	.menu_list li:hover i,
-	.search_btn:hover,
-	.notice_btn:hover{
+	.menu_list li:hover i{
 		color: #2A8356;
 	}
 	.menu_list li:hover:before{
 		opacity: 1;
+	}
+	.content_list_item:hover,
+	.table_model tr:not(:first-child):hover{
+		background-color: #EDF4EE;
+	}
+	.comm_btn:hover,
+	.page_box li:hover{
+		background-color: #2A8356;
+		color: #fff;
 	}
 }

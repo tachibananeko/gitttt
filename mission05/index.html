@@ -12,12 +12,12 @@
 
 	<body>
 
-		<div class="main_outside">
+		<div class="outside">
 			<!-- menu -->
-			<div class="main_menu">
+			<div class="menu">
 				<ul class="menu_list">
 					<li>
-						<div class="main_logo"></div>
+						<div class="logo"></div>
 					</li>
 					<li class="dash_icon">
 						<i class="material-icons">insert_chart</i>
@@ -44,7 +44,7 @@
 						Settings					
 					</li>
 				</ul>
-				<div class="main_myinfo">
+				<div class="myinfo">
 					<div class="myinfo_img">
 						<img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/week5/andychen.jpeg" alt="">
 					</div>
@@ -56,9 +56,9 @@
 
 
 			<!-- content -->
-			<div class="main_content">
+			<div class="content">
 				<!-- content head -->
-				<div class="main_content_head">
+				<div class="content_head">
 					<h1>Assignment</h1>
 					<div class="select_box">
 						<select>
@@ -78,32 +78,58 @@
 
 
 				<!-- content detail -->
-				<div class="main_content_box">
-					<div class="main_content_list">
+				<div class="content_box">
+					<div class="content_list_box">
 						<div class="select_box">
 							<select>
 								<option value="">All (4)</option>
 							</select>
 							<i class="material-icons">keyboard_arrow_down</i>
 						</div>
-						<ul class="content_list">
-							<li class="title">Chapter Assignment 2</li>
-							<li class="time">4 hrs ago</li>
-							<li class="txt">Please check this file check this file</li>
-							<li class="name">Emily Wang</li>
-						</ul>
+
+
+
+						<div class="content_list">
+							<ul class="content_list_item on">
+								<li class="title">Chapter Assignment 2</li>
+								<li class="time">4 hrs ago</li>
+								<li class="txt">Please check this file check this file</li>
+								<li class="name">Emily Wang</li>
+							</ul>
+							
+							<ul class="content_list_item">
+								<li class="title">Chapter Assignment 1</li>
+								<li class="time">12 hrs ago</li>
+								<li class="txt">My Homework</li>
+								<li class="name">David Xu</li>
+							</ul>
+							
+							<ul class="content_list_item">
+								<li class="title">Final Assignment</li>
+								<li class="time">18 hrs ago</li>
+								<li class="txt">Have a problem with this…</li>
+								<li class="name">Tony Wei</li>
+							</ul>							
+							
+							<ul class="content_list_item">
+								<li class="title">Final Assignment</li>
+								<li class="time">19 hrs ago</li>
+								<li class="txt">Did I do it right?</li>
+								<li class="name">Christina Lin</li>
+							</ul>
+						</div>
 					</div>
 
 
 
-					<div class="main_content_detail">
+					<div class="list_detail">
 						<div class="detail_com" data-times="2">comments</div>
-						<div class="detail_box">
+						<div class="detail_item">
 							<h2 class="detail_title">
-								<span class="detail_sort">
+								<span class="sort">
 									Chapter Assignment 2 / HTML&CSS
 								</span>
-								<span class="detail_title">
+								<span class="txt">
 									Please check this file for me, thanks!
 								</span>
 								<button class="detail_btn material-icons">more_vert</button>
@@ -112,46 +138,65 @@
 
 							<!-- model -->
 							<div class="detail_model">
-								<div class="detail_img">
+								<div class="member_img">
 									<img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/week5/emilywang.jpeg" alt="">
 								</div>
-								<div class="detail_info">
-									<div class="detail_member">
-										<span class="name">
-											Emily Wang
-										</span>
-										<span class="time">
-											10:38 AM (4 hours ago)
-										</span>
-										<button class="favorite_btn material-icons">star_border</button>
-										<button class="edit_btn material-icons">edit</button>
+								<div class="member_info">
+									<div class="name">
+										Emily Wang
 									</div>
-									<div class="detail_txtx">
+									<div class="time">
+										10:38 AM (4 hours ago)
+									</div>
+									<div class="txt">
 										Hi Teacher, the attached file is my homework of chapter 2. And here comes a question: Why in the following code the height of the div is bigger than the height of the img ? There is a gap below the image, but it doesn’t seems to be a padding/margin. What is the gap or extra space below image?
 									</div>
-									<button class="file_btn material-icons">attach_file</button>
+									<button class="file_btn">
+										<i class="material-icons">attach_file</i>
+										HW-2-David.zip
+									</button>
 								</div>
 							</div>
 							<!-- model end -->
 
-
-
-							<!-- function -->
-							<div class="function_box">
-								<div class="page_box">
-									<button class="page_l_btn material-icons">chevron_left</button>
-									<button class="page_r_btn material-icons">chevron_right</button>
+							<!-- 回覆model -->
+							<div class="detail_model">
+								<div class="member_img">
+									<img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/week5/andychen.jpeg" alt="">
 								</div>
-
-
-
-								<div class="comm_box">
-									<button class="comm_mark_btn">Mark as read</button>
-									<button class="comm_reply_btn">Reply</button>
+								<div class="member_info">
+									<div class="name">
+										Emily Wang
+									</div>
+									<div class="time">
+										10:38 AM (4 hours ago)
+									</div>
+									<div class="function">
+										<button class="favorite_btn material-icons">star_border</button>
+										<button class="edit_btn material-icons">edit</button>
+									</div>
+									<div class="txt">
+										Hi Teacher, the attached file is my homework of chapter 2. And here comes a question: Why in the following code the height of the div is bigger than the height of the img ? There is a gap below the image, but it doesn’t seems to be a padding/margin. What is the gap or extra space below image?
+									</div>
 								</div>
 							</div>
-							<!-- function end -->
+							<!-- 回覆model end -->
 						</div>
+						<!-- function -->
+						<div class="function_box">
+							<div class="page_box">
+								<button class="page_btn material-icons">chevron_left</button>
+								<button class="page_btn material-icons">chevron_right</button>
+							</div>
+
+
+
+							<div class="comm_box">
+								<button class="comm_btn">Mark as read</button>
+								<button class="comm_btn on">Reply</button>
+							</div>
+						</div>
+						<!-- function end -->
 					</div>
 				</div>
 				<!-- content detail end -->
