@@ -339,7 +339,7 @@
 	height: 55px;
 }
 .sort_box{
-	display: flex;
+	display: inline-flex;
 	align-items: center;
 }
 .sort_box i{
