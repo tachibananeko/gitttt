@@ -41,7 +41,7 @@
 .menu_list a{
 	display: flex;
 	align-items: center;
-	
+
 }
 .menu_list i{
 	margin-right: 16px;
@@ -712,7 +712,8 @@ screen and (-ms-high-contrast: active), (-ms-high-contrast: none){
 	[class*="_btn"].material-icons:hover,
 	.menu_list li:hover,
 	.menu_list li:hover i,
-	.file_btn:hover{
+	.file_btn:hover,
+	.add_btn:hover{
 		color: #2A8356;
 	}
 	.menu_list li:hover:before{
@@ -738,7 +739,35 @@ screen and (-ms-high-contrast: active), (-ms-high-contrast: none){
 		color: #fff; 
 	}
 }
-
+	[class*="_btn"].material-icons:active,
+	.menu_list li:active,
+	.menu_list li:active i,
+	.file_btn:active,
+	.add_btn:active{
+		color: #2A8356;
+	}
+	.menu_list li:active:before{
+		opacity: 1;
+	}
+	.content_list_item:active,
+	.table_model tr:not(:first-child):active{
+		background-color: #EDF4EE;
+	}
+	.comm_btn:active,
+	.page_box li:active,
+	.submit_btn:not(:disabled):active{
+		background-color: #2A8356;
+		color: #fff;
+	}
+	.import>input:active{
+		border-color: #2A8356;
+	}
+	.submit_btn.err:active,
+	.comm_btn.err:active{
+		background-color:#E3006E;
+		border-color: #E3006E;
+		color: #fff; 
+	}
 
 	.import>input:focus{
 		border-color: #2A8356;
