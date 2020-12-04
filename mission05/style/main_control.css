@@ -30,14 +30,18 @@
 	background: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/085a62fb22df4bf21c605a180648c6c6e35c2b32/week5/logo-ANSWER.svg) no-repeat left center;
 	margin-bottom: 20px;
 }
-.menu_list li:not(:first-child){
+.menu_list li:not(:first-child),
+.menu_list a{
 	position: relative;
-	display: flex;
 	height: 32px;
 	font-size: 16px;
 	font-weight: bold;
-	align-items: center;
 	margin-bottom: 15px;
+}
+.menu_list a{
+	display: flex;
+	align-items: center;
+	
 }
 .menu_list i{
 	margin-right: 16px;
