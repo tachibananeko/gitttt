@@ -211,32 +211,37 @@
 		<!-- alert -->
 		<!-- tr detail -->
 		<div class="alert_mask" style="display: none;">
-			<div class="alert_box">
+			<!-- 需打開下方按鈕 class="active" -->
+			<div class="alert_box _mini">
 				<button class="close_btn material-icons">close</button>
-				<div class="alert_detail_img">
-					<img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/week5/emilywang.jpeg">
+				<div class="alert_info">
+					<div class="alert_detail_img">
+						<img src="https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/master/week5/emilywang.jpeg">
+					</div>
+					<ul class="alert_detail">
+						<li class="no">#1</li>
+						<li class="level">Admin</li>
+						<li class="name">Emir Wicks</li>
+						<li class="mail">emir.wicks@mail.com</li>
+						<li class="status">
+							<tt>Verified</tt>
+							<i class="status_icon material-icons">keyboard_arrow_down</i>
+						</li>
+					</ul>
 				</div>
-				<ul class="alert_detail">
-					<li class="no">#1</li>
-					<li class="level">Admin</li>
-					<li class="name">Emir Wicks</li>
-					<li class="mail">emir.wicks@mail.com</li>
-					<li>
-						<div class="select_box">
-							<select>
-								<option value="">Verified</option>
-							</select>
-							<i class="material-icons">keyboard_arrow_down</i>
-						</div>
-					</li>
-				</ul>
+				<!-- 送出按鈕 -->
+				<div class="alert_foot">
+					<button class="comm_btn err">Deactivate</button>
+					<button class="comm_btn">Edit</button>
+				</div>
+				<!-- 送出按鈕 end -->
 			</div>
 		</div>
 
 
 
 		<!-- add edit box -->
-		<div class="alert_mask">
+		<div class="alert_mask" style="display: none;">
 			<div class="alert_box">
 				<button class="close_btn material-icons">close</button>
 				<h2 class="alert_title">New Admin</h2>

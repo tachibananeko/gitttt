@@ -148,6 +148,9 @@
 	border: 1px solid #CDDDCD;
 	border-radius: 2px;
 }
+.list_detail{
+	position: relative;
+}
 .detail_com{
 	line-height: 19px;
 	color: #707070;
@@ -245,6 +248,33 @@
 	padding: 16px 0;
 	justify-content: space-between;
 }
+.reply_box{
+	position: absolute;
+	width: 0;
+	height: 0;
+	background: linear-gradient(to bottom, #EDF4EE 56px, #CDDDCD 57px, #fff 58px);
+	border: 1px solid #CDDDCD;
+	border-radius: 2px;
+	bottom: 0;
+	right: 0;
+	transform-origin: right bottom;
+	transform: scale(0);
+	transition: all .3s ease;
+	visibility: collapse;
+}
+.reply_box.active{
+	width: 100%;
+	height: 250px;
+	transform: scale(1);
+	visibility: visible;
+}
+.relay_txt{
+	height: calc(100% - 67px);
+}
+.reply_foot{
+	padding: 16px 32px;
+	text-align: right;
+}
 .page_btn{
 	width: 24px;
 	height: 24px;
@@ -269,6 +299,10 @@
 	color: #fff;
 }
 
+.comm_btn.err{
+	border-color: #E3006E;
+	color: #E3006E;
+}
 /*admin.html*/
 .add_btn{
 	display: flex;
@@ -339,9 +373,8 @@
 	flex-direction: column;
 	overflow: hidden;
 }
-.alert_minibox{
-	padding: 32px;
-	flex-direction: row;
+.alert_box._mini{
+	height: auto;
 }
 .alert_title{
 	display: flex;
@@ -359,10 +392,29 @@
 	overflow-y: auto;
 	-webkit-overflow-scrolling: touch;
 }
+._mini .alert_info{
+	display: flex;
+	padding: 32px;
+}
+
 .alert_foot{
 	flex: none;
 	padding: 16px 32px;
 	text-align: right;
+}
+._mini .alert_foot{
+	padding: 0 32px;
+	height: 0;
+	transform-origin: center top;
+	transform: scaleY(0);
+	transition: all .3s ease;
+	visibility: collapse;
+}
+._mini.active .alert_foot{
+	height: auto;
+	padding: 0 32px 32px;
+	transform: scaleY(1);
+	visibility: visible;
 }
 .alert_detail_img{
 	width: 141px;
@@ -393,8 +445,17 @@
 	color: #0000009A;
 	margin-bottom: 8px;
 }
-.alert_detail>.select_box{
-	width: 100%;
+.alert_detail>.status{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.status_icon{
+	color: #2A8356;
+	transition: all .3s ease;
+}
+.active .status_icon{
+	transform: rotate(-180deg);
 }
 .alert_content{
 	position: relative;
@@ -630,11 +691,12 @@
 	transition: all .3s linear;
 }
 
-[class*="_btn"]:not(:disabled):not(.err),
+[class*="_btn"]:not(:disabled),
 .menu_list li,
 .content_list_item,
 .page_box li,
-.checkbox_box{
+.checkbox_box,
+.alert_detail>.status{
 	cursor: pointer;
 }
 
@@ -643,9 +705,10 @@
 @media (pointer: fine),
 (pointer: fine) and (-moz-touch-enabled: 0),
 screen and (-ms-high-contrast: active), (-ms-high-contrast: none){
-	
+	[class*="_btn"].material-icons:hover,
 	.menu_list li:hover,
-	.menu_list li:hover i{
+	.menu_list li:hover i,
+	.file_btn:hover{
 		color: #2A8356;
 	}
 	.menu_list li:hover:before{
@@ -656,15 +719,18 @@ screen and (-ms-high-contrast: active), (-ms-high-contrast: none){
 		background-color: #EDF4EE;
 	}
 	.comm_btn:hover,
-	.page_box li:hover{
+	.page_box li:hover,
+	.submit_btn:not(:disabled):hover{
 		background-color: #2A8356;
 		color: #fff;
 	}
 	.import>input:hover{
 		border-color: #2A8356;
 	}
-	.submit_btn:not(:disabled):not(.err):hover{
-		background-color:#2A8356;
+	.submit_btn.err:hover,
+	.comm_btn.err:hover{
+		background-color:#E3006E;
+		border-color: #E3006E;
 		color: #fff; 
 	}
 }
