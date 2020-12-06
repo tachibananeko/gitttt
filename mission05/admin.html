@@ -259,7 +259,7 @@
 				<h2 class="alert_title" id="alert_title">New Admin</h2>
 
 				<!-- 中間scroll資訊 -->
-				<div class="alert_info">
+				<div class="alert_info" id="alert_info">
 					<div class="alert_content" id="alert_content">
 						<div class="title">Account</div>
 						<label class="import">
@@ -388,6 +388,7 @@
 
 		function chAlert(title,status1,status2,btnText){
 			$('#alert_mask2').css('display','')
+			$('#alert_info').scrollTop(0)
 			$('#alert_title').text(title)
 			$('#alert_content input,#submit_btn').attr('readonly',status1)
 			$('#alert_content3').css('display',status2)
