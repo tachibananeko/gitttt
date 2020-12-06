@@ -799,6 +799,6 @@ screen and (-ms-high-contrast: active), (-ms-high-contrast: none){
 		color: #fff; 
 	}
 
-	.import>input:focus{
+	.import>input:not(:read-only):focus{
 		border-color: #2A8356;
 	}
