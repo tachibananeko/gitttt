@@ -389,7 +389,7 @@
 		function chAlert(title,status1,status2,btnText){
 			$('#alert_mask2').css('display','')
 			$('#alert_title').text(title)
-			$('#alert_content input,#submit_btn').attr('disabled',status1)
+			$('#alert_content input,#submit_btn').attr('readonly',status1)
 			$('#alert_content3').css('display',status2)
 			$('#adminBtn button:eq(1)').text(btnText)
 		}
