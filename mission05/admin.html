@@ -88,7 +88,7 @@
 
 
 				<!-- content table -->
-				<div class="table_box">
+				<div class="table_box" id="table_box">
 					<table class="table_model">
 						<tr>
 							<th width="10%">
@@ -222,9 +222,9 @@
 
 		<!-- alert -->
 		<!-- tr detail -->
-		<div class="alert_mask" style="display: none;">
+		<div class="alert_mask" style="display: none;" id="alert_mask1">
 			<!-- 需打開下方按鈕 class="active" -->
-			<div class="alert_box _mini">
+			<div class="alert_box _mini" id="alert_mini">
 				<button class="close_btn material-icons">close</button>
 				<div class="alert_info">
 					<div class="alert_detail_img">
@@ -235,7 +235,7 @@
 						<li class="level">Admin</li>
 						<li class="name">Emir Wicks</li>
 						<li class="mail">emir.wicks@mail.com</li>
-						<li class="status">
+						<li class="status" id="alert_arrow">
 							<tt>Verified</tt>
 							<i class="status_icon material-icons">keyboard_arrow_down</i>
 						</li>
@@ -253,14 +253,14 @@
 
 
 		<!-- add edit box -->
-		<div class="alert_mask" style="display: none;">
+		<div class="alert_mask" style="display: none;" id="alert_mask2">
 			<div class="alert_box">
 				<button class="close_btn material-icons">close</button>
-				<h2 class="alert_title">New Admin</h2>
+				<h2 class="alert_title" id="alert_title">New Admin</h2>
 
 				<!-- 中間scroll資訊 -->
 				<div class="alert_info">
-					<div class="alert_content">
+					<div class="alert_content" id="alert_content">
 						<div class="title">Account</div>
 						<label class="import">
 							<div>Name</div>
@@ -275,12 +275,12 @@
 					<div class="alert_content">
 						<div class="title">Verification</div>
 						<!-- class="err"錯誤 -->
-						<div class="alert_notice err">
+						<div class="alert_notice err" id="alert_notice">
 							unverified
 							<tt>2020/4/12</tt>
 						</div>
 
-						<button class="submit_btn">Send Verification Mail</button>
+						<button class="submit_btn" id="submit_btn">Send Verification Mail</button>
 					</div>
 
 					<div class="alert_content">
@@ -334,7 +334,7 @@
 						</ul>
 					</div>
 
-					<div class="alert_content">
+					<div class="alert_content" id="alert_content3">
 						<div class="title">Deactivate Account</div>
 						<div class="alert_notice err">This cannot be undone!</div>
 						<button class="submit_btn err">Deactivate This Account</button>
@@ -343,7 +343,7 @@
 				<!-- 中間scroll資訊 end -->
 
 				<!-- 送出按鈕 -->
-				<div class="alert_foot">
+				<div class="alert_foot" id="adminBtn">
 					<button class="comm_btn">Cancel</button>
 					<button class="comm_btn">Add</button>
 				</div>
@@ -364,5 +364,40 @@
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 		<!-- js end -->
 	</body>
+
+
+	<script>
+		let editBtn = true;
+		$('.add_btn').click(function(){
+			chAlert('New Admin',false,'none','Add')
+			$('#alert_notice').addClass('err')	
+			$('#alert_content input').each(function(){$(this).val('')})
+		})
+		
+		$('#table_box .txtr').each(function(){
+			$(this).find('button:eq(0)').click(function(){
+				chAlert('Edit Admin',true,'','Edit')
+				$('#alert_notice').removeClass('err')
+				for(let i=0;i<2;i++){
+					$(`#alert_content input:eq(${i})`).val($(this).parents('tr').find(`td:eq(${i+1})`).text())
+				}		
+			}).mouseenter(function(){editBtn = false;}).mouseleave(function(){editBtn = true;})	
+		})
+
+		$('#alert_mask2 .close_btn,#adminBtn button').click(function(){$('#alert_mask2').css('display','none')})
+
+		function chAlert(title,status1,status2,btnText){
+			$('#alert_mask2').css('display','')
+			$('#alert_title').text(title)
+			$('#alert_content input,#submit_btn').attr('disabled',status1)
+			$('#alert_content3').css('display',status2)
+			$('#adminBtn button:eq(1)').text(btnText)
+		}
+
+		$('#table_box tr:not(:eq(0))').click(function(){if(editBtn){$('#alert_mask1').css('display','')}})
+		$('#alert_mask1 .close_btn').click(function(){$('#alert_mask1').css('display','none')})
+		$('#alert_arrow,#alert_mini .comm_btn').click(function(){$('#alert_mini').toggleClass('active')})
+
+	</script>
 
 </html>
