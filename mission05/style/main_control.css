@@ -4,6 +4,7 @@
 .outside{
 	display: flex;
 	width: 100%;
+	max-width: 1280px;
 	height: 100%;
 }
 .menu{
@@ -729,7 +730,8 @@
 .content_list_item,
 .page_box li,
 .checkbox_box,
-.alert_detail>.status{
+.alert_detail>.status,
+.table_model tr{
 	cursor: pointer;
 }
 
@@ -758,7 +760,7 @@ screen and (-ms-high-contrast: active), (-ms-high-contrast: none){
 		background-color: #2A8356;
 		color: #fff;
 	}
-	.import>input:hover{
+	.import>input:not(:read-only):hover{
 		border-color: #2A8356;
 	}
 	.submit_btn.err:hover,
