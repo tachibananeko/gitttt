@@ -452,8 +452,9 @@
 .alert_detail_img{
 	width: 141px;
 	height: 141px;
+	background-position: center;
+	background-size: cover;
 	flex: none;
-	overflow: hidden;
 }
 .close_btn{
 	position: absolute;
@@ -482,6 +483,12 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+}
+.alert_detail>.status>tt{
+	padding: 4px;
+	background-color: #EDF4EE;
+	border-radius: 2px;
+	font-size: 14px;
 }
 .status_icon{
 	color: #2A8356;
@@ -789,7 +796,7 @@ screen and (-ms-high-contrast: active), (-ms-high-contrast: none){
 		background-color: #2A8356;
 		color: #fff;
 	}
-	.import>input:active{
+	.import>input:not(:read-only):active{
 		border-color: #2A8356;
 	}
 	.submit_btn.err:active,
