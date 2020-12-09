@@ -437,3 +437,14 @@ screen and (-ms-high-contrast: active), (-ms-high-contrast: none){
 		color: #916000;
 	}
 }
+	[class*="_btn"]:active,
+	.menu_item li:active,
+	.sell_box_item li:active,
+	.foot_menu li:active{
+		opacity: 0.7;
+	}
+	.topshow_btn:active,
+	.train_btn:active{
+		background-color: #fff;
+		color: #916000;
+	}
