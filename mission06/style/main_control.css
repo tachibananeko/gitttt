@@ -9,14 +9,27 @@
 }
 header{
 	display: flex;
-	padding: 9px 0 9px 20px;
+	padding: 9px 20px;
 	justify-content: space-between;
 }
 .main_logo{
 	display: block;
 	width: 128px;
 	height: 38px;
-	background: url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/d%E2%80%99Perfume.png?raw=true);
+	background: url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/d%E2%80%99Perfume.png?raw=true) no-repeat;
+}
+.main_logo._white{
+	position: relative;
+	background-image:url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/d%E2%80%99Perfumewhite.png?raw=true); 
+}
+.main_logo._white:after{
+	content: '© 2020. All Rights Reserved.';
+	position: absolute;
+	line-height: 38px;
+	color: #fff;
+	font-size: 14px;
+	left: calc(100% + 20px);
+	white-space: nowrap;
 }
 .menu_item{
 	display: flex;
@@ -27,12 +40,14 @@ header{
 .menu_item li + li{
 	margin-left: 32px;
 }
+.menu_item li,
 .menu_item a{
+	position: relative;
 	display: flex;
 	align-items: center;
 }
 .cart_num:after{
-	content: '('attr(data-car)')';
+	content: '('attr(data-cart)')';
 	display: inline-block;
 }
 .topshow_box{
@@ -63,7 +78,8 @@ header{
 	font-size: 28px;
 }
 .show_box{
-	padding: 60px 0;
+	padding-top: 60px;
+	padding-bottom: 60px;
 }
 .show_box_item01,
 .show_box_item02,
@@ -125,7 +141,8 @@ header{
 	margin-bottom: 4px;
 }
 .show_box_sort p{
-	line-height: 24px;	
+	line-height: 24px;
+	font-size: 16px;	
 }
 .train_btn{
 	width: 100%;
@@ -135,13 +152,12 @@ header{
 	font-size: 20px;
 }
 .sell_box{
-	padding: 40px;
+	padding: 40px 0;
 	background-color: #E0E0E0;
 }
 .sell_box_item{
 	display: flex;
 	line-height: 24px;
-	
 }
 .sell_box_item li{
 	width: calc((100% - 60px) / 3);
@@ -150,19 +166,113 @@ header{
 	margin-left: 30px;
 }
 .sell_box_img{
+	position: relative;
 	height: 540px;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center;
+	margin-bottom: 8px;
+}
+li._sellout .sell_box_img:after{
+	content: 'Sold out';
+	position: absolute;
+	display: flex;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, .3);
+	color: #fff;
+	font-size: 24px;
+	align-items: center;
+	justify-content: center;
+	top: 0;
+	left: 0;
 }
 .sell_box_item h3{
 	line-height: 36px;
 	font-size: 24px;
+	font-weight: bold;
 }
 .sell_box_item p{
-
+	margin-bottom: 16px;
 }
-
+.sell_box_item .money:after{
+	content: attr(data-discount);
+	color: #8D8D8D;
+	text-decoration: line-through;
+	margin-left: 8px;
+}
+.show_box_txt05{
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+}
+.show_box_txt05>h3{
+	line-height: 48px;
+	font-size: 32px;
+	font-weight: bold;
+}
+.show_box_txt05>h4{
+	line-height: 30px;
+	font-size: 20px;
+}
+.show_box_txt05>p{
+	line-height: 24px;
+	margin-bottom: 16px;
+	
+}
+.mail_box{
+	height: 600px;
+	background: url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/index10.jpg?raw=true) no-repeat center/cover;
+	padding-bottom: 112px;
+}
+.mail_box_item{
+	display: flex;
+	height: 100%;
+	align-items: flex-end;
+}
+.mail_box_item h4{
+	line-height: 48px;
+	font-size: 24px;
+	color: #8D8D8D;
+	margin-bottom: 20px;
+}
+.import_box{
+	display: flex;
+	width: 350px;
+	height: 60px;
+	background-color: #fff;
+	border: 2px solid #916000;
+	border-radius: 4px;
+	overflow: hidden;
+}
+.import_box>input{
+	height: 100%;
+	flex:1 1 100%;
+	padding: 0 16px;
+}
+.import_btn{
+	width: 131px;
+	height: 100%;
+	background-color: #916000;
+	color: #fff;
+}
+footer{
+	padding: 20px 16px;
+	background-color: #916000;
+}
+.foot_box{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.foot_menu{
+	font-size: 20px;
+	color: #fff;
+}
+.foot_menu li + li{
+	margin-left: 36px;
+}
 
 
 
@@ -191,13 +301,123 @@ header{
 
 /*hand*/
 [class*="_btn"]:not(:disabled),
-.menu_item li{	
+.menu_item li,
+.sell_box_item li,
+.foot_menu li{	
 	transition: all .3s linear;
 }
 
 [class*="_btn"]:not(:disabled),
-.menu_item li{
+.menu_item li,
+.sell_box_item li,
+.foot_menu li{
 	cursor: pointer;
+}
+
+/*RWD*/
+@media (max-width: 768px){
+	.cart_num:after{
+		content: attr(data-cart);
+		position: absolute;
+		padding: 0 5px;
+		background-color: #916000;
+		border-radius: 7px;
+		color: #fff;
+		font-size: 12px;
+		top: -10px;
+    	right: -10px;
+	}
+	.menu_hab_btn{
+		position: relative;
+		width: 30px;
+		height: 30px;
+	}
+	.menu_hab_btn i,
+	.menu_hab_btn i:before,
+	.menu_hab_btn i:after{
+		position: absolute;
+		width: 100%;
+		height: 5px;
+		background-color: #8D8D8D;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		margin: auto;
+	}
+	.menu_hab_btn i:before,
+	.menu_hab_btn i:after{
+		content: '';
+		top: 0;
+		bottom: calc(100% + 15px);
+	}
+	.menu_hab_btn i:after{
+		top: calc(100% + 5px);
+		bottom: auto;
+	}
+	.topshow_box{
+		height: 480px;
+		background-position: 15% center;
+	}
+	.topshow_txt{
+		line-height: 30px;
+		font-size: 20px;
+	}
+	.topshow_txt>h1{
+		line-height: 48px;
+		font-size: 32px;
+	}
+	.show_box{
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+	.show_box>div + div{
+		margin-top: 32px;
+	}
+	.show_box_item01,
+	.show_box_item02,
+	.show_box_item03{
+		height: 350px;
+		margin-bottom: 8px;
+	}
+	.show_box_txt{
+		padding: 0;
+	}
+	.show_box_txt>p{
+		margin-bottom: 8px;
+	}
+	.show_box_item04{
+		height: 680px;
+		margin-bottom: 8px;
+	}
+	.show_box_sort,
+	.show_box_sort li + li{
+		margin-bottom: 20px;
+	}
+	.sell_box{
+		padding: 32px 15px;
+	}
+	.sell_box_item{
+		flex-direction: column;
+	}
+	.sell_box_item li{
+		width: 100%;
+	}
+	.sell_box_item li + li{
+		margin: 32px 0 0;
+	}
+	.sell_box_img{
+		height: 350px;
+	}
+	.sell_box_item p{
+		margin-bottom: 4px;
+	}
+	.show_box_img05,
+	.show_box_txt05>h4,
+	.show_box_txt05>p{
+		margin-bottom: 8px;
+	}
+
+
 }
 
 
@@ -206,7 +426,9 @@ header{
 (pointer: fine) and (-moz-touch-enabled: 0),
 screen and (-ms-high-contrast: active), (-ms-high-contrast: none){
 	[class*="_btn"]:hover,
-	.menu_item li:hover{
+	.menu_item li:hover,
+	.sell_box_item li:hover,
+	.foot_menu li:hover{
 		opacity: 0.7;
 	}
 	.topshow_btn:hover,
