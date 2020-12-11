@@ -17,13 +17,13 @@
 				<span id="index_back" class="main_logo"></span>
 				<ul class="menu_item">
 					<li class="d-none d-md-block">
-						<a href="">
+						<a href="product.html">
 							<i class="material-icons">store</i>
 							Product
 						</a>
 					</li>
 					<li class="d-none d-md-block">
-						<a href="">
+						<a href="login.html">
 							<i class="material-icons">person</i>
 							Log in
 						</a>
@@ -46,141 +46,228 @@
 						</button>
 					</li>
 				</ul>
+				<!-- ph menu -->
+				<ul class="ph_menu_item" style="display: none;">
+					<li><a href="product.html">Product</a></li>
+					<li><a href="">Wishlist</a></li>
+					<li><a href="">Blog</a></li>
+					<li><a href="">Contact</a></li>
+					<li id="login"><a href="login.html">Log in</a></li>
+					<li id="Logged"><a href="member.html">Mypage</a></li>
+				</ul>
 			</header>
 
 
 
 			<div class="main_scroll">
+				<!-- 產品分類 -->
+				<div class="d-none d-md-block prod_menu_box">
+					<ul class="main_width prod_menu_list">
+						<li><a href="">CHANEL</a></li>
+						<li><a href="">Jo Malone</a></li>
+						<li><a href="">Curology</a></li>
+						<li><a href="">Dior</a></li>
+						<li><a href="">Chloe</a></li>
+						<li><a href="">ZARA</a></li>
+					</ul>
+				</div>
+				<!-- 產品分類 end -->
+				
+				
+				
 				<div class="container-fulid member_box">
 					<div class="row main_width">
 
-						<!-- menu -->
-						<div class="col-12 col-md-2">
-							<h2>會員中心</h2>
+						<!-- 會員中心menu -->
+						<div class="col-12 col-md-2 mem_menu_box">
+							<h2 class="d-none d-md-block">會員中心</h2>
 							<ul class="mem_list">
 								<li class="on"><a href="">會員資料修改</a></li>
 								<li><a href="">訂單查詢</a></li>
 								<li><a href="">退／換貨申請</a></li>
 							</ul>
 						</div>
-						<!-- menu end -->
+						<!-- 會員中心menu end -->
 
 
 
-						<!-- edit -->
-						<div class="col-12 col-md-7 mem_txt">
+						<!-- 資料修改 -->
+						<div class="col-12 col-md-7 order-1 order-md-0 ch mem_edit_box">
 							<h2>個人資料修改</h2>
-							<table class="mem_tb">
-								<tr>
-									<th>會員帳號</th>
-									<td>email@example.com</td>
-								</tr>
-								<tr>
-									<th>會員姓名</th>
-									<td>
-										<input type="text">
-									</td>
-								</tr>
-								<tr>
-									<th>會員性別</th>
-									<td>
-										lable>
-									</td>
-								</tr>
-								<tr>
-									<th>電子信箱</th>
-									<td></td>
-								</tr>
-								<tr>
-									<th>手機號碼</th>
-									<td></td>
-								</tr>
-								<tr>
-									<th>聯絡地址</th>
-									<td></td>
-								</tr>
-								<tr>
-									<th></th>
-									<td></td>
-								</tr>
-								<tr>
-									<th></th>
-									<td></td>
-								</tr>
-								<tr>
-									<th></th>
-									<td></td>
-								</tr>
-								<tr>
-									<th>配送地址</th>
-									<td></td>
-								</tr>
-								<tr>
-									<th></th>
-									<td></td>
-								</tr>
-								<tr>
-									<th></th>
-									<td></td>
-								</tr>
-								<tr>
-									<td colspan="2">
-										<button class="">確定修改</button>
-									</td>
-								</tr>
-							</table>
+							<div class="row data_item">
+								<div class="col-4 col-md-2 title">會員帳號</div>
+								<div class="col-8 col-md-8">email@example.com</div>
+								<div class="col-auto"></div>
+							</div>
 
-							<h2>修改密碼</h2>
-							<table class="mem_tb">
-								<tr>
-									<th>舊密碼</th>
-									<td></td>
-								</tr>
-								<tr>
-									<th>新密碼</th>
-									<td></td>
-								</tr>
-								<tr>
-									<th>確認密碼</th>
-									<td></td>
-								</tr>
-								<tr>
-									<td colspan="2">
-										<button class="">變更密碼</button>
-									</td>
-								</tr>
-							</table>
+							<div class="row data_item">
+								<div class="col-4 col-md-2 title">會員性別</div>
+								<div class="col-8 col-md-8">
+									<label class="mem_select">
+										<select name="" id="">
+											<option value="">女</option>
+										</select>
+										<i class="material-icons">arrow_drop_down</i>
+									</label>
+								</div>
+								<div class="col-auto"></div>
+							</div>
+
+							<div class="row data_item">
+								<div class="col-4 col-md-2 title">電子信箱</div>
+								<div class="col-8 col-md-8">
+									<input class="input_area" type="mail" placeholder="email@example.com">
+								</div>
+								<div class="col-auto"></div>
+							</div>
+
+							<div class="row data_item">
+								<div class="col-4 col-md-2 title">手機號碼</div>
+								<div class="col-8 col-md-8">
+									<input class="input_area" type="tel">
+								</div>
+								<div class="col-auto"></div>
+							</div>
+
+							<div class="row data_item">
+								<div class="col-4 col-md-2 title">聯絡地址</div>
+								<div class="col-8 col-md-8 _address">
+									<label class="mem_select">
+										<select name="" id="">
+											<option value="">台灣及離島</option>
+										</select>
+										<i class="material-icons">arrow_drop_down</i>
+									</label>
+									<label class="mem_select">
+										<select name="" id="">
+											<option value="">高雄市</option>
+										</select>
+										<i class="material-icons">arrow_drop_down</i>
+									</label>
+									<label class="mem_select">
+										<select name="" id="">
+											<option value="">鹽埕區</option>
+										</select>
+										<i class="material-icons">arrow_drop_down</i>
+									</label>
+									<input class="input_area" type="text" placeholder="請輸入地址">
+								</div>
+								<div class="col-auto"></div>
+							</div>
+							
+							<div class="row">
+								<div class="col-0 col-md-2"></div>
+								<div class="col-12 col-md-8">
+									<label class="mem_checkbox">
+										<input type="checkbox" checked>
+										<span></span>
+										<tt>我願意收到最新優惠情報</tt>
+									</label>
+								</div>
+							</div>
+
+							<div class="row data_item">
+								<div class="col-4 col-md-2 title">配送地址</div>
+								<div class="col-8 col-md-8 _address">
+									<label class="mem_select">
+										<select name="" id="">
+											<option value="">台灣及離島</option>
+										</select>
+										<i class="material-icons">arrow_drop_down</i>
+									</label>
+									<label class="mem_select">
+										<select name="" id="">
+											<option value="">高雄市</option>
+										</select>
+										<i class="material-icons">arrow_drop_down</i>
+									</label>
+									<label class="mem_select">
+										<select name="" id="">
+											<option value="">鹽埕區</option>
+										</select>
+										<i class="material-icons">arrow_drop_down</i>
+									</label>
+									<input class="input_area" type="text" placeholder="請輸入地址">
+								</div>
+								<div class="col-auto"></div>
+							</div>
+							<div class="row data_item">
+								<div class="col-4 col-md-2 title"></div>
+								<div class="col-8 col-md-8">
+									<button class="submit_btn">確定修改</button>
+								</div>
+								<div class="col-auto"></div>
+							</div>
+
+
+
+							<h2>修改密碼</h2>							
+							<div class="row data_item">
+								<div class="col-4 col-md-2 title">舊密碼</div>
+								<div class="col-8 col-md-8">
+									<input class="input_area" type="number">
+								</div>
+								<div class="col-auto"></div>
+							</div>
+							<div class="row data_item">
+								<div class="col-4 col-md-2 title">新密碼</div>
+								<div class="col-8 col-md-8">
+									<input class="input_area" type="number">
+								</div>
+								<div class="col-auto"></div>
+							</div>
+							<div class="row data_item">
+								<div class="col-4 col-md-2 title">確認密碼</div>
+								<div class="col-8 col-md-8">
+									<input class="input_area" type="number">
+								</div>
+								<div class="col-auto"></div>
+							</div>
+							<div class="row data_item">
+								<div class="col-4 col-md-2 title"></div>
+								<div class="col-8 col-md-8">
+									<button class="submit_btn">變更密碼</button>
+								</div>
+								<div class="col-auto"></div>
+							</div>
+							
 						</div>
-						<!-- edit end -->
+						<!-- 資料修改 end -->
 
 
-						<!-- num -->
+						<!-- 會員編碼 -->
 						<div class="col-12 col-md-3 mem_num">
-							<h2>會員編碼<tt>T00020080615</tt></h2>
-							<table>
-								<tr>
-									<th>購物車</th>
-									<td>56</td>
-								</tr>
-								<tr>
-									<th>我的收藏</th>
-									<td>23</td>
-								</tr>
-								<tr>
-									<th>完成訂單</th>
-									<td>8</td>
-								</tr>
-								<tr>
-									<th>會員紅利</th>
-									<td>2680</td>
-								</tr>
-								<tr>
-									<th>邀請碼</th>
-									<td>TK2075</td>
-								</tr>
-							</table>
+							<h2 class="mem_num_title">
+								<i class="material-icons">person</i>	
+								會員編碼<tt>T00020080615</tt>
+							</h2>
+
+							<div class="row data_item">
+								<div class="col-4 col-md-5">購物車</div>
+								<div class="col-8 col-md-7">56</div>
+							</div>
+
+							<div class="row data_item">
+								<div class="col-4 col-md-5">我的收藏</div>
+								<div class="col-8 col-md-7">23</div>
+							</div>
+
+							<div class="row data_item">
+								<div class="col-4 col-md-5">完成訂單</div>
+								<div class="col-8 col-md-7">8</div>
+							</div>
+
+							<div class="row data_item">
+								<div class="col-4 col-md-5">會員紅利</div>
+								<div class="col-8 col-md-7">2680</div>
+							</div>
+
+							<div class="row data_item mem_note" data-note="新戶輸入邀請碼即可獲贈紅利點數1000點">
+								<div class="col-4 col-md-5">邀請碼</div>
+								<div class="col-8 col-md-7">TK2075</div>
+							</div>
 						</div>
-						<!-- num end -->
+						<!-- 會員編碼 end -->
 					</div>
 				</div>
 				
@@ -197,6 +284,14 @@
 					</div>
 				</footer>
 			</div>
+
+
+
+			<!-- alert box -->
+			<div class="alert_mask" style="display: none;">
+				<div class="alert_box">已加入我的收藏</div>
+			</div>
+			<!-- alert box end -->
 		</div>
 
 

@@ -17,13 +17,13 @@
 				<span id="index_back" class="main_logo"></span>
 				<ul class="menu_item">
 					<li class="d-none d-md-block">
-						<a href="">
+						<a href="product.html">
 							<i class="material-icons">store</i>
 							Product
 						</a>
 					</li>
 					<li class="d-none d-md-block">
-						<a href="">
+						<a href="login.html">
 							<i class="material-icons">person</i>
 							Log in
 						</a>
@@ -45,6 +45,15 @@
 							<i></i>
 						</button>
 					</li>
+				</ul>
+				<!-- ph menu -->
+				<ul class="ph_menu_item" style="display: none;">
+					<li><a href="product.html">Product</a></li>
+					<li><a href="">Wishlist</a></li>
+					<li><a href="">Blog</a></li>
+					<li><a href="">Contact</a></li>
+					<li id="login"><a href="login.html">Log in</a></li>
+					<li id="Logged"><a href="member.html">Mypage</a></li>
 				</ul>
 			</header>
 
@@ -92,12 +101,16 @@
 							<h2>CHANEL N°5</h2>
 							<h3 class="ch">N°5，女性魅力的極致精髓。散發柔美澄透的乙醛花束香氣。經典傳奇香氛，蘊藏於極簡設計的獨特瓶身。</h3>
 							<div class="detail_cash">NT$4,980</div>
-							<label class="detail_num">
-								<select name="" id="">
-									<option value="">1</option>
-								</select>
+							<div class="detail_add_box">
+								<label class="detail_num">
+									<input type="number" step="1" min="0" max="10" value="1">
+									<span class="num_switch_btn">
+										<i class="material-icons">arrow_drop_up</i>
+										<i class="material-icons">arrow_drop_down</i>
+									</span>
+								</label>
 								<button class="detail_cart_btn ch">加入購物車</button>
-							</label>
+							</div>
 							<button class="fav_btn">
 								<i class="material-icons">favorite</i>
 								加入我的收藏
@@ -124,6 +137,14 @@
 					</div>
 				</footer>
 			</div>
+
+
+
+			<!-- alert box -->
+			<div class="alert_mask" style="display: none;">
+				<div class="alert_box">已加入我的收藏</div>
+			</div>
+			<!-- alert box end -->
 		</div>
 
 
