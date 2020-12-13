@@ -10,4 +10,4 @@ function showBox(text){
 
 $('#menuBar').click(function(){$('#ph_menu').toggleClass('on')})
 $(window).resize(function(){ $('#ph_menu').removeClass('on')})
-
+$('#ph_menu').click(function(){ $('#ph_menu').removeClass('on')})
