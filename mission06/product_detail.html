@@ -41,13 +41,13 @@
 						</a>
 					</li>
 					<li class="d-md-none">
-						<button class="menu_hab_btn">
+						<button class="menu_hab_btn" id="menuBar">
 							<i></i>
 						</button>
 					</li>
 				</ul>
 				<!-- ph menu -->
-				<ul class="ph_menu_item" style="display: none;">
+				<ul class="ph_menu_item" id="ph_menu">
 					<li><a href="product.html">Product</a></li>
 					<li><a href="">Wishlist</a></li>
 					<li><a href="">Blog</a></li>
@@ -109,9 +109,9 @@
 										<i class="material-icons">arrow_drop_down</i>
 									</span>
 								</label>
-								<button class="detail_cart_btn ch">加入購物車</button>
+								<button class="detail_cart_btn ch" id="cart_btn">加入購物車</button>
 							</div>
-							<button class="fav_btn">
+							<button class="fav_btn" id="fav_btn">
 								<i class="material-icons">favorite</i>
 								加入我的收藏
 							</button>
@@ -141,7 +141,7 @@
 
 
 			<!-- alert box -->
-			<div class="alert_mask" style="display: none;">
+			<div class="alert_mask" style="display: none;" id="alert_mask">
 				<div class="alert_box">已加入我的收藏</div>
 			</div>
 			<!-- alert box end -->
@@ -156,5 +156,15 @@
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
 		<!-- js end -->
+		<script src="script/common.js"></script>
+
+		<!-- cart_btn  fav_btn -->
+		<script>
+			$('#fav_btn').click(function(){ showBox('已加入我的收藏')})
+			$('#cart_btn').click(function(){ showBox('已加入購物車')})
+		</script>
+
+
+
 	</body>
 </html>

@@ -24,6 +24,7 @@ header{
 	width: 128px;
 	height: 38px;
 	background: url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/d%E2%80%99Perfume.png?raw=true) no-repeat;
+	cursor: pointer;
 }
 .main_logo._white{
 	position: relative;
@@ -60,7 +61,13 @@ header{
 	top: 100%;
 	left: 0;
 	z-index: 2;
+	display: none;
 }
+
+.ph_menu_item.on{
+	display: block;
+}
+
 .ph_menu_item li{
 	height: 56px;
 	line-height: 56px;
@@ -70,6 +77,12 @@ header{
 	text-align: center;
 	margin-bottom: 1px;
 }
+
+.ph_menu_item li a{
+	width: 100%;
+	display: block;
+}
+
 .cart_num:after{
 	content: '('attr(data-cart)')';
 	display: inline-block;

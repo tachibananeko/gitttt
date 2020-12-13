@@ -1,225 +1,237 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta http-equiv="Content-type" content="text/html; charset=UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, shrink-to-fit=no">
-		<meta http-equiv="X-UA-Compatible" content="ie=edge">	
-		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-		<link rel="stylesheet" href="style/reset.css">
-		<link rel="stylesheet" href="style/main_control.css">
-	</head>
 
-	<body>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="style/reset.css">
+    <link rel="stylesheet" href="style/main_control.css">
+</head>
 
-		<div class="outside">
-			<header class="main_width">
-				<span id="index_back" class="main_logo"></span>
-				<ul class="menu_item">
-					<li class="d-none d-md-block">
-						<a href="product.html">
-							<i class="material-icons">store</i>
-							Product
-						</a>
-					</li>
-					<li class="d-none d-md-block">
-						<a href="login.html">
-							<i class="material-icons">person</i>
-							Log in
-						</a>
-					</li>
-					<li class="d-none d-md-block">
-						<a href="">
-							<i class="material-icons">favorite</i>
-							Wishlist
-						</a>
-					</li>
-					<li>
-						<a href="" class="cart_num" data-cart="3">
-							<i class="material-icons">shopping_cart</i>
-							<tt class="d-none d-md-block">Cart</tt>
-						</a>
-					</li>
-					<li class="d-md-none">
-						<button class="menu_hab_btn">
+<body>
+
+    <div class="outside">
+        <header class="main_width">
+            <span id="index_back" class="main_logo"></span>
+            <ul class="menu_item">
+                <li class="d-none d-md-block">
+                    <a href="product.html">
+                        <i class="material-icons">store</i> Product
+                    </a>
+                </li>
+                <li class="d-none d-md-block">
+                    <a href="login.html">
+                        <i class="material-icons">person</i> Log in
+                    </a>
+                </li>
+                <li class="d-none d-md-block">
+                    <a href="">
+                        <i class="material-icons">favorite</i> Wishlist
+                    </a>
+                </li>
+                <li>
+                    <a href="" class="cart_num" data-cart="3">
+                        <i class="material-icons">shopping_cart</i>
+                        <tt class="d-none d-md-block">Cart</tt>
+                    </a>
+                </li>
+                <li class="d-md-none">
+                    <button class="menu_hab_btn" id="menuBar">
 							<i></i>
 						</button>
-					</li>
-				</ul>
-				<!-- ph menu -->
-				<ul class="ph_menu_item" style="display: none;">
-					<li><a href="product.html">Product</a></li>
-					<li><a href="">Wishlist</a></li>
-					<li><a href="">Blog</a></li>
-					<li><a href="">Contact</a></li>
-					<li id="login"><a href="login.html">Log in</a></li>
-					<li id="Logged"><a href="member.html">Mypage</a></li>
-				</ul>
-			</header>
+                </li>
+            </ul>
+            <!-- ph menu -->
+            <ul class="ph_menu_item" id="ph_menu">
+                <li><a href="product.html">Product</a></li>
+                <li><a href="">Wishlist</a></li>
+                <li><a href="">Blog</a></li>
+                <li><a href="">Contact</a></li>
+                <li id="login"><a href="login.html">Log in</a></li>
+                <li id="Logged"><a href="member.html">Mypage</a></li>
+            </ul>
+        </header>
 
-			<div class="main_scroll">
-				<!-- 主圖 -->
-				<div class="container_fluid topshow_box">
-					<div class="row main_width">
-						<div class="col-0 col-md-7"></div>
-						<div class="col-12 col-md-5 topshow_txt">
-							<h1>Perfume your day</h1>
-							<p>A perfume is like a piece of clothing, a message, a way of presenting oneself a costume that according to the person who wears it.</p>
-							<button class="topshow_btn">Shop now</button>
-						</div>
-					</div>
-				</div>
-				<!-- 主圖 end -->
-				
-				
-				
-				<!-- 產品展示01 -->
-				<div class="container show_box">			
-				
-					<div class="row main_width">
-						<div class="col-12 col-md-6 order-0 order-md-2 show_box_item01">
-						</div>
-						<div class="col-12 col-md-6 show_box_txt">
-							<h2>Gabrielle CHANEL</h2>
-							<p class="ch">全新嗅覺體驗，花香四溢、明亮馥郁。結合茉莉、依蘭依蘭、橙花和最迷人的格拉斯晚香玉之花香，呈現出夢幻花香氣息。 極具女性特質的香奈兒嘉柏麗香水，專為光芒四射的她而生。</p>
-							<button class="more_btn ch">查看更多</button>
-						</div>
-					</div>			
-				
-					<div class="row main_width">
-						<div class="col-12 col-md-6 show_box_item02"></div>
-						<div class="col-12 col-md-6 show_box_txt">
-							<h2>Five O’clock Au Gingembre</h2>
-							<p class="ch">生薑與溫醇的肉桂香、紅糖的香甜摻和成一氣，溫暖微辛的氣息反倒形成一股輕煙氤氳開來，還帶點微微煙醺感漫溢在整個鼻息之間，細聞之下,又還有溫溫淡淡的木香，溫和而暖心。</p>
-							<button class="more_btn ch">查看更多</button>
-						</div>
-					</div>			
-				
-					<div class="row main_width">
-						<div class="col-12 col-md-6 order-0 order-md-2 show_box_item03"></div>
-						<div class="col-12 col-md-6 show_box_txt">
-							<h2>CHANEL N°5</h2>
-							<p class="ch">N°5，女性魅力的極致精髓。散發柔美澄透的乙醛花束香氣。經典傳奇香氛，蘊藏於極簡設計的獨特瓶身。</p>
-							<button class="more_btn ch">查看更多</button>
-						</div>
-					</div>			
-				
-					<div class="row main_width">
-						<div class="col-12 col-md-6 show_box_item04"></div>
-						<div class="col-12 col-md-6 show_box_txt">
-							<ul class="show_box_sort">
-								<li>
-									<h3>Levels of Preventive Maintenance Compliance</h3>
-									<p>The core idea of preventative maintenance is the performance of proactive actions against unscheduled downtime in order to identify potential defects before they evolve into something more severe.</p>
-								</li>
-								<li>
-									<h3>Percentage of Planned Maintenance</h3>
-									<p>The planned maintenance percentage is the total planned maintenance time in your CMMS software over a date range over the total number of hours of a service performed by the technicians.</p>
-								</li>
-								<li>
-									<h3>Critical percentage of planned maintenance</h3>
-									<p>Calculating the critical percentage of planned maintenance will help you prioritize the most important operations that should be performed immediately.</p>
-								</li>
-							</ul>
-							<button class="train_btn">Plan a free online training</button>
-						</div>
-					</div>
-				</div>
-				<!-- 產品展示01 end -->
-				
-				
-				
-				<!-- 產品銷售 -->
-				<!-- 賣掉加上class="_sellout" -->
-				<div class="sell_box">
-					<ul class="sell_box_item main_width">
-						<li>
-							<div class="sell_box_img" style="background-image: url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/index6.jpg?raw=true);"></div>
-							<h3>Poppy & Barley</h3>
-							<p>Jo Malone</p>
-							<div class="money" data-discount="NT$1,580">NT$1,380</div>
-						</li>
-						<li>
-							<div class="sell_box_img" style="background-image: url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/index7.jpg?raw=true);"></div>
-							<h3>Body Wash</h3>
-							<p>Curology</p>
-							<div class="money" data-discount="">NT$1,580</div>
-						</li>
-						<li class="_sellout">
-							<div class="sell_box_img" style="background-image: url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/index8.jpg?raw=true);"></div>
-							<h3>Apple Cider Vinegar Capsule</h3>
-							<p>Tonik</p>
-							<div class="money" data-discount="">NT$1,580</div>
-						</li>
-					</ul>
-				</div>
-				<!-- 產品銷售 -->
-				
-				
-				
-				<!-- 產品展示02 -->
-				<div class="container_fluid show_box">
-					<div class="row main_width">
-						<div class="col-12 col-md-8 show_box_img05">
-							<img src="https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/index9.jpg?raw=true" alt="">
-						</div>
-						<div class="col-12 col-md-4 show_box_txt05">
-							<h3>Bottle-Recycling</h3>
-							<h4>Recycle your used empty bottles and be rewarded!</h4>
-							<p>For the past 10 years, we have collected over 800,000 bottles through Empty Bottle Recycling Campaign and planted more than 860 pine trees for a better environment.For the past 10 years, we have collected over 800,000 bottles through Empty Bottle Recycling Campaign and planted more than 860 pine trees for a better environment.</p>
-							<button class="more_btn ch">查看更多</button>
-						</div>
-					</div>
-				</div>
-				<!-- 產品展示02 end -->
-				
-				
-				
-				<!-- 訂閱 -->
-				<div class="container_fluid mail_box">
-					<div class="row main_width mail_box_item">
-						<div class="col-12 col-md-4">
-							<h4>記得<br>訂閱以獲取更多資訊！</h4>
-							<label class="import_box">
+        <div class="main_scroll">
+            <!-- 主圖 -->
+            <div class="container_fluid topshow_box">
+                <div class="row main_width">
+                    <div class="col-0 col-md-7"></div>
+                    <div class="col-12 col-md-5 topshow_txt">
+                        <h1>Perfume your day</h1>
+                        <p>A perfume is like a piece of clothing, a message, a way of presenting oneself a costume that according to the person who wears it.</p>
+                        <button class="topshow_btn" id="topshow_btn">Shop now</button>
+                    </div>
+                </div>
+            </div>
+            <!-- 主圖 end -->
+
+
+
+            <!-- 產品展示01 -->
+            <div class="container show_box">
+
+                <div class="row main_width">
+                    <div class="col-12 col-md-6 order-0 order-md-2 show_box_item01">
+                    </div>
+                    <div class="col-12 col-md-6 show_box_txt">
+                        <h2>Gabrielle CHANEL</h2>
+                        <p class="ch">全新嗅覺體驗，花香四溢、明亮馥郁。結合茉莉、依蘭依蘭、橙花和最迷人的格拉斯晚香玉之花香，呈現出夢幻花香氣息。 極具女性特質的香奈兒嘉柏麗香水，專為光芒四射的她而生。</p>
+                        <button class="more_btn ch">查看更多</button>
+                    </div>
+                </div>
+
+                <div class="row main_width">
+                    <div class="col-12 col-md-6 show_box_item02"></div>
+                    <div class="col-12 col-md-6 show_box_txt">
+                        <h2>Five O’clock Au Gingembre</h2>
+                        <p class="ch">生薑與溫醇的肉桂香、紅糖的香甜摻和成一氣，溫暖微辛的氣息反倒形成一股輕煙氤氳開來，還帶點微微煙醺感漫溢在整個鼻息之間，細聞之下,又還有溫溫淡淡的木香，溫和而暖心。</p>
+                        <button class="more_btn ch">查看更多</button>
+                    </div>
+                </div>
+
+                <div class="row main_width">
+                    <div class="col-12 col-md-6 order-0 order-md-2 show_box_item03"></div>
+                    <div class="col-12 col-md-6 show_box_txt">
+                        <h2>CHANEL N°5</h2>
+                        <p class="ch">N°5，女性魅力的極致精髓。散發柔美澄透的乙醛花束香氣。經典傳奇香氛，蘊藏於極簡設計的獨特瓶身。</p>
+                        <button class="more_btn ch">查看更多</button>
+                    </div>
+                </div>
+
+                <div class="row main_width">
+                    <div class="col-12 col-md-6 show_box_item04"></div>
+                    <div class="col-12 col-md-6 show_box_txt">
+                        <ul class="show_box_sort">
+                            <li>
+                                <h3>Levels of Preventive Maintenance Compliance</h3>
+                                <p>The core idea of preventative maintenance is the performance of proactive actions against unscheduled downtime in order to identify potential defects before they evolve into something more severe.</p>
+                            </li>
+                            <li>
+                                <h3>Percentage of Planned Maintenance</h3>
+                                <p>The planned maintenance percentage is the total planned maintenance time in your CMMS software over a date range over the total number of hours of a service performed by the technicians.</p>
+                            </li>
+                            <li>
+                                <h3>Critical percentage of planned maintenance</h3>
+                                <p>Calculating the critical percentage of planned maintenance will help you prioritize the most important operations that should be performed immediately.</p>
+                            </li>
+                        </ul>
+                        <button class="train_btn">Plan a free online training</button>
+                    </div>
+                </div>
+            </div>
+            <!-- 產品展示01 end -->
+
+
+
+            <!-- 產品銷售 -->
+            <!-- 賣掉加上class="_sellout" -->
+            <div class="sell_box">
+                <ul class="sell_box_item main_width">
+                    <li>
+                        <div class="sell_box_img" style="background-image: url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/index6.jpg?raw=true);"></div>
+                        <h3>Poppy & Barley</h3>
+                        <p>Jo Malone</p>
+                        <div class="money" data-discount="NT$1,580">NT$1,380</div>
+                    </li>
+                    <li>
+                        <div class="sell_box_img" style="background-image: url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/index7.jpg?raw=true);"></div>
+                        <h3>Body Wash</h3>
+                        <p>Curology</p>
+                        <div class="money" data-discount="">NT$1,580</div>
+                    </li>
+                    <li class="_sellout">
+                        <div class="sell_box_img" style="background-image: url(https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/index8.jpg?raw=true);"></div>
+                        <h3>Apple Cider Vinegar Capsule</h3>
+                        <p>Tonik</p>
+                        <div class="money" data-discount="">NT$1,580</div>
+                    </li>
+                </ul>
+            </div>
+            <!-- 產品銷售 -->
+
+
+
+            <!-- 產品展示02 -->
+            <div class="container_fluid show_box">
+                <div class="row main_width">
+                    <div class="col-12 col-md-8 show_box_img05">
+                        <img src="https://github.com/hexschool/webLayoutTraining1st/blob/master/perfume-week6/index9.jpg?raw=true" alt="">
+                    </div>
+                    <div class="col-12 col-md-4 show_box_txt05">
+                        <h3>Bottle-Recycling</h3>
+                        <h4>Recycle your used empty bottles and be rewarded!</h4>
+                        <p>For the past 10 years, we have collected over 800,000 bottles through Empty Bottle Recycling Campaign and planted more than 860 pine trees for a better environment.For the past 10 years, we have collected over 800,000 bottles through
+                            Empty Bottle Recycling Campaign and planted more than 860 pine trees for a better environment.</p>
+                        <button class="more_btn ch">查看更多</button>
+                    </div>
+                </div>
+            </div>
+            <!-- 產品展示02 end -->
+
+
+
+            <!-- 訂閱 -->
+            <div class="container_fluid mail_box">
+                <div class="row main_width mail_box_item">
+                    <div class="col-12 col-md-4">
+                        <h4>記得<br>訂閱以獲取更多資訊！</h4>
+                        <label class="import_box">
 								<input type="mail" placeholder="Your email address">
 								<button class="import_btn">Subscribe</button>
 							</label>
-						</div>
-					</div>
-				</div>
-				<!-- 訂閱 end -->
+                    </div>
+                </div>
+            </div>
+            <!-- 訂閱 end -->
 
 
 
-				<footer>
-					<div class="main_width foot_box">
-						<span id="index_back02" class="main_logo _white"></span>
-						<ul class="d-none d-md-flex foot_menu">
-							<li><a href="product.html">Product</a></li>
-							<li><a href="">Blog</a></li>
-							<li><a href="">Contact</a></li>
-						</ul>
-					</div>
-				</footer>
-			</div>
+            <footer>
+                <div class="main_width foot_box">
+                    <span id="index_back02" class="main_logo _white"></span>
+                    <ul class="d-none d-md-flex foot_menu">
+                        <li><a href="product.html">Product</a></li>
+                        <li><a href="">Blog</a></li>
+                        <li><a href="">Contact</a></li>
+                    </ul>
+                </div>
+            </footer>
+        </div>
 
 
 
-			<!-- alert box -->
-			<div class="alert_mask" style="display: none;">
-				<div class="alert_box">已加入我的收藏</div>
-			</div>
-			<!-- alert box end -->
-		</div>
+        <!-- alert box -->
+        <div class="alert_mask" style="display: none;">
+            <div class="alert_box">已加入我的收藏</div>
+        </div>
+        <!-- alert box end -->
+    </div>
 
 
-		
-		
 
-		<!-- js -->
-		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
-		<!-- js end -->
-	</body>
+
+
+    <!-- js -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <!-- js end -->
+    <script src="script/common.js"></script>
+    <script>
+        $('#topshow_btn').click(function() {
+            location.href = "product.html"
+        })
+
+
+		// $('#menuBar').click(function(){$('#ph_menu').toggleClass('on')})
+		// $(window).resize(function(){ $('#ph_menu').removeClass('on')})
+		// $('#ph_menu li').click(function(){ $('#ph_menu').removeClass('on')})
+
+    </script>
+</body>
+
 </html>
