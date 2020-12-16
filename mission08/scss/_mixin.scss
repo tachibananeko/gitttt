@@ -1,0 +1,55 @@
+@mixin pos_abs($top , $right , $bottom , $left){
+	position: absolute;
+	top: $top;
+	bottom: $bottom;
+	right: $right;
+	left: $left;
+}
+// 紫底 白字 無框 按鈕
+@mixin primary_btn {
+	color: #fff;
+	border-radius: 3px;
+	background: #6C51E2;
+}
+// 無底 紫字 紫框 按鈕
+@mixin secondary_btn {
+	color: #6C51E2;
+	border-radius: 3px;
+	border: 1px solid #6C51E2;
+	background: transparent;
+}
+// 無底 白字 白框 按鈕
+@mixin cancel_btn {
+	color: #fff;
+	border-radius: 3px;
+	border: 1px solid #fff;
+	background: transparent;
+}
+@mixin max1200px{
+	@media screen and (max-width: 1200px) {
+		@content;
+	}
+}
+@mixin max992px{
+	@media screen and (max-width: 992px) {
+		@content;
+	}
+}
+@mixin max768px{
+	@media screen and (max-width: 768px) {
+		@content;
+	}
+}
+@mixin max576px{
+	@media screen and (max-width: 576px) {
+		@content;
+	}
+}
+@mixin hoverHandler{
+	@media (pointer: fine),
+	(-moz-touch-enabled: 0),
+	screen and (-ms-high-contrast: active),
+	(-ms-high-contrast: none) {
+		@content;
+	}
+}
