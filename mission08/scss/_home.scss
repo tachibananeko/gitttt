@@ -1,0 +1,206 @@
+.slider_box {
+    position: relative;
+    height: 320px;
+    margin-bottom: 120px;
+}
+.slider_funtion {
+    @include pos_abs(0, 0, 0, 0);
+    @include d_f_center(flex, center, space-between);
+    width: 920px;
+    height: 48px;
+    margin: auto;
+}
+.slider_btn {
+    color: #fff;
+    font-size: 48px;
+    &:hover{
+        opacity: 0.7;
+    }
+}
+.slider_box_item {
+    @include pos_abs(0, 0, 0, 0);
+    @include d_f_center(flex, center, unset);
+    @extend %transition;
+    width: 300%;
+    height: 100%;
+    color: #fff;
+    >li {
+        @include d_f_center(flex, center, center);
+        @include bg_set(left, center, no-repeat, cover);
+        width: 100%;
+        height: 100%;
+        >h2 {
+            font-family: $text_family_secondary;
+            font-size: 48px;
+            font-weight: 800;
+        }
+    }
+}
+.main_title{
+    line-height: 37px;
+    font-family: $text_family_secondary;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 24px;
+}
+.scrollshow_box,
+.place_box,
+.detail_box {
+    margin-bottom: 72px;
+}
+.scrollshow_box_menu{
+    @include d_f_center(inline-flex, center, unset);
+    line-height: 36px;
+    border-bottom: 2px solid $bg_primary;
+    margin-bottom: 24px;
+    >li{
+        @include d_f_center(flex, flex-start, unset);
+        @extend %hand;
+        position: relative;
+        padding: 0 24px;
+        color: $text_secondary;
+        font-family: $text_family_secondary;
+        font-weight: bold;
+        font-size: 24px;
+        &:before{
+            @extend %transition;
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: $bg_secondary;
+            left: 0;
+            top: 100%;
+        }
+        &:after{
+            content: attr(data-num);
+            line-height: 14px;
+            font-size: $text_size_secondary;
+        }
+        &.on{
+            color: $text_purple;
+        }
+        &.on:before {
+            width: 100%;
+        }
+        @include hoverHandler(1, unset, $text_purple) {
+            &:hover:before {
+                width: 100%;
+            }
+        }
+    }
+}
+.scrollshow_box_item{
+    @include d_f_center(flex, center, space-between);
+    >li{
+        @extend %hand;
+        width: calc((100% - 90px) / 4);
+        >.title{
+            line-height: 24px;
+            font-weight: bold;
+        }
+        @include hoverHandler(.7, unset, unset);
+        >.money{
+            color: $text_secondary;
+            font-size: $text_size_secondary;
+        }
+    }
+}
+.scrollshow_box_img{
+    @include bg_set(center, center, no-repeat, cover);
+    height: 175px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+.scrollshow_box_detail {
+    color: #00000061;
+    font-size: 12px;
+    .review {
+        &:before {
+            content: '・';
+        }
+        &:after {
+            content: ' 'attr(data-review);
+        }
+    }
+}
+.place_box_item {
+    @include d_f(flex, unset, space-between, unset, wrap);
+    color: #fff;
+    >li {
+        @include bg_set(center, center, no-repeat, cover);
+        @extend %hand;
+        @include hoverHandler(.7, unset, unset);
+        position: relative;
+        width: calc((100% - 60px) / 3);
+        padding: 16px 24px;
+        border-radius: 8px;
+        font-weight: bold;
+        overflow: hidden;
+        &:not(:nth-last-child(1)):not(:nth-last-child(2)):not(:nth-last-child(3)) {
+            margin-bottom: 24px;
+        }
+        >tt{
+            display: block;
+            color: #FFFFFF98;
+            font-size: 12px;
+        }
+        >span {
+            font-size: 24px;
+            font-family: $text_family_secondary;
+        }
+        >i{
+            @include pos_abs(0, 16px, 0, auto);
+            height: 24px;
+            margin: auto;
+        }
+    }
+}
+.detail_box{
+    >.main_title{
+        @include d_f_center(flex, center, space-between);
+        margin-bottom: 24px;
+        .more_btn {
+            @include secondary_btn;
+            @include hoverHandler(1, $bg_secondary, #fff);
+            padding: 8px 16px;
+            font-size: $text_secondary;
+        }
+    }    
+    
+}
+.detail_box_item{
+    @include d_f(flex, unset, space-between, unset, wrap)
+    >li{
+        @include hoverHandler(.7, unset, unset);
+        @extend %hand;
+        width: calc((100% - 60px) / 3);
+        >.detail_box_img {
+            border-radius: 8px;
+            margin-bottom: 24px;
+            overflow: hidden;
+        }
+        >.title{
+            font-family: $text_family_secondary;
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: capitalize;
+            margin-bottom: 8px;
+        }
+        >p{
+            @include omission(2, 48px);
+            line-height: 24px;
+            color: $text_secondary;
+            font-size: 16px;
+            
+        }
+    }
+}
+
+
+
+
+
+
+

@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700;800&family=Raleway:wght@400;700;800&display=swap');
+
+
+// 字體顏色與大小
+$text_primary:#121212;
+$text_secondary:#00000099;
+$text_purple:#6C51E2;
+$text_size_primary:16px;
+$text_size_secondary:14px;
+$text_family_secondary:'Raleway';
+// 背景色
+$bg_primary:#F1F0F8;
+$bg_secondary:#6C51E2;
+$bg_white:#fff;
+
+// 距離
+$distance_primary:8px;
+@function distance($count: 1) {
+    @return $distance_primary * $count;
+}
+// 動畫
+.active_item {
+    opacity: 0;
+    visibility: collapse;
+}
+.active{
+    > .active_item,
+    ~ .active_item {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+
+
+
+// 常用全域設定
+html,
+body,
+input,
+button,
+select,
+textarea,
+tt {
+    font-family: 'Open sans',
+    sans-serif;
+    color: $text_primary;
+    font-size: $text_size_primary;
+}
+.outside {
+    width: 100%;
+    height: 100%;
+}
+.main_width {
+    width: 1110px;
+    margin: auto;
+}
+.scroll_box{
+    height: calc(100% - 72px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.main_logo{
+    width: 96px;
+    height: 24px;
+    background: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/13f2e6e6b718b6abafb62ce7a672d42fc39eaeae/week8/logo-aloha.svg) no-repeat center;
+    color: transparent;
+}
+.material-icons {
+    >* {
+        font-family: 'Open sans';
+    }
+    &:before {
+        @include pos_abs(0, auto, 0, 16px);
+        content: attr(data-icon);
+        height: 24px;
+        margin: auto;
+    }
+}
+// 組件
+// header
+header{
+    display: flex;
+    padding: distance(3) 0;
+    align-items: center;
+    >.select_box{
+        margin-left: auto;
+    }
+}
+.select_box{
+    @include d_f_center(flex, center, unset);
+    position: relative;
+    height: 24px;
+    font-size: $text_size_secondary;
+    >i{
+        width: 24px;
+        height: 24px;
+        pointer-events: none;
+    }
+    >.function{
+        @include pos_abs(0, auto, 0, 0);
+    }
+    >.arr {
+        @include pos_abs(0, 0, 0, auto);
+    }
+    >select,
+    &._member>span {
+        @extend %hand;
+        width: 100%;
+        height: 100%;
+        line-height: 24px;
+        padding: 0 distance(3) 0 34px;
+        color: $text_secondary;
+        font-size: $text_size_secondary;
+    }
+    &._member>span{
+        color: $text_primary;
+    }
+}
+.select_box + .select_box{
+    margin-left: distance(3);
+}
+.select_member_img{
+    @include pos_abs(0, auto, 0, 0);
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid $bg_secondary;
+    overflow: hidden;
+}
+.txt_btn{
+    margin-left: distance(6);
+    @extend %hand;
+    @include hoverHandler(.7, unset, unset);
+}
+// 搜尋
+.search_box{
+    @include pos_abs(calc(100% - 72px), 0, auto, 0);
+    @include d_f_center(flex, center, space-between);
+    height: 104px;
+    padding: 24px;
+    background-color: $bg_primary;
+    border-radius: 8px;
+    margin: auto;
+}
+.search_box_item {
+    position: relative;
+    width: calc((100% - 158px) / 3);
+    height: 100%;
+    background-color: $bg_white;
+    border-radius: 4px;
+    >.import_box {
+        @include d_f_center(flex, center, unset);
+        height: 100%;
+        padding: 0 16px;
+        >i{
+            margin-right: 16px;
+        }
+        >span {
+            color: $text_secondary;
+        }
+    }    
+}
+.search_location_list {
+    @include pos_abs(calc(100% + 8px), 0, auto, 0);
+    @include shadow_primary;
+    @extend %transition;
+    background-color: $bg_white;
+    border-radius: 4px;
+    >li {
+        @include d_f(flex, unset, center, column, wrap);
+        @extend %hand;
+        position: relative;
+        padding: 8px 16px 8px 48px;
+        background-color: transparent;
+        @include hoverHandler(1, $bg_primary, unset);
+        &.on {
+            background-color: $bg_primary;
+        }
+        >span,
+        >tt{
+            font-size: $text_size_primary;
+        }
+        >tt{
+            color: $text_secondary;
+            font-size: 12px;
+        }
+    }
+
+}
+.search_guest_list{
+    @include pos_abs(calc(100% + 8px), 0, auto, 0);
+    @include shadow_primary;
+    @extend %transition;
+    padding: 6px 0;
+    background-color: $bg_white;
+    border-radius: 4px;
+    >li{
+        @include d_f_center(flex, center, unset);
+        padding: 8px 16px;
+
+    }
+    input{
+        width: 48px;
+        height: 100%;
+        text-align: center;
+    }
+    .qu_btn{
+        display: block;
+        width: 24px;
+        @include hoverHandler(.7, unset, unset);
+        &:first-of-type{
+            margin-left: auto;
+        }
+    }
+}
+.saerch_btn{
+    @include primary_btn;
+    width: 126px;
+    height: 100%;
+}
+// 星級評分
+
+// 訂閱
+.subscripte_box{
+    padding: 92px 0;
+    background-color: $bg_primary;
+    >div{
+        @include d_f(flex, center, center, column, unset);
+    }
+    h2{
+        font-family: $text_family_secondary;
+        font-size: 48px;
+        font-weight: 800;
+        margin-bottom: 24px;
+    }
+}
+.subscripte_box_item {
+    @include d_f_center(flex, center, center);
+    width: 540px;
+    height: 56px;
+    background-color: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    >input{
+        flex:1 1 100%;
+        padding: 0 20px;
+    }
+    >.subscripte_btn{
+        @include primary_btn;
+        width: 150px;
+        height: 100%;
+        border-radius: 0 4px 4px 0;
+        flex: none;
+    }
+}
+// footer
+footer{
+    @include d_f_center(flex, center, unset);
+    padding: 26px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
