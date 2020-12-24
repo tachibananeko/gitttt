@@ -257,6 +257,7 @@ header{
 footer{
     @include d_f_center(flex, center, unset);
     padding: 26px 0;
+    border-top: 1px solid $bg_primary;
     >.select_box{
         margin-left: auto;
     }    
@@ -264,7 +265,6 @@ footer{
 .copyright_box {
     color: $text_secondary;
     font-size: 14px;
-
     >ul {
         @include d_f_center(inline-flex, center, unset);
         margin-left: 64px;

@@ -1,0 +1,95 @@
+.member_box{
+    @include d_f_center(flex, unset, space-between);
+}
+// My Bookings
+.booking_box{
+    flex:1 1 100%;
+    margin-right: 30px;
+}
+.booking_box_menu{
+    @include d_f_center(inline-flex, center, space-between);
+    margin-bottom: 24px;
+    li{
+        @include hoverHandler(1, unset, $text_purple);
+        @extend %hand;
+        font-weight: bold;
+        &.on {
+            color: $text_purple;
+        }
+    }
+    >li + li{
+        margin-left: 24px;        
+    }    
+}
+.booking_detail {
+
+}
+.booking_detail_item{
+    @include d_f_center(flex, center, unset);
+    position: relative;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    +.booking_detail_item{
+        &:before{
+            @include pos_abs(auto, 0, calc(100% + 24px), auto);
+            content:'';
+            width: 100%;
+            height: 1px;
+            background-color: $bg_primary;
+        }
+    }
+    >.view_btn{
+        @include pos_abs(16px, 16px, auto, auto);
+        @include cancel_btn;
+        font-weight: bold;
+    }
+}
+.booking_detail_img{
+    @include bg_set(center, center, no-repeat, cover);
+    width: 255px;
+    height: 175px;
+    flex:none;
+    border-radius: 8px 0 0 8px;
+}
+.booking_detail_txt{
+    padding: 16px 16px 16px 0;
+    >li{
+        @include d_f(flex, flex-start, unset, column, wrap);
+        position: relative;
+        padding-left: 56px;
+        &:not(:last-child){
+            margin-bottom: 8px;
+        }        
+        >span{
+            line-height: 22px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        >tt{
+            color: $text_secondary;
+            font-size: 12px;
+        }
+    }
+}
+
+// Profile
+.proflie_box{
+    width: 350px;
+    flex:none;
+    .edit_btn{
+        @include cancel_btn;
+        font-weight: bold;
+    }
+}
+.verified_checkbox{
+    height: 100%;
+    background-color: $bg_secondary;
+    color: #fff;
+}
+
+
+
+
+
+
+

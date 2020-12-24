@@ -154,7 +154,8 @@ table {
 .scrollshow_box_menu > li,
 .scrollshow_box_item > li,
 .place_box_item > li,
-.detail_box_item > li {
+.detail_box_item > li,
+.booking_box_menu li {
   cursor: pointer;
   -webkit-transition: color .3s linear, background-color .3s linear, opacity .3s linear, border-color .3s linear, -webkit-box-shadow .3s linear;
   transition: color .3s linear, background-color .3s linear, opacity .3s linear, border-color .3s linear, -webkit-box-shadow .3s linear;
@@ -576,6 +577,7 @@ footer {
   display: -ms-flexbox;
   display: flex;
   padding: 26px 0;
+  border-top: 1px solid #F1F0F8;
 }
 
 footer > .select_box {
@@ -985,5 +987,183 @@ footer > .select_box {
   line-height: 24px;
   color: #00000099;
   font-size: 16px;
+}
+
+.member_box {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: unset;
+      -ms-flex-align: unset;
+          align-items: unset;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.booking_box {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+  margin-right: 30px;
+}
+
+.booking_box_menu {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  margin-bottom: 24px;
+}
+
+.booking_box_menu li {
+  font-weight: bold;
+}
+
+@media (pointer: fine), (-moz-touch-enabled: 0), screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .booking_box_menu li:hover {
+    opacity: 1;
+    background-color: unset;
+    color: #6C51E2;
+  }
+}
+
+.booking_box_menu li.on {
+  color: #6C51E2;
+}
+
+.booking_box_menu > li + li {
+  margin-left: 24px;
+}
+
+.booking_detail_item {
+  -webkit-box-pack: unset;
+      -ms-flex-pack: unset;
+          justify-content: unset;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+}
+
+.booking_detail_item + .booking_detail_item:before {
+  position: absolute;
+  top: auto;
+  bottom: calc(100% + 24px);
+  right: 0;
+  left: auto;
+  content: '';
+  width: 100%;
+  height: 1px;
+  background-color: #F1F0F8;
+}
+
+.booking_detail_item > .view_btn {
+  position: absolute;
+  top: 16px;
+  bottom: auto;
+  right: 16px;
+  left: auto;
+  color: #6C51E2;
+  background: transparent;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+@media (pointer: fine), (-moz-touch-enabled: 0), screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .booking_detail_item > .view_btn:hover {
+    opacity: 0.7;
+    background-color: unset;
+    color: unset;
+  }
+}
+
+.booking_detail_img {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 255px;
+  height: 175px;
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+  border-radius: 8px 0 0 8px;
+}
+
+.booking_detail_txt {
+  padding: 16px 16px 16px 0;
+}
+
+.booking_detail_txt > li {
+  -webkit-box-pack: unset;
+      -ms-flex-pack: unset;
+          justify-content: unset;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  position: relative;
+  padding-left: 56px;
+}
+
+.booking_detail_txt > li:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.booking_detail_txt > li > span {
+  line-height: 22px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.booking_detail_txt > li > tt {
+  color: #00000099;
+  font-size: 12px;
+}
+
+.proflie_box {
+  width: 350px;
+  -webkit-box-flex: 0;
+      -ms-flex: none;
+          flex: none;
+}
+
+.proflie_box .edit_btn {
+  color: #6C51E2;
+  background: transparent;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+@media (pointer: fine), (-moz-touch-enabled: 0), screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .proflie_box .edit_btn:hover {
+    opacity: 0.7;
+    background-color: unset;
+    color: unset;
+  }
+}
+
+.verified_checkbox {
+  height: 100%;
+  background-color: #6C51E2;
+  color: #fff;
 }
 /*# sourceMappingURL=all.css.map */
