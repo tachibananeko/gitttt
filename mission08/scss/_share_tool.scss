@@ -84,15 +84,16 @@ header{
     display: flex;
     padding: distance(3) 0;
     align-items: center;
-    >.select_box{
-        margin-left: auto;
-    }
 }
 .select_box{
     @include d_f_center(flex, center, unset);
     position: relative;
     height: 24px;
     font-size: $text_size_secondary;
+    margin-left: auto;
+    +.select_box{
+        margin-left: 24px;
+    }
     >i{
         width: 24px;
         height: 24px;
@@ -117,9 +118,6 @@ header{
     &._member>span{
         color: $text_primary;
     }
-}
-.select_box + .select_box{
-    margin-left: distance(3);
 }
 .select_member_img{
     @include pos_abs(0, auto, 0, 0);
@@ -259,8 +257,26 @@ header{
 footer{
     @include d_f_center(flex, center, unset);
     padding: 26px 0;
+    >.select_box{
+        margin-left: auto;
+    }    
 }
+.copyright_box {
+    color: $text_secondary;
+    font-size: 14px;
 
+    >ul {
+        @include d_f_center(inline-flex, center, unset);
+        margin-left: 64px;
+        >li{
+            @extend %hand;
+            @include hoverHandler(.7, unset, unset);
+        }
+        >li + li{
+            margin-left: 24px;
+        }
+    }
+}
 
 
 
