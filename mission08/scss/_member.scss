@@ -1,10 +1,21 @@
 .member_box{
     @include d_f_center(flex, unset, space-between);
+    padding: 24px 0;
+    @include max992px {
+        @include d_f(flex, unset, center, column-reverse, unset);
+        padding: 24px 39px;
+    }
+    @include max576px{
+        padding: 24px 15px;
+    }
 }
 // My Bookings
 .booking_box{
     flex:1 1 100%;
     margin-right: 30px;
+    @include max576px{
+        margin-right: 0;
+    }
 }
 .booking_box_menu{
     @include d_f_center(inline-flex, center, space-between);
@@ -21,27 +32,33 @@
         margin-left: 24px;        
     }    
 }
-.booking_detail {
-
-}
 .booking_detail_item{
     @include d_f_center(flex, center, unset);
     position: relative;
     padding-bottom: 24px;
-    margin-bottom: 24px;
+    border-radius: 8px;
+    overflow: hidden;
+    @include max576px{
+        @include d_f(flex, flex-start, unset, column, unset);
+        background-color: $bg_primary;
+    }
     +.booking_detail_item{
-        &:before{
-            @include pos_abs(auto, 0, calc(100% + 24px), auto);
-            content:'';
-            width: 100%;
-            height: 1px;
-            background-color: $bg_primary;
+        padding-top: 24px;
+        border-top: 1px solid $bg_primary;
+        @include max576px {
+            padding-top: 0;
+            margin-top: 24px;
         }
     }
     >.view_btn{
         @include pos_abs(16px, 16px, auto, auto);
         @include cancel_btn;
         font-weight: bold;
+        @include max576px{
+            position: static;
+            text-align: left;
+            margin-left: 24px;
+        }
     }
 }
 .booking_detail_img{
@@ -49,10 +66,23 @@
     width: 255px;
     height: 175px;
     flex:none;
-    border-radius: 8px 0 0 8px;
+    @include max576px{
+        width: 100%;
+        height: 226px;
+    }
+}
+.mem_title{
+    @include d_f_center(flex, center, unset);
+    line-height: 29px;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 24px;
 }
 .booking_detail_txt{
     padding: 16px 16px 16px 0;
+    @include max576px{
+        padding: 24px 24px 24px 8px;
+    }
     >li{
         @include d_f(flex, flex-start, unset, column, wrap);
         position: relative;
@@ -68,26 +98,134 @@
         >tt{
             color: $text_secondary;
             font-size: 12px;
+            white-space: normal;
         }
     }
 }
 
 // Profile
 .proflie_box{
+    position: relative;
     width: 350px;
     flex:none;
-    .edit_btn{
+    @include max992px{
+        width: 100%;
+        margin-bottom: 48px;
+    }
+    >.edit_btn{
         @include cancel_btn;
+        @include pos_abs(0, 0, auto, auto);
         font-weight: bold;
+        font-size: 14px;
     }
 }
 .verified_checkbox{
+    @include d_f_center(inline-flex, center, unset);
+    @extend %hand;
+    position: relative;
     height: 100%;
+    padding: 0 8px 0 30px;
+    border-radius: 37px;
     background-color: $bg_secondary;
-    color: #fff;
+    margin-left: 8px;
+    >span:before{
+        @include checktick(12px, 6px, 12px, 8px, 2px, #fff);
+        content: '';
+    }
+    >tt{
+        font-size: 12px;
+        color: #fff;
+    }
 }
-
-
+.proflie_detail{
+    position: relative;
+    padding: 24px;
+    background-color: $bg_primary;
+    border-radius: 8px;
+    @include max992px{
+        @include d_f(flex, unset, unset, unset, unset);
+    }
+    @include max576px{
+        @include d_f(flex, unset, unset, column, unset);
+    }
+}
+.proflie_detail_box {
+    @include d_f(flex, unset, unset, unset, wrap);
+    width: 100%;
+    >.proflie_detail_img {
+        @include pos_abs(24px, 24px, auto, auto);
+        width: 64px;
+        height: 64px;
+        border-radius: 8px;
+        overflow: hidden;
+        @include max992px {
+            position: static;
+            margin-right: 16px;
+        }
+        @include max576px {
+            position: absolute;
+            margin-right: 0;
+        }
+    }
+    >.title {
+        width: 100%;
+        font-weight: bold;
+        margin-bottom: 24px;
+    }
+    >.txt {
+        color: $text_secondary;
+        margin-bottom: 24px;
+        @include max992px {
+            margin-bottom: 0;
+        }
+        @include max992px {
+            margin-bottom: 24px;
+        }
+        >li:not(:last-child) {
+            margin-bottom: 16px;
+        }
+    }
+}
+.proflie_card{
+    @include d_f_center(flex, unset, space-between);
+    width: 100%;
+    >li {
+        position: relative;
+        width: calc((100% - 8px) / 2);
+        padding: 16px;
+        background-color: #fff;
+        border-radius: 4px;
+        >.add_btn {
+            @include pos_abs(0, 0, 0, 0);
+            @include hoverHandler (1, #fff, $text_purple);
+            @extend %hand;
+            width: 32px;
+            height: 32px;
+            background-color: $bg_secondary;
+            border-radius: 50%;
+            color: #fff;
+            margin: auto;
+        }
+    }
+}
+.card_detail {
+    &._icon_visa:after{
+        @include pos_abs(auto, 16px, 16px, auto);
+        content: attr(data-card);
+        padding: 1px;
+        background-color: #000;
+        color: #fff;
+        font-size: 12px;
+        transform: scale(.8);
+    }
+    >li {
+        color: $text_secondary;
+        font-size: 12px;        
+    }
+    >li:not(::last-child){
+        margin-bottom: 4px;
+    }
+}
 
 
 

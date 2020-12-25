@@ -84,6 +84,11 @@
 		}
 		
 	}
+	&:active{
+		opacity: $op;
+		background-color: $bg;
+		color: $txt;
+	}
 }
 
 // 自定義
@@ -124,7 +129,20 @@
 	background: transparent;
 	text-transform: uppercase;
 }
-
+// 選取勾勾
+@mixin checktick($width, $height, $x, $y, $boder, $bc) {
+	content: none;
+	display: block;
+	position: absolute;
+	width: $width;
+	height: $height;
+	left: $x;
+	top: $y;
+	border-width: 0 0 $boder $boder;
+	border-style:  solid;
+	border-color: $bc;
+	transform: rotate(-48deg);
+}
 // 陰影
 @mixin shadow_primary {
 	box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .2);

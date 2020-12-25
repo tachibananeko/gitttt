@@ -49,10 +49,10 @@ tt {
 }
 .outside {
     width: 100%;
-    height: 100%;
+    height: 100%;    
 }
 .main_width {
-    width: 1110px;
+    max-width: 1110px;
     margin: auto;
 }
 .scroll_box{
@@ -61,11 +61,27 @@ tt {
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 }
+.hab_btn{
+    @include pos_abs(0, auto, 0, 15px);
+    @include hoverHandler(1, $bg_primary, $text_purple);
+    @extend %hand;
+    display: none;
+    height: 24px;
+    margin: auto;
+    @include max576px{
+        display: block;
+    }
+}
 .main_logo{
+    @include hoverHandler (.7, unset, transparent);
+    @extend %hand;
     width: 96px;
     height: 24px;
     background: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/13f2e6e6b718b6abafb62ce7a672d42fc39eaeae/week8/logo-aloha.svg) no-repeat center;
     color: transparent;
+    @include max576px {
+        margin: auto;
+    }
 }
 .material-icons {
     >* {
@@ -82,8 +98,20 @@ tt {
 // header
 header{
     display: flex;
-    padding: distance(3) 0;
+    padding: 24px 0;
     align-items: center;
+    @include max992px {
+        padding: 24px 39px;
+    }
+    @include max576px {
+        position: relative;
+        padding: 16px 15px;
+    }
+    >.select_box{
+        @include max576px {
+            display: none;
+        }
+    }
 }
 .select_box{
     @include d_f_center(flex, center, unset);
@@ -111,7 +139,7 @@ header{
         width: 100%;
         height: 100%;
         line-height: 24px;
-        padding: 0 distance(3) 0 34px;
+        padding: 0 24px 0 34px;
         color: $text_secondary;
         font-size: $text_size_secondary;
     }
@@ -128,7 +156,7 @@ header{
     overflow: hidden;
 }
 .txt_btn{
-    margin-left: distance(6);
+    margin-left: 48px;
     @extend %hand;
     @include hoverHandler(.7, unset, unset);
 }
@@ -258,16 +286,34 @@ footer{
     @include d_f_center(flex, center, unset);
     padding: 26px 0;
     border-top: 1px solid $bg_primary;
+    @include max992px {
+        padding: 26px 39px;
+    }
     >.select_box{
         margin-left: auto;
+        @include max992px{
+            display: none;
+        }
     }    
 }
 .copyright_box {
     color: $text_secondary;
     font-size: 14px;
+    @include max992px{
+        @include d_f_center(flex, center, space-between);
+        width: 100%;
+    }
+    @include max576px {
+        @include d_f(flex, center, unset, column-reverse, unset);
+        width: 100%;
+    }
     >ul {
         @include d_f_center(inline-flex, center, unset);
         margin-left: 64px;
+        @include max576px {
+            margin-left: 0;
+            margin-bottom: 16px;
+        }
         >li{
             @extend %hand;
             @include hoverHandler(.7, unset, unset);
