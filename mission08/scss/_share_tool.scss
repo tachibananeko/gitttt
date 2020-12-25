@@ -80,6 +80,7 @@ tt {
     background: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/13f2e6e6b718b6abafb62ce7a672d42fc39eaeae/week8/logo-aloha.svg) no-repeat center;
     color: transparent;
     @include max576px {
+        @include pos_abs(0, 0, 0, 0);
         margin: auto;
     }
 }
@@ -159,6 +160,12 @@ header{
     margin-left: 48px;
     @extend %hand;
     @include hoverHandler(.7, unset, unset);
+    @include max576px{
+        margin-left: auto;
+        &:nth-last-child(2) {
+            display: none;
+        }
+    }
 }
 // 搜尋
 .search_box{

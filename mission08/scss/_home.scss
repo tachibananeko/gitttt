@@ -9,6 +9,10 @@
     width: 920px;
     height: 48px;
     margin: auto;
+    @include max992px{
+        width: 100%;
+        padding: 0 39px;
+    }
 }
 .slider_btn {
     color: #fff;
@@ -21,7 +25,7 @@
     @include pos_abs(0, 0, 0, 0);
     @include d_f_center(flex, center, unset);
     @extend %transition;
-    width: 300%;
+    width: 100%;
     height: 100%;
     color: #fff;
     >li {
@@ -29,10 +33,16 @@
         @include bg_set(left, center, no-repeat, cover);
         width: 100%;
         height: 100%;
+        flex: none;
         >h2 {
             font-family: $text_family_secondary;
             font-size: 48px;
             font-weight: 800;
+            text-align: center;
+            @include max992px{
+                width: 50%;
+
+            }
         }
     }
 }
