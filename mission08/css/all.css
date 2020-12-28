@@ -158,7 +158,6 @@ table {
 .place_box_item > li,
 .detail_box_item > li,
 .booking_box_menu li,
-.verified_checkbox,
 .proflie_card > li > .add_btn {
   cursor: pointer;
   -webkit-transition: color .3s linear, background-color .3s linear, opacity .3s linear, border-color .3s linear, -webkit-box-shadow .3s linear;
@@ -434,15 +433,7 @@ header {
   bottom: auto;
   right: 0;
   left: 0;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  width: 1110px;
   height: 104px;
   padding: 24px;
   background-color: #F1F0F8;
@@ -476,6 +467,28 @@ header {
   .search_box {
     width: calc(100% - 30px);
   }
+}
+
+.search_box > .search_width {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+}
+
+.search_box._orther_state {
+  width: 100%;
+  border-radius: 0;
+}
+
+.search_box._orther_state > .search_width {
+  width: 1110px;
 }
 
 .search_box_item {

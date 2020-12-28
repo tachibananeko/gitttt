@@ -185,7 +185,7 @@ header{
 // 搜尋
 .search_box{
     @include pos_abs(calc(100% - 72px), 0, auto, 0);
-    @include d_f_center(flex, center, space-between);
+    width: 1110px;
     height: 104px;
     padding: 24px;
     background-color: $bg_primary;
@@ -198,6 +198,17 @@ header{
     }
     @include max576px{
         width: calc(100% - 30px);
+    }
+    >.search_width {
+        @include d_f_center(flex, center, space-between);
+        margin: auto;
+    }
+    &._orther_state{
+        width: 100%;
+        border-radius: 0;
+        >.search_width {
+            width: 1110px;
+        }
     }
 }
 .search_box_item {

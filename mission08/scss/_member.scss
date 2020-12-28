@@ -121,7 +121,6 @@
 }
 .verified_checkbox{
     @include d_f_center(inline-flex, center, unset);
-    @extend %hand;
     position: relative;
     height: 100%;
     padding: 0 8px 0 30px;
