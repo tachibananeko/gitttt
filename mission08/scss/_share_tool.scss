@@ -177,9 +177,12 @@ header{
     border-radius: 8px;
     margin: auto;
     @include max992px{
-    @include d_f(flex, unset, unset, column, unset);
-        width: 576px;
-        height: auto;
+        @include d_f(flex, unset, unset, column, unset);
+            width: 576px;
+            height: auto;
+    }
+    @include max576px{
+        width: calc(100% - 30px);
     }
 }
 .search_box_item {
