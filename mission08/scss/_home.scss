@@ -165,6 +165,7 @@
     overflow: hidden;
 }
 .scrollshow_box_detail {
+    @include d_f_center(inline-flex, center, unset);
     color: #00000061;
     font-size: 12px;
     .review {

@@ -213,6 +213,7 @@ header{
     @extend %transition;
     background-color: $bg_white;
     border-radius: 4px;
+    z-index: 2;
     >li {
         @include d_f(flex, unset, center, column, wrap);
         @extend %hand;
@@ -241,6 +242,7 @@ header{
     padding: 6px 0;
     background-color: $bg_white;
     border-radius: 4px;
+    z-index: 2;
     >li{
         @include d_f_center(flex, center, unset);
         padding: 8px 16px;
@@ -269,7 +271,11 @@ header{
     }
 }
 // 星級評分
-
+.score_box{
+    >li{
+        color: #000;
+    }
+}
 // 訂閱
 .subscripte_box{
     padding: 92px 0;

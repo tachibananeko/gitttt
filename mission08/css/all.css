@@ -507,6 +507,7 @@ header {
           box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.2);
   background-color: #fff;
   border-radius: 4px;
+  z-index: 2;
 }
 
 .search_location_list > li {
@@ -569,6 +570,7 @@ header {
   padding: 6px 0;
   background-color: #fff;
   border-radius: 4px;
+  z-index: 2;
 }
 
 .search_guest_list > li {
@@ -641,6 +643,10 @@ header {
   .saerch_btn {
     width: 100%;
   }
+}
+
+.score_box > li {
+  color: #000;
 }
 
 .subscripte_box {
@@ -1176,6 +1182,15 @@ footer > .select_box {
 }
 
 .scrollshow_box_detail {
+  -webkit-box-pack: unset;
+      -ms-flex-pack: unset;
+          justify-content: unset;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   color: #00000061;
   font-size: 12px;
 }
