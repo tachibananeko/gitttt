@@ -200,19 +200,19 @@
         border-radius: 8px;
         font-weight: bold;
         overflow: hidden;
-        &:not(:nth-last-child(1)):not(:nth-last-child(2)):not(:nth-last-child(3)) {
+        &:not(:nth-child(4)):not(:nth-child(5)):not(:nth-child(6)) {
             margin-bottom: 24px;
         }
         @include max992px{
             width: calc((100% - 30px) / 2);
-            &:not(:nth-last-child(1)):not(:nth-last-child(2)) {
+            &:not(:nth-child(5)):not(:nth-child(6)) {
                 margin-bottom: 24px;
             }
         }
         @include max576px {
             width: 100%;
-            &:not(:last-child){
-                margin-bottom: 8px;
+            &:not(:last-child) {
+                margin-bottom: 8px!important;
             }
         }
         

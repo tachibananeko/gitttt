@@ -109,8 +109,10 @@ header{
         padding: 16px 15px;
     }
     >.select_box{
-        @include max576px {
-            display: none;
+        &:not(._member) {
+            @include max576px {
+                display: none;
+            }
         }
     }
 }
@@ -144,8 +146,21 @@ header{
         color: $text_secondary;
         font-size: $text_size_secondary;
     }
+    &._member{
+        @include max576px {
+            margin: 0 24px 0 auto;
+        }
+    }
     &._member>span{
         color: $text_primary;
+        @include max576px {
+            display: none;
+        }
+    }
+    &._member>i{
+        @include max576px {
+            display: none;
+        }
     }
 }
 .select_member_img{

@@ -309,7 +309,7 @@ header {
 }
 
 @media screen and (max-width: 576px) {
-  header > .select_box {
+  header > .select_box:not(._member) {
     display: none;
   }
 }
@@ -366,8 +366,26 @@ header {
   font-size: 14px;
 }
 
+@media screen and (max-width: 576px) {
+  .select_box._member {
+    margin: 0 24px 0 auto;
+  }
+}
+
 .select_box._member > span {
   color: #121212;
+}
+
+@media screen and (max-width: 576px) {
+  .select_box._member > span {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .select_box._member > i {
+    display: none;
+  }
 }
 
 .select_member_img {
@@ -1265,7 +1283,7 @@ footer > .select_box {
   color: unset;
 }
 
-.place_box_item > li:not(:nth-last-child(1)):not(:nth-last-child(2)):not(:nth-last-child(3)) {
+.place_box_item > li:not(:nth-child(4)):not(:nth-child(5)):not(:nth-child(6)) {
   margin-bottom: 24px;
 }
 
@@ -1273,7 +1291,7 @@ footer > .select_box {
   .place_box_item > li {
     width: calc((100% - 30px) / 2);
   }
-  .place_box_item > li:not(:nth-last-child(1)):not(:nth-last-child(2)) {
+  .place_box_item > li:not(:nth-child(5)):not(:nth-child(6)) {
     margin-bottom: 24px;
   }
 }
@@ -1283,7 +1301,7 @@ footer > .select_box {
     width: 100%;
   }
   .place_box_item > li:not(:last-child) {
-    margin-bottom: 8px;
+    margin-bottom: 8px !important;
   }
 }
 
