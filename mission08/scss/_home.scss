@@ -38,6 +38,7 @@
         height: 100%;
         flex: none;
         >h2 {
+            line-height: 64px;
             font-family: $text_family_secondary;
             font-size: 48px;
             font-weight: 800;
@@ -45,7 +46,7 @@
             @include max992px{
                 width: 50%;
             }
-            @include max992px {
+            @include max576px {
                 line-height: 48px;
                 font-size: 32px;
             }
@@ -58,13 +59,21 @@
     font-size: 32px;
     font-weight: bold;
     margin-bottom: 24px;
+    @include max992px{
+        line-height: 29px;
+        font-size: 24px;
+    }
 }
 .scrollshow_box,
 .detail_box{
+    position: relative;
     margin-bottom: 72px;
     @include max992px {
         padding: 0 0 0 39px;
         margin-bottom: 48px;
+    }
+    @include max576px{
+        padding: 0 0 0 15px;
     }
 }
 .scrollshow_box_menu{
@@ -81,6 +90,10 @@
         font-family: $text_family_secondary;
         font-weight: bold;
         font-size: 24px;
+        @include max576px{
+            padding: 0 16px;
+            font-size: 20px;
+        }
         &:before{
             @extend %transition;
             content: '';
@@ -103,7 +116,7 @@
             width: 100%;
         }
         @include hoverHandler(1, unset, $text_purple) {
-            &:hover:before {
+            &:before {
                 width: 100%;
             }
         }
@@ -111,6 +124,7 @@
 }
 .scrollshow_box_item{
     @include d_f_center(flex, center, space-between);
+    @include scrollbar(auto, hidden);
     >li{
         @extend %hand;
         width: calc((100% - 90px) / 4);
@@ -134,6 +148,14 @@
     >li+li {
         margin-left: 30px;
     }
+}
+.scrollshow_box_btn{
+    @include pos_abs(auto, 16px, 141px, auto);
+    @include hoverHandler(1, #6C51E2, #fff);
+    width: 40px;
+    height: 40px;
+    background-color: #F1F0F8;
+    border-radius: 50%;
 }
 .scrollshow_box_img{
     @include bg_set(center, center, no-repeat, cover);
@@ -159,6 +181,9 @@
     @include max992px {
         padding: 0 39px;
         margin-bottom: 48px;
+    }
+    @include max576px{
+        padding: 0 15px;
     }
 }
 .place_box_item {
@@ -209,6 +234,7 @@
 .detail_box{
     >.main_title{
         @include d_f_center(flex, center, space-between);
+        padding-right: 15px;
         margin-bottom: 24px;
         .more_btn {
             @include secondary_btn;
@@ -220,11 +246,16 @@
     
 }
 .detail_box_item{
-    @include d_f(flex, unset, space-between, unset, wrap)
+    @include d_f(flex, unset, space-between, unset, unset)
+    @include scrollbar(auto, hidden);
     >li{
         @include hoverHandler(.7, unset, unset);
         @extend %hand;
         width: calc((100% - 60px) / 3);
+        @include max576px {
+            flex:none;
+            min-width: 240px;
+        }
         >.detail_box_img {
             border-radius: 8px;
             margin-bottom: 24px;
@@ -243,6 +274,11 @@
             color: $text_secondary;
             font-size: 16px;
             
+        }
+    }
+    >li+li{
+        @include max576px {
+            margin-left: 30px;
         }
     }
 }

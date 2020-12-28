@@ -673,6 +673,13 @@ header {
   margin-bottom: 24px;
 }
 
+@media screen and (max-width: 576px) {
+  .subscripte_box h2 {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+}
+
 .subscripte_box_item {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -688,6 +695,12 @@ header {
   background-color: #fff;
   border-radius: 4px;
   overflow: hidden;
+}
+
+@media screen and (max-width: 576px) {
+  .subscripte_box_item {
+    width: calc(100% - 30px);
+  }
 }
 
 .subscripte_box_item > input {
@@ -923,6 +936,7 @@ footer > .select_box {
 }
 
 .slider_box_item > li > h2 {
+  line-height: 64px;
   font-family: "Raleway";
   font-size: 48px;
   font-weight: 800;
@@ -935,7 +949,7 @@ footer > .select_box {
   }
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 576px) {
   .slider_box_item > li > h2 {
     line-height: 48px;
     font-size: 32px;
@@ -950,8 +964,16 @@ footer > .select_box {
   margin-bottom: 24px;
 }
 
+@media screen and (max-width: 992px) {
+  .main_title {
+    line-height: 29px;
+    font-size: 24px;
+  }
+}
+
 .scrollshow_box,
 .detail_box {
+  position: relative;
   margin-bottom: 72px;
 }
 
@@ -960,6 +982,13 @@ footer > .select_box {
   .detail_box {
     padding: 0 0 0 39px;
     margin-bottom: 48px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .scrollshow_box,
+  .detail_box {
+    padding: 0 0 0 15px;
   }
 }
 
@@ -996,6 +1025,13 @@ footer > .select_box {
   font-size: 24px;
 }
 
+@media screen and (max-width: 576px) {
+  .scrollshow_box_menu > li {
+    padding: 0 16px;
+    font-size: 20px;
+  }
+}
+
 .scrollshow_box_menu > li:before {
   content: '';
   position: absolute;
@@ -1021,13 +1057,13 @@ footer > .select_box {
 }
 
 @media (pointer: fine), (-moz-touch-enabled: 0), screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .scrollshow_box_menu > li:hover:before {
-    width: 100%;
-  }
   .scrollshow_box_menu > li:hover {
     opacity: 1;
     background-color: unset;
     color: #6C51E2;
+  }
+  .scrollshow_box_menu > li:hover:before {
+    width: 100%;
   }
 }
 
@@ -1035,6 +1071,10 @@ footer > .select_box {
   opacity: 1;
   background-color: unset;
   color: #6C51E2;
+}
+
+.scrollshow_box_menu > li:active:before {
+  width: 100%;
 }
 
 .scrollshow_box_item {
@@ -1047,6 +1087,9 @@ footer > .select_box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 .scrollshow_box_item > li {
@@ -1096,6 +1139,32 @@ footer > .select_box {
   margin-left: 30px;
 }
 
+.scrollshow_box_btn {
+  position: absolute;
+  top: auto;
+  bottom: 141px;
+  right: 16px;
+  left: auto;
+  width: 40px;
+  height: 40px;
+  background-color: #F1F0F8;
+  border-radius: 50%;
+}
+
+@media (pointer: fine), (-moz-touch-enabled: 0), screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .scrollshow_box_btn:hover {
+    opacity: 1;
+    background-color: #6C51E2;
+    color: #fff;
+  }
+}
+
+.scrollshow_box_btn:active {
+  opacity: 1;
+  background-color: #6C51E2;
+  color: #fff;
+}
+
 .scrollshow_box_img {
   background-position: center center;
   background-repeat: no-repeat;
@@ -1127,6 +1196,12 @@ footer > .select_box {
   .place_box {
     padding: 0 39px;
     margin-bottom: 48px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .place_box {
+    padding: 0 15px;
   }
 }
 
@@ -1228,6 +1303,7 @@ footer > .select_box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding-right: 15px;
   margin-bottom: 24px;
 }
 
@@ -1283,8 +1359,11 @@ footer > .select_box {
   -webkit-box-direction: unset;
       -ms-flex-direction: unset;
           flex-direction: unset;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  -ms-flex-wrap: unset;
+      flex-wrap: unset;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 .detail_box_item > li {
@@ -1303,6 +1382,15 @@ footer > .select_box {
   opacity: 0.7;
   background-color: unset;
   color: unset;
+}
+
+@media screen and (max-width: 576px) {
+  .detail_box_item > li {
+    -webkit-box-flex: 0;
+        -ms-flex: none;
+            flex: none;
+    min-width: 240px;
+  }
 }
 
 .detail_box_item > li > .detail_box_img {
@@ -1328,6 +1416,12 @@ footer > .select_box {
   line-height: 24px;
   color: #00000099;
   font-size: 16px;
+}
+
+@media screen and (max-width: 576px) {
+  .detail_box_item > li + li {
+    margin-left: 30px;
+  }
 }
 
 .member_box {

@@ -30,6 +30,12 @@
 	overflow: hidden;
 	max-height:$height;
 }
+// scroll
+@mixin scrollbar($x, $y) {
+	overflow-x: $x;
+	overflow-y: $y;
+	-webkit-overflow-scrolling: touch;
+}
 // 動畫
 %transition {
 	transition: all .3s ease-in-out;
@@ -75,16 +81,16 @@
 	@media (pointer: fine),
 	(-moz-touch-enabled: 0),
 	screen and (-ms-high-contrast: active),
-	(-ms-high-contrast: none) {
-		@content;
+	(-ms-high-contrast: none) {		
 		&:hover{
+			@content;
 			opacity: $op;
 			background-color: $bg;
 			color: $txt;
-		}
-		
+		}		
 	}
-	&:active{
+	&:active {
+		@content;
 		opacity: $op;
 		background-color: $bg;
 		color: $txt;

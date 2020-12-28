@@ -282,7 +282,12 @@ header{
         font-size: 48px;
         font-weight: 800;
         margin-bottom: 24px;
+        @include max576px {
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
     }
+    
 }
 .subscripte_box_item {
     @include d_f_center(flex, center, center);
@@ -291,6 +296,9 @@ header{
     background-color: #fff;
     border-radius: 4px;
     overflow: hidden;
+    @include max576px {
+        width: calc(100% - 30px);
+    }
     >input{
         flex:1 1 100%;
         padding: 0 20px;
