@@ -655,6 +655,10 @@ header {
   display: none;
 }
 
+.search_box._orther_state .import_box > .more_title {
+  display: block;
+}
+
 .search_box._orther_state .import_box > .more_title,
 .search_box._orther_state .import_box > span {
   color: #000;
