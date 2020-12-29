@@ -62,14 +62,19 @@
                     <button class="material-icons slider_btn">keyboard_arrow_left</button>
                     <button class="material-icons slider_btn">keyboard_arrow_right</button>
                 </div>
+
+
+
                 <!-- 搜尋 -->
+                <!-- 加上 _orther_state 為搜尋後樣式 -->
                 <div class="search_box">
-                    <!-- 展開選單加上 .active -->
-                    <div class="search_width">
+                    <div class="search_box_width">
+                        <!-- 展開選單加上 .active -->
                         <div class="search_box_item">
-                            <label class="import_box">
-                                <i  class="material-icons">location_on</i>
+                            <label class="import_box material-icons" data-icon="location_on">
                                 <input type="text" placeholder="Destination">
+                                <div class="more_title">Destination</div>
+                                <tt>Bangkok</tt>
                             </label>
                             <!-- 下拉 -->
                             <ul class="search_location_list active_item">
@@ -89,17 +94,17 @@
                         </div>
                         
                         <div class="search_box_item">
-                            <div class="import_box">
-                                <i class="material-icons">date_range</i>
-                                <span>Check-in / Check-out</span>
+                            <div class="import_box material-icons material-icons" data-icon="date_range">
+                                <span>Check-in / out</span>
+                                <tt>17 June - 19 June</tt>
                             </div>
                         </div>
                         
                         <!-- 展開選單加上 .active -->
                         <div class="search_box_item">
-                            <div class="import_box">
-                                <i class="material-icons">person</i>
+                            <div class="import_box material-icons" data-icon="person">
                                 <span>Guests</span>
+                                <tt>2 adults・1 room</tt>
                             </div>
         
                             <!-- 下拉 -->

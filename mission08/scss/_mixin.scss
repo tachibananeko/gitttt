@@ -43,23 +43,23 @@
 
 
 // RWD相關
-@mixin max1200px {
-	@media screen and (max-width: 1200px) {
+@mixin mw_xl {
+	@media screen and (max-width: 1199px) {
 		@content;
 	}
 }
-@mixin max992px{
-	@media screen and (max-width: 992px) {
+@mixin mw_lg {
+	@media screen and (max-width: 991px) {
 		@content;
 	}
 }
-@mixin max768px{
-	@media screen and (max-width: 768px) {
+@mixin mw_md {
+	@media screen and (max-width: 767px) {
 		@content;
 	}
 }
-@mixin max576px{
-	@media screen and (max-width: 576px) {
+@mixin mw_sm {
+	@media screen and (max-width: 575px) {
 		@content;
 	}
 }
@@ -150,7 +150,7 @@
 	transform: rotate(-48deg);
 }
 // 陰影
-@mixin shadow_primary {
+%shadow_primary {
 	box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .2);
 }
 

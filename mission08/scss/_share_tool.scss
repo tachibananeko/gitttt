@@ -68,7 +68,7 @@ tt {
     display: none;
     height: 24px;
     margin: auto;
-    @include max576px{
+    @include mw_sm{
         display: block;
     }
 }
@@ -79,7 +79,7 @@ tt {
     height: 24px;
     background: url(https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/13f2e6e6b718b6abafb62ce7a672d42fc39eaeae/week8/logo-aloha.svg) no-repeat center;
     color: transparent;
-    @include max576px {
+    @include mw_sm {
         @include pos_abs(0, 0, 0, 0);
         margin: auto;
     }
@@ -101,16 +101,16 @@ header{
     display: flex;
     padding: 24px 0;
     align-items: center;
-    @include max992px {
+    @include mw_lg {
         padding: 24px 39px;
     }
-    @include max576px {
+    @include mw_sm {
         position: relative;
         padding: 16px 15px;
     }
     >.select_box{
         &:not(._member) {
-            @include max576px {
+            @include mw_sm {
                 display: none;
             }
         }
@@ -147,18 +147,18 @@ header{
         font-size: $text_size_secondary;
     }
     &._member{
-        @include max576px {
+        @include mw_sm {
             margin: 0 24px 0 auto;
         }
     }
     &._member>span{
         color: $text_primary;
-        @include max576px {
+        @include mw_sm {
             display: none;
         }
     }
     &._member>i{
-        @include max576px {
+        @include mw_sm {
             display: none;
         }
     }
@@ -175,7 +175,7 @@ header{
     margin-left: 48px;
     @extend %hand;
     @include hoverHandler(.7, unset, unset);
-    @include max576px{
+    @include mw_sm{
         margin-left: auto;
         &:nth-last-child(2) {
             display: none;
@@ -185,57 +185,141 @@ header{
 // 搜尋
 .search_box{
     @include pos_abs(calc(100% - 72px), 0, auto, 0);
-    width: 1110px;
-    height: 104px;
+    max-width: 1110px;
     padding: 24px;
     background-color: $bg_primary;
     border-radius: 8px;
     margin: auto;
-    @include max992px{
-        @include d_f(flex, unset, unset, column, unset);
-            width: 576px;
-            height: auto;
+    @include mw_lg {
+        width: 576px;
+        height: auto;
     }
-    @include max576px{
+    @include mw_sm {
         width: calc(100% - 30px);
     }
-    >.search_width {
+    &_width {
         @include d_f_center(flex, center, space-between);
         margin: auto;
+        @include mw_lg {
+            @include d_f(flex, unset, unset, column, unset);
+            height: auto;
+        }
     }
+    &_item {
+        position: relative;
+        width: calc((100% - 158px) / 3);
+        height: 56px;
+        background-color: $bg_white;
+        border-radius: 4px;
+
+        @include mw_lg {
+            width: 100%;
+            margin-bottom: 16px;
+        }
+
+        >.import_box {
+            @include d_f(flex, flex-start, center, column, unset);
+            height: 100%;
+            padding: 0 16px 0 56px;
+            >i {
+                line-height: 56px;
+                margin-right: 16px;
+            }
+            >input{
+                width: 100%;
+            }
+            >span {
+                color: $text_secondary;
+                font-size: 16px;
+            }
+            .more_title,
+            >tt {
+                display: none;
+            }
+        }
+    }
+    // 搜尋後樣式
     &._orther_state{
         width: 100%;
+        max-width: none;
+        padding: 16px 0;
         border-radius: 0;
-        >.search_width {
-            width: 1110px;
+        >.search_box_width {
+            max-width: 1110px;            
+            @include mw_lg {
+                @include d_f(flex, unset, space-between, row, unset);
+                padding: 0 39px;
+            }
+            @include mw_sm {
+                padding: 0;
+            }
+            >.search_box_item{
+                @include mw_lg {
+                    width: calc((100% - 150px) / 3);
+                    margin-bottom: 0;
+                }
+                @include mw_sm {
+                    position: relative;
+                    width: calc(100% / 3);
+                    height: auto;
+                    background-color: transparent;
+                }
+                &:not(:last-child):after{
+                    content: '';
+                    position: absolute;
+                    width: 1px;
+                    height: 33px;
+                    background-color: #fff;
+                    top: 0;
+                    bottom: 0;
+                    left: 100%;
+                    margin: auto;
+                }
+            }
+            >.saerch_btn{
+                width: 126px;
+                @include mw_sm {
+                    display: none;
+                }
+            }
+        }
+        .import_box {
+            padding: 0 8px 0 40px;
+            @include mw_sm {
+                @include d_f_center(flex, center, center);
+                padding: 0;
+            }
+            &.material-icons:before{
+                left: 8px;
+                @include mw_sm {
+                    content: none;
+                }
+            }
+            >input{
+                display: none;
+            }
+            >.more_title,
+            >span {
+                color: #000;
+                font-weight: bold;
+                font-size: 12px;
+                text-transform: uppercase;
+                @include mw_sm {
+                    display: none;
+                }
+            }
+            >tt {
+                display: block;
+                line-height: 20px;
+                color: $text_secondary;
+                font-size: 14px;
+            }
         }
     }
-}
-.search_box_item {
-    position: relative;
-    width: calc((100% - 158px) / 3);
-    height: 56px;
-    background-color: $bg_white;
-    border-radius: 4px;
-    @include max992px{
-        width: 100%;
-        margin-bottom: 16px;
-    }
-    >.import_box {
-        @include d_f_center(flex, center, unset);
-        height: 100%;
-        padding: 0 16px;
-        >i{
-            margin-right: 16px;
-        }
-        >span {
-            color: $text_secondary;
-        }
-    }    
 }
 .search_location_list {
     @include pos_abs(calc(100% + 8px), 0, auto, 0);
-    @include shadow_primary;
+    @extend %shadow_primary;
     @extend %transition;
     background-color: $bg_white;
     border-radius: 4px;
@@ -263,7 +347,7 @@ header{
 }
 .search_guest_list{
     @include pos_abs(calc(100% + 8px), 0, auto, 0);
-    @include shadow_primary;
+    @extend %shadow_primary;
     @extend %transition;
     padding: 6px 0;
     background-color: $bg_white;
@@ -292,7 +376,7 @@ header{
     @include primary_btn;
     width: 126px;
     height: 56px;
-    @include max992px{
+    @include mw_lg{
         width: 100%;
     }
 }
@@ -314,7 +398,7 @@ header{
         font-size: 48px;
         font-weight: 800;
         margin-bottom: 24px;
-        @include max576px {
+        @include mw_sm {
             font-size: 24px;
             margin-bottom: 16px;
         }
@@ -328,7 +412,7 @@ header{
     background-color: #fff;
     border-radius: 4px;
     overflow: hidden;
-    @include max576px {
+    @include mw_sm {
         width: calc(100% - 30px);
     }
     >input{
@@ -348,12 +432,12 @@ footer{
     @include d_f_center(flex, center, unset);
     padding: 26px 0;
     border-top: 1px solid $bg_primary;
-    @include max992px {
+    @include mw_lg {
         padding: 26px 39px;
     }
     >.select_box{
         margin-left: auto;
-        @include max992px{
+        @include mw_lg{
             display: none;
         }
     }    
@@ -361,18 +445,18 @@ footer{
 .copyright_box {
     color: $text_secondary;
     font-size: 14px;
-    @include max992px{
+    @include mw_lg{
         @include d_f_center(flex, center, space-between);
         width: 100%;
     }
-    @include max576px {
+    @include mw_sm {
         @include d_f(flex, center, unset, column-reverse, unset);
         width: 100%;
     }
     >ul {
         @include d_f_center(inline-flex, center, unset);
         margin-left: 64px;
-        @include max576px {
+        @include mw_sm {
             margin-left: 0;
             margin-bottom: 16px;
         }

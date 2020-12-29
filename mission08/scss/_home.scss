@@ -2,7 +2,7 @@
     position: relative;
     height: 320px;
     margin-bottom: 120px;
-    @include max992px{
+    @include mw_lg{
         margin-bottom: 312px;
     }
 }
@@ -12,9 +12,12 @@
     width: 920px;
     height: 48px;
     margin: auto;
-    @include max992px{
+    @include mw_lg{
         width: 100%;
         padding: 0 39px;
+    }
+    @include mw_sm {
+        padding: 0 15px;
     }
 }
 .slider_btn {
@@ -43,10 +46,11 @@
             font-size: 48px;
             font-weight: 800;
             text-align: center;
-            @include max992px{
+            @include mw_lg{
                 width: 50%;
             }
-            @include max576px {
+            @include mw_sm {
+                width: 60%;
                 line-height: 48px;
                 font-size: 32px;
             }
@@ -59,7 +63,7 @@
     font-size: 32px;
     font-weight: bold;
     margin-bottom: 24px;
-    @include max992px{
+    @include mw_lg{
         line-height: 29px;
         font-size: 24px;
     }
@@ -68,11 +72,11 @@
 .detail_box{
     position: relative;
     margin-bottom: 72px;
-    @include max992px {
+    @include mw_lg {
         padding: 0 0 0 39px;
         margin-bottom: 48px;
     }
-    @include max576px{
+    @include mw_sm{
         padding: 0 0 0 15px;
     }
 }
@@ -90,7 +94,7 @@
         font-family: $text_family_secondary;
         font-weight: bold;
         font-size: 24px;
-        @include max576px{
+        @include mw_sm{
             padding: 0 16px;
             font-size: 20px;
         }
@@ -129,10 +133,10 @@
         @extend %hand;
         width: calc((100% - 90px) / 4);
         flex:none;
-        @include max992px{
+        @include mw_lg{
             min-width: 270px; 
         }
-        @include max576px {
+        @include mw_sm {
             min-width: 240px;
         }
         >.title{
@@ -179,11 +183,11 @@
 }
 .place_box {
     margin-bottom: 72px;
-    @include max992px {
+    @include mw_lg {
         padding: 0 39px;
         margin-bottom: 48px;
     }
-    @include max576px{
+    @include mw_sm{
         padding: 0 15px;
     }
 }
@@ -203,13 +207,13 @@
         &:not(:nth-child(4)):not(:nth-child(5)):not(:nth-child(6)) {
             margin-bottom: 24px;
         }
-        @include max992px{
+        @include mw_lg{
             width: calc((100% - 30px) / 2);
             &:not(:nth-child(5)):not(:nth-child(6)) {
                 margin-bottom: 24px;
             }
         }
-        @include max576px {
+        @include mw_sm {
             width: 100%;
             &:not(:last-child) {
                 margin-bottom: 8px!important;
@@ -253,7 +257,7 @@
         @include hoverHandler(.7, unset, unset);
         @extend %hand;
         width: calc((100% - 60px) / 3);
-        @include max576px {
+        @include mw_sm {
             flex:none;
             min-width: 240px;
         }
@@ -278,7 +282,7 @@
         }
     }
     >li+li{
-        @include max576px {
+        @include mw_sm {
             margin-left: 30px;
         }
     }
