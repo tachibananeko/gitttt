@@ -68,8 +68,7 @@
         font-size: 24px;
     }
 }
-.scrollshow_box,
-.detail_box{
+.scrollshow_box{
     position: relative;
     margin-bottom: 72px;
     @include mw_lg {
@@ -237,10 +236,21 @@
     }
 }
 .detail_box{
+    position: relative;
+    margin-bottom: 72px;
+    @include mw_lg {
+        padding: 0 39px;
+        margin-bottom: 48px;
+    }
+    @include mw_sm {
+        padding: 0 0 0 15px;
+    }
     >.main_title{
         @include d_f_center(flex, center, space-between);
-        padding-right: 15px;
         margin-bottom: 24px;
+        @include mw_sm {
+            padding-right: 15px;
+        }
         .more_btn {
             @include secondary_btn;
             @include hoverHandler(1, $bg_secondary, #fff);
