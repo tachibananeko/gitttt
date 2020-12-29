@@ -28,7 +28,6 @@
     }
 }
 .slider_box_item {
-    @include pos_abs(0, 0, 0, 0);
     @include d_f_center(flex, center, unset);
     @extend %transition;
     width: 100%;

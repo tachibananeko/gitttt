@@ -184,7 +184,7 @@ header{
 }
 // 搜尋
 .search_box{
-    @include pos_abs(calc(100% - 72px), 0, auto, 0);
+    @include pos_abs(calc(100% - 52px), 0, auto, 0);
     max-width: 1110px;
     padding: 24px;
     background-color: $bg_primary;

@@ -434,7 +434,7 @@ header {
 
 .search_box {
   position: absolute;
-  top: calc(100% - 72px);
+  top: calc(100% - 52px);
   bottom: auto;
   right: 0;
   left: 0;
@@ -1088,11 +1088,6 @@ footer > .select_box {
 }
 
 .slider_box_item {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
   -webkit-box-pack: unset;
       -ms-flex-pack: unset;
           justify-content: unset;
