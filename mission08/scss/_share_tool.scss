@@ -240,6 +240,7 @@ header{
     }
     // 搜尋後樣式
     &._orther_state{
+        position: static;
         width: 100%;
         max-width: none;
         padding: 16px 0;

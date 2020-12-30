@@ -547,6 +547,7 @@ header {
 }
 
 .search_box._orther_state {
+  position: static;
   width: 100%;
   max-width: none;
   padding: 16px 0;
