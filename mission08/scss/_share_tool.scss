@@ -265,7 +265,7 @@ header{
                     height: auto;
                     background-color: transparent;
                 }
-                &:not(:last-child):after{
+                &:not(:nth-last-child(2)):after {
                     content: '';
                     position: absolute;
                     width: 1px;

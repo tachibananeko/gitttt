@@ -601,7 +601,7 @@ header {
   }
 }
 
-.search_box._orther_state > .search_box_width > .search_box_item:not(:last-child):after {
+.search_box._orther_state > .search_box_width > .search_box_item:not(:nth-last-child(2)):after {
   content: '';
   position: absolute;
   width: 1px;
@@ -2244,7 +2244,7 @@ footer > .select_box {
   font-size: 12px;
 }
 
-.card_detail > li:not(::last-child) {
+.card_detail > li:not(:last-child) {
   margin-bottom: 4px;
 }
 /*# sourceMappingURL=all.css.map */
