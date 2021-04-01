@@ -1,0 +1,39 @@
+
+
+// 字體顏色與大小
+
+// 背景色
+
+
+
+// 動畫
+.active_item {
+    opacity: 0;
+    visibility: collapse;
+}
+.active{
+    > .active_item,
+    ~ .active_item {
+        visibility: visible;
+        opacity: 1;
+    }
+}
+
+
+
+
+// 常用全域設定
+
+// 組件
+
+
+
+
+
+
+
+
+
+
+
+

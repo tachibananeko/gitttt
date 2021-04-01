@@ -1,0 +1,156 @@
+// 常用
+@mixin pos_abs($top , $right , $bottom , $left){
+	position: absolute;
+	top: $top;
+	bottom: $bottom;
+	right: $right;
+	left: $left;
+}
+@mixin d_f($flex, $ai, $jc, $di, $wr) {
+	justify-content: $jc;
+	align-items: $ai;
+	display: $flex;
+	flex-direction: $di;
+	flex-wrap: $wr;
+}
+@mixin d_f_center($flex, $ai, $jc) {
+	justify-content: $jc;
+	align-items: $ai;
+	display: $flex;
+}
+@mixin bg_set($x, $y, $repeat, $size) {
+	background-position: $x $y;
+	background-repeat: $repeat;
+	background-size: $size;
+}
+@mixin omission($line, $height) {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: $line;
+	overflow: hidden;
+	max-height:$height;
+}
+// scroll
+@mixin scrollbar($x, $y) {
+	overflow-x: $x;
+	overflow-y: $y;
+	-webkit-overflow-scrolling: touch;
+}
+// 動畫
+%transition {
+	transition: all .3s ease-in-out;
+}
+
+
+// RWD相關
+@mixin mw_xl {
+	@media screen and (max-width: 1199px) {
+		@content;
+	}
+}
+@mixin mw_lg {
+	@media screen and (max-width: 991px) {
+		@content;
+	}
+}
+@mixin mw_md {
+	@media screen and (max-width: 767px) {
+		@content;
+	}
+}
+@mixin mw_sm {
+	@media screen and (max-width: 575px) {
+		@content;
+	}
+}
+
+// 手指hover相關
+[class*="_btn"]:not(disable),
+%hand {
+	cursor: pointer;
+	transition: color .3s linear,
+	background-color .3s linear,
+	opacity .3s linear,
+	box-shadow .3s linear,
+	border-color .3s linear;
+}
+%no_hand{
+	cursor: default;
+}
+@mixin hoverHandler($op, $bg, $txt) {
+	@media (pointer: fine),
+	(-moz-touch-enabled: 0),
+	screen and (-ms-high-contrast: active),
+	(-ms-high-contrast: none) {		
+		&:hover{
+			@content;
+			opacity: $op;
+			background-color: $bg;
+			color: $txt;
+		}		
+	}
+	&:active {
+		@content;
+		opacity: $op;
+		background-color: $bg;
+		color: $txt;
+	}
+}
+
+// 自定義
+// 紫底 白字 無框 按鈕
+@mixin primary_btn {
+	@include hoverHandler(1, #fff, $text_purple);
+	color: #fff;
+	border-radius: 3px;
+	border: 1px solid $bg_secondary;
+	background: $bg_secondary;
+	text-transform: uppercase;
+}
+
+// 無底 紫字 紫框 按鈕
+@mixin secondary_btn {
+	@include hoverHandler(1, $bg_secondary, $text_purple);
+	color: $text_purple;
+	border-radius: 3px;
+	border: 1px solid $bg_secondary;
+	background: transparent;
+	text-transform: uppercase;
+}
+
+// 無底 白字 白框 按鈕
+@mixin cancel_btn {
+	@include hoverHandler(.7, unset, unset);
+	color: #fff;
+	border-radius: 3px;
+	border: 1px solid #fff;
+	background: transparent;
+	text-transform: uppercase;
+}
+
+// 無底 紫字 無框 按鈕
+@mixin cancel_btn {
+	@include hoverHandler(.7, unset, unset);
+	color: $text_purple;
+	background: transparent;
+	text-transform: uppercase;
+}
+// 選取勾勾
+@mixin checktick($width, $height, $x, $y, $boder, $bc) {
+	content: none;
+	display: block;
+	position: absolute;
+	width: $width;
+	height: $height;
+	left: $x;
+	top: $y;
+	border-width: 0 0 $boder $boder;
+	border-style:  solid;
+	border-color: $bc;
+	transform: rotate(-48deg);
+}
+// 陰影
+%shadow_primary {
+	box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .2);
+}
+
