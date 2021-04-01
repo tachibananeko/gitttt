@@ -68,16 +68,16 @@
 [class*="_btn"]:not(disable),
 %hand {
 	cursor: pointer;
-	transition: color .3s linear,
-	background-color .3s linear,
-	opacity .3s linear,
-	box-shadow .3s linear,
-	border-color .3s linear;
+	transition: all .2s ease-in-out;
+}
+[class*=_btn]:not(disable)>span,
+%btn_initem{
+    transition: all .3s .1s ease-in-out;
 }
 %no_hand{
 	cursor: default;
 }
-@mixin hoverHandler($op, $bg, $txt) {
+@mixin hoverHandler($op, $bg, $txt, $border_px) {
 	@media (pointer: fine),
 	(-moz-touch-enabled: 0),
 	screen and (-ms-high-contrast: active),
@@ -85,56 +85,21 @@
 		&:hover{
 			@content;
 			opacity: $op;
-			background-color: $bg;
+			background-image: $bg;
 			color: $txt;
+			border-width: $border_px 0;
 		}		
 	}
 	&:active {
 		@content;
 		opacity: $op;
-		background-color: $bg;
+		background-image: $bg;
 		color: $txt;
+		border-width: $border_px 0;
 	}
 }
 
 // 自定義
-// 紫底 白字 無框 按鈕
-@mixin primary_btn {
-	@include hoverHandler(1, #fff, $text_purple);
-	color: #fff;
-	border-radius: 3px;
-	border: 1px solid $bg_secondary;
-	background: $bg_secondary;
-	text-transform: uppercase;
-}
-
-// 無底 紫字 紫框 按鈕
-@mixin secondary_btn {
-	@include hoverHandler(1, $bg_secondary, $text_purple);
-	color: $text_purple;
-	border-radius: 3px;
-	border: 1px solid $bg_secondary;
-	background: transparent;
-	text-transform: uppercase;
-}
-
-// 無底 白字 白框 按鈕
-@mixin cancel_btn {
-	@include hoverHandler(.7, unset, unset);
-	color: #fff;
-	border-radius: 3px;
-	border: 1px solid #fff;
-	background: transparent;
-	text-transform: uppercase;
-}
-
-// 無底 紫字 無框 按鈕
-@mixin cancel_btn {
-	@include hoverHandler(.7, unset, unset);
-	color: $text_purple;
-	background: transparent;
-	text-transform: uppercase;
-}
 // 選取勾勾
 @mixin checktick($width, $height, $x, $y, $boder, $bc) {
 	content: none;
@@ -149,8 +114,53 @@
 	border-color: $bc;
 	transform: rotate(-48deg);
 }
+
 // 陰影
 %shadow_primary {
 	box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .2);
 }
+
+// 百家按鈕基本組件
+@mixin btn_set($width, $height, $bg){
+	position: relative;
+	width: $width;
+	height: $height;
+	background: $bg;
+}
+@mixin btn_txt($jc, $color, $shadow) {
+	content: attr(data-txt);
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: $jc;
+	color: $color;
+	text-shadow: 1px 1px 1px $shadow;
+	top: 0;
+	left: 0;
+}
+// 上下漸層線
+@mixin btn_border($px, $border_img) {
+	border: 1px solid #000;
+	border-width: $px 0;
+	border-image: $border_img;
+}
+// 內部span漸層
+@mixin btn_initem($bg_img, $x, $y, $op) {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-image: $bg_img;
+	top: $x;
+	left: $y;
+	opacity: $op;
+}
+// 滑過光暈
+@mixin btn_light($px_1, $px_2, $px_3){
+	box-shadow: 0 0 $px_1 #fcf7b7 inset,
+		0 0 $px_2 #fcf7b7 inset
+		0 0 $px_3 #fcf7b7 inset;
+}
+
 

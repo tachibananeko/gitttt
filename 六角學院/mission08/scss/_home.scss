@@ -1,0 +1,305 @@
+.slider_box {
+    position: relative;
+    height: 320px;
+    margin-bottom: 120px;
+    @include mw_lg{
+        margin-bottom: 312px;
+    }
+}
+.slider_funtion {
+    @include pos_abs(0, 0, 0, 0);
+    @include d_f_center(flex, center, space-between);
+    width: 920px;
+    height: 48px;
+    margin: auto;
+    @include mw_lg{
+        width: 100%;
+        padding: 0 39px;
+    }
+    @include mw_sm {
+        padding: 0 15px;
+    }
+}
+.slider_btn {
+    color: #fff;
+    font-size: 48px;
+    &:hover{
+        opacity: 0.7;
+    }
+}
+.slider_box_item {
+    @include d_f_center(flex, center, unset);
+    @extend %transition;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    >li {
+        @include d_f_center(flex, center, center);
+        @include bg_set(left, center, no-repeat, cover);
+        width: 100%;
+        height: 100%;
+        flex: none;
+        >h2 {
+            line-height: 64px;
+            font-family: $text_family_secondary;
+            font-size: 48px;
+            font-weight: 800;
+            text-align: center;
+            @include mw_lg{
+                width: 50%;
+            }
+            @include mw_sm {
+                width: 60%;
+                line-height: 48px;
+                font-size: 32px;
+            }
+        }
+    }
+}
+.main_title{
+    line-height: 37px;
+    font-family: $text_family_secondary;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 24px;
+    @include mw_lg{
+        line-height: 29px;
+        font-size: 24px;
+    }
+}
+.scrollshow_box{
+    position: relative;
+    margin-bottom: 72px;
+    @include mw_lg {
+        padding: 0 0 0 39px;
+        margin-bottom: 48px;
+    }
+    @include mw_sm{
+        padding: 0 0 0 15px;
+    }
+}
+.scrollshow_box_menu{
+    @include d_f_center(inline-flex, center, unset);
+    line-height: 36px;
+    border-bottom: 2px solid $bg_primary;
+    margin-bottom: 24px;
+    >li{
+        @include d_f_center(flex, flex-start, unset);
+        @extend %hand;
+        position: relative;
+        padding: 0 24px;
+        color: $text_secondary;
+        font-family: $text_family_secondary;
+        font-weight: bold;
+        font-size: 24px;
+        @include mw_sm{
+            padding: 0 16px;
+            font-size: 20px;
+        }
+        &:before{
+            @extend %transition;
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: $bg_secondary;
+            left: 0;
+            top: 100%;
+        }
+        &:after{
+            content: attr(data-num);
+            line-height: 14px;
+            font-size: $text_size_secondary;
+        }
+        &.on{
+            color: $text_purple;
+        }
+        &.on:before {
+            width: 100%;
+        }
+        @include hoverHandler(1, unset, $text_purple) {
+            &:before {
+                width: 100%;
+            }
+        }
+    }
+}
+.scrollshow_box_item{
+    @include d_f_center(flex, center, space-between);
+    @include scrollbar(auto, hidden);
+    >li{
+        @extend %hand;
+        width: calc((100% - 90px) / 4);
+        flex:none;
+        @include mw_lg{
+            min-width: 270px; 
+        }
+        @include mw_sm {
+            min-width: 240px;
+        }
+        >.title{
+            line-height: 24px;
+            font-weight: bold;
+        }
+        @include hoverHandler(.7, unset, unset);
+        >.money{
+            color: $text_secondary;
+            font-size: $text_size_secondary;
+        }
+    }
+    >li+li {
+        margin-left: 30px;
+    }
+}
+.scrollshow_box_btn{
+    @include pos_abs(auto, 16px, 141px, auto);
+    @include hoverHandler(1, #6C51E2, #fff);
+    width: 40px;
+    height: 40px;
+    background-color: #F1F0F8;
+    border-radius: 50%;
+}
+.scrollshow_box_img{
+    @include bg_set(center, center, no-repeat, cover);
+    height: 175px;
+    border-radius: 8px;
+    margin-bottom: 8px;
+    overflow: hidden;
+}
+.scrollshow_box_detail {
+    @include d_f_center(inline-flex, center, unset);
+    color: #00000061;
+    font-size: 12px;
+    .review {
+        &:before {
+            content: '・';
+        }
+        &:after {
+            content: ' 'attr(data-review);
+        }
+    }
+}
+.place_box {
+    margin-bottom: 72px;
+    @include mw_lg {
+        padding: 0 39px;
+        margin-bottom: 48px;
+    }
+    @include mw_sm{
+        padding: 0 15px;
+    }
+}
+.place_box_item {
+    @include d_f(flex, unset, space-between, unset, wrap);
+    color: #fff;
+    >li {
+        @include bg_set(center, center, no-repeat, cover);
+        @extend %hand;
+        @include hoverHandler(.7, unset, unset);
+        position: relative;
+        width: calc((100% - 60px) / 3);
+        padding: 16px 24px;
+        border-radius: 8px;
+        font-weight: bold;
+        overflow: hidden;
+        &:not(:nth-child(4)):not(:nth-child(5)):not(:nth-child(6)) {
+            margin-bottom: 24px;
+        }
+        @include mw_lg{
+            width: calc((100% - 30px) / 2);
+            &:not(:nth-child(5)):not(:nth-child(6)) {
+                margin-bottom: 24px;
+            }
+        }
+        @include mw_sm {
+            width: 100%;
+            &:not(:last-child) {
+                margin-bottom: 8px!important;
+            }
+        }
+        
+        >tt{
+            display: block;
+            color: #FFFFFF98;
+            font-size: 12px;
+        }
+        >span {
+            font-size: 24px;
+            font-family: $text_family_secondary;
+        }
+        >i{
+            @include pos_abs(0, 16px, 0, auto);
+            height: 24px;
+            margin: auto;
+        }
+    }
+}
+.detail_box{
+    position: relative;
+    margin-bottom: 72px;
+    @include mw_lg {
+        padding: 0 39px;
+        margin-bottom: 48px;
+    }
+    @include mw_sm {
+        padding: 0 0 0 15px;
+    }
+    >.main_title{
+        @include d_f_center(flex, center, space-between);
+        margin-bottom: 24px;
+        @include mw_sm {
+            padding-right: 15px;
+        }
+        .more_btn {
+            @include secondary_btn;
+            @include hoverHandler(1, $bg_secondary, #fff);
+            padding: 8px 16px;
+            font-size: $text_secondary;
+        }
+    }    
+    
+}
+.detail_box_item{
+    @include d_f(flex, unset, space-between, unset, unset)
+    @include scrollbar(auto, hidden);
+    >li{
+        @include hoverHandler(.7, unset, unset);
+        @extend %hand;
+        width: calc((100% - 60px) / 3);
+        @include mw_sm {
+            flex:none;
+            min-width: 240px;
+        }
+        >.detail_box_img {
+            border-radius: 8px;
+            margin-bottom: 24px;
+            overflow: hidden;
+        }
+        >.title{
+            font-family: $text_family_secondary;
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: capitalize;
+            margin-bottom: 8px;
+        }
+        >p{
+            @include omission(2, 48px);
+            line-height: 24px;
+            color: $text_secondary;
+            font-size: 16px;
+            
+        }
+    }
+    >li+li{
+        @include mw_sm {
+            margin-left: 30px;
+        }
+    }
+}
+
+
+
+
+
+
+
