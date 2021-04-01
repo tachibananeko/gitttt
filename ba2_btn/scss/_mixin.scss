@@ -77,7 +77,7 @@
 %no_hand{
 	cursor: default;
 }
-@mixin hoverHandler($op, $bg, $txt, $border_px) {
+@mixin hoverHandler($op, $bg, $border_px, $txt) {
 	@media (pointer: fine),
 	(-moz-touch-enabled: 0),
 	screen and (-ms-high-contrast: active),
@@ -86,16 +86,20 @@
 			@content;
 			opacity: $op;
 			background-image: $bg;
-			color: $txt;
 			border-width: $border_px 0;
+			&::after{
+				color: $txt;
+			}
 		}		
 	}
 	&:active {
 		@content;
 		opacity: $op;
 		background-image: $bg;
-		color: $txt;
 		border-width: $border_px 0;
+		&::after {
+			color: $txt;
+		}
 	}
 }
 

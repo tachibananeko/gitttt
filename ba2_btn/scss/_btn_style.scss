@@ -14,29 +14,16 @@
         overflow: hidden;
         &._on{
             border-width: 1px 0;
+            color: #FEFDAB;
         }
-        @include hoverHandler(1, none, initial, 1px);
+        &::after {
+            @include btn_txt(center, #EFBE78, hsla(354, 29%, 7%, .5));
+        }
+        &._on::after{
+            color: #FEFDAB;
+        }
+        @include hoverHandler(1, none, 1px, #FEFDAB);
     }
-}
-
-
-
-.ga_menu_btn::after {
-    content: attr(data-txt);
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #EFBE78;
-    text-shadow: 1px 1px 1px hsla(354, 29%, 7%, 0.5);
-    top: 0;
-}
-
-.ga_menu_btn._on::after,
-.ga_menu_btn:hover::after {
-    color: #FEFDAB;
 }
 
 .ga_menu_btn>span {

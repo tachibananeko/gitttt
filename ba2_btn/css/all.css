@@ -474,22 +474,7 @@ tt {
 
 .ga_menu_btn._on {
   border-width: 1px 0;
-}
-
-@media (pointer: fine), (-moz-touch-enabled: 0), screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .ga_menu_btn:hover {
-    opacity: 1;
-    background-image: none;
-    color: initial;
-    border-width: 1px 0;
-  }
-}
-
-.ga_menu_btn:active {
-  opacity: 1;
-  background-image: none;
-  color: initial;
-  border-width: 1px 0;
+  color: #FEFDAB;
 }
 
 .ga_menu_btn::after {
@@ -509,10 +494,31 @@ tt {
   color: #EFBE78;
   text-shadow: 1px 1px 1px rgba(23, 13, 14, 0.5);
   top: 0;
+  left: 0;
 }
 
-.ga_menu_btn._on::after,
-.ga_menu_btn:hover::after {
+.ga_menu_btn._on::after {
+  color: #FEFDAB;
+}
+
+@media (pointer: fine), (-moz-touch-enabled: 0), screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .ga_menu_btn:hover {
+    opacity: 1;
+    background-image: none;
+    border-width: 1px 0;
+  }
+  .ga_menu_btn:hover::after {
+    color: #FEFDAB;
+  }
+}
+
+.ga_menu_btn:active {
+  opacity: 1;
+  background-image: none;
+  border-width: 1px 0;
+}
+
+.ga_menu_btn:active::after {
   color: #FEFDAB;
 }
 
