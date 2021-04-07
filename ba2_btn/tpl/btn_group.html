@@ -8,107 +8,110 @@
 </head>
 <body>
     <div class="outside_flex">
-        <div class="ga_menu">
-            <button class="ga_menu_btn" data-txt="交易紀錄">
-                <span></span>
+        <div class="menu">
+            <button class="menu__btn" data-txt="交易紀錄">
+                <span class="hover_item"></span>
             </button>
-            <button class="ga_menu_btn _on" data-txt="投注明細">
-                <span></span>
-            </button>
-        </div>
-    
-        <div class="ga_table">
-            <button class="ga_table_btn" data-txt="MW2010">
-                <span></span>
-                <i></i>
-            </button>
-            <button class="ga_table_btn _i_vip _i_ex" data-txt="MW2010">
-                <span></span>
-                <i></i>
-            </button>
-            <button class="ga_table_btn _i_ex" data-txt="MW2010">
-                <span></span>
-                <i></i>
-            </button>
-            <button class="ga_table_btn _i_fast" data-txt="MW2010">
-                <span></span>
-                <i></i>
-            </button>
-            <button class="ga_table_btn _i_vip _i_ex _i_fast _on" data-txt="MW2010">
-                <span></span>
-                <i></i>
+            <button class="menu__btn --on" data-txt="投注明細">
+                <span class="hover_item"></span>
             </button>
         </div>
     
-        <div class="ga_function">
-            <button class="ga_function_btn" data-txt="確定">
-                <span></span>
+        <div class="tableno">
+            <button class="tableno__btn" data-txt="MW2010">
+                <span class="hover_item"></span>
+                <i></i>
             </button>
-            <button class="ga_function_btn _repeat" data-txt="續押">
-                <span></span>
+            <button class="tableno__btn --i_vip --i_ex" data-txt="MW2010">
+                <span class="hover_item"></span>
+                <i></i>
             </button>
-            <button class="ga_function_btn _cancel" data-txt="取消">
-                <span></span>
+            <button class="tableno__btn --i_ex" data-txt="MW2010">
+                <span class="hover_item"></span>
+                <i></i>
+            </button>
+            <button class="tableno__btn --i_fast" data-txt="MW2010">
+                <span class="hover_item"></span>
+                <i></i>
+            </button>
+            <button class="tableno__btn --i_vip --i_ex --i_fast _on" data-txt="MW2010">
+                <span class="hover_item"></span>
+                <i></i>
+            </button>
+        </div>
+    
+        <div class="function">
+            <button class="function__btn" data-txt="確定">
+                <span class="hover_item"></span>
+            </button>
+            <button class="function__btn --repeat" data-txt="續押">
+                <span class="hover_item"></span>
+            </button>
+            <button class="function__btn --cancel" data-txt="取消">
+                <span class="hover_item"></span>
             </button>
         </div>
 
 
-        <div class="ga_channel">
-            <button class="ga_channel_1st" style="display:none;"></button>
-            <ul class="ga_channel_item">
-                <li class="_on" data-txt="CHT">
-                    <span></span>
+        <div class="channel">
+            <button class="channel_1st" style="display:none;"></button>
+            <ul class="channel__item">
+                <li class="--on" data-txt="CHT">
+                    <span class="hover_item"></span>
                 </li>
                 <li data-txt="CHT">
-                    <span></span>
+                    <span class="hover_item"></span>
                 </li>
                 <li data-txt="CHT">
-                    <span></span>
+                    <span class="hover_item"></span>
                 </li>
             </ul>
         </div>
 
 
-        <div class="ga_card">
-            <button class="ga_card_btn _on" data-txt="TA-9nn2">
-                <span></span>
+
+        <ul class="cardno">
+            <li class="--on" data-txt="TA-9nn2">
+                <span class="hover_item"></span>
+            </li>
+            <li data-txt="TA-9nn2">
+                <span class="hover_item"></span>
+            </li>
+            <li data-txt="TA-9nn2">
+                <span class="hover_item"></span>
+            </li>
+            <li data-txt="TA-nnnnnnnn">
+                <span class="hover_item"></span>
+            </li>
+        </ul>
+
+
+
+        <div class="PR">
+            <button class="PR__btn" data-txt="呼叫公關">
+                <span class="hover_item"></span>
             </button>
-            <button class="ga_card_btn" data-txt="TA-9nn2">
-                <span></span>
+            <button class="PR__btn --tips" data-txt="打賞">
+                <span class="hover_item"></span>
             </button>
-            <button class="ga_card_btn" data-txt="TA-9nn2">
-                <span></span>
-            </button>
-            <button class="ga_card_btn" data-txt="TA-9nn2">
-                <span></span>
+            <button class="PR__btn --fly" data-txt="飛牌">
+                <span class="hover_item"></span>
             </button>
         </div>
 
-        <div class="ga_PR">
-            <button class="ga_PR_btn" data-txt="呼叫公關">
-                <span></span>
-            </button>
-            <button class="ga_PR_btn _tips" data-txt="打賞">
-                <span></span>
-            </button>
-            <button class="ga_PR_btn _fly" data-txt="飛牌">
-                <span></span>
-            </button>
-        </div>
 
-
-        <div class="ga_othpage">
-            <button class="ga_othpage_btn"  data-txt="免佣模式">
-                <span></span>
+        <div class="othpage">
+            <button class="othpage__btn"  data-txt="傳統模式">
+                <span class="hover_item"></span>
             </button>
-            <button class="ga_othpage_btn _on" data-txt="傳統模式">
-                <span></span>
+            <button class="othpage__btn --nocon" data-txt="免佣模式">
+                <span class="hover_item"></span>
             </button>
-            <button class="ga_othpage_btn _more_tb"  data-txt="多桌模式">
-                <span></span>
+            <button class="othpage__btn --more_tb"  data-txt="多桌模式">
+                <span class="hover_item"></span>
             </button>
-            <button class="ga_othpage_btn _good_road"  data-txt="好路追注">
-                <span></span>
+            <button class="othpage__btn --good_road"  data-txt="好路追注">
+                <span class="hover_item"></span>
             </button>
         </div>
     </div>

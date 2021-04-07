@@ -14,15 +14,16 @@
 	flex-wrap: $wr;
 }
 @mixin d_f_center($flex, $ai, $jc) {
-	justify-content: $jc;
-	align-items: $ai;
 	display: $flex;
+	align-items: $ai;
+	justify-content: $jc;
 }
 @mixin bg_set($x, $y, $repeat, $size) {
 	background-position: $x $y;
 	background-repeat: $repeat;
 	background-size: $size;
 }
+// 縮字點點點
 @mixin omission($line, $height) {
 	display: -webkit-box;
 	-webkit-box-orient: vertical;
@@ -77,28 +78,46 @@
 %no_hand{
 	cursor: default;
 }
-@mixin hoverHandler($op, $bg, $border_px, $txt) {
+@mixin hoverHandler($op, $bg) {
+	@media (pointer: fine),
+	(-moz-touch-enabled: 0),
+	screen and (-ms-high-contrast: active),
+	(-ms-high-contrast: none) {
+		&:hover {
+			@content;
+			opacity: $op;
+			background-image: $bg;
+		}
+	}
+
+	&:active {
+		@content;
+		opacity: $op;
+		background-image: $bg;
+	}
+}
+@mixin btn_hoverHandler($border, $txt) {
 	@media (pointer: fine),
 	(-moz-touch-enabled: 0),
 	screen and (-ms-high-contrast: active),
 	(-ms-high-contrast: none) {		
 		&:hover{
-			@content;
-			opacity: $op;
-			background-image: $bg;
-			border-width: $border_px 0;
+			border-width: $border;
 			&::after{
 				color: $txt;
+			}
+			>span{
+				opacity: 1;
 			}
 		}		
 	}
 	&:active {
-		@content;
-		opacity: $op;
-		background-image: $bg;
-		border-width: $border_px 0;
+		border-width: $border;
 		&::after {
 			color: $txt;
+		}
+		>span {
+			opacity: 1;
 		}
 	}
 }
@@ -106,23 +125,17 @@
 // 自定義
 // 選取勾勾
 @mixin checktick($width, $height, $x, $y, $boder, $bc) {
+	@include pos_abs($y, unset, unset, $x);
 	content: none;
 	display: block;
-	position: absolute;
 	width: $width;
 	height: $height;
-	left: $x;
-	top: $y;
 	border-width: 0 0 $boder $boder;
 	border-style:  solid;
 	border-color: $bc;
 	transform: rotate(-48deg);
 }
 
-// 陰影
-%shadow_primary {
-	box-shadow: 0 1px 5px 0 rgba(0, 0, 0, .2);
-}
 
 // 百家按鈕基本組件
 @mixin btn_set($width, $height, $bg){
@@ -132,17 +145,14 @@
 	background: $bg;
 }
 @mixin btn_txt($jc, $color, $shadow) {
+	@include d_f_center(flex, center, $jc);
 	content: attr(data-txt);
-	position: absolute;
+	position: relative;
 	width: 100%;
-	height: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: $jc;
+	height: 100%;	
 	color: $color;
 	text-shadow: 1px 1px 1px $shadow;
-	top: 0;
-	left: 0;
+	pointer-events: none;
 }
 // 上下漸層線
 @mixin btn_border($px, $border_img) {
@@ -151,20 +161,37 @@
 	border-image: $border_img;
 }
 // 內部span漸層
-@mixin btn_initem($bg_img, $x, $y, $op) {
-	position: absolute;
+@mixin btn_hoveritem($bg_img) {
+	@include pos_abs(0, unset, unset, 0);
 	width: 100%;
 	height: 100%;
-	background-image: $bg_img;
-	top: $x;
-	left: $y;
-	opacity: $op;
+	background: $bg_img;
+	opacity: 0;
 }
-// 滑過光暈
-@mixin btn_light($px_1, $px_2, $px_3){
-	box-shadow: 0 0 $px_1 #fcf7b7 inset,
-		0 0 $px_2 #fcf7b7 inset
-		0 0 $px_3 #fcf7b7 inset;
+// 內部span反光層
+@mixin btn_hoverlight {
+	@include pos_abs(0, unset, unset, 0);
+	content: '';
+	width: 100%;
+	height: 100%;
+	background: radial-gradient(100% 105% ellipse, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, .25) 51%, rgba(255, 255, 255, .25) 100%);
+	background-size: 150% 200%;
+	background-repeat: no-repeat;
 }
+// _on效果
+@mixin btn_on($color) {
+	&.--on{
+		@extend %no_hand;
+		@content;
 
+		&::after {
+			color: $color;
+		}
+
+		>span {
+			opacity: 1;
+		}
+	}
+	
+}
 
