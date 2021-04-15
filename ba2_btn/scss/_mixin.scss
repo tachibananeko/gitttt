@@ -142,7 +142,7 @@ $breakpoints: (
 	background: $bg;
 }
 @mixin btn_txt($jc, $color, $shadow) {
-	@include d_f_center(flex, center, $jc);
+	@include d_f(flex, center, $jc);
 	@extend %hand;
 	content: attr(data-txt);
 	position: relative;

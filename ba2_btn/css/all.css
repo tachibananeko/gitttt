@@ -459,14 +459,19 @@ tt {
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  background-color: #000;
+}
+
+.ba3_none {
+  display: none;
 }
 
 /* 左邊按鈕 */
 .menu {
   width: 130px;
   height: 200px;
-  background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, #3e3123), to(#140a0c));
-  background-image: linear-gradient(to right, #3e3123 50%, #140a0c 100%);
+  background-image: -webkit-gradient(linear, left top, right top, color-stop(50%, #001940), to(#004889));
+  background-image: linear-gradient(to right, #001940 50%, #004889 100%);
 }
 
 .menu__btn {
@@ -476,9 +481,9 @@ tt {
   background: transparent;
   border: 1px solid #000;
   border-width: 0;
-  -o-border-image: linear-gradient(to right, #f2d77a 10%, #ffffc5 30%, #f2d77a 60%, rgba(242, 216, 122, 0) 100%) 1;
-     border-image: -webkit-gradient(linear, left top, right top, color-stop(10%, #f2d77a), color-stop(30%, #ffffc5), color-stop(60%, #f2d77a), to(rgba(242, 216, 122, 0))) 1;
-     border-image: linear-gradient(to right, #f2d77a 10%, #ffffc5 30%, #f2d77a 60%, rgba(242, 216, 122, 0) 100%) 1;
+  -o-border-image: linear-gradient(to right, #f2bd79 0%, #ffffc5 50%, #f2bd79 100%) 1;
+     border-image: -webkit-gradient(linear, left top, right top, from(#f2bd79), color-stop(50%, #ffffc5), to(#f2bd79)) 1;
+     border-image: linear-gradient(to right, #f2bd79 0%, #ffffc5 50%, #f2bd79 100%) 1;
 }
 
 .menu__btn::after {
@@ -495,8 +500,8 @@ tt {
   position: relative;
   width: 100%;
   height: 100%;
-  color: #fbe2b0;
-  text-shadow: 1px 1px 1px rgba(23, 13, 14, 0.5);
+  color: #fff;
+  text-shadow: 1px 1px 1px transparent;
   pointer-events: none;
 }
 
@@ -508,8 +513,8 @@ tt {
   left: 0;
   width: 100%;
   height: 100%;
-  background: -webkit-gradient(linear, left top, right top, from(#f2bd79), color-stop(60%, #563d29), to(#000));
-  background: linear-gradient(to right, #f2bd79 0%, #563d29 60%, #000 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(60%, #f2bd79), to(#563d29));
+  background: linear-gradient(to right, #f2bd79 60%, #563d29 100%);
   opacity: 0;
   -webkit-transition: all .3s .1s ease-in-out;
   transition: all .3s .1s ease-in-out;
@@ -524,9 +529,8 @@ tt {
   content: '';
   width: 100%;
   height: 100%;
-  background: radial-gradient(100% 105% ellipse, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 51%, rgba(255, 255, 255, 0.25) 100%);
-  background-size: 150% 200%;
-  background-repeat: no-repeat;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, rgba(255, 255, 255, 0.3)), color-stop(51%, transparent), to(transparent));
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3) 50%, transparent 51%, transparent 100%);
 }
 
 .menu__btn.--on {
@@ -534,7 +538,7 @@ tt {
 }
 
 .menu__btn.--on::after {
-  color: #fbe2b0;
+  color: #240913;
 }
 
 .menu__btn.--on > span {
@@ -546,7 +550,7 @@ tt {
     border-width: 1px 0;
   }
   .menu__btn:hover::after {
-    color: #fbe2b0;
+    color: #240913;
   }
   .menu__btn:hover .hover_item {
     opacity: 1;
@@ -558,7 +562,7 @@ tt {
 }
 
 .menu__btn:active::after {
-  color: #fbe2b0;
+  color: #240913;
 }
 
 .menu__btn:active .hover_item {
@@ -583,10 +587,10 @@ tt {
   position: relative;
   width: 115px;
   height: 35px;
-  background: -webkit-gradient(linear, left top, right top, color-stop(60%, #f2bd79), to(#563d29));
-  background: linear-gradient(to right, #f2bd79 60%, #563d29 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#001940), to(#004889));
+  background: linear-gradient(to right, #001940 0%, #004889 100%);
   border-radius: 3px;
-  border: 2px solid #fbe2b0;
+  border: 2px solid #37c6ff;
   margin: 0 10px 10px;
 }
 
@@ -599,7 +603,8 @@ tt {
   content: '';
   width: 100%;
   height: 100%;
-  background: linear-gradient(127deg, rgba(255, 255, 255, 0.3) 40%, transparent 41%, transparent 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, rgba(255, 255, 255, 0.3)), color-stop(51%, transparent), to(transparent));
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3) 50%, transparent 51%, transparent 100%);
 }
 
 .tableno__btn::after {
@@ -616,7 +621,7 @@ tt {
   position: relative;
   width: 100%;
   height: 100%;
-  color: #240913;
+  color: #fff;
   text-shadow: 1px 1px 1px transparent;
   pointer-events: none;
   font-weight: bold;
@@ -630,8 +635,8 @@ tt {
   left: 0;
   width: 100%;
   height: 100%;
-  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #563d29), to(#000));
-  background: linear-gradient(to right, #563d29 50%, #000 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(60%, #f2bd79), to(#563d29));
+  background: linear-gradient(to right, #f2bd79 60%, #563d29 100%);
   opacity: 0;
   -webkit-transition: all .3s .1s ease-in-out;
   transition: all .3s .1s ease-in-out;
@@ -648,7 +653,8 @@ tt {
   content: '';
   width: 100%;
   height: 100%;
-  background: linear-gradient(127deg, rgba(255, 255, 255, 0.3) 40%, transparent 41%, transparent 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, rgba(255, 255, 255, 0.3)), color-stop(51%, transparent), to(transparent));
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3) 50%, transparent 51%, transparent 100%);
 }
 
 .tableno__btn.--i_vip::after {
@@ -706,8 +712,12 @@ tt {
   top: 8px;
 }
 
+.tableno__btn.--on {
+  border-color: #ffd300;
+}
+
 .tableno__btn.--on::after {
-  color: #fbe2b0;
+  color: #240913;
 }
 
 .tableno__btn.--on > span {
@@ -716,10 +726,11 @@ tt {
 
 @media (pointer: fine), (-moz-touch-enabled: 0), screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .tableno__btn:hover {
-    border-width: 2px 2px;
+    border-color: #ffd300;
+    border-width: 2px;
   }
   .tableno__btn:hover::after {
-    color: #fbe2b0;
+    color: #240913;
   }
   .tableno__btn:hover .hover_item {
     opacity: 1;
@@ -727,11 +738,12 @@ tt {
 }
 
 .tableno__btn:active {
-  border-width: 2px 2px;
+  border-color: #ffd300;
+  border-width: 2px;
 }
 
 .tableno__btn:active::after {
-  color: #fbe2b0;
+  color: #240913;
 }
 
 .tableno__btn:active .hover_item {
@@ -756,27 +768,26 @@ tt {
   position: relative;
   width: 140px;
   height: 60px;
-  background: -webkit-gradient(linear, left top, right top, from(#00a0ed), to(#111269));
-  background: linear-gradient(to right, #00a0ed 0%, #111269 100%);
+  background: #0f2f66;
   border: 1px solid #000;
-  border-width: 1px 0;
-  -o-border-image: linear-gradient(to right, transparent 5%, #f2d77a 20%, #ffffc5 60%, #f2d77a 80%, transparent 100%) 1;
-     border-image: -webkit-gradient(linear, left top, right top, color-stop(5%, transparent), color-stop(20%, #f2d77a), color-stop(60%, #ffffc5), color-stop(80%, #f2d77a), to(transparent)) 1;
-     border-image: linear-gradient(to right, transparent 5%, #f2d77a 20%, #ffffc5 60%, #f2d77a 80%, transparent 100%) 1;
+  border-width: 2px;
+  -o-border-image: linear-gradient(to right, #63faff 0%, #37c6ff 100%) 1;
+     border-image: -webkit-gradient(linear, left top, right top, from(#63faff), to(#37c6ff)) 1;
+     border-image: linear-gradient(to right, #63faff 0%, #37c6ff 100%) 1;
 }
 
 .function__btn::before {
   position: absolute;
   top: 0;
-  bottom: unset;
-  right: unset;
+  bottom: 0;
+  right: 0;
   left: 0;
   content: '';
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(100% 105% ellipse, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 51%, rgba(255, 255, 255, 0.25) 100%);
-  background-size: 200% 200%;
-  background-repeat: no-repeat;
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.15)), color-stop(30%, rgba(255, 255, 255, 0.15)), color-stop(60%, transparent), to(transparent));
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.15) 30%, transparent 60%, transparent 100%);
+  margin: auto;
 }
 
 .function__btn::after {
@@ -793,7 +804,7 @@ tt {
   position: relative;
   width: 100%;
   height: 100%;
-  color: #fbe2b0;
+  color: #fff;
   text-shadow: 1px 1px 1px rgba(23, 13, 14, 0.5);
   pointer-events: none;
   font-size: 24px;
@@ -807,55 +818,147 @@ tt {
   left: 0;
   width: 100%;
   height: 100%;
-  background: -webkit-gradient(linear, left top, right top, from(#005fd7), to(#0b0e25));
-  background: linear-gradient(to right, #005fd7 0%, #0b0e25 100%);
+  background: #001940;
   opacity: 0;
   -webkit-transition: all .3s .1s ease-in-out;
   transition: all .3s .1s ease-in-out;
-  -webkit-box-shadow: 0 0 3px #fbe2b0 inset, 0 0 6px #fbe2b0 inset;
-          box-shadow: 0 0 3px #fbe2b0 inset, 0 0 6px #fbe2b0 inset;
 }
 
 .function__btn .hover_item::before {
   position: absolute;
   top: 0;
-  bottom: unset;
-  right: unset;
+  bottom: 0;
+  right: 0;
   left: 0;
   content: '';
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(100% 105% ellipse, rgba(255, 255, 255, 0) 50%, rgba(255, 255, 255, 0.25) 51%, rgba(255, 255, 255, 0.25) 100%);
-  background-size: 200% 200%;
-  background-repeat: no-repeat;
+  width: calc(100% - 6px);
+  height: calc(100% - 6px);
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.15)), color-stop(30%, rgba(255, 255, 255, 0.15)), color-stop(60%, transparent), to(transparent));
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.15) 30%, transparent 60%, transparent 100%);
+  margin: auto;
+}
+
+.function__btn i {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(50%, #37c6ffb3), to(transparent)) 0 3%/100% 2px no-repeat;
+  background: linear-gradient(to right, transparent 0%, #37c6ffb3 50%, transparent 100%) 0 3%/100% 2px no-repeat;
+}
+
+.function__btn i::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  content: '';
+  background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(50%, #37c6ffb3), to(transparent)) 0 97%/100% 2px no-repeat;
+  background: linear-gradient(to right, transparent 0%, #37c6ffb3 50%, transparent 100%) 0 97%/100% 2px no-repeat;
+}
+
+.function__btn i::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  content: '';
+  background: radial-gradient(ellipse at center, #37c6ffb3 3%, transparent 40%) 0 -50%/100% 150% no-repeat;
 }
 
 .function__btn.--repeat {
-  background: -webkit-gradient(linear, left top, right top, from(#14b045), to(#113924));
-  background: linear-gradient(to right, #14b045 0%, #113924 100%);
+  background: #115f24;
+  -o-border-image: linear-gradient(to right, #00d345 0%, #14b045 100%) 1;
+     border-image: -webkit-gradient(linear, left top, right top, from(#00d345), to(#14b045)) 1;
+     border-image: linear-gradient(to right, #00d345 0%, #14b045 100%) 1;
 }
 
 .function__btn.--repeat .hover_item {
-  background: -webkit-gradient(linear, left top, right top, from(#00d345), to(#110024));
-  background: linear-gradient(to right, #00d345 0%, #110024 100%);
+  background: #0f361e;
+}
+
+.function__btn.--repeat i {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(50%, #caff71b3), to(transparent)) 0 3%/100% 2px no-repeat;
+  background: linear-gradient(to right, transparent 0%, #caff71b3 50%, transparent 100%) 0 3%/100% 2px no-repeat;
+}
+
+.function__btn.--repeat i::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  content: '';
+  background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(50%, #caff71b3), to(transparent)) 0 97%/100% 2px no-repeat;
+  background: linear-gradient(to right, transparent 0%, #caff71b3 50%, transparent 100%) 0 97%/100% 2px no-repeat;
+}
+
+.function__btn.--repeat i::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  content: '';
+  background: radial-gradient(ellipse at center, #caff71b3 3%, transparent 40%) 0 -50%/100% 150% no-repeat;
 }
 
 .function__btn.--cancel {
-  background: -webkit-gradient(linear, left top, right top, from(#ff5f67), to(#2d0000));
-  background: linear-gradient(to right, #ff5f67 0%, #2d0000 100%);
+  background: #c11615;
+  -o-border-image: linear-gradient(to right, #ff5f67 0%, #ff302a 100%) 1;
+     border-image: -webkit-gradient(linear, left top, right top, from(#ff5f67), to(#ff302a)) 1;
+     border-image: linear-gradient(to right, #ff5f67 0%, #ff302a 100%) 1;
 }
 
 .function__btn.--cancel .hover_item {
-  background: -webkit-gradient(linear, left top, right top, from(#ff302a), color-stop(90%, #0e0000));
-  background: linear-gradient(to right, #ff302a 0%, #0e0000 90%);
+  background: #650008;
+}
+
+.function__btn.--cancel i {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(50%, #ffe1f9b3), to(transparent)) 0 3%/100% 2px no-repeat;
+  background: linear-gradient(to right, transparent 0%, #ffe1f9b3 50%, transparent 100%) 0 3%/100% 2px no-repeat;
+}
+
+.function__btn.--cancel i::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  content: '';
+  background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(50%, #ffe1f9b3), to(transparent)) 0 97%/100% 2px no-repeat;
+  background: linear-gradient(to right, transparent 0%, #ffe1f9b3 50%, transparent 100%) 0 97%/100% 2px no-repeat;
+}
+
+.function__btn.--cancel i::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  content: '';
+  background: radial-gradient(ellipse at center, #ffe1f9b3 3%, transparent 40%) 0 -50%/100% 150% no-repeat;
 }
 
 @media (pointer: fine), (-moz-touch-enabled: 0), screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .function__btn:hover {
-    border-width: 1px 0;
+    border-width: 2px;
   }
   .function__btn:hover::after {
-    color: #fbe2b0;
+    color: #fff;
   }
   .function__btn:hover .hover_item {
     opacity: 1;
@@ -863,11 +966,11 @@ tt {
 }
 
 .function__btn:active {
-  border-width: 1px 0;
+  border-width: 2px;
 }
 
 .function__btn:active::after {
-  color: #fbe2b0;
+  color: #fff;
 }
 
 .function__btn:active .hover_item {
@@ -892,8 +995,26 @@ tt {
   position: relative;
   width: 70px;
   height: 100%;
-  background: #000;
-  font-weight: bold;
+  background: -webkit-gradient(linear, left top, right top, from(#001940), to(#004889));
+  background: linear-gradient(to right, #001940 0%, #004889 100%);
+  border: 1px solid #000;
+  border-width: 1px;
+  -o-border-image: linear-gradient(to right, #f2bd79 0%, #ffffc5 50%, #f2bd79 100%) 1;
+     border-image: -webkit-gradient(linear, left top, right top, from(#f2bd79), color-stop(50%, #ffffc5), to(#f2bd79)) 1;
+     border-image: linear-gradient(to right, #f2bd79 0%, #ffffc5 50%, #f2bd79 100%) 1;
+}
+
+.channel__item > li::before {
+  position: absolute;
+  top: 0;
+  bottom: unset;
+  right: unset;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, rgba(255, 255, 255, 0.3)), color-stop(51%, transparent), to(transparent));
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3) 50%, transparent 51%, transparent 100%);
 }
 
 .channel__item > li::after {
@@ -910,7 +1031,7 @@ tt {
   position: relative;
   width: 100%;
   height: 100%;
-  color: #756e6e;
+  color: #fff;
   text-shadow: 1px 1px 1px transparent;
   pointer-events: none;
 }
@@ -928,7 +1049,6 @@ tt {
   opacity: 0;
   -webkit-transition: all .3s .1s ease-in-out;
   transition: all .3s .1s ease-in-out;
-  border: 1px solid #fbe2b0;
 }
 
 .channel__item > li .hover_item::before {
@@ -940,7 +1060,8 @@ tt {
   content: '';
   width: 100%;
   height: 100%;
-  background: linear-gradient(127deg, rgba(255, 255, 255, 0.3) 40%, transparent 41%, transparent 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, rgba(255, 255, 255, 0.3)), color-stop(51%, transparent), to(transparent));
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3) 50%, transparent 51%, transparent 100%);
 }
 
 .channel__item > li.--on::after {
@@ -989,16 +1110,33 @@ tt {
   position: relative;
   width: auto;
   height: 100%;
-  background: -webkit-gradient(linear, left bottom, left top, from(#42210b), to(#000));
-  background: linear-gradient(to top, #42210b 0%, #000 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#001940), to(#004889));
+  background: linear-gradient(to right, #001940 0%, #004889 100%);
+  border: 1px solid #000;
+  border-width: 1px;
+  -o-border-image: linear-gradient(to right, #f2bd79 0%, #ffffc5 50%, #f2bd79 100%) 1;
+     border-image: -webkit-gradient(linear, left top, right top, from(#f2bd79), color-stop(50%, #ffffc5), to(#f2bd79)) 1;
+     border-image: linear-gradient(to right, #f2bd79 0%, #ffffc5 50%, #f2bd79 100%) 1;
   min-width: 80px;
   padding: 0 5px;
-  border: 1px solid #fbe2b0;
   border-width: 1px 1px 0;
 }
 
 .cardno > li + li {
   border-left: none;
+}
+
+.cardno > li::before {
+  position: absolute;
+  top: 0;
+  bottom: unset;
+  right: unset;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, rgba(255, 255, 255, 0.3)), color-stop(51%, transparent), to(transparent));
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3) 50%, transparent 51%, transparent 100%);
 }
 
 .cardno > li::after {
@@ -1015,7 +1153,7 @@ tt {
   position: relative;
   width: 100%;
   height: 100%;
-  color: #fbe2b0;
+  color: #fff;
   text-shadow: 1px 1px 1px transparent;
   pointer-events: none;
   font-size: 14px;
@@ -1045,7 +1183,70 @@ tt {
   content: '';
   width: 100%;
   height: 100%;
-  background: linear-gradient(127deg, rgba(255, 255, 255, 0.3) 40%, transparent 41%, transparent 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, rgba(255, 255, 255, 0.3)), color-stop(51%, transparent), to(transparent));
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3) 50%, transparent 51%, transparent 100%);
+}
+
+.cardno > li i {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(50%, #37c6ffb3), to(transparent)) 0 3%/100% 2px no-repeat;
+  background: linear-gradient(to right, transparent 0%, #37c6ffb3 50%, transparent 100%) 0 3%/100% 2px no-repeat;
+}
+
+.cardno > li i::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  content: '';
+  background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(50%, #37c6ffb3), to(transparent)) 0 97%/100% 2px no-repeat;
+  background: linear-gradient(to right, transparent 0%, #37c6ffb3 50%, transparent 100%) 0 97%/100% 2px no-repeat;
+}
+
+.cardno > li i::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  content: '';
+  background: radial-gradient(ellipse at center, #37c6ffb3 3%, transparent 40%) 0 -50%/100% 150% no-repeat;
+}
+
+.cardno > li.--on i {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(50%, #fbe2b0b3), to(transparent)) 0 3%/100% 2px no-repeat;
+  background: linear-gradient(to right, transparent 0%, #fbe2b0b3 50%, transparent 100%) 0 3%/100% 2px no-repeat;
+}
+
+.cardno > li.--on i::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  content: '';
+  background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(50%, #fbe2b0b3), to(transparent)) 0 97%/100% 2px no-repeat;
+  background: linear-gradient(to right, transparent 0%, #fbe2b0b3 50%, transparent 100%) 0 97%/100% 2px no-repeat;
+}
+
+.cardno > li.--on i::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  content: '';
+  background: radial-gradient(ellipse at center, #fbe2b0b3 3%, transparent 40%) 0 -50%/100% 150% no-repeat;
 }
 
 .cardno > li.--on::after {
@@ -1060,6 +1261,34 @@ tt {
   .cardno > li:hover {
     border-width: 1px 1px 0;
   }
+  .cardno > li:hover i {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(50%, #fbe2b0b3), to(transparent)) 0 3%/100% 2px no-repeat;
+    background: linear-gradient(to right, transparent 0%, #fbe2b0b3 50%, transparent 100%) 0 3%/100% 2px no-repeat;
+  }
+  .cardno > li:hover i::before {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    content: '';
+    background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(50%, #fbe2b0b3), to(transparent)) 0 97%/100% 2px no-repeat;
+    background: linear-gradient(to right, transparent 0%, #fbe2b0b3 50%, transparent 100%) 0 97%/100% 2px no-repeat;
+  }
+  .cardno > li:hover i::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    content: '';
+    background: radial-gradient(ellipse at center, #fbe2b0b3 3%, transparent 40%) 0 -50%/100% 150% no-repeat;
+  }
   .cardno > li:hover::after {
     color: #240913;
   }
@@ -1070,6 +1299,37 @@ tt {
 
 .cardno > li:active {
   border-width: 1px 1px 0;
+}
+
+.cardno > li:active i {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(50%, #fbe2b0b3), to(transparent)) 0 3%/100% 2px no-repeat;
+  background: linear-gradient(to right, transparent 0%, #fbe2b0b3 50%, transparent 100%) 0 3%/100% 2px no-repeat;
+}
+
+.cardno > li:active i::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  content: '';
+  background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(50%, #fbe2b0b3), to(transparent)) 0 97%/100% 2px no-repeat;
+  background: linear-gradient(to right, transparent 0%, #fbe2b0b3 50%, transparent 100%) 0 97%/100% 2px no-repeat;
+}
+
+.cardno > li:active i::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  content: '';
+  background: radial-gradient(ellipse at center, #fbe2b0b3 3%, transparent 40%) 0 -50%/100% 150% no-repeat;
 }
 
 .cardno > li:active::after {
@@ -1091,13 +1351,13 @@ tt {
   position: relative;
   width: 100px;
   height: 100%;
-  background: -webkit-gradient(linear, left top, right top, from(#14b045), to(#113924));
-  background: linear-gradient(to right, #14b045 0%, #113924 100%);
+  background: -webkit-gradient(linear, left bottom, left top, from(#009245), to(#113924));
+  background: linear-gradient(to top, #009245 0%, #113924 100%);
   border: 1px solid #000;
-  border-width: 1px 0;
-  -o-border-image: linear-gradient(to right, transparent 5%, #f2d77a 20%, #ffffc5 60%, #f2d77a 80%, transparent 100%) 1;
-     border-image: -webkit-gradient(linear, left top, right top, color-stop(5%, transparent), color-stop(20%, #f2d77a), color-stop(60%, #ffffc5), color-stop(80%, #f2d77a), to(transparent)) 1;
-     border-image: linear-gradient(to right, transparent 5%, #f2d77a 20%, #ffffc5 60%, #f2d77a 80%, transparent 100%) 1;
+  border-width: 1px;
+  -o-border-image: linear-gradient(to right, #00d345 0%, #14b045 100%) 1;
+     border-image: -webkit-gradient(linear, left top, right top, from(#00d345), to(#14b045)) 1;
+     border-image: linear-gradient(to right, #00d345 0%, #14b045 100%) 1;
 }
 
 .PR__btn::before {
@@ -1109,7 +1369,8 @@ tt {
   content: '';
   width: 100%;
   height: 100%;
-  background: linear-gradient(127deg, rgba(255, 255, 255, 0.3) 40%, transparent 41%, transparent 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, rgba(255, 255, 255, 0.3)), color-stop(51%, transparent), to(transparent));
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3) 50%, transparent 51%, transparent 100%);
 }
 
 .PR__btn::after {
@@ -1126,7 +1387,7 @@ tt {
   position: relative;
   width: 100%;
   height: 100%;
-  color: #fbe2b0;
+  color: #fff;
   text-shadow: 1px 1px 1px rgba(23, 13, 14, 0.5);
   pointer-events: none;
 }
@@ -1139,8 +1400,8 @@ tt {
   left: 0;
   width: 100%;
   height: 100%;
-  background: -webkit-gradient(linear, left top, right top, from(#00d345), to(#110024));
-  background: linear-gradient(to right, #00d345 0%, #110024 100%);
+  background: -webkit-gradient(linear, left bottom, left top, from(#00c945), to(#117024));
+  background: linear-gradient(to top, #00c945 0%, #117024 100%);
   opacity: 0;
   -webkit-transition: all .3s .1s ease-in-out;
   transition: all .3s .1s ease-in-out;
@@ -1157,51 +1418,39 @@ tt {
   content: '';
   width: 100%;
   height: 100%;
-  background: linear-gradient(127deg, rgba(255, 255, 255, 0.3) 40%, transparent 41%, transparent 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, rgba(255, 255, 255, 0.3)), color-stop(51%, transparent), to(transparent));
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3) 50%, transparent 51%, transparent 100%);
 }
 
-.PR__btn.--tips {
-  background: -webkit-gradient(linear, left top, right top, from(#f36428), to(#440010));
-  background: linear-gradient(to right, #f36428 0%, #440010 100%);
+.PR__btn i {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(50%, #caff71b3), to(transparent)) 0 3%/100% 2px no-repeat;
+  background: linear-gradient(to right, transparent 0%, #caff71b3 50%, transparent 100%) 0 3%/100% 2px no-repeat;
 }
 
-.PR__btn.--tips .hover_item {
-  background: -webkit-gradient(linear, left top, right top, from(#ff901d), to(#991b10));
-  background: linear-gradient(to right, #ff901d 0%, #991b10 100%);
+.PR__btn i::before {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  content: '';
+  background: -webkit-gradient(linear, left top, right top, from(transparent), color-stop(50%, #caff71b3), to(transparent)) 0 97%/100% 2px no-repeat;
+  background: linear-gradient(to right, transparent 0%, #caff71b3 50%, transparent 100%) 0 97%/100% 2px no-repeat;
 }
 
-.PR__btn.--fly {
-  background: -webkit-gradient(linear, left top, right top, from(#00a0ed), to(#111269));
-  background: linear-gradient(to right, #00a0ed 0%, #111269 100%);
-}
-
-.PR__btn.--fly .hover_item {
-  background: -webkit-gradient(linear, left top, right top, from(#005fd7), to(#0b0e25));
-  background: linear-gradient(to right, #005fd7 0%, #0b0e25 100%);
-}
-
-@media (pointer: fine), (-moz-touch-enabled: 0), screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .PR__btn:hover {
-    border-width: 1px 0;
-  }
-  .PR__btn:hover::after {
-    color: #fbe2b0;
-  }
-  .PR__btn:hover .hover_item {
-    opacity: 1;
-  }
-}
-
-.PR__btn:active {
-  border-width: 1px 0;
-}
-
-.PR__btn:active::after {
-  color: #fbe2b0;
-}
-
-.PR__btn:active .hover_item {
-  opacity: 1;
+.PR__btn i::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  content: '';
+  background: radial-gradient(ellipse at center, #caff71b3 3%, transparent 40%) 0 -50%/100% 150% no-repeat;
 }
 
 /* 另開功能分頁 */
@@ -1216,13 +1465,13 @@ tt {
   position: relative;
   width: calc(100% / 4);
   height: 100%;
-  background: -webkit-gradient(linear, left top, right top, from(#14b045), to(#113924));
-  background: linear-gradient(to right, #14b045 0%, #113924 100%);
+  background: -webkit-gradient(linear, left bottom, left top, from(#00c945), to(#117024));
+  background: linear-gradient(to top, #00c945 0%, #117024 100%);
   border: 1px solid #000;
-  border-width: 1px 0;
-  -o-border-image: linear-gradient(to right, transparent 5%, #f2d77a 20%, #ffffc5 60%, #f2d77a 80%, transparent 100%) 1;
-     border-image: -webkit-gradient(linear, left top, right top, color-stop(5%, transparent), color-stop(20%, #f2d77a), color-stop(60%, #ffffc5), color-stop(80%, #f2d77a), to(transparent)) 1;
-     border-image: linear-gradient(to right, transparent 5%, #f2d77a 20%, #ffffc5 60%, #f2d77a 80%, transparent 100%) 1;
+  border-width: 1px;
+  -o-border-image: linear-gradient(to right, #f2bd79 0%, #ffffc5 50%, #f2bd79 100%) 1;
+     border-image: -webkit-gradient(linear, left top, right top, from(#f2bd79), color-stop(50%, #ffffc5), to(#f2bd79)) 1;
+     border-image: linear-gradient(to right, #f2bd79 0%, #ffffc5 50%, #f2bd79 100%) 1;
 }
 
 .othpage__btn::before {
@@ -1251,7 +1500,7 @@ tt {
   position: relative;
   width: 100%;
   height: 100%;
-  color: #fbe2b0;
+  color: #fff;
   text-shadow: 1px 1px 1px rgba(23, 13, 14, 0.5);
   pointer-events: none;
 }
@@ -1264,8 +1513,8 @@ tt {
   left: 0;
   width: 100%;
   height: 100%;
-  background: -webkit-gradient(linear, left top, right top, from(#00d345), to(#110024));
-  background: linear-gradient(to right, #00d345 0%, #110024 100%);
+  background: -webkit-gradient(linear, left bottom, left top, from(#009245), to(#113924));
+  background: linear-gradient(to top, #009245 0%, #113924 100%);
   opacity: 0;
   -webkit-transition: all .3s .1s ease-in-out;
   transition: all .3s .1s ease-in-out;
@@ -1285,42 +1534,12 @@ tt {
   background: linear-gradient(127deg, rgba(255, 255, 255, 0.3) 40%, transparent 41%, transparent 100%);
 }
 
-.othpage__btn.--nocon {
-  background-image: -webkit-gradient(linear, left top, right top, from(#8260fa), to(#000));
-  background-image: linear-gradient(to right, #8260fa 0%, #000 100%);
-}
-
-.othpage__btn.--nocon .hover_item {
-  background-image: -webkit-gradient(linear, left top, right top, from(#c69aff), to(#19004d));
-  background-image: linear-gradient(to right, #c69aff 0%, #19004d 100%);
-}
-
-.othpage__btn.--more_tb {
-  background-image: -webkit-gradient(linear, left top, right top, from(#f36428), to(#440010));
-  background-image: linear-gradient(to right, #f36428 0%, #440010 100%);
-}
-
-.othpage__btn.--more_tb .hover_item {
-  background-image: -webkit-gradient(linear, left top, right top, from(#ff901d), to(#991b10));
-  background-image: linear-gradient(to right, #ff901d 0%, #991b10 100%);
-}
-
-.othpage__btn.--good_road {
-  background-image: -webkit-gradient(linear, left top, right top, from(#00a0ed), to(#111269));
-  background-image: linear-gradient(to right, #00a0ed 0%, #111269 100%);
-}
-
-.othpage__btn.--good_road .hover_item {
-  background-image: -webkit-gradient(linear, left top, right top, from(#005fd7), to(#0b0e25));
-  background-image: linear-gradient(to right, #005fd7 0%, #0b0e25 100%);
-}
-
 @media (pointer: fine), (-moz-touch-enabled: 0), screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .othpage__btn:hover {
     border-width: 1px 0;
   }
   .othpage__btn:hover::after {
-    color: #fbe2b0;
+    color: #fff;
   }
   .othpage__btn:hover .hover_item {
     opacity: 1;
@@ -1332,7 +1551,7 @@ tt {
 }
 
 .othpage__btn:active::after {
-  color: #fbe2b0;
+  color: #fff;
 }
 
 .othpage__btn:active .hover_item {
@@ -1351,17 +1570,17 @@ tt {
           justify-content: center;
   border: 1px solid #000;
   border-width: 1px 0;
-  -o-border-image: linear-gradient(to right, #f2d77a 10%, #ffffc5 30%, #f2d77a 60%, rgba(242, 216, 122, 0) 100%) 1;
-     border-image: -webkit-gradient(linear, left top, right top, color-stop(10%, #f2d77a), color-stop(30%, #ffffc5), color-stop(60%, #f2d77a), to(rgba(242, 216, 122, 0))) 1;
-     border-image: linear-gradient(to right, #f2d77a 10%, #ffffc5 30%, #f2d77a 60%, rgba(242, 216, 122, 0) 100%) 1;
+  -o-border-image: linear-gradient(to right, transparent 5%, #37c6ff 20%, #63faff 60%, #37c6ff 80%, transparent 100%) 1;
+     border-image: -webkit-gradient(linear, left top, right top, color-stop(5%, transparent), color-stop(20%, #37c6ff), color-stop(60%, #63faff), color-stop(80%, #37c6ff), to(transparent)) 1;
+     border-image: linear-gradient(to right, transparent 5%, #37c6ff 20%, #63faff 60%, #37c6ff 80%, transparent 100%) 1;
   width: 300px;
   height: 30px;
-  background: -webkit-gradient(linear, left top, right top, from(#005fd7), to(#0b0e25));
-  background: linear-gradient(to right, #005fd7 0%, #0b0e25 100%);
+  background: -webkit-gradient(linear, left bottom, left top, from(#001940), to(#004889));
+  background: linear-gradient(to top, #001940 0%, #004889 100%);
 }
 
 .title__txt {
-  color: #fbe2b0;
+  color: #fff;
 }
 
 .goodroad {
@@ -1381,10 +1600,9 @@ tt {
   position: relative;
   height: 55px;
   padding: 2px;
-  background: -webkit-gradient(linear, left top, right top, from(#f2bd79), to(#563d29));
-  background: linear-gradient(to right, #f2bd79 0%, #563d29 100%);
+  background: #001940;
   border-radius: 5px;
-  color: #fbe2b0;
+  color: #fff;
   font-size: 14px;
   margin-bottom: 5px;
   overflow: hidden;
@@ -1398,8 +1616,8 @@ tt {
   display: flex;
   width: calc(100% - 4px);
   height: calc(100% - 4px);
-  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #333), color-stop(80%, #000));
-  background: linear-gradient(to right, #333 50%, #000 80%);
+  background: -webkit-gradient(linear, left bottom, left top, from(#001940), to(#004889));
+  background: linear-gradient(to top, #001940 0%, #004889 100%);
 }
 
 .goodroad__item .hover_item {
@@ -1410,8 +1628,8 @@ tt {
   left: 0;
   width: 100%;
   height: 100%;
-  background: -webkit-gradient(linear, left top, right top, color-stop(50%, #666), color-stop(80%, #000));
-  background: linear-gradient(to right, #666 50%, #000 80%);
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(30%, #004889), to(#00a6ed));
+  background: linear-gradient(to top, #004889 30%, #00a6ed 100%);
   opacity: 0;
   -webkit-transition: all .3s .1s ease-in-out;
   transition: all .3s .1s ease-in-out;
@@ -1432,7 +1650,7 @@ tt {
       -ms-flex: 0 0 55px;
           flex: 0 0 55px;
   height: 90%;
-  border-right: 1px solid #fbe2b0;
+  border-right: 1px solid #37c6ff;
 }
 
 .goodroad__item__txt {
@@ -1503,12 +1721,16 @@ tt {
   pointer-events: none;
 }
 
-.goodroad__item.--player::before {
-  background: -webkit-gradient(linear, left top, right top, from(#ff302a), color-stop(90%, #0e0000));
-  background: linear-gradient(to right, #ff302a 0%, #0e0000 90%);
+.goodroad__item:nth-child(even) {
+  background: #37c6ff;
 }
 
-.goodroad__item.--player .hover_item {
+.goodroad__item:nth-child(even)::before {
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(30%, #004889), to(#00a6ed));
+  background: linear-gradient(to top, #004889 30%, #00a6ed 100%);
+}
+
+.goodroad__item:nth-child(even) .hover_item {
   position: absolute;
   top: 0;
   bottom: unset;
@@ -1516,28 +1738,8 @@ tt {
   left: 0;
   width: 100%;
   height: 100%;
-  background: -webkit-gradient(linear, left top, right top, from(#ff5f67), to(#2d0000));
-  background: linear-gradient(to right, #ff5f67 0%, #2d0000 100%);
-  opacity: 0;
-  -webkit-transition: all .3s .1s ease-in-out;
-  transition: all .3s .1s ease-in-out;
-}
-
-.goodroad__item.--banker::before {
-  background: -webkit-gradient(linear, left top, right top, from(#005fd7), to(#0b0e25));
-  background: linear-gradient(to right, #005fd7 0%, #0b0e25 100%);
-}
-
-.goodroad__item.--banker .hover_item {
-  position: absolute;
-  top: 0;
-  bottom: unset;
-  right: unset;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: -webkit-gradient(linear, left top, right top, from(#00a0ed), to(#111269));
-  background: linear-gradient(to right, #00a0ed 0%, #111269 100%);
+  background: -webkit-gradient(linear, left bottom, left top, from(#001940), to(#004889));
+  background: linear-gradient(to top, #001940 0%, #004889 100%);
   opacity: 0;
   -webkit-transition: all .3s .1s ease-in-out;
   transition: all .3s .1s ease-in-out;
@@ -1548,7 +1750,7 @@ tt {
     border-width: 1px 0;
   }
   .goodroad__item:hover::after {
-    color: #fbe2b0;
+    color: #fff;
   }
   .goodroad__item:hover .hover_item {
     opacity: 1;
@@ -1560,7 +1762,7 @@ tt {
 }
 
 .goodroad__item:active::after {
-  color: #fbe2b0;
+  color: #fff;
 }
 
 .goodroad__item:active .hover_item {
