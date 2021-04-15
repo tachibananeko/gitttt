@@ -1,12 +1,13 @@
 
 
 // 字體顏色
-$txt_primary:#fefdb3;
-$txt_secondary:#240913;
-$txt_gray:#B3B3B3;
-$txt_black:#000;
-$txt_white:#fff;
-$txt_shadow:hsla(354, 29%, 7%, 0.5);
+$txt_color: (
+    "txt_primary:#fff",
+    "txt_secondary:#240913",
+    "txt_gray:#B3B3B3",
+    "txt_black:#000",
+    "txt_shadow:hsla(354, 29%, 7%, 0.5)"
+);
 
 // 背景色
 $bg_primary:linear-gradient(to right, #001940 50%, #004889 100%);
@@ -17,20 +18,21 @@ $bg_lightyellow: #ffd300;
 
 
 // 按鈕色
-$btn_primary:linear-gradient(to right, #f2bd79 20%, #563d29 100%);
-$btn_secondary:linear-gradient(to right, #f2bd79 60%, #563d29 100%);
+$btn_primary:linear-gradient(to right, #f2bd79 60%, #563d29 100%);
+$btn_secondary:linear-gradient(to right, #001940 0%, #004889 100%);
+$btn_blue:linear-gradient(to top, #001940 0%, #004889 100%);
+$btn_lightblue:linear-gradient(to top, #004889 30%, #00a6ed 100%);
+
+$btn_green:linear-gradient(to top, #009245 0%, #113924 100%);
+$btn_lightgreen:linear-gradient(to top, #00c945 0%, #117024 100%);
+$btn_red:linear-gradient(to right, #ff302a 0%, #0e0000 90%);
+$btn_lightred:linear-gradient(to right, #ff5f67 0%, #2d0000 100%);
+
+
 $btn_black:linear-gradient(to right, #333 50%, #000 80%);
 $btn_lightblack:linear-gradient(to right, #666 50%, #000 80%);
 $btn_brown:linear-gradient(to right, #563d29 50%, #000 100%);
 $btn_darkbrown:linear-gradient(to top, #42210b 0%, #000 100%);
-
-$btn_blue:linear-gradient(to right, #001940 0%, #004889 100%);
-$btn_lightblue:linear-gradient(to right, #111269 30%, #00a0ed 100%);
-
-$btn_green:linear-gradient(to right, #00d345 0%, #110024 100%);
-$btn_lightgreen:linear-gradient(to right, #14b045 0%, #113924 100%);
-$btn_red:linear-gradient(to right, #ff302a 0%, #0e0000 90%);
-$btn_lightred:linear-gradient(to right, #ff5f67 0%, #2d0000 100%);
 $btn_orange:linear-gradient(to right, #f36428 0%, #440010 100%);
 $btn_lightorange:linear-gradient(to right, #ff901d 0%, #991b10 100%);
 $btn_purple:linear-gradient(to right, #8260fa 0%, #000 100%);
@@ -39,9 +41,10 @@ $btn_gold:linear-gradient(to right, #f2bd79 0%, #563d29 100%);
 
 // 裝飾線色
 $border_primary:linear-gradient(to right,#f2bd79 0%, #ffffc5 50%, #f2bd79  100%) 1;
+$border_secondary:linear-gradient(to right, transparent 5%, #37c6ff 20%, #63faff 60%, #37c6ff 80%, transparent 100%) 1;
 $border_blue:linear-gradient(to right, #63faff 0%, #37c6ff  100%) 1;
-$border_green:linear-gradient(to right, #f2bd79 0%, #ffffc5 50%, #f2bd79 100%) 1;
-$border_red:linear-gradient(to right, #f2bd79 0%, #ffffc5 50%, #f2bd79 100%) 1;
+$border_green:linear-gradient(to right, #00d345 0%, #14b045 100%) 1;
+$border_red:linear-gradient(to right, #ff5f67 0%, #ff302a 100%) 1;
 
 // 動畫
 .active_item {
