@@ -1,4 +1,19 @@
-// 常用
+
+// 寬度距離基本設定
+@function distance($count: 1) {
+	@return 5px * $count;
+}
+
+$num: 100; 
+@while $num > 0 {
+	.w#{$num} {
+		width: $num * 1%;
+	}
+
+	$num: $num - 1;
+}
+
+// 常用設定
 @mixin pos_abs($top , $right , $bottom , $left){
 	position: absolute;
 	top: $top;
@@ -33,90 +48,6 @@
 // 動畫
 %transition {
 	transition: all .3s ease-in-out;
-}
-
-
-// RWD相關
-$breakpoints: (
-	pc: 1440px,
-	big_pad: 1112px,
-	pad: 1024px,
-	ph: 767px
-);
-@mixin mw_xl {
-	@media screen and (max-width: map-get($breakpoints, "pc")) {
-		@content;
-	}
-}
-@mixin mw_lg {
-	@media screen and (max-width: map-get($breakpoints, "big_pad")) {
-		@content;
-	}
-}
-@mixin mw_md {
-	@media screen and (max-width: map-get($breakpoints, "pad")) {
-		@content;
-	}
-}
-@mixin mw_sm {
-	@media screen and (max-width: map-get($breakpoints, "ph")) {
-		@content;
-	}
-}
-
-// 手指hover相關
-[class*="_btn"]:not(disable),
-%hand {
-	cursor: pointer;
-	transition: all .2s ease-in-out;
-}
-%no_hand{
-	cursor: default;
-}
-@mixin hoverHandler($op, $bg) {
-	@media (pointer: fine),
-	(-moz-touch-enabled: 0),
-	screen and (-ms-high-contrast: active),
-	(-ms-high-contrast: none) {
-		&:hover {
-			@content;
-			opacity: $op;
-			background-image: $bg;
-		}
-	}
-
-	&:active {
-		@content;
-		opacity: $op;
-		background-image: $bg;
-	}
-}
-@mixin btn_hoverHandler($border, $txt) {
-	@media (pointer: fine),
-	(-moz-touch-enabled: 0),
-	screen and (-ms-high-contrast: active),
-	(-ms-high-contrast: none) {		
-		&:hover{
-			@content
-			border-width: $border;
-			&::after{
-				color: $txt;
-			}
-			.hover_item{
-				opacity: 1;
-			}
-		}		
-	}
-	&:active {
-		@content
-		border-width: $border;
-		&::after {
-			color: $txt;
-		}
-		.hover_item {
-			opacity: 1;
-		}
-	}
 }
 
 // 自定義
@@ -235,3 +166,125 @@ $breakpoints: (
 	
 }
 
+// icon設定
+$icon: (
+	'member',
+	'full_sc',
+	'normal_sc',
+	'logout',
+	'road_set',
+	'groad01',
+	'groad02',
+	'groad03',
+	'groad04',
+	'groad05',
+	'groad06',
+	'groad07',
+	'groad08'
+);
+
+@each $name in $icon {
+	.icon_#{$name} {
+		display: inline-block;
+		background:url(../images/icon_#{$name}.svg) no-repeat center / contain;
+	}
+}
+
+
+
+// RWD相關
+$breakpoints: (
+	pc: 1440px,
+	big_pad: 1112px,
+	pad: 1024px,
+	ph: 767px);
+
+@mixin mw_xl {
+	@media screen and (max-width: map-get($breakpoints, "pc")) {
+		@content;
+	}
+}
+
+@mixin mw_lg {
+	@media screen and (max-width: map-get($breakpoints, "big_pad")) {
+		@content;
+	}
+}
+
+@mixin mw_md {
+	@media screen and (max-width: map-get($breakpoints, "pad")) {
+		@content;
+	}
+}
+
+@mixin mw_sm {
+	@media screen and (max-width: map-get($breakpoints, "ph")) {
+		@content;
+	}
+}
+
+
+// 手指hover相關
+// 一般
+[class*="_btn"]:not(disable),
+%hand {
+	cursor: pointer;
+	transition: all .2s ease-in-out;
+}
+
+%no_hand {
+	cursor: default;
+}
+
+@mixin hoverHandler($op, $bg) {
+
+	@media (pointer: fine),
+	(-moz-touch-enabled: 0),
+	screen and (-ms-high-contrast: active),
+	(-ms-high-contrast: none) {
+		&:hover {
+			@content;
+			opacity: $op;
+			background-image: $bg;
+		}
+	}
+
+	&:active {
+		@content;
+		opacity: $op;
+		background-image: $bg;
+	}
+}
+
+// 按鈕
+@mixin btn_hoverHandler($border, $txt) {
+
+	@media (pointer: fine),
+	(-moz-touch-enabled: 0),
+	screen and (-ms-high-contrast: active),
+	(-ms-high-contrast: none) {
+		&:hover {
+			@content border-width: $border;
+
+			&::after {
+				color: $txt;
+			}
+
+			.hover_item {
+				opacity: 1;
+			}
+		}
+	}
+
+	&:active {
+		@content border-width: $border;
+
+		&::after {
+			color: $txt;
+		}
+
+		.hover_item {
+			opacity: 1;
+		}
+	}
+}

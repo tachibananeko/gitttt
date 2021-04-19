@@ -1,6 +1,5 @@
 .outside_flex {
-    display: flex;
-    flex-wrap: wrap;
+    background-color: #000;
 }
 
 /* 左邊按鈕 */
@@ -81,7 +80,7 @@
             margin: auto;
         }
         &.--i_vip>i {
-            background: url(../images/i_vip.svg) no-repeat center/contain;
+            background: url(../images/icon_vip.svg) no-repeat center/contain;
         }
         &.--i_ex>i::before,
         &.--i_fast>i::after {
@@ -89,14 +88,14 @@
             position: absolute;
             width: 20px;
             height: 20px;
-            background: url(../images/i_ex.svg) no-repeat center/contain;
+            background: url(../images/icon_ex.svg) no-repeat center/contain;
             top: 0;
             bottom: 0;
             right: -20px;
             margin: auto;
         }
         &.--i_fast>i::after {
-            background-image: url(../images/i_fast.svg);
+            background-image: url(../images/icon_fast.svg);
         }
         &.--i_ex.--i_fast>i::before,
         &.--i_ex.--i_fast>i::after {
