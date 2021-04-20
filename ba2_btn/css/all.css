@@ -2241,6 +2241,41 @@ tt {
   overflow: hidden;
 }
 
+.lobbyTb i {
+  position: relative;
+  margin-left: auto;
+}
+
+.lobbyTb.--i_vip i {
+  width: 40px;
+  height: 100%;
+  background: url(../images/icon_vip.svg) no-repeat center/contain;
+}
+
+.lobbyTb.--i_ex i::before,
+.lobbyTb.--i_fast i::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: unset;
+  left: unset;
+  content: '';
+  width: 20px;
+  height: 20px;
+  background: url(../images/icon_ex.svg) no-repeat center/contain;
+  right: calc(100% + 5px);
+  margin: auto;
+}
+
+.lobbyTb.--i_fast i::after {
+  background-image: url(../images/icon_fast.svg);
+  right: calc(100% + 35px);
+}
+
+.lobbyTb.--i_fast:not(.--i_vip):not(.--i_ex) i::after {
+  right: calc(100% + 5px);
+}
+
 .lobbyTb__title {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2333,6 +2368,34 @@ tt {
   margin: auto;
   text-align: center;
   text-shadow: none;
+}
+
+.lobbyTb__title__time {
+  position: relative;
+  height: 25px;
+  background: url(../images/icon_time.png) no-repeat center/contain;
+  margin-left: auto;
+}
+
+.lobbyTb__title__time::after {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  content: attr(data-time);
+  width: 100%;
+  height: 100%;
+  padding: 0 3px;
+  background: linear-gradient(-137deg, #001940 0%, #000) 100%;
+  border-radius: 27px;
+  border: 1px solid #fbe2b0;
+  color: #fff;
+  font-weight: 20px;
 }
 
 .lobbyTb__road {
