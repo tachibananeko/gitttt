@@ -131,7 +131,6 @@
     display: flex;
     width: 400px;
     padding: 10px;
-    background-image: linear-gradient(to top, #3D3022 0%, #160C0D 100%);
     justify-content: center;
     &__btn{
         @include btn_set(140px, 60px, #0f2f66);
@@ -406,5 +405,146 @@
 
         // 手指效果
         @include btn_hoverHandler(1px 0, map-get($ba3_txt_color, txt_primary));
+    }
+}
+
+
+// 大廳桌
+.lobbyTb{
+    @extend %txtshadow;
+    width: 600px;
+    border-radius: 10px;
+    color: map-get($ba3_txt_color, txt_primary);
+    font-size: 14px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    // 大廳狀態
+    &::before{
+
+    }
+    &.--vip::before {}
+    &.--vip::before {}
+    &.--vip::before {}
+
+    // title區
+    &__title{
+        @include d_f(flex, center, flex-stert);
+        position: relative;
+        background: #004889;
+        height: 35px;
+        padding: 0 10px;
+        overflow: hidden;
+        &::before{
+            @include pos_abs(0, unset, unset, 0)
+            content: '';
+            width: 100%;
+            height: 2000%;
+            background: linear-gradient(-137deg, #004889 0%, #001940) 100%;
+            background-size: 25px 25px;
+            pointer-events: none;
+            transform: rotate(-45deg);
+            transform-origin: 2% 5%;
+        }
+
+        &__limit{
+            position: relative;
+            &::before{
+                content: attr(data-info);
+                margin-right: 5px;
+            }
+        }
+        &__no {
+            @include pos_abs(-120%, 0, auto, 0);
+            width: 33%;
+            height: 200%;
+            border-radius: 20px;
+            border: 2px solid map-get($ba3_bg_color, bg_secondary);
+            font-weight: bold;
+            margin: auto;
+            overflow: hidden;
+            &::before {
+                @include pos_abs(0, unset, unset, 0) content: '';
+                width: 100%;
+                height: 2000%;
+                background: linear-gradient(-137deg, #001940 0%, #000) 100%;
+                background-size: 25px 25px;
+                pointer-events: none;
+                transform: rotate(-45deg);
+                transform-origin: 8% 6%;                
+            }
+            &::after{
+                @include pos_abs(unset, 0, 0, 0)
+                @include bg_txt(map-get($ba3_bg_color, bg_secondary_vl), 24px);
+                content: attr(data-txt);
+                margin: auto;
+                text-align: center;
+                text-shadow: none;
+            }
+        }
+    }
+
+    // 珠路區
+    &__road{
+        padding-bottom: calc(100% * .17847);
+        background: map-get($ba3_bg_color, bg_white);
+    }
+
+    // foot區
+    &__foot{
+        @include d_f(flex, center, space-between);
+        height: 35px;
+        padding-left: 10px;
+        background: map-get($ba3_bg_color, bg_primary_vl);
+        &__info{
+            @include d_f(flex, center, flex-start);
+            height: 100%;
+            >li{
+                font-size: 14px;
+                &::after {
+                    content: attr(data-info);
+                    background: #000;
+                    padding: 3px 5px;
+                    border-radius: 3px;
+                    color: map-get($ba3_txt_color, txt_primary);
+                    margin-left: 5px;
+                }
+                +li{
+                    margin-left: 20px;
+                }
+                &:nth-child(1){
+                    color: map-get($ba3_txt_color, txt_bank);
+                }
+                &:nth-child(2) {
+                    color: map-get($ba3_txt_color, txt_play);
+                }
+                &:nth-child(3) {
+                    color: map-get($ba3_txt_color, txt_tie);
+                }                
+            }
+        }
+
+        &__btn{
+            @include btn_set(20%, 100%, map-get($ba3_btn_color, btn_lightblue_vl));
+            @include btn_border(1px 0, map-get($ba3_border_color, border_secondary));
+
+            &::before {
+                @include btn_hoverlight03;
+            }
+            &::after {
+                @include btn_txt(center, map-get($ba3_txt_color, txt_primary), map-get($ba3_txt_color, txt_shadow));
+                font-size: 18px;
+            }
+
+            .hover_item {
+                @include btn_hoveritem(map-get($ba3_btn_color, btn_secondary));
+
+                &::before {
+                    @include btn_hoverlight03;
+                }
+            }
+
+            // 手指效果
+            @include btn_hoverHandler(1px 0, map-get($ba3_txt_color, txt_primary));
+        }
     }
 }

@@ -51,25 +51,33 @@ $ba2_border_color: (
 
 
 
-// BA2＝＝＝＝＝＝＝＝＝＝＝＝＝
+// BA3＝＝＝＝＝＝＝＝＝＝＝＝＝
 // 字體顏色
 $ba3_txt_color: (txt_primary:#fff,
     txt_secondary:#240913,
     txt_gray:#B3B3B3,
-    txt_shadow:hsla(354, 29%, 7%, 0.5));
+    txt_shadow:hsla(354, 29%, 7%, 0.5),
+    txt_bank: #ff302a,
+    txt_play: #0068ed,
+    txt_tie: #009245
+);
 
 // 背景色
 $ba3_bg_color: (bg_primary:linear-gradient(to right, #001940 50%, #004889 100%),
-    bg_primary_vl:linear-gradient(to bottom, #3e3123 50%, #140a0c 100%),
+    bg_primary_vl:linear-gradient(to bottom, #004889 0%, #001940 100%),
     bg_secondary:#fbe2b0,
+    bg_secondary_vl:linear-gradient(to bottom, #f2bd79 60%, #563d29 100%),
     bg_lightblue: #37c6ff,
-    bg_lightyellow: #ffd300);
+    bg_lightyellow: #ffd300,
+    bg_white: #fff,
+    );
 
 // 按鈕色
 $ba3_btn_color:(btn_primary:linear-gradient(to right, #f2bd79 60%, #563d29 100%),
     btn_secondary:linear-gradient(to right, #001940 0%, #004889 100%),
     btn_blue:linear-gradient(to top, #001940 0%, #004889 100%),
     btn_lightblue:linear-gradient(to top, #004889 30%, #00a6ed 100%),
+    btn_lightblue_vl:linear-gradient(to right, #004889 30%, #00a6ed 100%),
 
     btn_green:linear-gradient(to top, #009245 0%, #113924 100%),
     btn_lightgreen:linear-gradient(to top, #00c945 0%, #117024 100%));
