@@ -413,14 +413,14 @@
 .lobbyTb{
     @extend %txtshadow;
     width: 600px;
-    border-radius: 10px;
+    border-radius: 5px;
     color: map-get($ba3_txt_color, txt_primary);
     font-size: 14px;
     margin-bottom: 30px;
     overflow: hidden;
     // 大廳狀態
     i {
-        position: relative;        
+        position: relative;
         margin-left: auto;
     }
 
@@ -432,12 +432,11 @@
 
     &.--i_ex i::before,
     &.--i_fast i::after {
-        @include pos_abs(0, unset, 0, unset);
+        @include pos_abs(0, calc(100% + 5px), 0, unset);
         content: '';
         width: 20px;
         height: 20px;
-        background: url(../images/icon_ex.svg) no-repeat center / contain;
-        right: calc(100% + 5px);
+        background: url(../images/icon_ex.svg) no-repeat center / contain;        
         margin: auto;
     }
 
@@ -452,9 +451,8 @@
 
     // title區
     &__title{
-        @include d_f(flex, center, flex-stert);
+        @include d_f(flex, center, flex-start);
         position: relative;
-        background: #004889;
         height: 35px;
         padding: 0 10px;
         overflow: hidden;
@@ -497,7 +495,7 @@
                 transform-origin: 8% 6%;                
             }
             &::after{
-                @include pos_abs(unset, 0, 0, 0)
+                @include pos_abs(unset, 0, 0, 0);
                 @include bg_txt(map-get($ba3_bg_color, bg_secondary_vl), 24px);
                 content: attr(data-txt);
                 margin: auto;
@@ -507,27 +505,37 @@
         }
 
         &__time{
+            @include d_f(flex, center, center);
             position: relative;
-            height: 25px;
-            background: url(../images/icon_time.png) no-repeat center / contain;
-            margin-left: auto;
-            &::after{
-                @include d_f(flex, center, center);
-                content: attr(data-time);
-                width: 100%;
-                height: 100%;
-                padding: 0 3px;
-                background: map-get($ba3_bg_color, bg_darkblue);
-                border-radius: 27px;
-                border: 1px solid map-get($ba3_bg_color, bg_secondary);
-                color: map-get($ba3_txt_color, txt_primary);
-                font-weight: 20px;
+            height: 80%;
+            padding: 0 5px;
+            background: map-get($ba3_bg_color, bg_darkblue);
+            border-radius: 27px;
+            border: 1px solid map-get($ba3_bg_color, bg_secondary);
+            color: map-get($ba3_txt_color, txt_primary);
+            font-size: 18px;
+            
+            &::before{
+                @include d_f(flex, center, center) 
+                content: none;
+                position: relative;
+                width: 25px;
+                height: 25px;
+                background: url(../images/icon_time.png) no-repeat center / contain;
+            }
+            &:empty{
+                background:none;
+                border: none;
+            }
+            &:empty::before {
+                content: '';
             }
         }
     }
 
     // 珠路區
     &__road{
+        @include btn_border(2px 0, map-get($ba3_border_color, border_secondary));
         padding-bottom: calc(100% * .17847);
         background: map-get($ba3_bg_color, bg_white);
     }

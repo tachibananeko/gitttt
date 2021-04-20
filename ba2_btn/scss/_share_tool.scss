@@ -5,14 +5,21 @@ $ba2_txt_color: (
     txt_secondary:#240913,
     txt_gray:#756e6e,
     txt_black:#000,
-    txt_shadow:hsla(354, 29%, 7%, 0.5)
+    txt_white:#fff,
+    txt_shadow:hsla(354, 29%, 7%, 0.5),
+    txt_bank: #ff302a,
+    txt_play: #0068ed,
+    txt_tie: #009245
 );
 
 // 背景色
 $ba2_bg_color: (
     bg_primary:linear-gradient(to right, #3e3123 50%, #140a0c 100%),
-    bg_primary_vl:linear-gradient(to bottom, #3e3123 50%, #140a0c 100%),
-    bg_secondary:#fbe2b0
+    bg_primary_vl:linear-gradient(to bottom, #3e3123 0%, #140a0c 100%),
+    bg_secondary:#fbe2b0,
+    bg_secondary_vl:linear-gradient(to bottom, #f2bd79 0%, #3e3123 100%),
+    bg_gold:linear-gradient(to bottom, #f2d77a 0%, #ffffc5 20%, #f2d77a 100%),
+    bg_white: #fff
 );
 
 // 按鈕色
