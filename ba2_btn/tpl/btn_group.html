@@ -104,7 +104,18 @@
             </button>
             <button class="PR__btn --fly ba3_none" data-txt="飛牌">
                 <span class="hover_item"></span>
-            </button>
+            </button>            
+        </div>
+
+
+
+        <!-- 槍手桌號 -->
+        <div class="PR__table" data-txt="槍手桌號">
+            <ul class="PR__table__num">
+                <li>MW2001</li>
+                <li>2010</li>
+                <li>MW2001</li>
+            </ul>
         </div>
 
 
@@ -126,8 +137,14 @@
 
         <!-- 好路追注 -->
         <div class="title">
-            <span class="title__txt">好路提示</span>
+            <span class="title__txt" data-txt="好路提示"></span>
         </div>
+
+        <div class="title --plural">
+            <span class="title__txt" data-txt="下注統計"></span>
+            <span class="title__txt --on" data-txt="最新投注"></span>
+        </div>
+
         <ul class="goodroad">
             <li class="goodroad__item">
                 <span class="hover_item"></span>
@@ -159,14 +176,23 @@
 
         <!-- 大廳桌 -->
         <div class="lobbyTitle">
-            <div class="lobbyTitle_num" data-num="15">
-                總桌次
-            </div>
+            <div class="lobbyTitle__num" data-txt="總桌次" data-num="999"></div>
             <ul class="lobbyTitle__btn">
-                <li>All</li>
-                <li class="--crown"></li>
-                <li class="--okada"></li>
-                <li class="--rw"></li>
+                <li data-txt="ALL">
+                    <span class="hover_item"></span>
+                </li>
+                <li>
+                    <span class="hover_item"></span>
+                    <i class="icon_rwm"></i>
+                </li>
+                <li>
+                    <span class="hover_item"></span>
+                    <i class="icon_rwm"></i>
+                </li>
+                <li>
+                    <span class="hover_item"></span>
+                    <i class="icon_rwm"></i>
+                </li>
             </ul>
         </div>
 
@@ -182,7 +208,61 @@
             <!-- title end -->
         
             <!-- road -->
-            <div class="lobbyTb__road"></div>
+            <div class="lobbyTb__road">
+                <!-- 路圖 -->
+                <div class="lobbyTb__road__img --m_rwm">
+                    <img src="../images/road_img.png">
+                </div>
+                <!-- 路圖 end -->
+
+                <!-- loading -->
+                <div class="lobbyTb__road__loading" style="display: none;"></div>
+                <!-- loading end -->
+
+                <!-- 限額 -->
+                <div class="lobbyTb__road__limit" data-info="本桌投注限紅">
+                    <ul class="mum_content">
+                        <li>
+                            最高投注:
+                            <span>197</span>
+                        </li>
+                        <li>
+                            和注最高:
+                            <span>19,777</span>
+                        </li>
+                        <li>
+                            對子最高:
+                            <span>19,777</span>
+                        </li>
+                    
+                        <li>
+                            最低投注:
+                            <span>1</span>
+                        </li>
+                        <li>
+                            和注最低:
+                            <span>1</span>
+                        </li>
+                        <li>
+                            對子最低:
+                            <span>1</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 限額 end -->
+
+                <!-- 好路出現 -->
+                <div class="lobbyTb__road__goodroad"></div>
+                <!-- 好路出現 end -->
+
+                <!-- 停止下注 -->
+                <div class="lobbyTb__road__stop"></div>
+                <!-- 停止下注 end -->
+
+                <!-- 關桌 -->
+                <div class="lobbyTb__road__close"></div>
+                <!-- 關桌 end -->
+            </div>
             <!-- road end -->
         
             <!-- foot -->
@@ -192,7 +272,7 @@
                     <li data-info="20">閒</li>
                     <li data-info="20">和</li>
                 </ul>
-                <span class="icon_crown"></span>
+                <span class="icon_rwm"></span>
                 <button class="lobbyTb__foot__btn" data-txt="進入">
                     <span class="hover_item"></span>
                 </button>
@@ -211,7 +291,63 @@
             <!-- title end -->
         
             <!-- road -->
-            <div class="lobbyTb__road"></div>
+            <div class="lobbyTb__road">
+                <!-- 路圖 -->
+                <div class="lobbyTb__road__img --m_rwm" style="display: none;">
+                    <img src="../images/road_img.png">
+                </div>
+                <!-- 路圖 end -->
+            
+                <!-- loading -->
+                <div class="lobbyTb__road__loading">
+                    <div class="load_item">loading</div>
+                </div>
+                <!-- loading end -->
+            
+                <!-- 限額 -->
+                <div class="lobbyTb__road__limit" data-info="本桌投注限紅">
+                    <ul class="mum_content">
+                        <li>
+                            最高投注:
+                            <span>197</span>
+                        </li>
+                        <li>
+                            和注最高:
+                            <span>19,777</span>
+                        </li>
+                        <li>
+                            對子最高:
+                            <span>19,777</span>
+                        </li>
+            
+                        <li>
+                            最低投注:
+                            <span>1</span>
+                        </li>
+                        <li>
+                            和注最低:
+                            <span>1</span>
+                        </li>
+                        <li>
+                            對子最低:
+                            <span>1</span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 限額 end -->
+            
+                <!-- 好路出現 -->
+                <div class="lobbyTb__road__goodroad"></div>
+                <!-- 好路出現 end -->
+            
+                <!-- 停止下注 -->
+                <div class="lobbyTb__road__stop"></div>
+                <!-- 停止下注 end -->
+            
+                <!-- 關桌 -->
+                <div class="lobbyTb__road__close"></div>
+                <!-- 關桌 end -->
+            </div>
             <!-- road end -->
         
             <!-- foot -->
@@ -221,7 +357,7 @@
                     <li data-info="20">閒</li>
                     <li data-info="20">和</li>
                 </ul>
-                <span class="icon_crown"></span>
+                <span class="icon_rwm"></span>
                 <button class="lobbyTb__foot__btn" data-txt="進入">
                     <span class="hover_item"></span>
                 </button>

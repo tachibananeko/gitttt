@@ -125,7 +125,52 @@ $num: 100;
 	}
 }
 
+// loading元件
+@mixin load_set($scale, $color) {
+	.load_item {
+		@include d_f(flex, center, center);
+		@include pos_abs(0, 0, 0, 0);
+		width: 150px;
+		height: 150px;
+		color: $color;
+		text-shadow: 0 0 5px $color;
+		font-size: 20px;
+		text-transform: uppercase;
+		transform: scale($scale);
+		margin: auto;
 
+		&::before,
+		&::after {
+			@include pos_abs(0, 0, 0, 0);
+			content: "\0020";
+			border-radius: 100px;
+			border: 5px solid $color;
+			box-shadow: 0 0 20px $color,
+				0 0 20px $color inset;
+			opacity: 0;
+			animation: load_item 2s infinite;
+		}
+
+		&::after {
+			animation: load_item 2s infinite 1s;
+		}
+	}
+}
+@keyframes load_item {
+	0% {
+		transform: scale(0);
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 1;
+	}
+
+	100% {
+		transform: scale(1);
+		opacity: 0;
+	}
+}
 
 // 百家按鈕基本組件
 @mixin btn_set($width, $height, $bg){
@@ -177,7 +222,7 @@ $num: 100;
 	content: '';
 	width: 100%;
 	height: 100%;
-	background: linear-gradient(127deg, rgba(255, 255, 255, .3) 40%, transparent 41%, transparent 100%);
+	background: linear-gradient(127deg, rgba(255, 255, 255, .2) 40%, transparent 41%, transparent 100%);
 }
 // 按鈕50%銳利反光層
 @mixin btn_hoverlight03 {
@@ -242,7 +287,8 @@ $icon: (
 	'groad05',
 	'groad06',
 	'groad07',
-	'groad08'
+	'groad08',
+	'rwm',
 );
 
 @each $name in $icon {
@@ -298,7 +344,7 @@ $breakpoints: (
 	cursor: default;
 }
 
-@mixin hoverHandler($op, $bg) {
+@mixin hoverHandler {
 
 	@media (pointer: fine),
 	(-moz-touch-enabled: 0),
@@ -306,15 +352,10 @@ $breakpoints: (
 	(-ms-high-contrast: none) {
 		&:hover {
 			@content;
-			opacity: $op;
-			background-image: $bg;
 		}
 	}
-
 	&:active {
 		@content;
-		opacity: $op;
-		background-image: $bg;
 	}
 }
 
@@ -326,7 +367,8 @@ $breakpoints: (
 	screen and (-ms-high-contrast: active),
 	(-ms-high-contrast: none) {
 		&:hover {
-			@content border-width: $border;
+			@content;
+			border-width: $border;
 
 			&::after {
 				color: $txt;
@@ -339,7 +381,8 @@ $breakpoints: (
 	}
 
 	&:active {
-		@content border-width: $border;
+		@content;
+		border-width: $border;
 
 		&::after {
 			color: $txt;

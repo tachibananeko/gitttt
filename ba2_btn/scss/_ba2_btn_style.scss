@@ -337,13 +337,54 @@
 
 // 好路追注
 .title {
-    @include d_f(flex, center, center) @include btn_border(1px 0, map-get($ba2_border_color, border_secondary));
+    @include d_f(flex, center, center);
     width: 300px;
-    height: 30px;
-    background: map-get($ba2_btn_color, btn_blue);
+    height: 35px;
+    padding: 0 20px;
+    background: map-get($ba2_bg_color, bg_primary_vl);
+    margin: 30px 0;
 
     &__txt {
-        color: map-get($ba2_txt_color, txt_primary);
+        position: relative;
+        width: 100%;
+        height: 100%;        
+        text-align: center;
+        // 複數標題按鈕
+        @at-root .--plural .title__txt {
+            @extend %hand;
+        }
+
+        // 當前頁面
+        &.--on{
+            z-index: 1;
+        }
+        
+        &::before{
+            @include pos_abs(0, unset, unset, 0);
+            content: '';
+            width: 100%;
+            height: 150%;
+            background: map-get($ba2_btn_color, btn_darkbrown);
+            border: 2px solid map-get($ba2_bg_color, bg_secondary);
+            border-top: 0;
+            border-radius: 0 0 10px 10px;
+            color: map-get($ba2_txt_color, txt_primary);
+            transform: perspective(300px) rotateX(-45deg);
+            transform-origin: 50% 0;
+
+            // 複數標題按鈕
+            @at-root .--plural .title__txt.--on::before{
+                background: map-get($ba2_bg_color, bg_gold);
+            }
+        }
+        &::after{
+            @include btn_txt(center, map-get($ba2_txt_color, txt_primary), transparent);
+
+            // 複數標題按鈕
+            @at-root .--plural .title__txt.--on::after {
+                color: map-get($ba2_txt_color, txt_secondary);
+            }
+        }        
     }
 }
 .goodroad {
@@ -443,15 +484,87 @@
 
 
 
+// 大廳桌選擇
+.lobbyTitle{
+    @include d_f(flex, center, flex-start);
+    background: map-get($ba2_bg_color, bg_primary_vl);
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 45px;
+    overflow: hidden;
+    margin-bottom: 30px;
+    &__num{
+        @include d_f(flex, center, flex-start);
+        position: relative;
+        left: -20px;
+        flex: none;
+        height: 100%;
+        padding:  0 30px;
+        background: map-get($ba2_bg_color, bg_secondary_vl);
+        border-top-right-radius: 5px;
+        transform: skewX(35deg);
+        &::before{
+            @extend %txtshadow;
+            content: attr(data-txt);
+            color: map-get($ba2_txt_color, txt_white);
+            font-size: 18px;
+            transform: skewX(-35deg);
+            margin-right: 10px;
+        }
+        &::after{
+            content: attr(data-num);
+            padding: 2px 5px;
+            background: #000;
+            border-radius: 3px;
+            color: map-get($ba2_txt_color, txt_white);
+            transform: skewX(-35deg);
+        }
+    }
+    &__btn{
+        @include d_f(flex, center, flex-start);
+        width: 100%;
+        height: 100%;
+        color: map-get($ba2_txt_color, txt_gray);
+        
+        li{
+            @include d_f(flex, center, center);
+            @include btn_set(calc(100% / 3), 100%, transparent);
+            @include btn_border(1px, map-get($ba2_border_color, border_brown));
+            padding: 0 5px;
+            
+            &:nth-child(1)::after{
+                @include btn_txt(center, map-get($ba2_txt_color, txt_primary), map-get($ba2_txt_color, txt_shadow));
+            }
+            i {
+                position: relative;
+                width: 100%;
+                height: 100%;
+            }
+            .hover_item {
+                @include btn_hoveritem(map-get($ba2_btn_color, btn_darkbrown));
+                &::before {
+                    @include btn_hoverlight02;
+                }
+            }
+
+            // 手指效果
+            @include btn_hoverHandler(1px, map-get($ba2_txt_color, txt_primary)){
+                border-image: map-get($ba2_border_color, border_secondary);
+            };
+            
+        }
+    }
+}
+
+
+
 // 大廳桌
 .lobbyTb {
-    @extend %txtshadow;
     width: 600px;
-    border-radius: 5px;
     color: map-get($ba2_txt_color, txt_white);
     font-size: 14px;
     margin-bottom: 30px;
-    overflow: hidden;
 
     // 大廳狀態
     i {
@@ -460,9 +573,9 @@
     }
 
     &.--i_vip i {
-        width: 40px;
-        height: 100%;
-        background: url(../images/icon_vip.svg) no-repeat center / contain;
+        width: 45px;
+        height: 60px;
+        background: url(../images/icon_ba2lobby_vip.svg) no-repeat center top / contain;
     }
 
     &.--i_ex i::before,
@@ -492,7 +605,13 @@
         height: 35px;
         padding: 0 10px 0 120px;
         background: map-get($ba2_bg_color, bg_primary);
-        overflow: hidden;
+
+        &::before{
+            @include pos_abs(0, 0, 0, 0);
+            content: '';
+            background: radial-gradient(ellipse at center, #991b10 0%, transparent 60%) 0 0/100% 200% no-repeat;
+            margin: auto;
+        }
 
         &__limit {
             position: relative;
@@ -511,13 +630,13 @@
             font-weight: bold;
             margin: auto;
             &::before{
-                @include pos_abs(0, unset, unset, unset)
+                @include pos_abs(0, unset, unset, unset);
                 content: '';
                 min-width: 120px;
                 width: 100%;
                 height: 100%;
                 background: map-get($ba2_bg_color, bg_secondary_vl);
-                border-radius: 5px;
+                border-top-right-radius: 5px;
                 transform: skewX(35deg);
 
             }
@@ -525,12 +644,12 @@
                 @include bg_txt(map-get($ba2_bg_color, bg_gold), 20px);
                 content: attr(data-txt);
                 position: relative;
-                text-shadow: none;
             }
         }
 
         &__time {
-            @include d_f(flex, center, center) position: relative;
+            @include d_f(flex, center, center);
+            position: relative;
             height: 80%;
             padding: 0 5px;
             border-radius: 27px;
@@ -539,11 +658,12 @@
             font-size: 18px;
 
             &::before {
-                @include d_f(flex, center, center) content: none;
+                @include d_f(flex, center, center);
+                content: none;
                 position: relative;
                 width: 25px;
                 height: 25px;
-                background: url(../images/icon_time.png) no-repeat center / contain;
+                background: url(../images/icon_time.svg) no-repeat center / contain;
             }
 
             &:empty {
@@ -558,8 +678,47 @@
 
     // 珠路區
     &__road {
-        @include btn_border(2px 0, map-get($ba2_border_color, border_primary));
-        padding-bottom: calc(100% * .17847);        background: map-get($ba2_bg_color, bg_white);
+        @include btn_border(1px 0, map-get($ba2_border_color, border_primary));
+        position: relative;
+        background: map-get($ba2_bg_color, bg_white);
+        >div:not(.lobbyTb__road__img):not(.lobbyTb__road__loading) {
+            @include pos_abs(0, 0, 0, 0);
+            width: 100%;
+            height: 100%;
+        }
+        &__loading{
+            @include load_set(.7, map-get($ba2_bg_color, bg_secondary02));
+            padding-bottom: calc(100% * .17847);
+        }
+        &__limit{
+            @include d_f(flex, center, center);
+            @extend %transition;
+            flex-direction: column;
+            padding: 10px;
+            background: map-get($ba2_bg_color, bg_black_alpha);
+            opacity: 0;
+            &::before{
+                content: attr(data-info);
+                display: block;
+                font-size: 18px;
+                text-align: center;
+            }
+            ul{
+                @include d_f(flex, flex-start, center);
+                width: 100%;
+                height: 80%;
+                flex-direction: column;
+                flex-wrap: wrap;
+                li{
+                    margin: 1% 0;
+                }
+            }
+        }
+        @include hoverHandler {
+            .lobbyTb__road__limit {
+                opacity: 1;
+            }
+        }
     }
 
     // foot區
@@ -568,9 +727,11 @@
         height: 35px;
         padding-left: 10px;
         background: map-get($ba2_bg_color, bg_primary_vl);
+        overflow: hidden;
 
         &__info {
             @include d_f(flex, center, flex-start);
+            flex: none;
             height: 100%;
 
             >li {
@@ -603,9 +764,17 @@
             }
         }
 
+        [class^=icon_]{
+            flex: 1 1 100%;
+            height: 80%;
+            background-position: right center;
+            margin-left: auto;
+        }
+
         &__btn {
             @include btn_set(25%, 100%, map-get($ba2_btn_color, btn_secondary));
             @include btn_border(1px 0, map-get($ba2_border_color, border_primary));
+            flex: none;
             transform: skewX(35deg);
             right: -10px;
             &::before {
