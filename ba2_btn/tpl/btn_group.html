@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../style/all.min.css">
 </head>
 <body>
-    <div class="outside_flex">
+    <div class="outside_flex ba2">
         <div class="menu w100">
             <button class="menu__btn" data-txt="交易紀錄">
                 <span class="hover_item"></span>
@@ -99,7 +99,7 @@
                 <span class="hover_item"></span>
                 <i></i>
             </button>
-            <button class="PR__btn --tips ba3_none" data-txt="打賞">
+            <button class="PR__btn --tips" data-txt="打賞">
                 <span class="hover_item"></span>
             </button>
             <button class="PR__btn --fly ba3_none" data-txt="飛牌">
@@ -136,41 +136,104 @@
 
 
         <!-- 好路追注 -->
-        <div class="title">
-            <span class="title__txt" data-txt="好路提示"></span>
-        </div>
+        <div class="details_outside">
+            
+            <div class="details">
 
-        <div class="title --plural">
-            <span class="title__txt" data-txt="下注統計"></span>
-            <span class="title__txt --on" data-txt="最新投注"></span>
-        </div>
+                <div class="details__title --plural">
+                    <span class="details__title__txt --on" data-txt="最新投注">
+                        <span class="hover_item"></span>
+                    </span>
+                    <span class="details__title__txt" data-txt="下注統計">
+                        <span class="hover_item"></span>
+                    </span>
+                </div>
+                <ul class="details__info">
+                    <li>
+                        <ul class="details__info__txt">
+                            <li>卡號1002001</li>
+                            <li class="txt_gray">2001桌5靴16局</li>
+                            <!-- 莊.txt_bank 閒.txt_play 和.txt_tie -->
+                            <li class="txt_play">閒 2000</li>
+                            <li class="txt_win">派彩 30000</li>
+                            <li>
+                                <span>已確認</span>
+                                <button class="details__info__btn">取消</button>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul class="details__info__txt">
+                            <li>卡號1002001</li>
+                            <li class="txt_gray">2001桌5靴16局</li>
+                            <!-- 莊.txt_bank 閒.txt_play 和.txt_tie -->
+                            <li class="txt_play">閒 2000</li>
+                            <li class="txt_win">派彩 30000</li>
+                            <li>
+                                <span class="txt_warn">未確認</span>
+                                <button class="details__info__btn">取消</button>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
 
-        <ul class="goodroad">
-            <li class="goodroad__item">
-                <span class="hover_item"></span>
-                <span class="goodroad__item__tb">2001</span>
-                <span class="goodroad__item__txt">拍拍球<i></i></span>
-                <span class="goodroad__item__go">
-                    <i data-txt="立即前往"></i>
-                </span>
-            </li>
-            <li class="goodroad__item --banker">
-                <span class="hover_item"></span>
-                <span class="goodroad__item__tb">2001</span>
-                <span class="goodroad__item__txt">長莊<i></i></span>
-                <span class="goodroad__item__go">
-                    <i data-txt="立即前往"></i>
-                </span>
-            </li>
-            <li class="goodroad__item --player">
-                <span class="hover_item"></span>
-                <span class="goodroad__item__tb">2001</span>
-                <span class="goodroad__item__txt">長閒<i></i></span>
-                <span class="goodroad__item__go">
-                    <i data-txt="立即前往"></i>
-                </span>
-            </li>
-        </ul>
+            <div class="details">
+                <div class="details__title">
+                    <span class="details__title__txt" data-txt="好路提示"></span>
+                </div>
+                <ul class="goodroad">
+                    <li class="goodroad__item">
+                        <span class="hover_item"></span>
+                        <span class="goodroad__item__tb">2001</span>
+                        <span class="goodroad__item__txt">拍拍球<i></i></span>
+                        <span class="goodroad__item__go">
+                            <i data-txt="立即前往"></i>
+                        </span>
+                    </li>
+                    <li class="goodroad__item --banker">
+                        <span class="hover_item"></span>
+                        <span class="goodroad__item__tb">2001</span>
+                        <span class="goodroad__item__txt">長莊<i></i></span>
+                        <span class="goodroad__item__go">
+                            <i data-txt="立即前往"></i>
+                        </span>
+                    </li>
+                    <li class="goodroad__item --player">
+                        <span class="hover_item"></span>
+                        <span class="goodroad__item__tb">2001</span>
+                        <span class="goodroad__item__txt">長閒<i></i></span>
+                        <span class="goodroad__item__go">
+                            <i data-txt="立即前往"></i>
+                        </span>
+                    </li>
+                    <li class="goodroad__item">
+                        <span class="hover_item"></span>
+                        <span class="goodroad__item__tb">2001</span>
+                        <span class="goodroad__item__txt">拍拍球<i></i></span>
+                        <span class="goodroad__item__go">
+                            <i data-txt="立即前往"></i>
+                        </span>
+                    </li>
+                    <li class="goodroad__item --banker">
+                        <span class="hover_item"></span>
+                        <span class="goodroad__item__tb">2001</span>
+                        <span class="goodroad__item__txt">長莊<i></i></span>
+                        <span class="goodroad__item__go">
+                            <i data-txt="立即前往"></i>
+                        </span>
+                    </li>
+                    <li class="goodroad__item --player">
+                        <span class="hover_item"></span>
+                        <span class="goodroad__item__tb">2001</span>
+                        <span class="goodroad__item__txt">長閒<i></i></span>
+                        <span class="goodroad__item__go">
+                            <i data-txt="立即前往"></i>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+        </div>
         
 
 
@@ -210,7 +273,8 @@
             <!-- road -->
             <div class="lobbyTb__road">
                 <!-- 路圖 -->
-                <div class="lobbyTb__road__img --m_rwm">
+                <div class="lobbyTb__road__img">
+                    <span class="icon_rwm"></span>
                     <img src="../images/road_img.png">
                 </div>
                 <!-- 路圖 end -->
@@ -293,7 +357,8 @@
             <!-- road -->
             <div class="lobbyTb__road">
                 <!-- 路圖 -->
-                <div class="lobbyTb__road__img --m_rwm" style="display: none;">
+                <div class="lobbyTb__road__img" style="display: none;">
+                    <i class="icon_rwm"></i>
                     <img src="../images/road_img.png">
                 </div>
                 <!-- 路圖 end -->

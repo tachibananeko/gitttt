@@ -1,55 +1,64 @@
 // BA2＝＝＝＝＝＝＝＝＝＝＝＝＝
 // 字體顏色
 $ba2_txt_color: (
-    txt_primary:#fbe2b0,
-    txt_secondary:#240913,
-    txt_gray:#756e6e,
-    txt_black:#000,
-    txt_white:#fff,
-    txt_shadow:hsla(354, 29%, 7%, 0.5),
-    txt_bank: #ff302a,
-    txt_play: #0068ed,
-    txt_tie: #009245
+    primary:#fbe2b0,
+    secondary:#240913,
+    gray:#756e6e,
+    black:#000,
+    white:#fff,
+    shadow:hsla(354, 29%, 7%, 0.5),
+    warn: #ff5f67,
+    bank: #ff302a,
+    play: #0068ed,
+    tie: #009245,
+    win: #37c6ff
 );
+
+@each $name, $value in $ba2_txt_color {
+    .ba2 .txt_#{$name} {
+        color: $value;
+    }
+}
 
 // 背景色
 $ba2_bg_color: (
-    bg_primary:linear-gradient(to right, #3e3123 50%, #140a0c 100%),
-    bg_primary_vl:linear-gradient(to bottom, #3e3123 0%, #140a0c 100%),
-    bg_secondary:#fbe2b0,
-    bg_secondary02:#f2bd79,
-    bg_secondary_vl:linear-gradient(to bottom, #f2bd79 0%, #3e3123 100%),
-    bg_gold:linear-gradient(to bottom, #f2d77a 0%, #ffffc5 20%, #f2d77a 100%),
-    bg_white: #fff,
-    bg_black_alpha: rgba(0, 0, 0, 0.7)
+    primary:linear-gradient(to right, #3e3123 50%, #140a0c 100%),
+    primary_vl:linear-gradient(to bottom, #3e3123 0%, #140a0c 100%),
+    secondary:#fbe2b0,
+    secondary02:#f2bd79,
+    secondary_vl:linear-gradient(to bottom, #f2bd79 0%, #3e3123 100%),
+    gold:linear-gradient(to bottom, #f2d77a 0%, #ffffc5 20%, #f2d77a 100%),
+    white: #fff,
+    brown: #240913,
+    black_alpha: rgba(0, 0, 0, 0.7)
 );
 
 // 按鈕色
 $ba2_btn_color: (
-    btn_primary:linear-gradient(to right, #f2bd79 60%, #563d29 100%),
-    btn_secondary:linear-gradient(to right, #f2bd79 0%, #563d29 60%, #000 100%),
-    btn_black:linear-gradient(to right, #333 50%, #000 80%),
-    btn_lightblack:linear-gradient(to right, #666 50%, #000 80%),
-    btn_brown:linear-gradient(to right, #563d29 50%, #000 100%),
-    btn_darkbrown:linear-gradient(to top, #42210b 0%, #000 100%),
-    btn_blue:linear-gradient(to right, #005fd7 0%, #0b0e25 100%),
-    btn_lightblue:linear-gradient(to right, #00a0ed 0%, #111269 100%),
-    btn_green:linear-gradient(to right, #00d345 0%, #110024 100%),
-    btn_lightgreen:linear-gradient(to right, #14b045 0%, #113924 100%),
-    btn_red:linear-gradient(to right, #ff302a 0%, #0e0000 90%),
-    btn_lightred:linear-gradient(to right, #ff5f67 0%, #2d0000 100%),
-    btn_orange:linear-gradient(to right, #f36428 0%, #440010 100%),
-    btn_lightorange:linear-gradient(to right, #ff901d 0%, #991b10 100%),
-    btn_purple:linear-gradient(to right, #8260fa 0%, #000 100%),
-    btn_lightpurple:linear-gradient(to right, #c69aff 0%, #19004d 100%),
-    btn_gold:linear-gradient(to right, #f2bd79 0%, #563d29 100%)
+    primary:linear-gradient(to right, #f2bd79 60%, #563d29 100%),
+    secondary:linear-gradient(to right, #f2bd79 0%, #563d29 60%, #000 100%),
+    black:linear-gradient(to right, #333 50%, #000 80%),
+    lightblack:linear-gradient(to right, #666 50%, #000 80%),
+    brown:linear-gradient(to right, #563d29 50%, #000 100%),
+    darkbrown:linear-gradient(to top, #42210b 0%, #000 100%),
+    blue:linear-gradient(to right, #005fd7 0%, #0b0e25 100%),
+    lightblue:linear-gradient(to right, #00a0ed 0%, #111269 100%),
+    green:linear-gradient(to right, #00d345 0%, #110024 100%),
+    lightgreen:linear-gradient(to right, #14b045 0%, #113924 100%),
+    red:linear-gradient(to right, #ff302a 0%, #0e0000 90%),
+    lightred:linear-gradient(to right, #ff5f67 0%, #2d0000 100%),
+    orange:linear-gradient(to right, #f36428 0%, #440010 100%),
+    lightorange:linear-gradient(to right, #ff901d 0%, #991b10 100%),
+    purple:linear-gradient(to right, #8260fa 0%, #000 100%),
+    lightpurple:linear-gradient(to right, #c69aff 0%, #19004d 100%),
+    gold:linear-gradient(to right, #f2bd79 0%, #563d29 100%)
 );
 
 // 裝飾線色
 $ba2_border_color: (
-    border_primary:linear-gradient(to right, transparent 5%, #f2d77a 20%, #ffffc5 60%, #f2d77a 80%, transparent 100%) 1,
-    border_secondary:linear-gradient(to right, #f2d77a 10%, #ffffc5 30%, #f2d77a 60%, rgba(242, 216, 122, 0) 100%) 1,
-    border_brown:linear-gradient(to top, #3e3123 0%, #140a0c 100%) 1
+    primary:linear-gradient(to right, transparent 5%, #f2d77a 20%, #ffffc5 60%, #f2d77a 80%, transparent 100%) 1,
+    secondary:linear-gradient(to right, #f2d77a 10%, #ffffc5 30%, #f2d77a 60%, rgba(242, 216, 122, 0) 100%) 1,
+    brown:linear-gradient(to top, #3e3123 0%, #140a0c 100%) 1
 );
 
 
@@ -63,44 +72,56 @@ $ba2_border_color: (
 
 // BA3＝＝＝＝＝＝＝＝＝＝＝＝＝
 // 字體顏色
-$ba3_txt_color: (txt_primary:#fff,
-    txt_secondary:#240913,
-    txt_gray:#B3B3B3,
-    txt_shadow:hsla(354, 29%, 7%, 0.5),
-    txt_bank: #ff302a,
-    txt_play: #0068ed,
-    txt_tie: #009245
+$ba3_txt_color: (
+    primary:#fff,
+    secondary:#240913,
+    gray:#B3B3B3,
+    shadow:hsla(354, 29%, 7%, 0.5),
+    warn: #ff5f67,
+    bank: #ff302a,
+    play: #0068ed,
+    tie: #009245
 );
+@each $name, $value in $ba3_txt_color {
+    .ba3 .txt_#{$name} {
+        color: $value;
+    }
+}
 
 // 背景色
-$ba3_bg_color: (bg_primary:linear-gradient(to right, #001940 50%, #004889 100%),
-    bg_primary_vl:linear-gradient(to bottom, #004889 0%, #001940 100%),
-    bg_secondary:#fbe2b0,
-    bg_secondary_vl:linear-gradient(to bottom, #f2bd79 60%, #563d29 100%),
-    bg_darkblue: linear-gradient(-137deg, #001940 0%, #000) 100%,
-    bg_lightblue: #37c6ff,
-    bg_lightyellow: #ffd300,
-    bg_white: #fff,
-    bg_black: #000,
-    bg_black_alpha: rgba(0, 0, 0, 0.7)
+$ba3_bg_color: (
+    primary:linear-gradient(to right, #001940 50%, #004889 100%),
+    primary_vl:linear-gradient(to bottom, #004889 0%, #001940 100%),
+    secondary:#fbe2b0,
+    secondary_vl:linear-gradient(to bottom, #f2bd79 60%, #563d29 100%),
+    darkblue: linear-gradient(-137deg, #001940 0%, #000) 100%,
+    lightblue: #37c6ff,
+    lightyellow: #ffd300,
+    white: #fff,
+    black: #000,
+    black_alpha: rgba(0, 0, 0, 0.7)
     );
 
 // 按鈕色
-$ba3_btn_color:(btn_primary:linear-gradient(to right, #f2bd79 60%, #563d29 100%),
-    btn_secondary:linear-gradient(to right, #001940 0%, #004889 100%),
-    btn_blue:linear-gradient(to top, #001940 0%, #004889 100%),
-    btn_lightblue:linear-gradient(to top, #004889 30%, #00a6ed 100%),
-    btn_lightblue_vl:linear-gradient(to right, #004889 30%, #00a6ed 100%),
-
-    btn_green:linear-gradient(to top, #009245 0%, #113924 100%),
-    btn_lightgreen:linear-gradient(to top, #00c945 0%, #117024 100%));
+$ba3_btn_color:(
+    primary:linear-gradient(to right, #f2bd79 60%, #563d29 100%),
+    secondary:linear-gradient(to right, #001940 0%, #004889 100%),
+    blue:linear-gradient(to top, #001940 0%, #004889 100%),
+    lightblue:linear-gradient(to top, #004889 30%, #00a6ed 100%),
+    lightblue_vl:linear-gradient(to right, #004889 30%, #00a6ed 100%),
+    green:linear-gradient(to top, #009245 0%, #113924 100%),
+    lightgreen:linear-gradient(to top, #00c945 0%, #117024 100%),
+    orange:linear-gradient(to top, #f36428 0%, #440010 100%),
+    lightorange:linear-gradient(to top, #ff901d 0%, #991b10 100%),
+);
 
 // 裝飾線色
-$ba3_border_color: (border_primary:linear-gradient(to right, #f2bd79 0%, #ffffc5 50%, #f2bd79 100%) 1,
-    border_secondary:linear-gradient(to right, transparent 5%, #37c6ff 20%, #63faff 60%, #37c6ff 80%, transparent 100%) 1,
-    border_blue:linear-gradient(to right, #63faff 0%, #37c6ff 100%) 1,
-    border_green:linear-gradient(to right, #00d345 0%, #14b045 100%) 1,
-    border_red:linear-gradient(to right, #ff5f67 0%, #ff302a 100%) 1);
+$ba3_border_color: (
+    primary:linear-gradient(to right, #f2bd79 0%, #ffffc5 50%, #f2bd79 100%) 1,
+    secondary:linear-gradient(to right, transparent 5%, #37c6ff 20%, #63faff 60%, #37c6ff 80%, transparent 100%) 1,
+    blue:linear-gradient(to right, #63faff 0%, #37c6ff 100%) 1,
+    green:linear-gradient(to right, #00d345 0%, #14b045 100%) 1,
+    red:linear-gradient(to right, #ff5f67 0%, #ff302a 100%) 1);
 
 
 // 動畫
