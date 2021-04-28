@@ -13,7 +13,7 @@ $num: 100;
 		margin-top: $num * 1%;
 	}
 	.mb#{$num} {
-		margin-top: $num * 1%;
+		margin-bottom: $num * 1%;
 	}
 
 	$num: $num - 1;
@@ -309,10 +309,10 @@ $icon: (
 
 // RWD相關
 $breakpoints: (
-	pc: 1440px,
+	pc: 1280px,
 	big_pad: 1112px,
 	pad: 1024px,
-	ph: 767px);
+	ph: 768px);
 
 @mixin mw_xl {
 	@media screen and (max-width: map-get($breakpoints, "pc")) {
