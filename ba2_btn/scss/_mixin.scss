@@ -312,7 +312,9 @@ $breakpoints: (
 	pc: 1280px,
 	big_pad: 1112px,
 	pad: 1024px,
-	ph: 768px);
+	pad_vl: 996px,
+	ph: 599px
+	);
 
 @mixin mw_xl {
 	@media screen and (max-width: map-get($breakpoints, "pc")) {
@@ -332,7 +334,13 @@ $breakpoints: (
 	}
 }
 
-@mixin mw_sm {
+@mixin mw_ms {
+	@media screen and (max-width: map-get($breakpoints, "pad_vl")) {
+		@content;
+	}
+}
+
+@mixin mw_xs {
 	@media screen and (max-width: map-get($breakpoints, "ph")) {
 		@content;
 	}
