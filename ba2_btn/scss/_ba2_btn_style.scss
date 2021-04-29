@@ -6,17 +6,17 @@
 .menu {
     width: 130px;
     height: 200px;
-    background-image: map-get($ba2_bg_color, primary);
+    background-image: map-get($bg_color, primary);
     &__btn {
-        @include btn_set(130px, 40px, transparent);
-        @include border(0, map-get($ba2_border_color, secondary));
+        @include btn_set(100%, 40px, transparent);
+        @include border(0, map-get($border_color, secondary));
 
         &::after {
-            @include btn_txt(center, map-get($ba2_txt_color, primary), map-get($ba2_txt_color, shadow));
+            @include btn_txt(center, map-get($txt_color, primary), map-get($txt_color, shadow));
         }
 
         .hover_item {
-            @include btn_hoveritem(map-get($ba2_btn_color, secondary));
+            @include btn_hoveritem(map-get($btn_color, secondary));
 
             &::before {
                 @include btn_hoverlight01(150%);
@@ -25,12 +25,12 @@
 
 
         // _on效果
-        @include btn_on(map-get($ba2_txt_color, primary)) {
+        @include btn_on(map-get($txt_color, primary)) {
             border-width: 1px 0;
         }
 
         // 手指效果
-        @include btn_hoverHandler(1px 0, map-get($ba2_txt_color, primary));
+        @include btn_hoverHandler(1px 0, map-get($txt_color, primary));
     }
 }
 
@@ -44,21 +44,21 @@
     align-content: flex-start;
     flex-wrap: wrap;
     &__btn{
-        @include btn_set(115px, 35px, map-get($ba2_btn_color, primary));
+        @include btn_set(115px, 35px, map-get($btn_color, primary));
         border-radius: 3px;
-        border: 2px solid map-get($ba2_bg_color, secondary);
+        border: 2px solid map-get($bg_color, secondary);
         margin: 0 10px 10px;
         &::before{
             @include btn_hoverlight02;
         }
         &::after {
-            @include btn_txt(center, map-get($ba2_txt_color, secondary ), transparent);
+            @include btn_txt(center, map-get($txt_color, secondary ), transparent);
             font-weight: bold;
         }
         .hover_item {
-            @include btn_hoveritem(map-get($ba2_btn_color, brown));
-            box-shadow: 0 0 3px map-get($ba2_bg_color, secondary) inset,
-            0 0 6px map-get($ba2_bg_color, secondary) inset;
+            @include btn_hoveritem(map-get($btn_color, brown));
+            box-shadow: 0 0 3px map-get($bg_color, secondary) inset,
+            0 0 6px map-get($bg_color, secondary) inset;
             &::before {
                 @include btn_hoverlight02;
             }
@@ -113,10 +113,10 @@
         }        
 
         // _on效果
-        @include btn_on(map-get($ba2_txt_color, primary));
+        @include btn_on(map-get($txt_color, primary));
 
         // 手指效果
-        @include btn_hoverHandler(2px 2px, map-get($ba2_txt_color, primary));
+        @include btn_hoverHandler(2px 2px, map-get($txt_color, primary));
     }
 }
 
@@ -128,42 +128,42 @@
     background-image: linear-gradient(to top, #3D3022 0%, #160C0D 100%);
     justify-content: center;
     &__btn{
-        @include btn_set(140px, 60px, map-get($ba2_btn_color, lightblue));
-        @include border(1px 0, map-get($ba2_border_color, primary));
+        @include btn_set(140px, 60px, map-get($btn_color, lightblue));
+        @include border(1px 0, map-get($border_color, primary));
         &::before{
             @include btn_hoverlight01(200%);
         }
         &::after{
-            @include btn_txt(center, map-get($ba2_txt_color, primary), map-get($ba2_txt_color, shadow));
+            @include btn_txt(center, map-get($txt_color, primary), map-get($txt_color, shadow));
             font-size: 24px;
             
         }
         .hover_item{
-            @include btn_hoveritem(map-get($ba2_btn_color, blue));
-            box-shadow: 0 0 3px map-get($ba2_bg_color, secondary) inset,
-                        0 0 6px map-get($ba2_bg_color, secondary) inset;
+            @include btn_hoveritem(map-get($btn_color, blue));
+            box-shadow: 0 0 3px map-get($bg_color, secondary) inset,
+                        0 0 6px map-get($bg_color, secondary) inset;
             &::before {
                 @include btn_hoverlight01(200%);
             }
         }
         // 續押
         &.--repeat {
-            background: map-get($ba2_btn_color, lightgreen);
+            background: map-get($btn_color, lightgreen);
             .hover_item {
-                background: map-get($ba2_btn_color, green);
+                background: map-get($btn_color, green);
             }
         }
 
         // 取消
         &.--cancel {
-            background: map-get($ba2_btn_color, lightred);
+            background: map-get($btn_color, lightred);
             .hover_item {
-                background: map-get($ba2_btn_color, red);
+                background: map-get($btn_color, red);
             }
         }
 
         // 手指效果
-        @include btn_hoverHandler(1px 0, map-get($ba2_txt_color, primary));
+        @include btn_hoverHandler(1px 0, map-get($txt_color, primary));
     }
 }
 
@@ -177,25 +177,25 @@
         border-radius: 5px;
         >li{
             @extend %hand;
-            @include btn_set(70px, 100%, map-get($ba2_txt_color, black));
+            @include btn_set(70px, 100%, map-get($txt_color, black));
             font-weight: bold;
 
             &::after{
-                @include btn_txt(center, map-get($ba2_txt_color, gray), transparent);
+                @include btn_txt(center, map-get($txt_color, gray), transparent);
             }
             .hover_item{
-                @include btn_hoveritem(map-get($ba2_btn_color, primary));
-                border: 1px solid map-get($ba2_bg_color, brown);
+                @include btn_hoveritem(map-get($btn_color, primary));
+                border: 1px solid map-get($bg_color, brown);
                 &::before {
                     @include btn_hoverlight02;
                 }
             }
 
             // _on效果
-            @include btn_on(map-get($ba2_txt_color, secondary ));
+            @include btn_on(map-get($txt_color, secondary ));
             
             // 手指效果
-            @include btn_hoverHandler(0 0, map-get($ba2_txt_color, secondary ));
+            @include btn_hoverHandler(0 0, map-get($txt_color, secondary ));
         }
     }
 }
@@ -208,30 +208,30 @@
     font-size: 0;
     >li{
         @extend %hand;
-        @include btn_set(auto, 100%, map-get($ba2_btn_color, darkbrown));
+        @include btn_set(auto, 100%, map-get($btn_color, darkbrown));
         min-width: 80px;
         padding: 0 5px;
-        border: 1px solid map-get($ba2_txt_color, primary);
+        border: 1px solid map-get($txt_color, primary);
         border-width: 1px 1px 0;
         +li{
             border-left: none;
         }
         &::after{
-            @include btn_txt(center, map-get($ba2_txt_color, primary), transparent);
+            @include btn_txt(center, map-get($txt_color, primary), transparent);
             font-size: 14px;
         }
         .hover_item{
-            @include btn_hoveritem(map-get($ba2_btn_color, primary));
+            @include btn_hoveritem(map-get($btn_color, primary));
             &::before{
                 @include btn_hoverlight02;
             }
         }
 
         // _on效果
-        @include btn_on(map-get($ba2_txt_color, secondary ));
+        @include btn_on(map-get($txt_color, secondary ));
         
         // 手指效果
-        @include btn_hoverHandler(1px 1px 0, map-get($ba2_txt_color, secondary ));
+        @include btn_hoverHandler(1px 1px 0, map-get($txt_color, secondary ));
     }
 }
 
@@ -241,42 +241,42 @@
     border-radius: 5px;
     font-size: 0;
     &__btn{
-        @include btn_set(100px, 100%, map-get($ba2_btn_color, lightgreen));
-        @include border(1px 0, map-get($ba2_border_color, primary));
+        @include btn_set(100px, 100%, map-get($btn_color, lightgreen));
+        @include border(1px 0, map-get($border_color, primary));
         &::before{
             @include btn_hoverlight02;
         }
         &::after{
-            @include btn_txt(center, map-get($ba2_txt_color, primary), map-get($ba2_txt_color, shadow));
+            @include btn_txt(center, map-get($txt_color, primary), map-get($txt_color, shadow));
         }
         .hover_item{
-            @include btn_hoveritem(map-get($ba2_btn_color, green));
-            box-shadow: 0 0 1px map-get($ba2_bg_color, secondary) inset,
-                        0 0 3px map-get($ba2_bg_color, secondary) inset;
+            @include btn_hoveritem(map-get($btn_color, green));
+            box-shadow: 0 0 1px map-get($bg_color, secondary) inset,
+                        0 0 3px map-get($bg_color, secondary) inset;
             &::before {
                 @include btn_hoverlight02;
             }
         }
         // 打賞
         &.--tips {
-            background: map-get($ba2_btn_color, orange);
+            background: map-get($btn_color, orange);
 
             .hover_item {
-                background: map-get($ba2_btn_color, lightorange);
+                background: map-get($btn_color, lightorange);
             }
         }
 
         // 飛牌
         &.--fly {
-            background: map-get($ba2_btn_color, lightblue);
+            background: map-get($btn_color, lightblue);
 
             .hover_item {
-                background: map-get($ba2_btn_color, blue);
+                background: map-get($btn_color, blue);
             }
         }
 
         // 手指效果
-        @include btn_hoverHandler(1px 0, map-get($ba2_txt_color, primary));
+        @include btn_hoverHandler(1px 0, map-get($txt_color, primary));
     }
 }
 
@@ -287,18 +287,18 @@
     border-radius: 5px;
     font-size: 0;
     &__btn{
-        @include btn_set(calc(100% / 4), 100%, map-get($ba2_btn_color, lightgreen));
-        @include border(1px 0, map-get($ba2_border_color, primary));
+        @include btn_set(calc(100% / 4), 100%, map-get($btn_color, lightgreen));
+        @include border(1px 0, map-get($border_color, primary));
         &::before{
             @include btn_hoverlight02;
         }
         &::after{
-            @include btn_txt(center, map-get($ba2_txt_color, primary), map-get($ba2_txt_color, shadow));
+            @include btn_txt(center, map-get($txt_color, primary), map-get($txt_color, shadow));
         }
         .hover_item{
-            @include btn_hoveritem(map-get($ba2_btn_color, green));
-            box-shadow: 0 0 1px map-get($ba2_bg_color, secondary) inset,
-            0 0 3px map-get($ba2_bg_color, secondary) inset;
+            @include btn_hoveritem(map-get($btn_color, green));
+            box-shadow: 0 0 1px map-get($bg_color, secondary) inset,
+            0 0 3px map-get($bg_color, secondary) inset;
             &::before {
                 @include btn_hoverlight02;
             }
@@ -306,30 +306,30 @@
 
         // 免佣
         &.--nocon {
-            background-image: map-get($ba2_btn_color, purple);
+            background-image: map-get($btn_color, purple);
             .hover_item {
-                background-image: map-get($ba2_btn_color, lightpurple);
+                background-image: map-get($btn_color, lightpurple);
             }
         }
 
         // 多桌
         &.--more_tb {
-            background-image: map-get($ba2_btn_color, orange);
+            background-image: map-get($btn_color, orange);
             .hover_item {
-                background-image: map-get($ba2_btn_color, lightorange);
+                background-image: map-get($btn_color, lightorange);
             }
         }
 
         // 好路追注
         &.--good_road {
-            background-image: map-get($ba2_btn_color, lightblue);
+            background-image: map-get($btn_color, lightblue);
             .hover_item {
-                background-image: map-get($ba2_btn_color, blue);
+                background-image: map-get($btn_color, blue);
             }
         }
 
         // 手指效果
-        @include btn_hoverHandler(1px 0, map-get($ba2_txt_color, primary));
+        @include btn_hoverHandler(1px 0, map-get($txt_color, primary));
     }
 }
 
@@ -343,7 +343,7 @@
         @include d_f(flex, center, center);
         height: 35px;
         padding: 0 10px;
-        background: map-get($ba2_bg_color, primary_vl);
+        background: map-get($bg_color, primary_vl);
 
         &__txt {
             position: relative;
@@ -355,7 +355,7 @@
             @at-root .--plural .details__title__txt:not(.--on) {
                 @extend %hand;
                 // 手指效果
-                @include btn_hoverHandler(0, map-get($ba2_txt_color, secondary));
+                @include btn_hoverHandler(0, map-get($txt_color, secondary));
             }
 
             &::before {
@@ -363,11 +363,11 @@
                 content: '';
                 width: 100%;
                 height: 150%;
-                background: map-get($ba2_btn_color, darkbrown);
-                border: 2px solid map-get($ba2_bg_color, secondary);
+                background: map-get($btn_color, darkbrown);
+                border: 2px solid map-get($bg_color, secondary);
                 border-top: 0;
                 border-radius: 0 0 10px 10px;
-                color: map-get($ba2_txt_color, primary);
+                color: map-get($txt_color, primary);
                 transform: perspective(300px) rotateX(-45deg);
                 transform-origin: 50% 0;
 
@@ -384,16 +384,16 @@
             }
 
             &::after {
-                @include btn_txt(center, map-get($ba2_txt_color, primary), transparent);
+                @include btn_txt(center, map-get($txt_color, primary), transparent);
 
                 // 複數標題按鈕
                 @at-root .--plural .details__title__txt.--on::after {
-                    color: map-get($ba2_txt_color, secondary);
+                    color: map-get($txt_color, secondary);
                 }
             }
 
             .hover_item {
-                @include btn_hoveritem(map-get($ba2_bg_color, gold)) {
+                @include btn_hoveritem(map-get($bg_color, gold)) {
                     width: 102%;
                     height: 150%;
                     border-radius: 0 0 0 10px;
@@ -423,11 +423,11 @@
         height: 200px;
 
         >li+li {
-            @include border(1px 0 0, map-get($ba2_border_color, primary));            
+            @include border(1px 0 0, map-get($border_color, primary));            
         }
         &__txt {
             padding: 20px 5px;
-            color: map-get($ba2_txt_color, primary);
+            color: map-get($txt_color, primary);
             >li+li{
                 margin-top: 5px;
             }
@@ -440,9 +440,9 @@
             }
         }
         &__btn {
-            @include btn_set(40%, 100%, map-get($ba2_bg_color, secondary));
+            @include btn_set(40%, 100%, map-get($bg_color, secondary));
             border-radius: 3px;
-            color: map-get($ba2_txt_color, secondary);
+            color: map-get($txt_color, secondary);
             font-size: 14px;
 
              // 手指效果
@@ -467,9 +467,9 @@
             position: relative;
             height: 55px;
             padding: 2px;
-            background: map-get($ba2_btn_color, gold);
+            background: map-get($btn_color, gold);
             border-radius: 5px;
-            color: map-get($ba2_txt_color, primary);
+            color: map-get($txt_color, primary);
             font-size: 14px;
             margin-bottom: 5px;
             overflow: hidden;
@@ -480,11 +480,11 @@
                 display: flex;
                 width: calc(100% - 4px);
                 height: calc(100% - 4px);
-                background: map-get($ba2_btn_color, black);
+                background: map-get($btn_color, black);
             }
 
             .hover_item {
-                @include btn_hoveritem(map-get($ba2_btn_color, lightblack));
+                @include btn_hoveritem(map-get($btn_color, lightblack));
             }
 
             &__tb {
@@ -492,7 +492,7 @@
                 position: relative;
                 flex: 0 0 55px;
                 height: 90%;
-                border-right: 1px solid map-get($ba2_bg_color, secondary);
+                border-right: 1px solid map-get($bg_color, secondary);
             }
 
             &__txt {
@@ -508,10 +508,10 @@
                 padding: 5px;
 
                 i {
-                    @include btn_set(100%, 100%, map-get($ba2_btn_color, primary));
+                    @include btn_set(100%, 100%, map-get($btn_color, primary));
                     display: block;
                     padding: 0 7px;
-                    border: 1px solid map-get($ba2_bg_color, secondary);
+                    border: 1px solid map-get($bg_color, secondary);
                     border-radius: 3px;
 
                     &::before {
@@ -519,7 +519,7 @@
                     }
 
                     &::after {
-                        @include btn_txt(center, map-get($ba2_txt_color, secondary), transparent);
+                        @include btn_txt(center, map-get($txt_color, secondary), transparent);
                     }
                 }
             }
@@ -527,29 +527,29 @@
             // 莊
             &.--player {
                 &::before {
-                    background: map-get($ba2_btn_color, red);
+                    background: map-get($btn_color, red);
                 }
 
                 .hover_item {
-                    @include btn_hoveritem(map-get($ba2_btn_color, lightred));
+                    @include btn_hoveritem(map-get($btn_color, lightred));
                 }
             }
 
             // 閒
             &.--banker {
                 &::before {
-                    background: map-get($ba2_btn_color, blue);
+                    background: map-get($btn_color, blue);
                 }
 
                 .hover_item {
-                    @include btn_hoveritem(map-get($ba2_btn_color, lightblue));
+                    @include btn_hoveritem(map-get($btn_color, lightblue));
                 }
             }
 
 
 
             // 手指效果
-            @include btn_hoverHandler(1px 0, map-get($ba2_txt_color, primary));
+            @include btn_hoverHandler(1px 0, map-get($txt_color, primary));
         }
     }
 }
@@ -560,7 +560,7 @@
 // 大廳桌選擇
 .lobbyTitle{
     @include d_f(flex, center, flex-start);
-    background: map-get($ba2_bg_color, primary_vl);
+    background: map-get($bg_color, primary_vl);
     position: relative;
     width: 100%;
     max-width: 600px;
@@ -574,13 +574,13 @@
         flex: none;
         height: 100%;
         padding:  0 30px;
-        background: map-get($ba2_bg_color, secondary_vl);
+        background: map-get($bg_color, secondary_vl);
         border-top-right-radius: 5px;
         transform: skewX(35deg);
         &::before{
             @extend %txtshadow;
             content: attr(data-txt);
-            color: map-get($ba2_txt_color, white);
+            color: map-get($txt_color, white);
             font-size: 18px;
             transform: skewX(-35deg);
             margin-right: 10px;
@@ -590,7 +590,7 @@
             padding: 2px 5px;
             background: #000;
             border-radius: 3px;
-            color: map-get($ba2_txt_color, white);
+            color: map-get($txt_color, white);
             transform: skewX(-35deg);
         }
     }
@@ -598,16 +598,16 @@
         @include d_f(flex, center, flex-start);
         width: 100%;
         height: 100%;
-        color: map-get($ba2_txt_color, gray);
+        color: map-get($txt_color, gray);
         
         li{
             @include d_f(flex, center, center);
             @include btn_set(calc(100% / 3), 100%, transparent);
-            @include border(1px, map-get($ba2_border_color, brown));
+            @include border(1px, map-get($border_color, brown));
             padding: 0 5px;
             
             &:nth-child(1)::after{
-                @include btn_txt(center, map-get($ba2_txt_color, primary), map-get($ba2_txt_color, shadow));
+                @include btn_txt(center, map-get($txt_color, primary), map-get($txt_color, shadow));
             }
             i {
                 position: relative;
@@ -615,15 +615,15 @@
                 height: 100%;
             }
             .hover_item {
-                @include btn_hoveritem(map-get($ba2_btn_color, darkbrown));
+                @include btn_hoveritem(map-get($btn_color, darkbrown));
                 &::before {
                     @include btn_hoverlight02;
                 }
             }
 
             // 手指效果
-            @include btn_hoverHandler(1px, map-get($ba2_txt_color, primary)){
-                border-image: map-get($ba2_border_color, secondary);
+            @include btn_hoverHandler(1px, map-get($txt_color, primary)){
+                border-image: map-get($border_color, secondary);
             };
             
         }
@@ -635,7 +635,7 @@
 // 大廳桌
 .lobbyTb {
     width: 600px;
-    color: map-get($ba2_txt_color, white);
+    color: map-get($txt_color, white);
     font-size: 14px;
     margin-bottom: 30px;
 
@@ -677,7 +677,7 @@
         position: relative;
         height: 35px;
         padding: 0 10px 0 120px;
-        background: map-get($ba2_bg_color, primary);
+        background: map-get($bg_color, primary);
 
         &::before{
             @include pos_abs(0, 0, 0, 0);
@@ -708,13 +708,13 @@
                 min-width: 120px;
                 width: 100%;
                 height: 100%;
-                background: map-get($ba2_bg_color, secondary_vl);
+                background: map-get($bg_color, secondary_vl);
                 border-top-right-radius: 5px;
                 transform: skewX(35deg);
 
             }
             &::after {
-                @include bg_txt(map-get($ba2_bg_color, gold), 20px);
+                @include bg_txt(map-get($bg_color, gold), 20px);
                 content: attr(data-txt);
                 position: relative;
             }
@@ -726,8 +726,8 @@
             height: 80%;
             padding: 0 5px;
             border-radius: 27px;
-            border: 1px solid map-get($ba3_bg_color, secondary);
-            color: map-get($ba3_txt_color, primary);
+            border: 1px solid map-get($bg_color, secondary);
+            color: map-get($txt_color, primary);
             font-size: 18px;
 
             &::before {
@@ -751,9 +751,9 @@
 
     // 珠路區
     &__road {
-        @include border(1px 0, map-get($ba2_border_color, primary));
+        @include border(1px 0, map-get($border_color, primary));
         position: relative;
-        background: map-get($ba2_bg_color, white);
+        background: map-get($bg_color, white);
         >div:not(.lobbyTb__road__img):not(.lobbyTb__road__loading) {
             @include pos_abs(0, 0, 0, 0);
             width: 100%;
@@ -775,7 +775,7 @@
 
         // loading
         &__loading{
-            @include load_set(.7, map-get($ba2_bg_color, secondary02));
+            @include load_set(.7, map-get($bg_color, secondary02));
             padding-bottom: calc(100% * .17847);
         }
 
@@ -785,7 +785,7 @@
             @extend %transition;
             flex-direction: column;
             padding: 10px;
-            background: map-get($ba2_bg_color, black_alpha);
+            background: map-get($bg_color, black_alpha);
             opacity: 0;
             &::before{
                 content: attr(data-info);
@@ -816,7 +816,7 @@
         @include d_f(flex, center, space-between);
         height: 35px;
         padding-left: 10px;
-        background: map-get($ba2_bg_color, primary_vl);
+        background: map-get($bg_color, primary_vl);
         overflow: hidden;
 
         &__info {
@@ -832,7 +832,7 @@
                     background: #000;
                     padding: 3px 5px;
                     border-radius: 3px;
-                    color: map-get($ba2_txt_color, white);
+                    color: map-get($txt_color, white);
                     margin-left: 5px;
                 }
 
@@ -841,15 +841,15 @@
                 }
 
                 &:nth-child(1) {
-                    color: map-get($ba2_txt_color, bank);
+                    color: map-get($txt_color, bank);
                 }
 
                 &:nth-child(2) {
-                    color: map-get($ba2_txt_color, play);
+                    color: map-get($txt_color, play);
                 }
 
                 &:nth-child(3) {
-                    color: map-get($ba2_txt_color, tie);
+                    color: map-get($txt_color, tie);
                 }
             }
         }
@@ -862,8 +862,8 @@
         }
 
         &__btn {
-            @include btn_set(25%, 100%, map-get($ba2_btn_color, secondary));
-            @include border(1px 0, map-get($ba2_border_color, primary));
+            @include btn_set(25%, 100%, map-get($btn_color, secondary));
+            @include border(1px 0, map-get($border_color, primary));
             flex: none;
             transform: skewX(35deg);
             right: -10px;
@@ -872,13 +872,13 @@
             }
 
             &::after {
-                @include btn_txt(center, map-get($ba2_txt_color, primary), map-get($ba2_txt_color, shadow));
+                @include btn_txt(center, map-get($txt_color, primary), map-get($txt_color, shadow));
                 font-size: 18px;
                 transform: skewX(-35deg);
             }
 
             .hover_item {
-                @include btn_hoveritem(map-get($ba2_btn_color, brown));
+                @include btn_hoveritem(map-get($btn_color, brown));
 
                 &::before {
                     @include btn_hoverlight01(200%);
@@ -886,7 +886,7 @@
             }
 
             // 手指效果
-            @include btn_hoverHandler(1px 0, map-get($ba2_txt_color, primary));
+            @include btn_hoverHandler(1px 0, map-get($txt_color, primary));
         }
     }
 }

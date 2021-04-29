@@ -9,11 +9,14 @@ $num: 100;
 	.w#{$num} {
 		width: $num * 1%;
 	}
-	.mt#{$num} {
-		margin-top: $num * 1%;
+	.w#{$num}px {
+		width: $num + px;
 	}
 	.mb#{$num} {
-		margin-bottom: $num * 1%;
+		margin-bottom: $num + px;
+	}
+	.mt#{$num} {
+		margin-top: $num + px;
 	}
 
 	$num: $num - 1;
@@ -310,7 +313,7 @@ $icon: (
 // RWD相關
 $breakpoints: (
 	pc: 1280px,
-	big_pad: 1112px,
+	big_pad: 1180px,
 	pad: 1024px,
 	pad_vl: 996px,
 	ph: 599px

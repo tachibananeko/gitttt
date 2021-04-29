@@ -48,6 +48,7 @@
             grid-template-areas:"video order"
                                 "table order"
                                 "road details";
+            
             @include mw_lg{
                 grid-template-rows: 480px 20px 1fr;
             }
@@ -80,6 +81,7 @@
                 @include mw_ms {
                     grid-area: 2 / 1 / 3 / 2;
                     opacity: .5;
+                    z-index: 1;
                 }
             }
 
@@ -90,6 +92,11 @@
                 @include mw_ms {
                     grid-area: 2 / 1 / 3 / 2;
                     opacity: .5;
+                }
+                // 電投無卡 網投無卡
+                @at-root .--noCard .order,
+                .--noOrder .order{
+                    display: none;
                 }
             }
 
@@ -107,12 +114,40 @@
             .detail {
                 grid-area: details;
                 background-color: #faa;
+                opacity: 0.5;
                 
                 @include mw_ms {
                     grid-area: 1 / 1 / 2 / 2;
                     opacity: .5;
                 }
             }
+
+            // 各種狀態
+            // 電投 電投無卡 網投無卡
+            @at-root .--telType .frame__main__inside,
+            .--telType.--noCard .frame__main__inside,
+            .--noOrder .frame__main__inside {
+                grid-template-areas:"video details"
+                                    "table details"
+                                    "road road";
+            }
+            // 電投
+            @at-root .--telType .order {
+                grid-area: 1 / 2 / 3 / 3;
+            }
+            // 電投視訊放大
+            @at-root .--telType.--bigTv .frame__main__inside {
+                
+            }
+
+            // 電投無卡視訊放大
+            @at-root .--telType.--noCard.--bigTv .frame__main__inside {}
+
+            // 網投視訊放大
+            @at-root .--bigTv .frame__main__inside {}
+
+            // 網投無卡視訊放大
+            @at-root .--noOrder.--bigTv .frame__main__inside {}
         }        
     }
 }
