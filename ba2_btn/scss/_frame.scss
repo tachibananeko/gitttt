@@ -1,4 +1,4 @@
-
+// 各種狀態關鍵字 >> 電網投各種狀態
 .frame{
     display: grid;
     width: 100%;
@@ -22,7 +22,7 @@
     }
     &__menu {
         grid-area: menu;
-        background-color: #fc0;
+        background: map-get($bg_color, primary);
     }
 
     &__main {
@@ -92,12 +92,7 @@
                 @include mw_ms {
                     grid-area: 2 / 1 / 3 / 2;
                     opacity: .5;
-                }
-                // 電投無卡 網投無卡
-                @at-root .--noCard .order,
-                .--noOrder .order{
-                    display: none;
-                }
+                }                
             }
 
             .road {
@@ -121,33 +116,64 @@
                     opacity: .5;
                 }
             }
-
-            // 各種狀態
-            // 電投 電投無卡 網投無卡
-            @at-root .--telType .frame__main__inside,
-            .--telType.--noCard .frame__main__inside,
-            .--noOrder .frame__main__inside {
-                grid-template-areas:"video details"
-                                    "table details"
-                                    "road road";
-            }
-            // 電投
-            @at-root .--telType .order {
-                grid-area: 1 / 2 / 3 / 3;
-            }
-            // 電投視訊放大
-            @at-root .--telType.--bigTv .frame__main__inside {
-                
-            }
-
-            // 電投無卡視訊放大
-            @at-root .--telType.--noCard.--bigTv .frame__main__inside {}
-
-            // 網投視訊放大
-            @at-root .--bigTv .frame__main__inside {}
-
-            // 網投無卡視訊放大
-            @at-root .--noOrder.--bigTv .frame__main__inside {}
         }        
     }
 }
+
+
+
+// 電網投各種狀態
+// 主要區塊配置 電投有卡 電投無卡 網投無卡 
+.--telType .frame__main__inside,
+.--telType.--noCard .frame__main__inside,
+.--noOrder .frame__main__inside {
+    grid-template-areas:"video details"
+                        "table details"
+                        "road road";
+}
+// 內層配置 電投有卡 
+.--telType .order {
+    grid-area: 1 / 2 / 3 / 3;
+}
+// 內層配置 電投無卡 網投無卡
+.--noCard .order,
+.--noOrder .order {
+    display: none;
+}
+
+
+
+// 視訊放大
+// 主要區塊配置 電頭有卡 網投有卡
+.--telType.--bigTv .frame__main__inside,
+.--bigTv .frame__main__inside {
+    grid-template-columns: 100%;
+    grid-template-rows: 600px calc(100% - 600px);
+    grid-template-areas:"video"
+                        "order";
+}
+// 內層配置 電投有卡 電頭無卡 網投有卡 網投無卡
+.--bigTv .table,
+.--bigTv .road,
+.--bigTv .detail {
+    display: none;
+}
+// 內層配置 電投有卡 網投有卡
+.--bigTv .order {
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+// 主要區塊配置 電投無卡 網投無卡
+.--telType.--noCard.--bigTv .frame__main__inside,
+.--noOrder.--bigTv .frame__main__inside {
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+    grid-template-areas:"video";
+}
+// 內層配置 電投無卡 網投無卡
+.--bigTv.--noCard .order,
+.--bigTv.--noOrder .order {
+    display: none;
+}
+
+

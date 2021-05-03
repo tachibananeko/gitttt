@@ -18,13 +18,42 @@
 </head>
 <body>
     <!-- 
-        電投.--telType 電投無卡.--telType+.--noCard
+        電投有卡.--telType 
+        電投無卡.--telType+.--noCard
+        網投有卡 無需class
         網投無卡.--noOrder
-        視訊放大在上方狀態後加上.--bigTv
+        視訊放大 在上方狀態後加上.--bigTv
     -->
-    <div class="frame ">
+    <div class="frame">
         <!-- 左邊menu -->
-        <aside class="frame__menu">左邊咩鈕</aside>
+        <aside class="frame__menu">
+            <!-- 客戶資訊 -->
+            <div class="menu__info">
+                <h1 class="menu__logo"></h1>
+                <div class="menu__info">
+                    <i class="icon_mem"></i>
+                    <span class="menu__info__name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur doloremque laboriosam explicabo numquam quibusdam sequi corrupti, assumenda eveniet ut optio libero voluptates iste nisi, dignissimos, non cumque inventore illum at ad perspiciatis ab. Aliquam quisquam vel adipisci tenetur aspernatur pariatur debitis sint quo obcaecati quibusdam, laborum libero sequi. Iusto, non.</span>
+                    <span class="menu__info__amout">2,000,000</span>
+                </div>
+            </div>
+            <!-- 客戶資訊 end -->
+
+            <!-- 廠商按鈕 -->
+            <div class="menu__main">
+                <button class="menu__main__btn" data-txt="交易紀錄">
+                    <span class="hover_item"></span>
+                </button>
+            </div>
+            <!-- 廠商按鈕 end -->
+
+            <!-- 基本按鈕 -->
+            <div class="menu__basic">
+                <button class="menu__basic__btn" data-txt="交易紀錄">
+                    <span class="hover_item"></span>
+                </button>
+            </div>
+            <!-- 基本按鈕 end -->
+        </aside>
         <!-- 左邊menu end -->        
 
         <!-- iframe放置區 -->

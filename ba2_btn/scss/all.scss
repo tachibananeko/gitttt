@@ -3,9 +3,16 @@
 @import "mixin";
 @import "share_tool";
 
-// layout
-@import "frame";
+// style
 @import "ba2_btn_style";
 // @import "ba3_btn_style";
+
+// layout
+@import "frame";
+@import "left_menu"; 
+@import "top_menu";
+@import "main_game"; 
+
+
 
 
