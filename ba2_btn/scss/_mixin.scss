@@ -43,7 +43,7 @@ $num: 100;
 	background-repeat: $repeat;
 	background-size: $size;
 }
-// 縮字點點點
+// 多行縮字點點點
 @mixin omission($line, $height) {
 	display: -webkit-box;
 	-webkit-box-orient: vertical;
@@ -286,9 +286,13 @@ $num: 100;
 // icon設定
 $icon: (
 	'member',
-	'full_sc',
-	'normal_sc',
+	'backlobby',
+	'history',
+	'rule',
+	'card',
+	'line',
 	'logout',
+	'back',
 	'road_set',
 	'groad01',
 	'groad02',
@@ -299,6 +303,7 @@ $icon: (
 	'groad07',
 	'groad08',
 	'rwm',
+	'ibo',
 );
 
 @each $name in $icon {
@@ -384,8 +389,8 @@ $breakpoints: (
 	screen and (-ms-high-contrast: active),
 	(-ms-high-contrast: none) {
 		&:hover {
-			@content;
 			border-width: $border;
+			@content;
 
 			&::after {
 				color: $txt;
@@ -398,8 +403,8 @@ $breakpoints: (
 	}
 
 	&:active {
-		@content;
 		border-width: $border;
+		@content;
 
 		&::after {
 			color: $txt;

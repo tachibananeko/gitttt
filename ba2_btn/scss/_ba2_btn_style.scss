@@ -8,8 +8,7 @@
     height: 200px;
     background-image: map-get($bg_color, primary);
     &__btn {
-        @include btn_set(100%, 40px, transparent);
-        @include border(0, map-get($border_color, secondary));
+        @include btn_set(100%, 40px, transparent);        
 
         &::after {
             @include btn_txt(center, map-get($txt_color, primary), map-get($txt_color, shadow));
@@ -17,6 +16,7 @@
 
         .hover_item {
             @include btn_hoveritem(map-get($btn_color, secondary));
+            @include border(0, map-get($border_color, secondary));
 
             &::before {
                 @include btn_hoverlight01(150%);
@@ -25,12 +25,10 @@
 
 
         // _on效果
-        @include btn_on(map-get($txt_color, primary)) {
-            border-width: 1px 0;
-        }
+        @include btn_on(map-get($txt_color, primary));
 
         // 手指效果
-        @include btn_hoverHandler(1px 0, map-get($txt_color, primary));
+        @include btn_hoverHandler(0, map-get($txt_color, primary));
     }
 }
 

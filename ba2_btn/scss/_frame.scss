@@ -21,8 +21,14 @@
                             "menu menu";
     }
     &__menu {
+        @include scrollbar(hidden, auto)
         grid-area: menu;
         background: map-get($bg_color, primary);
+        z-index: 2;
+        @include mw_md{
+            @include d_f(flex, center, center);
+            position: relative;
+        }
     }
 
     &__main {
@@ -34,9 +40,11 @@
         grid-template-areas:"nav"
                             "inside";
 
-        &__nav{            
+        &__nav{
+            @include d_f(flex, center, flex-start);
             grid-area: nav;
-            background-color: #f00;
+            padding: 0 10px;
+            background: map-get($bg_color, primary_vl);
         }
         &__inside {
             grid-area: inside;

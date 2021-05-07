@@ -23,43 +23,122 @@
         網投有卡 無需class
         網投無卡.--noOrder
         視訊放大 在上方狀態後加上.--bigTv
+
+        百2 .--ba2
     -->
     <div class="frame">
         <!-- 左邊menu -->
+        <!-- 打開人頭內按鈕 .--active -->
         <aside class="frame__menu">
             <!-- 客戶資訊 -->
             <div class="menu__info">
-                <h1 class="menu__logo"></h1>
-                <div class="menu__info">
-                    <i class="icon_mem"></i>
-                    <span class="menu__info__name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur doloremque laboriosam explicabo numquam quibusdam sequi corrupti, assumenda eveniet ut optio libero voluptates iste nisi, dignissimos, non cumque inventore illum at ad perspiciatis ab. Aliquam quisquam vel adipisci tenetur aspernatur pariatur debitis sint quo obcaecati quibusdam, laborum libero sequi. Iusto, non.</span>
-                    <span class="menu__info__amout">2,000,000</span>
+                <div class="menu__info__logo"></div>
+                <button class="menu__info__btn"></button>
+                <div class="menu__info__txt">
+                    <span class="name">LoremLoremLoremLoremLoremLoremLoremLoremLoremLorem</span>
+                    <span class="amount">200,000,000</span>
                 </div>
             </div>
             <!-- 客戶資訊 end -->
 
-            <!-- 廠商按鈕 -->
+            <!-- 分頁按鈕 -->
             <div class="menu__main">
-                <button class="menu__main__btn" data-txt="交易紀錄">
-                    <span class="hover_item"></span>
-                </button>
+                <!-- 廠商按鈕 -->
+                <!-- 當前頁面.--on -->
+                <ul class="--api">
+                    <li data-txt="百家樂">
+                        <span class="hover_item"></span>
+                        <i class="icon_ibo"></i>
+                    </li>
+                    <li data-txt="百家樂">
+                        <span class="hover_item"></span>
+                        <i class="icon_ibo"></i>
+                    </li>
+                    <li data-txt="百家樂">
+                        <span class="hover_item"></span>
+                        <i class="icon_ibo"></i>
+                    </li>
+                </ul>
+                <!-- 廠商按鈕 end -->
+    
+                <!-- 基本按鈕 -->
+                <!-- 當前頁面.--on -->
+                <ul class="--myself">
+                    <li data-txt="槍手桌號" class="--PR">
+                        MW2000
+                    </li>
+                    <li data-txt="返回大廳">
+                        <span class="hover_item"></span>
+                        <i class="icon_backlobby"></i>
+                    </li>
+                    <li data-txt="投注明細">
+                        <span class="hover_item"></span>
+                        <i class="icon_history"></i>
+                    </li>
+                    <li data-txt="遊戲規則">
+                        <span class="hover_item"></span>
+                        <i class="icon_rule"></i>
+                    </li>
+                    <li data-txt="選擇卡片">
+                        <span class="hover_item"></span>
+                        <i class="icon_card"></i>
+                    </li>
+                    <li data-txt="選擇線路">
+                        <span class=" hover_item"></span>
+                        <i class="icon_line"></i>
+                    </li>
+                    <li data-txt="登出">
+                        <span class=" hover_item"></span>
+                        <i class="icon_logout"></i>
+                    </li>
+                </ul>
+                <!-- 基本按鈕 end -->
             </div>
-            <!-- 廠商按鈕 end -->
-
-            <!-- 基本按鈕 -->
-            <div class="menu__basic">
-                <button class="menu__basic__btn" data-txt="交易紀錄">
-                    <span class="hover_item"></span>
-                </button>
-            </div>
-            <!-- 基本按鈕 end -->
+            <!-- 分頁按鈕 end -->
         </aside>
         <!-- 左邊menu end -->        
 
         <!-- iframe放置區 -->
         <main class="frame__main">
             <!-- 上方menu -->
-            <nav class="frame__main__nav">上面咩鈕</nav>
+            <nav class="frame__main__nav">
+                <!-- 返回鍵 -->
+                <button class="nav__back__btn"></button>
+                <!-- 返回鍵 end -->
+
+
+                <!-- 視訊頻道 -->
+                <div class="channel">
+                    <button class="channel_1st" style="display:none;"></button>
+                    <ul class="channel__item">
+                        <li class="--on" data-txt="CHT">
+                            <span class="hover_item"></span>
+                        </li>
+                        <li data-txt="CHT">
+                            <span class="hover_item"></span>
+                        </li>
+                        <li data-txt="CHT">
+                            <span class="hover_item"></span>
+                        </li>
+                    </ul>
+                </div>
+                <!-- 視訊頻道 end -->
+
+                <!-- 疑難排解 -->
+                <i class="nav__err__btn"></i>
+                <!-- 疑難排解 end -->
+
+                <!-- 打賞 -->
+                <button class="nav__tip__btn" data-txt="打賞">
+                    <span class="hover_item"></span>
+                </button>
+                <!-- 打賞 end -->
+
+                <!-- 全螢幕 -->
+                <!-- 縮小螢幕 --zoomin -->
+                <button class="nav__zoom__btn"></button>
+                <!-- 全螢幕 end -->
+            </nav>
             <!-- 上方menu end -->
 
             <div class="frame__main__inside">

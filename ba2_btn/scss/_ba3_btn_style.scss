@@ -1,42 +1,7 @@
 
 
-.outside_flex {
-    background-color: #000;
-}
-
-.ba3_none{
-    display: none;
-}
 /* 左邊按鈕 */
-.menu {
-    width: 130px;
-    height: 200px;
-    background-image: map-get($bg_color, primary);
-    &__btn {
-        @include btn_set(100%, 40px, transparent);
-        @include border(0, map-get($border_color, primary));
 
-        &::after {
-            @include btn_txt(center, map-get($txt_color, primary), transparent);
-        }
-
-        .hover_item {
-            @include btn_hoveritem(map-get($btn_color, primary));
-            &::before {
-                @include btn_hoverlight03;
-            }
-        }
-
-
-        // _on效果
-        @include btn_on(map-get($txt_color, secondary)) {
-            border-width: 1px 0;
-        }
-
-        // 手指效果
-        @include btn_hoverHandler(1px 0, map-get($txt_color, secondary));
-    }
-}
 
 
 /* 桌號按鈕 */
