@@ -149,38 +149,38 @@
 }
 
 /* 視訊品質 */
-.channel {
-    height: 30px;
-    border-radius: 5px;
-    &__item{
-        display: flex;
-        height: 100%;
-        border-radius: 5px;
-        >li{
-            @extend %hand;
-            @include btn_set(70px, 100%, map-get($btn_color, secondary));
-            @include border(1px, map-get($border_color, primary));
-            &::before {
-                @include btn_hoverlight03;
-            }
-            &::after{
-                @include btn_txt(center, map-get($txt_color, primary), transparent);
-            }
-            .hover_item{
-                @include btn_hoveritem(map-get($btn_color, primary));
-                &::before {
-                    @include btn_hoverlight03;
-                }
-            }
+// .channel {
+//     height: 30px;
+//     border-radius: 5px;
+//     &__item{
+//         display: flex;
+//         height: 100%;
+//         border-radius: 5px;
+//         >li{
+//             @extend %hand;
+//             @include btn_set(70px, 100%, map-get($btn_color, secondary));
+//             @include border(1px, map-get($border_color, primary));
+//             &::before {
+//                 @include btn_hoverlight03;
+//             }
+//             &::after{
+//                 @include btn_txt(center, map-get($txt_color, primary), transparent);
+//             }
+//             .hover_item{
+//                 @include btn_hoveritem(map-get($btn_color, primary));
+//                 &::before {
+//                     @include btn_hoverlight03;
+//                 }
+//             }
 
-            // _on效果
-            @include btn_on(map-get($txt_color, secondary));
+//             // _on效果
+//             @include btn_on(map-get($txt_color, secondary));
             
-            // 手指效果
-            @include btn_hoverHandler(0 0, map-get($txt_color, secondary));
-        }
-    }
-}
+//             // 手指效果
+//             @include btn_hoverHandler(0 0, map-get($txt_color, secondary));
+//         }
+//     }
+// }
 
 /* 卡號 */
 .cardno {

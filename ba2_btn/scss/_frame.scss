@@ -21,10 +21,9 @@
                             "menu menu";
     }
     &__menu {
-        @include scrollbar(hidden, auto)
         grid-area: menu;
         background: map-get($bg_color, primary);
-        z-index: 2;
+        z-index: 3;
         @include mw_md{
             @include d_f(flex, center, center);
             position: relative;
@@ -45,6 +44,7 @@
             grid-area: nav;
             padding: 0 10px;
             background: map-get($bg_color, primary_vl);
+            z-index: 2;
         }
         &__inside {
             grid-area: inside;
