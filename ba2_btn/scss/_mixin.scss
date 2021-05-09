@@ -1,27 +1,4 @@
 
-// 寬度距離基本設定
-@function distance($count: 1) {
-	@return 5px * $count;
-}
-
-$num: 100; 
-@while $num > 0 {
-	.w#{$num} {
-		width: $num * 1%;
-	}
-	.w#{$num}px {
-		width: $num + px;
-	}
-	.mb#{$num} {
-		margin-bottom: $num + px;
-	}
-	.mt#{$num} {
-		margin-top: $num + px;
-	}
-
-	$num: $num - 1;
-}
-
 // 常用設定
 %txtshadow{
 	text-shadow: 2px 2px hsla(354, 29%, 7%, 0.5);
@@ -205,6 +182,7 @@ $num: 100;
 	color: $color;
 	text-shadow: 2px 1px $shadow;
 	pointer-events: none;
+	white-space: nowrap;
 }
 // 內部span漸層
 @mixin btn_hoveritem($bg_img) {
@@ -270,15 +248,15 @@ $num: 100;
 @mixin btn_on($color) {
 	&.--on{
 		@extend %no_hand;
-		@content;
 
 		&::after {
 			color: $color;
 		}
 
-		>span {
+		.hover_item {
 			opacity: 1;
 		}
+		@content;
 	}
 	
 }
@@ -380,6 +358,22 @@ $breakpoints: (
 		@content;
 	}
 }
+// 僅在pc顯示
+@mixin fine {
+	@media (pointer: fine) and (max-resolution: 2dppx),
+	screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2),
+	(-moz-touch-enabled: 0){
+		@content;
+	}
+}
+// 僅在ph顯示
+@mixin coarse{
+	@media (pointer: coarse),
+	(-moz-touch-enabled: 1),
+	screen and (pointer: fine) and (min-resolution: 2dppx) and (max-width: 1023px){
+		@content;
+	}
+}
 
 // 按鈕
 @mixin btn_hoverHandler($border, $txt) {
@@ -416,3 +410,32 @@ $breakpoints: (
 	}
 }
 
+// 寬度距離基本設定
+@function distance($count: 4) {
+	@return 5px * $count;
+}
+@mixin mr_distance {
+	margin-right: distance();
+	@include mw_ms{
+		margin-right: distance(2);
+	}
+}
+
+
+$num: 100; 
+@while $num > 0 {
+	.w#{$num} {
+		width: $num * 1%;
+	}
+	.w#{$num}px {
+		width: $num + px;
+	}
+	.mb#{$num} {
+		margin-bottom: $num + px;
+	}
+	.mt#{$num} {
+		margin-top: $num + px;
+	}
+
+	$num: $num - 1;
+}

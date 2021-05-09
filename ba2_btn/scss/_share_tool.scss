@@ -91,6 +91,7 @@ $border_color: ();
         secondary:#fbe2b0,
         secondary_vl:linear-gradient(to top, #f2bd79 60%, #563d29 100%),
         darkblue: linear-gradient(-137deg, #001940 0%, #000) 100%,
+        darkblue_vl: linear-gradient(to top, #001940 0%, #000) 100%,
         lightblue: #37c6ff,
         lightyellow: #ffd300,
         i_green: #caff71b3,
@@ -99,7 +100,9 @@ $border_color: ();
         i_gold: #fbe2b0b3,
         white: #fff,
         black: #000,
-        black_alpha: rgba(0, 0, 0, 0.7)
+        black_alpha: rgba(0, 0, 0, 0.7),
+        red: #ff302a,
+        green: #009245,
     );
 
     // 按鈕色
@@ -130,7 +133,7 @@ $border_color: ();
 // 字顏色class
 @each $name, $value in $txt_color {
     .txt_#{$name} {
-        color: $value;
+        color: $value !important;
     }
 }
 

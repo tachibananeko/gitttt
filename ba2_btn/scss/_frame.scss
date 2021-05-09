@@ -25,6 +25,7 @@
         background: map-get($bg_color, primary);
         z-index: 3;
         @include mw_md{
+            @include scrollbar(auto, hidden);
             @include d_f(flex, center, center);
             position: relative;
         }
@@ -32,7 +33,6 @@
 
     &__main {
         grid-area: main;
-        background-color: #00f;
 
         display: grid;
         grid-template-rows: 50px calc(100% - 50px);
@@ -51,19 +51,17 @@
             background-color: #0f0;
 
             display: grid;
-            grid-template-columns: 750px 1fr;
+            grid-template-columns: 750px calc(100% - 750px);
             grid-template-rows: 480px 80px 1fr;
             grid-template-areas:"video order"
                                 "table order"
                                 "road details";
             
             @include mw_lg{
-                grid-template-rows: 480px 20px 1fr;
+                grid-template-columns: 700px calc(100% - 700px);grid-template-rows: 430px 25px 1fr;
             }
             @include mw_md {
                 @include scrollbar(hidden, auto);
-                grid-template-columns: 700px 1fr;
-                grid-template-rows: 430px 20px 1fr;
             }
             @include mw_ms {
                 grid-template-columns: 1fr;
@@ -75,7 +73,8 @@
 
             .video {
                 grid-area: video;
-                background-color: #aff;
+                position: relative;
+                background-color: map-get($bg_color, black);
 
                 @include mw_ms{
                     grid-area: 1 / 1 / 2 / 2;
@@ -83,23 +82,23 @@
             }
 
             .table {
+                @include d_f(flex, flex-start, flex-start);
+                position: relative;
+                flex-direction: column;
                 grid-area: table;
-                background-color: #faf;
+                background-color: map-get($bg_color, black);
 
                 @include mw_ms {
                     grid-area: 2 / 1 / 3 / 2;
-                    opacity: .5;
                     z-index: 1;
                 }
             }
 
             .order {
                 grid-area: order;
-                background-color: #ffa;
 
                 @include mw_ms {
                     grid-area: 2 / 1 / 3 / 2;
-                    opacity: .5;
                 }                
             }
 

@@ -1,10 +1,8 @@
 
+// 返回按鈕
 .back_btn{
-    width: 30px;
-    flex:none;
-    height: 30px;
-    background: url(../images/icon_back.svg) no-repeat center / contain;
-    margin-right: 20px;
+    @include btn_set(30px, 30px, url(../images/icon_back.svg) no-repeat center / contain);
+    @include mr_distance;
     
     // 手指效果
     @include hoverHandler{
@@ -12,67 +10,92 @@
     }
 }
 
+// 視訊頻道
 .channel {
+    @include mr_distance;
     height: 30px;
-    margin-right: 20px;    
-
+    
     &__item {
         @include d_f(flex, center, flex-start);
         position: relative;
         height: 100%;
 
-        @include mw_md {
+        @include mw_ms {
+            display: none;
             height: auto;
             flex-direction: column;
-
-            &::before{
-                
-            }
-        }
-
-        >li {
-            @extend %hand;
-            @include btn_set(60px, 100%, map-get($btn_color, secondary));
-            @include border(1px, map-get($border_color, primary));
-            @include mw_md {
-                height: 30px;
-            }
-
-            &::before {
-                @include btn_hoverlight03;
-            }
-
-            &::after {
-                @include btn_txt(center, map-get($txt_color, primary), transparent);
-            }
-
-            .hover_item {
-                @include btn_hoveritem(map-get($btn_color, primary));
-
-                &::before {
-                    @include btn_hoverlight03;
-                }
-            }
-
-            
-
-            // _on效果
-            @include btn_on(map-get($txt_color, secondary));
-
-            // 手指效果
-            @include btn_hoverHandler(0 0, map-get($txt_color, secondary));
         }
     }
 
+    li,
+    &__1st {
+        @extend %hand;
+        @include btn_set(60px, 100%, map-get($btn_color, secondary));
+        @include border(1px, map-get($border_color, primary));
+        @include mw_ms {
+            height: 30px;
+        }
+        &::before {
+            @include btn_hoverlight03;
+        }
+        &::after {
+            @include btn_txt(center, map-get($txt_color, primary), transparent);
+        }
+        .hover_item {
+            @include btn_hoveritem(map-get($btn_color, primary));
+            &::before {
+                @include btn_hoverlight03;
+            }
+        }
+        
+        // _on效果
+        @include btn_on(map-get($txt_color, secondary));
+        // 手指效果
+        @include btn_hoverHandler(0 0, map-get($txt_color, secondary));
+    }
+
     // ph當前頻道
-    &__1st {}
+    &__1st {
+        display: none;
+        @include mw_ms {
+            display: block;
+            height: 30px;
+        }
+    }
 }
 
+// 疑難排解
+.handle_btn{
+    @include btn_set(30px, 30px, url(../images/icon_err.svg) no-repeat center / contain);
+    @include mr_distance;
+    position: relative;
+
+    &::after{
+        @include pos_abs(calc(100% + 5px), unset, unset, 0);
+        @include border(1px, map-get($border_color, primary ));
+        content: attr(data-txt);
+        background: map-get($bg_color , black_alpha );
+        padding: 3px 5px;
+        font-size: 14px;
+        white-space: nowrap;
+        visibility: hidden;
+    }
+
+    // 手指效果
+    @include hoverHandler{
+        
+        &::after{
+            visibility: visible;
+        }
+    }
+}
+
+// 打賞
 .tip_btn{
     @include btn_set(auto, 30px, map-get($btn_color, orange));
-    @include border(1px, map-get($border_color, orange));
-    padding: 0 20px;
-    margin-right: 10px;
+    @include border(1px, map-get($border_color, primary));
+    @include mr_distance;
+    padding: 0 10px;
 
     &::before {
         @include btn_hoverlight03;
@@ -100,3 +123,36 @@
     @include btn_hoverHandler(1px, map-get($txt_color, primary));
 }
 
+// 全螢幕
+.zoom_btn{
+    @include btn_set(auto, 30px, url(../images/icon_zoomin.svg) no-repeat left center / 20px);
+    padding-left: 25px;
+    margin-left: auto;
+    color: map-get($txt_color, gray);
+    font-weight: bold;
+
+    @include coarse{
+        display: none;
+    }
+    &__txt{
+        &.--in{
+            display: none;
+        }
+    }
+
+    // 縮小螢幕
+    &.--zoomout{
+        background-image: url(../images/icon_zoomout.svg);
+        .zoom_btn__txt{
+            display: none;
+        }
+        .--in{
+            display: block;
+        }
+    }
+    
+    // 手指效果
+    @include hoverHandler{
+        opacity: 0.7;
+    }
+}
