@@ -73,7 +73,7 @@
 
             .video {
                 grid-area: video;
-                position: relative;
+                
                 background-color: map-get($bg_color, black);
 
                 @include mw_ms{
@@ -82,10 +82,8 @@
             }
 
             .table {
-                @include d_f(flex, flex-start, flex-start);
-                position: relative;
-                flex-direction: column;
                 grid-area: table;
+                
                 background-color: map-get($bg_color, black);
 
                 @include mw_ms {

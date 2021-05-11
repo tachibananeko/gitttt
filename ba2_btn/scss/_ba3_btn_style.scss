@@ -344,7 +344,7 @@
         @include d_f(flex, center, center);
         @include border(1px 0, map-get($border_color, secondary));
         height: 35px;
-        background: map-get($btn_color, blue);
+        background: map-get($btn_color, secondary_vl);
 
         &__txt {
             position: relative;
@@ -425,11 +425,11 @@
                 display: flex;
                 width: calc(100% - 4px);
                 height: calc(100% - 4px);
-                background: map-get($btn_color, blue);
+                background: map-get($btn_color, secondary_vl);
             }
 
             .hover_item {
-                @include btn_hoveritem(map-get($btn_color, lightblue));
+                @include btn_hoveritem(map-get($btn_color, lightblue_vl));
             }
 
             &__tb {
@@ -474,11 +474,11 @@
                 background: #37c6ff;
 
                 &::before {
-                    background: map-get($btn_color, lightblue);
+                    background: map-get($btn_color, lightblue_vl);
                 }
 
                 .hover_item {
-                    @include btn_hoveritem(map-get($btn_color, blue));
+                    @include btn_hoveritem(map-get($btn_color, secondary_vl));
                 }
             }
 
@@ -707,7 +707,7 @@
         }
 
         &__btn{
-            @include btn_set(20%, 100%, map-get($btn_color, lightblue_vl));
+            @include btn_set(20%, 100%, map-get($btn_color, lightblue));
             @include border(1px 0, map-get($border_color, secondary));
             flex: none;
             &::before {

@@ -92,17 +92,24 @@ $border_color: ();
         secondary_vl:linear-gradient(to top, #f2bd79 60%, #563d29 100%),
         darkblue: linear-gradient(-137deg, #001940 0%, #000) 100%,
         darkblue_vl: linear-gradient(to top, #001940 0%, #000) 100%,
-        lightblue: #37c6ff,
-        lightyellow: #ffd300,
-        i_green: #caff71b3,
-        i_blue: #37c6ffb3,
-        i_red: #ffe1f9b3,
-        i_gold: #fbe2b0b3,
+        darkblue_vl_re: linear-gradient(to bottom, #001940 0%, #000) 100%,
         white: #fff,
         black: #000,
         black_alpha: rgba(0, 0, 0, 0.7),
-        red: #ff302a,
-        green: #009245,
+        secondary_alpha: #fdfcb380,
+        blue: #0f2f66,
+        middblue: #001940,
+        lightblue: #37c6ff,
+        lightyellow: #ffd300,
+        green: #115f24,
+        darkgreen: #0f361e,
+        red: #c11615,
+        darkred: #650008,
+        i_blue: #37c6ffb3,
+        i_green: #caff71b3,
+        i_red: #ffe1f9b3,
+        i_gold: #fbe2b0b3,
+        order_area: #224d4d
     );
 
     // 按鈕色
@@ -110,13 +117,13 @@ $border_color: ();
         primary:linear-gradient(to right, #f2bd79 60%, #563d29 100%),
         primary_vl:linear-gradient(to bottom, #f2bd79 60%, #563d29 100%),
         secondary:linear-gradient(to right, #001940 0%, #004889 100%),
-        blue:linear-gradient(to top, #001940 0%, #004889 100%),
-        lightblue:linear-gradient(to top, #004889 30%, #00a6ed 100%),
-        lightblue_vl:linear-gradient(to right, #004889 30%, #00a6ed 100%),
+        secondary_vl:linear-gradient(to top, #001940 0%, #004889 100%),
+        lightblue:linear-gradient(to right, #004889 30%, #00a6ed 100%),
+        lightblue_vl:linear-gradient(to top, #004889 30%, #00a6ed 100%),
         green:linear-gradient(to top, #009245 0%, #113924 100%),
         lightgreen:linear-gradient(to top, #00c945 0%, #117024 100%),
         orange:linear-gradient(to top, #f36428 0%, #440010 100%),
-        lightorange:linear-gradient(to top, #ff901d 0%, #991b10 100%),
+        lightorange:linear-gradient(to top, #ff901d 0%, #991b10 100%)        
     );
 
     // 裝飾線色

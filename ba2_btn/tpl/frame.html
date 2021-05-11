@@ -135,6 +135,14 @@
                 <i class="handle_btn" data-txt="疑難排解"></i>
                 <!-- 疑難排解 end -->
 
+                <!-- ph選擇桌次 -->
+                <button class="tableph_btn" data-txt="MW2010">
+                    <span class="hover_item"></span>
+                    <i></i>
+                    <span class="triangle"></span>
+                </button>
+                <!-- ph選擇桌次 end -->
+
                 <!-- 打賞 -->
                 <button class="tip_btn" data-txt="打賞">
                     <span class="hover_item"></span>
@@ -146,7 +154,7 @@
                 <!-- 縮小螢幕 --zoomout -->
                 <button class="zoom_btn">
                     <span class="zoom_btn__txt">全螢幕</span>
-                    <span class="zoom_btn__txt --in">縮小螢幕</span>
+                    <span class="zoom_btn__txt --in">正常螢幕</span>
                 </button>
                 <!-- 全螢幕 end -->
             </nav>
@@ -196,12 +204,15 @@
                         <!-- 選擇卡片呼叫公關 end -->
 
                         <!-- 連線訊號燈 -->
+                        <!-- 訊號慢--slow -->
                         <div class="video__function__speed">150.48 KB/s</div>
                         <!-- 連線訊號燈end -->
                     </div>
                     <!-- 視訊上物件 end -->
                 </div>
                 <!-- 視訊 end -->
+
+
     
                 <!-- 選擇桌次 -->
                 <!-- 當前桌--on 包台--i_ex 快速桌--i_fast  -->
@@ -277,68 +288,250 @@
                     </ul>
                 </div>
                 <!-- 選擇桌次 end -->
+
+
     
                 <!-- 下注區與卡號 -->
                 <div class="order">
-                    <div class="order__card">
-                        <ul class="order__card__title">
-                            <li class="--on" data-txt="TA-9nn2">
-                                <span class="hover_item"></span>
-                                <i></i>
-                            </li>
-                            <li data-txt="TA-9nn2">
-                                <span class="hover_item"></span>
-                                <i></i>
-                            </li>
-                            <li data-txt="TA-9nn2">
-                                <span class="hover_item"></span>
-                                <i></i>
-                            </li>
-                            <li data-txt="TA-nnnnnnnn">
-                                <span class="hover_item"></span>
-                                <i></i>
-                            </li>
-                            <li data-txt="TA-nnnnnnnn">
-                                <span class="hover_item"></span>
-                                <i></i>
-                            </li>
+                    <!-- 下注資訊 -->
+                    <div class="order__info">
+                        <ul>
+                            <li data-txt="卡號:">TA-12345678</li>
+                            <li data-txt="上下數:">0</li>
+                            <li data-txt="洗碼:">0</li>
+                            <li data-txt="卡靴:">0</li>
                         </ul>
-                        <div class="order__card__info">
-                            <table>
-                                <tr>
-                                    <th class="w15">座位</th>
-                                    <th class="w25">卡號</th>
-                                    <th class="w25">餘額</th>
-                                    <th class="w20">上下數</th>
-                                    <th class="w15">小費</th>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>ORT1-123456</td>
-                                    <td>10,000</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>ORT1-123456</td>
-                                    <td>10,000</td>
-                                    <td>0</td>
-                                    <td>0</td>
-                                </tr>
-                            </table>
+                    </div>
+                    <!-- 下注資訊 end -->
+
+                    <!-- 下注桌布 -->
+                    <!-- 不能下注的.area_xx 加上.--nobet遮罩 -->
+                    <div class="order__area">
+                        <div class="area_b txt_bank">
+                            <!-- 下注閃爍 -->
+                            <span class="shine" style="display: none;"></span>
+
+                            <!-- 賠率限額桌字 -->
+                            <div class="odd">1.5</div>
+                            <div class="txt">莊</div>
+                            <div class="limit" data-min="20" data-max="200,000">~</div>
+
+                            <!-- 下注金額籌碼 -->
+                            <div class="total_amount">0</div>
+                            <div class="amount">
+                                0
+                                <button class="amount_btn"></button>
+                            </div>
+                            <img class="coin" />
+                        </div>
+
+                        <div class="area_p txt_play">
+                            <!-- 下注閃爍 -->
+                            <span class="shine" style="display: none;"></span>
+
+                            <!-- 賠率限額桌字 -->
+                            <div class="odd">1.5</div>
+                            <div class="txt">閒</div>
+                            <div class="limit" data-min="20" data-max="200,000">~</div>
+
+                            <!-- 下注金額籌碼 -->
+                            <div class="total_amount">0</div>
+                            <div class="amount">
+                                0
+                                <button class="amount_btn"></button>
+                            </div>
+                            <img class="coin" />
+                        </div>
+
+                        <div class="area_bp txt_bank">
+                            <!-- 下注閃爍 -->
+                            <span class="shine" style="display: none;"></span>
+
+                            <!-- 賠率限額桌字 -->
+                            <div class="odd">1.5</div>
+                            <div class="txt">莊對</div>
+                            <div class="limit" data-min="20" data-max="200,000">~</div>
+
+                            <!-- 下注金額籌碼 -->
+                            <div class="total_amount">0</div>
+                            <div class="amount">
+                                0
+                                <button class="amount_btn"></button>
+                            </div>
+                            <img class="coin" />
+                        </div>
+
+                        <div class="area_t txt_tie">
+                            <!-- 下注閃爍 -->
+                            <span class="shine" style="display: none;"></span>
+
+                            <!-- 賠率限額桌字 -->
+                            <div class="odd">1.5</div>
+                            <div class="txt">和</div>
+                            <div class="limit" data-min="20" data-max="200,000">~</div>
+
+                            <!-- 下注金額籌碼 -->
+                            <div class="total_amount">0</div>
+                            <div class="amount">
+                                0
+                                <button class="amount_btn"></button>
+                            </div>
+                            <img class="coin" />
+                        </div>
+
+                        <div class="area_pp txt_play">
+                            <!-- 下注閃爍 -->
+                            <span class="shine" style="display: none;"></span>
+
+                            <!-- 賠率限額桌字 -->
+                            <div class="odd">1.5</div>
+                            <div class="txt">閒對</div>
+                            <div class="limit" data-min="20" data-max="200,000">~</div>
+
+                            <!-- 下注金額籌碼 -->
+                            <div class="total_amount">0</div>
+                            <div class="amount">
+                                0
+                                <button class="amount_btn"></button>
+                            </div>
+                            <img class="coin" />
                         </div>
                     </div>
+                    <!-- 下注桌布 end -->
+
+                    <!-- 籌碼 -->
+                    <ul class="order__chips">
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <!-- 籌碼 end -->
+
+                    <!-- 下注按鈕 -->
+                    <div class="order__function">
+                        <button class="function_btn" data-txt="確定">
+                            <span class="hover_item"></span>
+                            <i></i>
+                        </button>
+                        <button class="function_btn --repeat" data-txt="續押">
+                            <span class="hover_item"></span>
+                            <i></i>
+                        </button>
+                        <button class="function_btn --cancel" data-txt="取消">
+                            <span class="hover_item"></span>
+                            <i></i>
+                        </button>
+                    </div>
+                    <!-- 下注按鈕 end -->
+
+                    <!-- 卡號按鈕 -->
+                    <ul class="order__cardTitle">
+                        <li class="--on" data-txt="TA-9nn2">
+                            <span class="hover_item"></span>
+                            <i></i>
+                        </li>
+                        <li data-txt="TA-9nn2">
+                            <span class="hover_item"></span>
+                            <i></i>
+                        </li>
+                        <li data-txt="TA-9nn2">
+                            <span class="hover_item"></span>
+                            <i></i>
+                        </li>
+                        <li data-txt="TA-nnnnnnnn">
+                            <span class="hover_item"></span>
+                            <i></i>
+                        </li>
+                        <li data-txt="TA-nnnnnnnn">
+                            <span class="hover_item"></span>
+                            <i></i>
+                        </li>
+                    </ul>
+                    <!-- 卡號按鈕 -->
+
+                    <!-- 卡號all -->
+                    <div class="order__cardAll" style="display: none;">
+                        <table>
+                            <tr>
+                                <th class="w15">座位</th>
+                                <th class="w25">卡號</th>
+                                <th class="w25">餘額</th>
+                                <th class="w20">上下數</th>
+                                <th class="w15">小費</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>ORT1-123456</td>
+                                <td>10,000</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>ORT1-123456</td>
+                                <td>10,000</td>
+                                <td>0</td>
+                                <td>0</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <!-- 卡號all end -->
                 </div>
                 <!-- 下注區與卡號 end -->
+
+
     
                 <!-- 珠路 -->
-                <div class="road">路紙</div>
+                <div class="road">
+                    <!-- 會員資訊 -->
+                    <ul class="memberInfo">
+                        <li data-txt="出碼/存碼">500,000 / 10</li>
+                        <li data-txt="目前餘額">500,000</li>
+                        <li data-txt="目前公關">gama</li>
+                    </ul>
+                    <!-- 會員資訊 end -->
+
+                    <!-- 結果統計 -->
+                    <div class="totalCount">
+                        <!-- 莊閒和 -->
+                        <ul class="totalCount__item">
+                            <li data-num="10">莊</li>
+                            <li data-num="10">閒</li>
+                            <li data-num="10">和</li>
+                            <li data-num="10">莊</li>
+                            <li data-num="10">閒</li>
+                        </ul>
+
+                        <!-- 百分比 -->
+                        <!-- 無統計資料 .--none -->
+                        <ul class="totalCount__percent">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <!-- 結果統計 end -->
+
+                    <!-- 珠路包 -->
+                    <div class="road__group">
+                        <!-- 珠路資訊 -->
+                        <div class="road__group__info"></div>
+                        <!-- 珠路資訊 end -->
+
+                        <!-- 珠路圖 -->
+                        <div class="road__group__img"></div>
+                        <!-- 珠路圖 end -->
+                    </div>
+                    <!-- 珠路包 -->
+                </div>
                 <!-- 珠路 end -->
     
                 <!-- 詳細資訊 -->
                 <div class="detail">
-                    <div class="goodgoodroad">好路追注</div>
+                    <div class="goodroad">好路追注</div>
                     <div class="info">最新投注</div>
                     <div class="red">限紅</div>
                 </div>

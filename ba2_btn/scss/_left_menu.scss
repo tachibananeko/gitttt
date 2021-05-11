@@ -80,7 +80,7 @@
                 max-width: calc(100% - 10px);
             }
             @include mw_md{
-                @include d_f(flex, center, flex-start)
+                @include d_f(flex, center, flex-start);
                 max-width: 100%;
                 white-space: normal;
                 word-break: break-word;
