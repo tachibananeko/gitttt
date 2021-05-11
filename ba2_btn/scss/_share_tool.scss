@@ -3,6 +3,7 @@
 $model: ba3;
 
 // 用到的樣式取出來做全域變數
+$order_color: ();
 $txt_color: ();
 $bg_color: ();
 $btn_color: ();
@@ -78,10 +79,10 @@ $border_color: ();
         gray:#B3B3B3,
         shadow:hsla(354, 29%, 7%, 0.5),
         warn: #ff5f67,
+        win: #37c6ff,
         bank: #ff302a,
         play: #0068ed,
-        tie: #009245,
-        win: #37c6ff
+        tie: #009245
     );
 
     // 背景色
@@ -94,6 +95,7 @@ $border_color: ();
         darkblue_vl: linear-gradient(to top, #001940 0%, #000) 100%,
         darkblue_vl_re: linear-gradient(to bottom, #001940 0%, #000) 100%,
         white: #fff,
+        gray:#B3B3B3,
         black: #000,
         black_alpha: rgba(0, 0, 0, 0.7),
         secondary_alpha: #fdfcb380,
@@ -109,7 +111,10 @@ $border_color: ();
         i_green: #caff71b3,
         i_red: #ffe1f9b3,
         i_gold: #fbe2b0b3,
-        order_area: #224d4d
+        order_area: #224d4d,
+        bank: #ff302a,
+        play: #0068ed,
+        tie: #009245
     );
 
     // 按鈕色
@@ -123,7 +128,7 @@ $border_color: ();
         green:linear-gradient(to top, #009245 0%, #113924 100%),
         lightgreen:linear-gradient(to top, #00c945 0%, #117024 100%),
         orange:linear-gradient(to top, #f36428 0%, #440010 100%),
-        lightorange:linear-gradient(to top, #ff901d 0%, #991b10 100%)        
+        lightorange:linear-gradient(to top, #ff901d 0%, #991b10 100%)
     );
 
     // 裝飾線色
@@ -141,6 +146,11 @@ $border_color: ();
 @each $name, $value in $txt_color {
     .txt_#{$name} {
         color: $value !important;
+    }
+}
+@each $name, $value in $bg_color {
+    .bg_#{$name} {
+        background: $value !important;
     }
 }
 

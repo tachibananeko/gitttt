@@ -180,8 +180,9 @@
                                 <li>靴1</li>
                                 <li>局10</li>
                             </ul>
+                            <!-- 倒數秒數塞data-time 停止下注字塞data-txt -->
                             <!-- 倒數5秒顏色 txt_warn -->
-                            <span class="time">停止下注</span>
+                            <span class="time" data-time="35" data-txt=""></span>
                         </div>
                         <!-- 桌次資訊 -->
 
@@ -501,16 +502,16 @@
                             <li data-num="10">莊</li>
                             <li data-num="10">閒</li>
                             <li data-num="10">和</li>
-                            <li data-num="10">莊</li>
-                            <li data-num="10">閒</li>
+                            <li data-num="10" class="--pair">莊</li>
+                            <li data-num="10" class="--pair">閒</li>
                         </ul>
 
                         <!-- 百分比 -->
                         <!-- 無統計資料 .--none -->
-                        <ul class="totalCount__percent">
-                            <li></li>
-                            <li></li>
-                            <li></li>
+                        <ul class="totalCount__percent" data-txt="無統計資料" style="display: none;">
+                            <li class="bg_bank" style="width: 33.33%;" class="bank">33.33%</li>
+                            <li class="bg_tie" style="width: 33.33%;" class="tie">33.33%</li>
+                            <li class="bg_play" style="width: 33.33%;" class="play">33.33%</li>
                         </ul>
                     </div>
                     <!-- 結果統計 end -->
@@ -518,7 +519,37 @@
                     <!-- 珠路包 -->
                     <div class="road__group">
                         <!-- 珠路資訊 -->
-                        <div class="road__group__info"></div>
+                        <!--
+                            莊閒 
+                            icon_bank_tw
+                            icon_play_tw
+                            icon_bank_cn
+                            icon_play_cn
+                            icon_bank_en
+                            icon_play_en
+                            實心圓
+                            icon_filled_bank
+                            icon_filled_play
+                            空心圓
+                            icon_hollow_bank
+                            icon_hollow_play
+                            斜線
+                            icon_slash_bank
+                            icon_slash_play 
+                        -->
+                        <div class="road__group__info">
+                            <div class="ballBox">
+                                <i class="icon_bank_tw"></i>
+                                <i class="icon_filled_bank"></i>
+                                <i class="icon_hollow_bank"></i>
+                                <i class="icon_slash_bank"></i>
+                            </div>
+                            <div class="ballBox">
+                                <i class="icon_play_tw"></i>
+                                <i class="icon_filled_play"></i><i class="icon_hollow_play"></i>
+                                <i class="icon_slash_play"></i>
+                            </div>
+                        </div>
                         <!-- 珠路資訊 end -->
 
                         <!-- 珠路圖 -->
@@ -528,12 +559,114 @@
                     <!-- 珠路包 -->
                 </div>
                 <!-- 珠路 end -->
+
+
     
                 <!-- 詳細資訊 -->
                 <div class="detail">
-                    <div class="goodroad">好路追注</div>
-                    <div class="info">最新投注</div>
-                    <div class="red">限紅</div>
+                    <!-- 好路追注 -->
+                    <div class="detail__box">
+                        <div class="detail__box__title">
+                            <span data-txt="好路提示"></span>
+                            <button class="goodroad_btn"></button>
+                        </div>
+                        <ul class="goodroadList">
+                            <li class="goodroadList__item">
+                                <span class="hover_item"></span>
+                                <span class="goodroadList__item__tb">2001</span>
+                                <span class="goodroadList__item__txt">拍拍球<i></i></span>
+                                <span class="goodroadList__item__go">
+                                    <i data-txt="立即前往"></i>
+                                </span>
+                            </li>
+                            <li class="goodroadList__item --banker">
+                                <span class="hover_item"></span>
+                                <span class="goodroadList__item__tb">2001</span>
+                                <span class="goodroadList__item__txt">長莊<i></i></span>
+                                <span class="goodroadList__item__go">
+                                    <i data-txt="立即前往"></i>
+                                </span>
+                            </li>
+                            <li class="goodroadList__item --player">
+                                <span class="hover_item"></span>
+                                <span class="goodroadList__item__tb">2001</span>
+                                <span class="goodroadList__item__txt">長閒<i></i></span>
+                                <span class="goodroadList__item__go">
+                                    <i data-txt="立即前往"></i>
+                                </span>
+                            </li>
+                            <li class="goodroadList__item">
+                                <span class="hover_item"></span>
+                                <span class="goodroadList__item__tb">2001</span>
+                                <span class="goodroadList__item__txt">拍拍球<i></i></span>
+                                <span class="goodroadList__item__go">
+                                    <i data-txt="立即前往"></i>
+                                </span>
+                            </li>
+                            <li class="goodroadList__item --banker">
+                                <span class="hover_item"></span>
+                                <span class="goodroadList__item__tb">2001</span>
+                                <span class="goodroadList__item__txt">長莊<i></i></span>
+                                <span class="goodroadList__item__go">
+                                    <i data-txt="立即前往"></i>
+                                </span>
+                            </li>
+                            <li class="goodroadList__item --player">
+                                <span class="hover_item"></span>
+                                <span class="goodroadList__item__tb">2001</span>
+                                <span class="goodroadList__item__txt">長閒<i></i></span>
+                                <span class="goodroadList__item__go">
+                                    <i data-txt="立即前往"></i>
+                                </span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 好路追注 end -->
+
+                    <!-- 最新投注 -->
+                    <div class="detail__box">
+                        <div class="detail__box__title">
+                            <span data-txt="最新投注"></span>
+                        </div>
+                        <ul class="orderInfo">
+                            <li>
+                                <ul class="orderInfo__txt">
+                                    <li>卡號1002001</li>
+                                    <li class="txt_gray">2001桌5靴16局</li>
+                                    <!-- 莊.txt_bank 閒.txt_play 和.txt_tie -->
+                                    <li class="txt_play">閒 2000</li>
+                                    <li class="txt_win">派彩 30000</li>
+                                    <li>
+                                        <button class="orderInfo__btn">取消</button>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <ul class="orderInfo__txt">
+                                    <li>卡號1002001</li>
+                                    <li class="txt_gray">2001桌5靴16局</li>
+                                    <!-- 莊.txt_bank 閒.txt_play 和.txt_tie -->
+                                    <li class="txt_play">閒 2000</li>
+                                    <li class="txt_win">派彩 30000</li>
+                                    <li>
+                                        <button class="orderInfo__btn">取消</button>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- 最新投注 end -->
+
+                    <!-- 限紅 -->
+                    <div class="detail__box" style="display: none;">
+                        <div class="detail__box__title">
+                            <span data-txt="限紅"></span>
+                        </div>
+                        <div class="limitList">
+    
+                        </div>
+                    </div>
+                    <!-- 限紅 end -->
                 </div>
                 <!-- 詳細資訊 end -->
             </div>

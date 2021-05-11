@@ -19,15 +19,37 @@
                 font-size: 14px;
                 font-weight: bold;
                 margin-bottom: 10px;
+                @include mw_ms {
+                    font-size: 12px;
+                }
             }
             .time{
+                min-width: 150px;
                 display: block;
                 color: map-get($txt_color, yellow);
-                font-size: 40px;
                 font-weight: bold;
                 text-align: center;
+                
+                &::before{
+                    content: attr(data-time);
+                    font-size: 50px;
+                }
+                &::after {
+                    content: attr(data-txt);
+                    font-size: 35px;
+                }
+                &[data-time=""]::before,
+                &[data-txt=""]::after{
+                    content: none;
+                }
                 @include mw_ms{
-                    font-size: 30px;
+                    min-width: 100px;
+                    &::before {
+                        font-size: 40px;
+                    }
+                    &::after{
+                        font-size: 20px;
+                    }
                 }
             }
         }
@@ -299,14 +321,13 @@
 
 // 下注區與卡號
 .order{
-    @include d_f(flex, flex-start, flex-end);
+    @include d_f(flex, unset, flex-end);
     position: relative;
     height: 100%;
     flex-direction: column;
     
     // 下注資訊.order__info
     &__info {
-        width: 100%;
         background: map-get($bg_color, primary_vl);
         padding: 5px;
 
@@ -334,7 +355,6 @@
     &__area {
         @include d_f(flex, flex-start, flex-start);
         flex-wrap: wrap;
-        width: 100%;
         flex: 1 1 100%;
         background: map-get($bg_color, order_area);
         border: 1px solid map-get($bg_color, black);
@@ -423,6 +443,10 @@
             font-size: 14px;
             text-shadow: 2px 1px map-get($txt_color, shadow);
 
+            @at-root .area_p .limit{
+                text-align: right;
+            }
+
             &::before,
             &::after {
                 content: attr(data-min);
@@ -455,6 +479,11 @@
             color: map-get($txt_color, primary);
             font-size: 14px;
 
+            @at-root .area_p .amount {
+                left: auto;
+                right: 5px;
+            }
+
             &_btn {
                 @include btn_set(23px, 23px, transparent);
                 @include pos_abs(0, 0, unset, unset);
@@ -478,7 +507,6 @@
     // 籌碼.order__chips
     &__chips {
         @include scrollbar(auto, hidden);
-        width: 100%;
         flex: none;
         height: 70px;
         background: map-get($bg_color, darkblue_vl);
@@ -487,7 +515,6 @@
     // 下注按鈕.order__function
     &__function {
         @include d_f(flex, center, center);
-        width: 100%;
         flex: none;
         height: 10%;
         background: map-get($bg_color, black);
@@ -554,7 +581,6 @@
     &__cardTitle {
         @include scrollbar(auto, hidden);
         @include d_f(flex, center, flex-start);
-        width: 100%;
         height: 35px;
         flex: none;
         padding: 5px 5px 0;
@@ -622,7 +648,6 @@
     &__cardAll {
         @include pos_abs(35px, unset, unset, 0);
         @include scrollbar(hidden, auto);
-        width: 100%;
         height: calc(100% - 35px);
         background: map-get($bg_color, black);
 
@@ -657,6 +682,9 @@
 
 // 珠路
 .road{
+    @include d_f(flex, unset, flex-start);
+    flex-direction: column;
+
     // 會員資訊
     .memberInfo{
         @include d_f(flex, center, space-around);
@@ -676,37 +704,274 @@
 
     // 結果統計
     .totalCount{
-        // .totalCount__item
+        position: relative;
+        // 莊閒和.totalCount__item
         &__item{
             @include d_f(flex, center, space-around);
-            padding: 5px 10px;
+            padding: 3px 10px;
             background: map-get($bg_color, darkblue_vl);
 
             li{
                 @include d_f(flex, center, center);
+                position: relative;
                 width: 25px;
                 height: 25px;
-                background: map-get($txt_color, bank);
+                background: map-get($txt_color, play);
                 border-radius: 50%;
                 color: map-get($txt_color, white);
                 font-size: 14px;
 
-                &:nth-child(even){
-                    background: map-get($txt_color, play);
+                &:nth-child(3n + 1){
+                    background: map-get($txt_color, bank);
                 }
+
                 &:nth-child(3){
                     background: map-get($txt_color, tie);
                 }
-                
+
+                &.--pair::before{
+                    @include pos_abs(-1px, unset, unset, -1px);
+                    content: '';
+                    width: 6px;
+                    height: 6px;
+                    border-radius: 50%;
+                    background: map-get($txt_color, bank);
+                    border: 1px solid map-get($bg_color, white);
+                }
+
+                &::after{
+                    @include pos_abs(unset, unset, unset, calc(100% + 5px));
+                    content: attr(data-num);
+                    font-size: 16px;
+                }
+            }
+        }
+
+        // 百分比.totalCount__percent
+        &__percent {
+            @include pos_abs(0, 0, 0, 0);
+            @include d_f(flex, center, center);
+            background: map-get($bg_color, darkblue_vl);
+            margin: auto;
+
+            // 無統計資料
+            &.--none::before{
+                content: attr(data-txt);
+            }
+            li{
+                @include d_f(flex, center, center);
+                height: 100%;
+                text-shadow: 2px 1px map-get($txt_color, shadow);
+            }
+            &.--none li{
+                display: none;
             }
         }
     }
 
-    // 百分比
+    
 
 
-    // 珠路包
+    // 珠路包.road__group
+    &__group{
+        @include d_f(flex, unset, flex-start);
+        flex: 1 1 100%;
 
+        //珠路資訊.road__group__info
+        &__info{
+            width: 25px;
+            height: 100%;
+            background: map-get($bg_color, gray);
 
+            .ballBox {
+                @include d_f(flex, center, center);
+                align-content: center;
+                flex-wrap: wrap;
+                height: 50%;
+
+                i{
+                    width: 10px;
+                    height: 10px;
+                    margin: 5px 2px;
+
+                    &:first-child{
+                        width: 20px;
+                        height: 20px;
+                    }
+                }
+            }
+        }
+
+        // 珠路圖.road__group__img
+        &__img{
+            flex: 1 1 100%;
+            height: 100%;
+        }
+    }
 }
+
+// 詳細資訊
+.detail__box{
+    width: calc(100% / 2 - 1px / 2);
+    max-width: 250px;
+    height: 100%;
+    background: map-get($bg_color, black);
+
+    @include mw_md{
+        background: map-get($bg_color, black_alpha);
+    }
+
+    // title統一樣式.detail__title
+    &__title {
+        @include d_f(flex, center, center);
+        @include border(1px 0, map-get($border_color, secondary));
+        height: 35px;
+        background: map-get($btn_color, secondary_vl);
+
+        span {
+            position: relative;
+
+            &::after {
+                @include btn_txt(center, map-get($txt_color, primary), transparent);
+            }
+        }
+    }
+
+    .goodroad_btn{
+
+    }
+}
+
+// 好路追注.goodroadList
+.goodroadList {
+    @include scrollbar(hidden, auto);
+    height: calc(100% - 35px);
+    padding: 10px 5px;
+
+    // .goodroadList__item
+    &__item {
+        @include d_f(flex, center, center);
+        @extend %hand;
+        position: relative;
+        height: 55px;
+        padding: 2px;
+        background: map-get($bg_color, middblue);
+        border-radius: 5px;
+        color: map-get($txt_color, primary);
+        font-size: 14px;
+        margin-bottom: 5px;
+        overflow: hidden;
+
+        &::before {
+            content: '';
+            position: absolute;
+            display: flex;
+            width: calc(100% - 4px);
+            height: calc(100% - 4px);
+            background: map-get($btn_color, secondary_vl);
+        }
+
+        .hover_item {
+            @include btn_hoveritem(map-get($btn_color, lightblue_vl));
+        }
+
+        // .goodroadList__item__tb
+        &__tb {
+            @include d_f(flex, center, center);
+            position: relative;
+            flex: 0 0 45px;
+            height: 90%;
+            border-right: 1px solid map-get($bg_color, lightblue);
+        }
+
+        // .goodroadList__item__txt
+        &__txt {
+            @include d_f(flex, center, center);
+            position: relative;
+            flex: 1 1 100%;
+            height: 100%;
+        }
+
+        // .goodroadList__item__go
+        &__go {
+            position: relative;
+            flex: 0 0 50px;
+            padding: 5px;
+
+            i {
+                @include btn_set(100%, 100%, map-get($btn_color, primary));
+                display: block;
+                padding: 0 7px;
+                border: 1px solid map-get($bg_color, secondary);
+                border-radius: 3px;
+
+                &::before {
+                    @include btn_hoverlight02;
+                }
+
+                &::after {
+                    @include btn_txt(center, map-get($txt_color, secondary), transparent);
+                }
+            }
+        }
+
+        // 雙
+        &:nth-child(even) {
+            background: #37c6ff;
+
+            &::before {
+                background: map-get($btn_color, lightblue_vl);
+            }
+
+            .hover_item {
+                @include btn_hoveritem(map-get($btn_color, secondary_vl));
+            }
+        }
+
+        // 手指效果
+        @include btn_hoverHandler(1px 0, map-get($txt_color, primary));
+    }
+}
+// 最新投注.orderInfo
+.orderInfo{
+
+    >li+li {
+        @include border(1px 0 0, map-get($border_color, secondary));
+    }
+
+    // .orderInfo__txt
+    &__txt {
+        padding: 10px 5px;
+        color: map-get($txt_color, primary);
+
+        >li+li {
+            margin-top: 5px;
+        }
+
+        li:not(:first-child) {
+            font-size: 14px;
+
+        }
+
+        li:last-child {
+            @include d_f(flex, center, flex-end);
+        }
+    }
+
+    // .orderInfo__btn
+    &__btn {
+        @include btn_set(40%, 100%, map-get($bg_color, secondary));
+        border-radius: 3px;
+        color: map-get($txt_color, secondary);
+        font-size: 14px;
+
+        // 手指效果
+        @include hoverHandler {
+            opacity: 0.5;
+        }
+    }
+}
+
+// 限紅.limitList
+
 

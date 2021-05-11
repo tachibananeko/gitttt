@@ -20,6 +20,7 @@
         grid-template-areas:"main main"
                             "menu menu";
     }
+    // .frame__menu
     &__menu {
         grid-area: menu;
         background: map-get($bg_color, primary);
@@ -31,6 +32,7 @@
         }
     }
 
+    // .frame__main
     &__main {
         grid-area: main;
 
@@ -39,6 +41,7 @@
         grid-template-areas:"nav"
                             "inside";
 
+        // .frame__main__nav
         &__nav{
             @include d_f(flex, center, flex-start);
             grid-area: nav;
@@ -46,19 +49,21 @@
             background: map-get($bg_color, primary_vl);
             z-index: 2;
         }
+
+        // .frame__main__inside
         &__inside {
             grid-area: inside;
-            background-color: #0f0;
 
             display: grid;
             grid-template-columns: 750px calc(100% - 750px);
-            grid-template-rows: 480px 80px 1fr;
+            grid-template-rows: 480px 80px calc(100% - 560px);
             grid-template-areas:"video order"
                                 "table order"
                                 "road details";
             
             @include mw_lg{
-                grid-template-columns: 700px calc(100% - 700px);grid-template-rows: 430px 25px 1fr;
+                grid-template-columns: 700px calc(100% - 700px);
+                grid-template-rows: 430px 25px calc(100% - 455px);
             }
             @include mw_md {
                 @include scrollbar(hidden, auto);
@@ -70,7 +75,7 @@
             @include mw_xs {
                 grid-template-rows: 70vw 300px 1fr;
             }
-
+            
             .video {
                 grid-area: video;
                 
@@ -85,10 +90,10 @@
                 grid-area: table;
                 
                 background-color: map-get($bg_color, black);
+                z-index: 2;
 
                 @include mw_ms {
                     grid-area: 2 / 1 / 3 / 2;
-                    z-index: 1;
                 }
             }
 
@@ -113,12 +118,12 @@
             
             .detail {
                 grid-area: details;
-                background-color: #faa;
-                opacity: 0.5;
-                
+
+                @include d_f(flex, unset, space-between);
+                z-index: 2;
+
                 @include mw_ms {
                     grid-area: 1 / 1 / 2 / 2;
-                    opacity: .5;
                 }
             }
         }        
