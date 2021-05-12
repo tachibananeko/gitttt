@@ -169,7 +169,7 @@
         position: relative;
         width: 100%;
         flex: none;
-        height: 25px;
+        height: 30px;
         background: map-get($bg_color, primary_vl);
         overflow: hidden;
 
@@ -181,7 +181,7 @@
             animation: shake 2s infinite;
             z-index: 1;
 
-            @include mw_md{
+            @include mw_lg{
                 content: '';
             }
             
@@ -234,8 +234,8 @@
         background: map-get($bg_color, black_alpha);
         padding: 5px 10px;
 
-        @include mw_md{
-            @include pos_abs(25px, unset, unset, 0);
+        @include mw_lg{
+            @include pos_abs(30px, unset, unset, 0);
             height: 100px;
             display: none;
         }

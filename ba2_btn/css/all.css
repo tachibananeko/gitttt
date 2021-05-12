@@ -4134,8 +4134,8 @@ tt {
   .frame__main__inside {
     -ms-grid-columns: 700px minmax(0, 1fr);
         grid-template-columns: 700px minmax(0, 1fr);
-    -ms-grid-rows: 430px 25px minmax(200px, 250px);
-        grid-template-rows: 430px 25px minmax(200px, 250px);
+    -ms-grid-rows: 430px 30px minmax(200px, 250px);
+        grid-template-rows: 430px 30px minmax(200px, 250px);
   }
 }
 
@@ -4144,8 +4144,6 @@ tt {
     overflow-x: hidden;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
-    -ms-grid-rows: 430px 25px minmax(200px, 250px);
-        grid-template-rows: 430px 25px minmax(200px, 250px);
   }
 }
 
@@ -5979,7 +5977,7 @@ tt {
   -webkit-box-flex: 0;
       -ms-flex: none;
           flex: none;
-  height: 25px;
+  height: 30px;
   background: -webkit-gradient(linear, left top, left bottom, from(#004889), to(#001940));
   background: linear-gradient(to bottom, #004889 0%, #001940 100%);
   overflow: hidden;
@@ -6003,7 +6001,7 @@ tt {
   z-index: 1;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1180px) {
   .table__title::before {
     content: '';
   }
@@ -6092,10 +6090,10 @@ tt {
   padding: 5px 10px;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1180px) {
   .table__group {
     position: absolute;
-    top: 25px;
+    top: 30px;
     bottom: unset;
     right: unset;
     left: 0;
