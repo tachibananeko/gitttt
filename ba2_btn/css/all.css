@@ -5750,6 +5750,12 @@ tt {
   background-image: url(../images/icon_vedioSmall.svg);
 }
 
+@media (pointer: coarse), (-moz-touch-enabled: 1), screen and (pointer: fine) and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1023px), screen and (pointer: fine) and (min-resolution: 2dppx) and (max-width: 1023px) {
+  .video__function .videobig_btn {
+    display: none;
+  }
+}
+
 .video__function .PR_btn {
   position: relative;
   width: auto;
@@ -7481,6 +7487,7 @@ tt {
   bottom: 0;
   right: unset;
   left: 10px;
+  position: relative;
   width: 20px;
   height: 20px;
   background: url(../images/icon_setting.svg) no-repeat center/contain;

@@ -94,6 +94,10 @@
             &.--small{
                 background-image: url(../images/icon_vedioSmall.svg);
             }
+            
+            @include coarse{
+                display: none;
+            }
         }
 
 
@@ -919,9 +923,7 @@
     // 好路提示設定按鈕
     .goodroad_btn {
         @include pos_abs(0, unset, 0, 10px);
-        width: 20px;
-        height: 20px;
-        background: url(../images/icon_setting.svg) no-repeat center / contain;
+        @include btn_set(20px, 20px, url(../images/icon_setting.svg) no-repeat center / contain);
         margin: auto;
 
         @include mw_lg{
