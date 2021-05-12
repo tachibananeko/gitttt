@@ -2409,6 +2409,8 @@ tt {
 }
 
 .tableno__btn:active .hover_item {
+  -webkit-transition: none;
+  transition: none;
   opacity: 1;
 }
 
@@ -2635,6 +2637,8 @@ tt {
 }
 
 .function__btn:active .hover_item {
+  -webkit-transition: none;
+  transition: none;
   opacity: 1;
 }
 
@@ -2881,6 +2885,8 @@ tt {
 }
 
 .cardno > li:active .hover_item {
+  -webkit-transition: none;
+  transition: none;
   opacity: 1;
 }
 
@@ -3035,6 +3041,8 @@ tt {
 }
 
 .PR__btn:active .hover_item {
+  -webkit-transition: none;
+  transition: none;
   opacity: 1;
 }
 
@@ -3224,6 +3232,8 @@ tt {
 }
 
 .othpage__btn:active .hover_item {
+  -webkit-transition: none;
+  transition: none;
   opacity: 1;
 }
 
@@ -3529,6 +3539,8 @@ tt {
 }
 
 .details .goodroad__item:active .hover_item {
+  -webkit-transition: none;
+  transition: none;
   opacity: 1;
 }
 
@@ -4008,6 +4020,8 @@ tt {
 }
 
 .lobbyTb__foot__btn:active .hover_item {
+  -webkit-transition: none;
+  transition: none;
   opacity: 1;
 }
 
@@ -4021,6 +4035,8 @@ tt {
   padding-bottom: env(safe-area-inset-bottom);
   -ms-grid-columns: 130px minmax(0, 1fr);
       grid-template-columns: 130px minmax(0, 1fr);
+  -ms-grid-rows: minmax(0, 100%);
+      grid-template-rows: minmax(0, 100%);
       grid-template-areas: "menu main" "menu main";
   margin: auto;
 }
@@ -4777,6 +4793,8 @@ tt {
 }
 
 .menu__main ul li:not(.--PR):active .hover_item {
+  -webkit-transition: none;
+  transition: none;
   opacity: 1;
 }
 
@@ -5073,6 +5091,8 @@ tt {
 }
 
 .channel li:active .hover_item, .channel__1st:active .hover_item {
+  -webkit-transition: none;
+  transition: none;
   opacity: 1;
 }
 
@@ -5401,6 +5421,8 @@ tt {
 }
 
 .tableph_btn:active .hover_item {
+  -webkit-transition: none;
+  transition: none;
   opacity: 1;
 }
 
@@ -5540,6 +5562,8 @@ tt {
 }
 
 .tip_btn:active .hover_item {
+  -webkit-transition: none;
+  transition: none;
   opacity: 1;
 }
 
@@ -5898,6 +5922,8 @@ tt {
 }
 
 .video__function .PR_btn:active .hover_item {
+  -webkit-transition: none;
+  transition: none;
   opacity: 1;
 }
 
@@ -6243,6 +6269,8 @@ tt {
 }
 
 .table__group li:active .hover_item {
+  -webkit-transition: none;
+  transition: none;
   opacity: 1;
 }
 
@@ -6813,6 +6841,8 @@ tt {
 }
 
 .order__function .function_btn:active .hover_item {
+  -webkit-transition: none;
+  transition: none;
   opacity: 1;
 }
 
@@ -7076,6 +7106,8 @@ tt {
 }
 
 .order__cardTitle > li:active .hover_item {
+  -webkit-transition: none;
+  transition: none;
   opacity: 1;
 }
 
@@ -7703,6 +7735,8 @@ tt {
 }
 
 .goodroadList__item:active .hover_item {
+  -webkit-transition: none;
+  transition: none;
   opacity: 1;
 }
 
