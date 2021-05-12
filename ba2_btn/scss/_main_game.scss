@@ -214,6 +214,7 @@
             @include btn_txt(center, map-get($txt_color, yellow), map-get($txt_color, shadow));
             @include pos_abs(0, 0, 0, 0);
             margin: auto;
+            z-index: 2;
         }
 
         span{

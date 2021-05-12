@@ -147,7 +147,7 @@
             .detail {
                 grid-area: details;
 
-                z-index: 2;
+                z-index: 3;
 
                 @include mw_ms {
                     grid-area: 1 / 1 / 2 / 2;

@@ -4264,7 +4264,7 @@ tt {
   -ms-grid-row-span: 2;
   -ms-grid-column: 2;
   grid-area: details;
-  z-index: 2;
+  z-index: 3;
 }
 
 @media screen and (max-width: 996px) {
@@ -6083,6 +6083,7 @@ tt {
   right: 0;
   left: 0;
   margin: auto;
+  z-index: 2;
 }
 
 .table__title span {
