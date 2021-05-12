@@ -4149,10 +4149,16 @@ tt {
 
 @media screen and (max-width: 996px) {
   .frame__main__inside {
+        grid-template-areas: "video" "order" "road";
     -ms-grid-columns: minmax(0, 1fr);
         grid-template-columns: minmax(0, 1fr);
     -ms-grid-rows: 50vw 1fr 1fr;
         grid-template-rows: 50vw 1fr 1fr;
+  }
+  .--tableOpen .frame__main__inside {
+        grid-template-areas: "video" "table" "order" "road";
+    -ms-grid-rows: 70vw 1fr 1fr 1fr;
+        grid-template-rows: 70vw 1fr 1fr 1fr;
   }
 }
 
@@ -4190,7 +4196,17 @@ tt {
 
 @media screen and (max-width: 996px) {
   .frame__main__inside .table {
+    -ms-grid-row: 2;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-area: 2 / 1 / 3 / 2;
     display: none;
+  }
+  .--tableOpen .table {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
 
@@ -4208,6 +4224,13 @@ tt {
     -ms-grid-column-span: 1;
     grid-area: 2 / 1 / 3 / 2;
   }
+  .--tableOpen .order {
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-area: 3 / 1 / 4 / 2;
+  }
 }
 
 .frame__main__inside .road {
@@ -4221,6 +4244,13 @@ tt {
 @media screen and (max-width: 996px) {
   .frame__main__inside .road {
     min-height: 350px;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 1;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 1;
+    grid-area: 3 / 1 / 4 / 2;
+  }
+  .--tableOpen .road {
     -ms-grid-row: 4;
     -ms-grid-row-span: 1;
     -ms-grid-column: 1;
@@ -6003,6 +6033,12 @@ tt {
   }
 }
 
+@media screen and (max-width: 996px) {
+  .table__title::before {
+    content: none;
+  }
+}
+
 @keyframes shake {
   10%,
   30%,
@@ -6052,7 +6088,7 @@ tt {
 .table__title span {
   display: block;
   width: 200px;
-  height: 40px;
+  height: 60px;
   background: -webkit-gradient(linear, left bottom, left top, from(#001940), to(#000)) 100%;
   background: linear-gradient(to top, #001940 0%, #000) 100%;
   border-left: 1px solid #fbe2b0;
@@ -6093,8 +6129,18 @@ tt {
     bottom: unset;
     right: unset;
     left: 0;
-    height: 100px;
+    max-height: 100px;
     display: none;
+  }
+}
+
+@media screen and (max-width: 996px) {
+  .table__group {
+    position: static;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 5px;
   }
 }
 
@@ -6107,6 +6153,13 @@ tt {
   border-radius: 3px;
   border: 2px solid #37c6ff;
   margin: 0 10px 5px;
+}
+
+@media screen and (max-width: 996px) {
+  .table__group li {
+    width: 110px;
+    margin: 0 5px 5px;
+  }
 }
 
 .table__group li::before {
@@ -6290,6 +6343,9 @@ tt {
   background: -webkit-gradient(linear, left top, left bottom, from(#004889), to(#001940));
   background: linear-gradient(to bottom, #004889 0%, #001940 100%);
   padding: 5px;
+  -webkit-box-ordinal-group: -1;
+      -ms-flex-order: -2;
+          order: -2;
 }
 
 .order__info ul {
@@ -6587,6 +6643,9 @@ tt {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    -webkit-box-ordinal-group: 0;
+        -ms-flex-order: -1;
+            order: -1;
   }
 }
 
@@ -6600,7 +6659,7 @@ tt {
 
 @media screen and (max-width: 996px) {
   .order__chips li {
-    margin: 0 10px;
+    margin: 0 5px;
   }
 }
 
@@ -6875,9 +6934,16 @@ tt {
   padding: 5px 5px 0;
   background: #000;
   font-size: 0;
-  -webkit-box-ordinal-group: 0;
-      -ms-flex-order: -1;
-          order: -1;
+  -webkit-box-ordinal-group: -2;
+      -ms-flex-order: -3;
+          order: -3;
+}
+
+@media screen and (max-width: 1024px) {
+  .order__cardTitle {
+    background: -webkit-gradient(linear, left bottom, left top, from(#001940), to(#000)) 100%;
+    background: linear-gradient(to top, #001940 0%, #000) 100%;
+  }
 }
 
 .order__cardTitle > li {

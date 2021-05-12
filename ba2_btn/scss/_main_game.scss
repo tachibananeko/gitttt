@@ -184,6 +184,10 @@
             @include mw_lg{
                 content: '';
             }
+
+            @include mw_ms {
+                content: none;
+            }
             
             @keyframes shake {
                 10%,
@@ -215,7 +219,7 @@
         span{
             display: block;
             width: 200px;
-            height: 40px;
+            height: 60px;
             background: map-get($bg_color, darkblue_vl);
             border-left: 1px solid map-get($bg_color, secondary);
             border-right: 1px solid map-get($bg_color, secondary);
@@ -236,8 +240,13 @@
 
         @include mw_lg{
             @include pos_abs(30px, unset, unset, 0);
-            height: 100px;
+            max-height: 100px;
             display: none;
+        }
+        @include mw_ms {
+            position: static;
+            display: flex;
+            padding: 5px;
         }
 
         li{
@@ -246,6 +255,12 @@
             border-radius: 3px;
             border: 2px solid map-get($bg_color, lightblue);
             margin: 0 10px 5px;
+
+            @include mw_ms {
+                width: 110px;
+                margin: 0 5px 5px;
+            }
+
             &::before{
                 @include btn_hoverlight03;
             }
@@ -334,6 +349,7 @@
     &__info {
         background: map-get($bg_color, primary_vl);
         padding: 5px;
+        order: -2;
 
         ul {
             @include d_f(flex, center, center);
@@ -517,6 +533,7 @@
 
         @include mw_ms{
             justify-content: center;
+            order: -1;
         }
 
         li{
@@ -527,7 +544,7 @@
             flex: none;
 
             @include mw_ms {
-                margin: 0 10px;
+                margin: 0 5px;
             }
 
 
@@ -619,7 +636,11 @@
         padding: 5px 5px 0;
         background: map-get($bg_color, black);
         font-size: 0;
-        order: -1;
+        order: -3;
+
+        @include mw_md{
+            background: map-get($bg_color, darkblue_vl);
+        }
 
         >li {
             @extend %hand;
