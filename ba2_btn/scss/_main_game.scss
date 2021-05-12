@@ -922,8 +922,8 @@
 
     // 好路提示設定按鈕
     .goodroad_btn {
-        @include pos_abs(0, unset, 0, 10px);
         @include btn_set(20px, 20px, url(../images/icon_setting.svg) no-repeat center / contain);
+        @include pos_abs(0, unset, 0, 10px);
         margin: auto;
 
         @include mw_lg{

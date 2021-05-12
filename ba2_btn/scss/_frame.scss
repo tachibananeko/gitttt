@@ -64,7 +64,7 @@
             
             @include mw_lg{
                 grid-template-columns: 700px minmax(0, 1fr);
-                grid-template-rows: 430px 80px minmax(200px, 250px);
+                grid-template-rows: 430px 25px minmax(200px, 250px);
             }
             @include mw_md {
                 @include scrollbar(hidden, auto);

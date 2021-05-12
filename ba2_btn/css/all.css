@@ -4134,8 +4134,8 @@ tt {
   .frame__main__inside {
     -ms-grid-columns: 700px minmax(0, 1fr);
         grid-template-columns: 700px minmax(0, 1fr);
-    -ms-grid-rows: 430px 80px minmax(200px, 250px);
-        grid-template-rows: 430px 80px minmax(200px, 250px);
+    -ms-grid-rows: 430px 25px minmax(200px, 250px);
+        grid-template-rows: 430px 25px minmax(200px, 250px);
   }
 }
 
@@ -7514,15 +7514,15 @@ tt {
 }
 
 .detail .goodroad_btn {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background: url(../images/icon_setting.svg) no-repeat center/contain;
   position: absolute;
   top: 0;
   bottom: 0;
   right: unset;
   left: 10px;
-  position: relative;
-  width: 20px;
-  height: 20px;
-  background: url(../images/icon_setting.svg) no-repeat center/contain;
   margin: auto;
 }
 
