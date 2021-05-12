@@ -401,13 +401,14 @@
                     <!-- 下注桌布 end -->
 
                     <!-- 籌碼 -->
+                    <!-- 當前籌碼 .--on -->
                     <ul class="order__chips">
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
+                        <li class="chips_10"></li>
+                        <li class="chips_20"></li>
+                        <li class="chips_50"></li>
+                        <li class="chips_50k"></li>
+                        <li class="chips_100k"></li>
+                        <li class="chips_set"></li>
                     </ul>
                     <!-- 籌碼 end -->
 
@@ -564,8 +565,21 @@
     
                 <!-- 詳細資訊 -->
                 <div class="detail">
+
+                    <!-- pad切換title -->
+                    <!-- 當前選項加上.--on -->
+                    <ul class="detail__change">
+                        <li class="--on">
+                            好路追注
+                            <button class="goodroad_btn"></button>
+                        </li>
+                        <li>最新投注</li>
+                    </ul>
+                    <!-- pad切換title end -->
+
                     <!-- 好路追注 -->
-                    <div class="detail__box">
+                    <!-- pad當前選項加上.--on -->
+                    <div class="detail__box --on">
                         <div class="detail__box__title">
                             <span data-txt="好路提示"></span>
                             <button class="goodroad_btn"></button>
@@ -624,11 +638,23 @@
                     <!-- 好路追注 end -->
 
                     <!-- 最新投注 -->
-                    <div class="detail__box">
+                    <div class="detail__box" >
                         <div class="detail__box__title">
                             <span data-txt="最新投注"></span>
                         </div>
                         <ul class="orderInfo">
+                            <li>
+                                <ul class="orderInfo__txt">
+                                    <li>卡號1002001</li>
+                                    <li class="txt_gray">2001桌5靴16局</li>
+                                    <!-- 莊.txt_bank 閒.txt_play 和.txt_tie -->
+                                    <li class="txt_play">閒 2000</li>
+                                    <li class="txt_win">派彩 30000</li>
+                                    <li>
+                                        <button class="orderInfo__btn">取消</button>
+                                    </li>
+                                </ul>
+                            </li>
                             <li>
                                 <ul class="orderInfo__txt">
                                     <li>卡號1002001</li>

@@ -120,7 +120,7 @@ $border_color: ();
     // 按鈕色
     $btn_color:(
         primary:linear-gradient(to right, #f2bd79 60%, #563d29 100%),
-        primary_vl:linear-gradient(to bottom, #f2bd79 60%, #563d29 100%),
+        primary_vl:linear-gradient(to bottom, #f2bd79 50%, #563d29 100%),
         secondary:linear-gradient(to right, #001940 0%, #004889 100%),
         secondary_vl:linear-gradient(to top, #001940 0%, #004889 100%),
         lightblue:linear-gradient(to right, #004889 30%, #00a6ed 100%),

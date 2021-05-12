@@ -177,7 +177,7 @@
             animation: shake 2s infinite;
             z-index: 1;
 
-            @include mw_lg{
+            @include mw_md{
                 content: '';
             }
             
@@ -230,15 +230,15 @@
         background: map-get($bg_color, black_alpha);
         padding: 5px 10px;
 
-        @include mw_lg{
+        @include mw_md{
             @include pos_abs(25px, unset, unset, 0);
             height: 100px;
-            visibility: hidden;
+            display: none;
         }
 
         li{
             @extend %hand;
-            @include btn_set(120px, 35px, map-get($btn_color, secondary));
+            @include btn_set(115px, 35px, map-get($btn_color, secondary));
             border-radius: 3px;
             border: 2px solid map-get($bg_color, lightblue);
             margin: 0 10px 5px;
@@ -364,7 +364,7 @@
         .area_t,
         .area_bp,
         .area_pp {
-            @include d_f(flex, space-between, flex-start);
+            @include d_f(flex, unset, flex-start);
             flex-direction: column;
             position: relative;
             width: 50%;
@@ -506,10 +506,30 @@
 
     // 籌碼.order__chips
     &__chips {
-        @include scrollbar(auto, hidden);
+        @include d_f(flex, center, space-around);
         flex: none;
         height: 70px;
         background: map-get($bg_color, darkblue_vl);
+
+        li{
+            @extend %hand;
+            @extend %transition;
+            width: 50px;
+            height: 50px;
+            flex: none;
+
+
+            &.--on{
+                width: 65px;
+                height: 65px;
+            }
+
+            // 手指效果
+            @include hoverHandler {
+                width: 65px;
+                height: 65px;
+            }
+        }
     }
 
     // 下注按鈕.order__function
@@ -704,6 +724,7 @@
 
     // 結果統計
     .totalCount{
+        @extend %hand;
         position: relative;
         // 莊閒和.totalCount__item
         &__item{
@@ -792,7 +813,7 @@
                 i{
                     width: 10px;
                     height: 10px;
-                    margin: 5px 2px;
+                    margin: 2px;
 
                     &:first-child{
                         width: 20px;
@@ -811,41 +832,114 @@
 }
 
 // 詳細資訊
-.detail__box{
-    width: calc(100% / 2 - 1px / 2);
-    max-width: 250px;
-    height: 100%;
-    background: map-get($bg_color, black);
+.detail{
+    @include d_f(flex, unset, flex-start);
+    flex-wrap: wrap;
 
-    @include mw_md{
-        background: map-get($bg_color, black_alpha);
+    // .detail__change
+    &__change{
+        @include d_f(flex, unset, flex-start);
+        @include border(1px 0, map-get($border_color, secondary));
+        width: 100%;
+        height: 35px;
+        display: none;
+
+        @include mw_lg{
+            display: flex;
+        }
+        
+
+        li{
+            position: relative;
+            width: 50%;
+            height: 100%;
+            line-height: 35px;
+            text-align: center;
+            background: map-get($btn_color, secondary_vl);
+        }
+
+        li.--on{
+            width: 80%;
+            background: map-get($btn_color, primary_vl);
+            color: map-get($txt_color, secondary);
+        }
     }
 
-    // title統一樣式.detail__title
-    &__title {
-        @include d_f(flex, center, center);
-        @include border(1px 0, map-get($border_color, secondary));
-        height: 35px;
-        background: map-get($btn_color, secondary_vl);
+    // .detail__box
+    &__box{
+        @include d_f(flex, unset, flex-start);
+        flex-direction: column;
+        width: calc(100% / 2);
+        height: 100%;
+        background: map-get($bg_color, black);
 
-        span {
+        @include mw_lg {
+            width: 100%;
+            height: calc(100% - 35px);
+
+            &:not(.--on) {
+                display: none;
+            }
+        }
+
+        @include mw_ms{
+            max-width: 250px;
+            background: map-get($bg_color, black_alpha);
+        }
+
+        // title統一樣式.detail__box__title
+        &__title {
+            @include d_f(flex, center, center);
+            @include border(1px 0, map-get($border_color, secondary));
             position: relative;
+            height: 35px;
+            flex: none;
+            background: map-get($btn_color, secondary_vl);
 
-            &::after {
-                @include btn_txt(center, map-get($txt_color, primary), transparent);
+            @include mw_xl{
+                @at-root .detail div:type-of-child(1) .detail__box__title {
+                    border-right-width: 1px;
+                }
+            }
+
+            @include mw_lg{
+                display: none;
+            }
+
+            span {
+                position: relative;
+
+                &::after {
+                    @include btn_txt(center, map-get($txt_color, primary), transparent);
+                }
             }
         }
     }
 
-    .goodroad_btn{
+    // 好路提示設定按鈕
+    .goodroad_btn {
+        @include pos_abs(0, unset, 0, 10px);
+        width: 20px;
+        height: 20px;
+        background: url(../images/icon_setting.svg) no-repeat center / contain;
+        margin: auto;
 
+        @include mw_lg{
+            filter: invert(1);
+        }
+
+        // 手指效果
+        @include hoverHandler{
+            transform: scale(1.2);
+        }
     }
 }
+
 
 // 好路追注.goodroadList
 .goodroadList {
     @include scrollbar(hidden, auto);
-    height: calc(100% - 35px);
+    flex: 1 1 100%;
     padding: 10px 5px;
 
     // .goodroadList__item
@@ -934,6 +1028,8 @@
 }
 // 最新投注.orderInfo
 .orderInfo{
+    @include scrollbar(hidden, auto);
+    flex: 1 1 100%;
 
     >li+li {
         @include border(1px 0 0, map-get($border_color, secondary));
@@ -945,7 +1041,7 @@
         color: map-get($txt_color, primary);
 
         >li+li {
-            margin-top: 5px;
+            margin-top: 3px;
         }
 
         li:not(:first-child) {
