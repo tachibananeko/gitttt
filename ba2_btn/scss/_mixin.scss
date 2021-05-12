@@ -383,10 +383,9 @@ $breakpoints: (
 }
 
 @mixin hoverHandler {
-	@media (pointer: fine),
-	(-moz-touch-enabled: 0),
-	screen and (-ms-high-contrast: active),
-	(-ms-high-contrast: none) {
+	@media (pointer: fine) and (max-resolution: 2dppx),
+	screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2),
+	(-moz-touch-enabled: 0) {
 		&:hover {
 			@content;
 		}
@@ -415,10 +414,9 @@ $breakpoints: (
 // 按鈕
 @mixin btn_hoverHandler($border, $txt) {
 
-	@media (pointer: fine),
-	(-moz-touch-enabled: 0),
-	screen and (-ms-high-contrast: active),
-	(-ms-high-contrast: none) {
+	@media (pointer: fine) and (max-resolution: 2dppx),
+	screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2),
+	(-moz-touch-enabled: 0) {
 		&:hover {
 			border-width: $border;
 			@content;

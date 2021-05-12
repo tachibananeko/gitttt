@@ -2386,7 +2386,7 @@ tt {
   opacity: 1;
 }
 
-@media (pointer: fine), (-moz-touch-enabled: 0), screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+@media (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (pointer: fine) and (max-resolution: 2dppx), screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (-moz-touch-enabled: 0) {
   .tableno__btn:hover {
     border-width: 2px;
     border-color: #ffd300;
@@ -2614,7 +2614,7 @@ tt {
   background: radial-gradient(ellipse at center, #ffe1f9b3 3%, transparent 40%) 0 -50%/100% 150% no-repeat;
 }
 
-@media (pointer: fine), (-moz-touch-enabled: 0), screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+@media (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (pointer: fine) and (max-resolution: 2dppx), screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (-moz-touch-enabled: 0) {
   .function__btn:hover {
     border-width: 2px;
   }
@@ -2801,7 +2801,7 @@ tt {
   background: radial-gradient(ellipse at center, #fbe2b0b3 3%, transparent 40%) 0 -50%/100% 150% no-repeat;
 }
 
-@media (pointer: fine), (-moz-touch-enabled: 0), screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+@media (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (pointer: fine) and (max-resolution: 2dppx), screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (-moz-touch-enabled: 0) {
   .cardno > li:hover {
     border-width: 1px 1px 0;
   }
@@ -3014,7 +3014,7 @@ tt {
   background: linear-gradient(to top, #ff901d 0%, #991b10 100%);
 }
 
-@media (pointer: fine), (-moz-touch-enabled: 0), screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+@media (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (pointer: fine) and (max-resolution: 2dppx), screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (-moz-touch-enabled: 0) {
   .PR__btn:hover {
     border-width: 1px;
   }
@@ -3203,7 +3203,7 @@ tt {
   background: linear-gradient(127deg, rgba(255, 255, 255, 0.2) 40%, transparent 41%, transparent 100%);
 }
 
-@media (pointer: fine), (-moz-touch-enabled: 0), screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+@media (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (pointer: fine) and (max-resolution: 2dppx), screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (-moz-touch-enabled: 0) {
   .othpage__btn:hover {
     border-width: 1px 0;
   }
@@ -3330,7 +3330,7 @@ tt {
   font-size: 14px;
 }
 
-@media (pointer: fine), (-moz-touch-enabled: 0), screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+@media (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (pointer: fine) and (max-resolution: 2dppx), screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (-moz-touch-enabled: 0) {
   .details__info__btn:hover {
     opacity: 0.5;
   }
@@ -3508,7 +3508,7 @@ tt {
   transition: all .3s .1s ease-in-out;
 }
 
-@media (pointer: fine), (-moz-touch-enabled: 0), screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+@media (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (pointer: fine) and (max-resolution: 2dppx), screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (-moz-touch-enabled: 0) {
   .details .goodroad__item:hover {
     border-width: 1px 0;
   }
@@ -3838,7 +3838,7 @@ tt {
   margin: 1% 0;
 }
 
-@media (pointer: fine), (-moz-touch-enabled: 0), screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+@media (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (pointer: fine) and (max-resolution: 2dppx), screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (-moz-touch-enabled: 0) {
   .lobbyTb__road:hover .lobbyTb__road__limit {
     opacity: 1;
   }
@@ -3987,7 +3987,7 @@ tt {
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0.3) 50%, transparent 51%, transparent 100%);
 }
 
-@media (pointer: fine), (-moz-touch-enabled: 0), screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+@media (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (pointer: fine) and (max-resolution: 2dppx), screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (-moz-touch-enabled: 0) {
   .lobbyTb__foot__btn:hover {
     border-width: 1px 0;
   }
@@ -4421,7 +4421,7 @@ tt {
   }
 }
 
-@media (pointer: fine), (-moz-touch-enabled: 0), screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+@media (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (pointer: fine) and (max-resolution: 2dppx), screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (-moz-touch-enabled: 0) {
   .menu__info__txt .name:hover {
     max-width: none;
     display: inline-block;
@@ -4430,13 +4430,13 @@ tt {
   }
 }
 
-@media screen and (pointer: fine) and (max-width: 1180px), screen and (-moz-touch-enabled: 0) and (max-width: 1180px), screen and (-ms-high-contrast: active) and (max-width: 1180px), screen and (-ms-high-contrast: none) and (max-width: 1180px) {
+@media screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2) and (max-width: 1180px), screen and (pointer: fine) and (max-resolution: 2dppx) and (max-width: 1180px), screen and (-moz-touch-enabled: 0) and (max-width: 1180px) {
   .menu__info__txt .name:hover {
     margin-left: 5px;
   }
 }
 
-@media screen and (pointer: fine) and (max-width: 1024px), screen and (-moz-touch-enabled: 0) and (max-width: 1024px), screen and (-ms-high-contrast: active) and (max-width: 1024px), screen and (-ms-high-contrast: none) and (max-width: 1024px) {
+@media screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2) and (max-width: 1024px), screen and (pointer: fine) and (max-resolution: 2dppx) and (max-width: 1024px), screen and (-moz-touch-enabled: 0) and (max-width: 1024px) {
   .menu__info__txt .name:hover {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -4574,7 +4574,7 @@ tt {
   }
 }
 
-@media (pointer: fine), (-moz-touch-enabled: 0), screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+@media (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (pointer: fine) and (max-resolution: 2dppx), screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (-moz-touch-enabled: 0) {
   .menu__info__txt .amount:hover {
     border: 1px solid #fbe2b0;
   }
@@ -4747,7 +4747,7 @@ tt {
           filter: none;
 }
 
-@media (pointer: fine), (-moz-touch-enabled: 0), screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+@media (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (pointer: fine) and (max-resolution: 2dppx), screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (-moz-touch-enabled: 0) {
   .menu__main ul li:not(.--PR):hover {
     border-width: 1px 0;
   }
@@ -4916,7 +4916,7 @@ tt {
   }
 }
 
-@media (pointer: fine), (-moz-touch-enabled: 0), screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+@media (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (pointer: fine) and (max-resolution: 2dppx), screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (-moz-touch-enabled: 0) {
   .back_btn:hover {
     -webkit-filter: brightness(150%);
             filter: brightness(150%);
@@ -5052,7 +5052,7 @@ tt {
   opacity: 1;
 }
 
-@media (pointer: fine), (-moz-touch-enabled: 0), screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+@media (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (pointer: fine) and (max-resolution: 2dppx), screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (-moz-touch-enabled: 0) {
   .channel li:hover, .channel__1st:hover {
     border-width: 0 0;
   }
@@ -5121,7 +5121,7 @@ tt {
   visibility: hidden;
 }
 
-@media (pointer: fine), (-moz-touch-enabled: 0), screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+@media (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (pointer: fine) and (max-resolution: 2dppx), screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (-moz-touch-enabled: 0) {
   .handle_btn:hover::after {
     visibility: visible;
   }
@@ -5314,7 +5314,7 @@ tt {
   }
 }
 
-@media (pointer: fine), (-moz-touch-enabled: 0), screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+@media (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (pointer: fine) and (max-resolution: 2dppx), screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (-moz-touch-enabled: 0) {
   .tableph_btn:hover {
     border-width: 1px;
   }
@@ -5519,7 +5519,7 @@ tt {
   background: radial-gradient(ellipse at center, #fbe2b0b3 3%, transparent 40%) 0 -50%/100% 150% no-repeat;
 }
 
-@media (pointer: fine), (-moz-touch-enabled: 0), screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+@media (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (pointer: fine) and (max-resolution: 2dppx), screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (-moz-touch-enabled: 0) {
   .tip_btn:hover {
     border-width: 1px;
   }
@@ -5576,7 +5576,7 @@ tt {
   display: block;
 }
 
-@media (pointer: fine), (-moz-touch-enabled: 0), screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+@media (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (pointer: fine) and (max-resolution: 2dppx), screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (-moz-touch-enabled: 0) {
   .zoom_btn:hover {
     opacity: 0.7;
   }
@@ -5877,7 +5877,7 @@ tt {
   background: radial-gradient(ellipse at center, #caff71b3 3%, transparent 40%) 0 -50%/100% 150% no-repeat;
 }
 
-@media (pointer: fine), (-moz-touch-enabled: 0), screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+@media (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (pointer: fine) and (max-resolution: 2dppx), screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (-moz-touch-enabled: 0) {
   .video__function .PR_btn:hover {
     border-width: 1px;
   }
@@ -6220,7 +6220,7 @@ tt {
   opacity: 1;
 }
 
-@media (pointer: fine), (-moz-touch-enabled: 0), screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+@media (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (pointer: fine) and (max-resolution: 2dppx), screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (-moz-touch-enabled: 0) {
   .table__group li:hover {
     border-width: 2px;
     border-color: #ffd300;
@@ -6519,7 +6519,7 @@ tt {
   background: url(../images/icon_x.svg) no-repeat center/50%;
 }
 
-@media (pointer: fine), (-moz-touch-enabled: 0), screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+@media (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (pointer: fine) and (max-resolution: 2dppx), screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (-moz-touch-enabled: 0) {
   .order__area .amount_btn:hover {
     -webkit-transform: scale(1.2);
             transform: scale(1.2);
@@ -6573,7 +6573,7 @@ tt {
   height: 65px;
 }
 
-@media (pointer: fine), (-moz-touch-enabled: 0), screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+@media (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (pointer: fine) and (max-resolution: 2dppx), screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (-moz-touch-enabled: 0) {
   .order__chips li:hover {
     width: 65px;
     height: 65px;
@@ -6792,7 +6792,7 @@ tt {
   background: radial-gradient(ellipse at center, #ffe1f9b3 3%, transparent 40%) 0 -50%/100% 150% no-repeat;
 }
 
-@media (pointer: fine), (-moz-touch-enabled: 0), screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+@media (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (pointer: fine) and (max-resolution: 2dppx), screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (-moz-touch-enabled: 0) {
   .order__function .function_btn:hover {
     border-width: 2px;
   }
@@ -6996,7 +6996,7 @@ tt {
   background: radial-gradient(ellipse at center, #fbe2b0b3 3%, transparent 40%) 0 -50%/100% 150% no-repeat;
 }
 
-@media (pointer: fine), (-moz-touch-enabled: 0), screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+@media (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (pointer: fine) and (max-resolution: 2dppx), screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (-moz-touch-enabled: 0) {
   .order__cardTitle > li:hover {
     border-width: 1px 1px 0;
   }
@@ -7501,7 +7501,7 @@ tt {
   }
 }
 
-@media (pointer: fine), (-moz-touch-enabled: 0), screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+@media (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (pointer: fine) and (max-resolution: 2dppx), screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (-moz-touch-enabled: 0) {
   .detail .goodroad_btn:hover {
     -webkit-transform: scale(1.2);
             transform: scale(1.2);
@@ -7682,7 +7682,7 @@ tt {
   transition: all .3s .1s ease-in-out;
 }
 
-@media (pointer: fine), (-moz-touch-enabled: 0), screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+@media (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (pointer: fine) and (max-resolution: 2dppx), screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (-moz-touch-enabled: 0) {
   .goodroadList__item:hover {
     border-width: 1px 0;
   }
@@ -7758,7 +7758,7 @@ tt {
   font-size: 14px;
 }
 
-@media (pointer: fine), (-moz-touch-enabled: 0), screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+@media (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (pointer: fine) and (max-resolution: 2dppx), screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (-moz-touch-enabled: 0) {
   .orderInfo__btn:hover {
     opacity: 0.5;
   }
