@@ -4149,17 +4149,17 @@ tt {
 
 @media screen and (max-width: 996px) {
   .frame__main__inside {
-    -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr;
-    -ms-grid-rows: 50vw 300px 1fr;
-        grid-template-rows: 50vw 300px 1fr;
+    -ms-grid-columns: minmax(0, 1fr);
+        grid-template-columns: minmax(0, 1fr);
+    -ms-grid-rows: 50vw 1fr 1fr;
+        grid-template-rows: 50vw 1fr 1fr;
   }
 }
 
 @media screen and (max-width: 599px) {
   .frame__main__inside {
-    -ms-grid-rows: 70vw 300px 1fr;
-        grid-template-rows: 70vw 300px 1fr;
+    -ms-grid-rows: 70vw 1fr 1fr;
+        grid-template-rows: 70vw 1fr 1fr;
   }
 }
 
@@ -4190,11 +4190,7 @@ tt {
 
 @media screen and (max-width: 996px) {
   .frame__main__inside .table {
-    -ms-grid-row: 2;
-    -ms-grid-row-span: 1;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 1;
-    grid-area: 2 / 1 / 3 / 2;
+    display: none;
   }
 }
 
@@ -6511,7 +6507,7 @@ tt {
 .order__area .amount {
   position: absolute;
   top: unset;
-  bottom: 30px;
+  bottom: 25px;
   right: unset;
   left: 5px;
   border: 1px solid #000;
@@ -6586,12 +6582,26 @@ tt {
   background: linear-gradient(to top, #001940 0%, #000) 100%;
 }
 
+@media screen and (max-width: 996px) {
+  .order__chips {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
 .order__chips li {
   width: 50px;
   height: 50px;
   -webkit-box-flex: 0;
       -ms-flex: none;
           flex: none;
+}
+
+@media screen and (max-width: 996px) {
+  .order__chips li {
+    margin: 0 10px;
+  }
 }
 
 .order__chips li.--on {
@@ -6625,6 +6635,7 @@ tt {
       -ms-flex: none;
           flex: none;
   height: 10%;
+  min-height: 40px;
   background: #000;
 }
 
@@ -7184,10 +7195,28 @@ tt {
   font-size: 14px;
 }
 
+@media screen and (max-width: 599px) {
+  .road .memberInfo {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+}
+
 .road .memberInfo li::before {
   content: attr(data-txt);
   color: #fefdb3;
   margin-right: 5px;
+}
+
+@media screen and (max-width: 599px) {
+  .road .memberInfo li:last-child {
+    display: none;
+  }
 }
 
 .road .totalCount {
@@ -7363,56 +7392,12 @@ tt {
   -webkit-box-align: unset;
       -ms-flex-align: unset;
           align-items: unset;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-}
-
-.detail__change {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: unset;
-      -ms-flex-align: unset;
-          align-items: unset;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  border: 1px solid #000;
-  border-width: 1px 0;
-  -o-border-image: linear-gradient(to right, transparent 5%, #37c6ff 20%, #63faff 60%, #37c6ff 80%, transparent 100%) 1;
-     border-image: -webkit-gradient(linear, left top, right top, color-stop(5%, transparent), color-stop(20%, #37c6ff), color-stop(60%, #63faff), color-stop(80%, #37c6ff), to(transparent)) 1;
-     border-image: linear-gradient(to right, transparent 5%, #37c6ff 20%, #63faff 60%, #37c6ff 80%, transparent 100%) 1;
-  width: 100%;
-  height: 35px;
-  display: none;
-}
-
-@media screen and (max-width: 1180px) {
-  .detail__change {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-}
-
-.detail__change li {
-  position: relative;
-  width: 50%;
-  height: 100%;
-  line-height: 35px;
-  text-align: center;
-  background: -webkit-gradient(linear, left bottom, left top, from(#001940), to(#004889));
-  background: linear-gradient(to top, #001940 0%, #004889 100%);
-}
-
-.detail__change li.--on {
-  width: 80%;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #f2bd79), to(#563d29));
-  background: linear-gradient(to bottom, #f2bd79 50%, #563d29 100%);
-  color: #240913;
+  pointer-events: none;
 }
 
 .detail__box {
@@ -7429,24 +7414,35 @@ tt {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: calc(100% / 2);
+  width: calc(100% / 2 - 1px);
   height: 100%;
   background: #000;
+  pointer-events: auto;
 }
 
 @media screen and (max-width: 1180px) {
   .detail__box {
     width: 100%;
-    height: calc(100% - 35px);
   }
   .detail__box:not(.--on) {
     display: none;
   }
 }
 
+@media screen and (max-width: 1024px) {
+  .detail__box {
+    width: 50%;
+    max-width: 250px;
+  }
+  .detail__box:not(.--on) {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
 @media screen and (max-width: 996px) {
   .detail__box {
-    max-width: 250px;
     background: rgba(0, 0, 0, 0.7);
   }
 }
@@ -7487,6 +7483,14 @@ tt {
   }
 }
 
+@media screen and (max-width: 996px) {
+  .detail__box__title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
 .detail__box__title span {
   position: relative;
 }
@@ -7511,7 +7515,71 @@ tt {
   white-space: nowrap;
 }
 
-.detail .goodroad_btn {
+.detail__change {
+  border: 1px solid #000;
+  border-width: 1px 0;
+  -o-border-image: linear-gradient(to right, transparent 5%, #37c6ff 20%, #63faff 60%, #37c6ff 80%, transparent 100%) 1;
+     border-image: -webkit-gradient(linear, left top, right top, color-stop(5%, transparent), color-stop(20%, #37c6ff), color-stop(60%, #63faff), color-stop(80%, #37c6ff), to(transparent)) 1;
+     border-image: linear-gradient(to right, transparent 5%, #37c6ff 20%, #63faff 60%, #37c6ff 80%, transparent 100%) 1;
+  width: 100%;
+  height: 35px;
+  pointer-events: auto;
+  display: none;
+}
+
+@media screen and (max-width: 1180px) {
+  .detail__change {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: unset;
+        -ms-flex-align: unset;
+            align-items: unset;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+}
+
+@media screen and (max-width: 996px) {
+  .detail__change {
+    display: none;
+  }
+}
+
+.detail__change li {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  background: -webkit-gradient(linear, left bottom, left top, from(#001940), to(#004889));
+  background: linear-gradient(to top, #001940 0%, #004889 100%);
+  line-height: 35px;
+  text-align: center;
+}
+
+@media (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (pointer: fine) and (max-resolution: 2dppx), screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (-moz-touch-enabled: 0) {
+  .detail__change li:hover {
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #f2bd79), to(#563d29));
+    background: linear-gradient(to bottom, #f2bd79 50%, #563d29 100%);
+    color: #240913;
+  }
+}
+
+.detail__change li:active {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #f2bd79), to(#563d29));
+  background: linear-gradient(to bottom, #f2bd79 50%, #563d29 100%);
+  color: #240913;
+}
+
+.detail__change li.--on {
+  width: 80%;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #f2bd79), to(#563d29));
+  background: linear-gradient(to bottom, #f2bd79 50%, #563d29 100%);
+  color: #240913;
+}
+
+.detail .goodroad_btn,
+.detail .close_btn {
   position: relative;
   width: 20px;
   height: 20px;
@@ -7524,23 +7592,36 @@ tt {
   margin: auto;
 }
 
-@media screen and (max-width: 1180px) {
-  .detail .goodroad_btn {
-    -webkit-filter: invert(1);
-            filter: invert(1);
-  }
+.--on > .goodroad_btn {
+  -webkit-filter: invert(1);
+          filter: invert(1);
 }
 
 @media (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (pointer: fine) and (max-resolution: 2dppx), screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (-moz-touch-enabled: 0) {
-  .detail .goodroad_btn:hover {
+  .detail .goodroad_btn:hover,
+  .detail .close_btn:hover {
     -webkit-transform: scale(1.2);
             transform: scale(1.2);
   }
 }
 
-.detail .goodroad_btn:active {
+.detail .goodroad_btn:active,
+.detail .close_btn:active {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
+}
+
+.detail .close_btn {
+  background-image: url(../images/icon_x.svg);
+  left: auto;
+  right: 10px;
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .detail .close_btn {
+    display: block;
+  }
 }
 
 .goodroadList {
