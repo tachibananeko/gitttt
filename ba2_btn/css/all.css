@@ -4157,8 +4157,8 @@ tt {
   }
   .--tableOpen .frame__main__inside {
         grid-template-areas: "video" "table" "order" "road";
-    -ms-grid-rows: 70vw 1fr 1fr 1fr;
-        grid-template-rows: 70vw 1fr 1fr 1fr;
+    -ms-grid-rows: 50vw 1fr 1fr 1fr;
+        grid-template-rows: 50vw 1fr 1fr 1fr;
   }
 }
 
@@ -4952,7 +4952,7 @@ tt {
   margin-right: 20px;
 }
 
-@media screen and (max-width: 996px) {
+@media screen and (max-width: 599px) {
   .back_btn {
     margin-right: 10px;
   }
@@ -4975,7 +4975,7 @@ tt {
   height: 30px;
 }
 
-@media screen and (max-width: 996px) {
+@media screen and (max-width: 599px) {
   .channel {
     margin-right: 10px;
   }
@@ -5140,7 +5140,7 @@ tt {
   position: relative;
 }
 
-@media screen and (max-width: 996px) {
+@media screen and (max-width: 599px) {
   .handle_btn {
     margin-right: 10px;
   }
@@ -5192,7 +5192,7 @@ tt {
   display: none;
 }
 
-@media screen and (max-width: 996px) {
+@media screen and (max-width: 599px) {
   .tableph_btn {
     margin-right: 10px;
   }
@@ -5465,7 +5465,7 @@ tt {
   padding: 0 10px;
 }
 
-@media screen and (max-width: 996px) {
+@media screen and (max-width: 599px) {
   .tip_btn {
     margin-right: 10px;
   }
@@ -5741,6 +5741,7 @@ tt {
           flex: 1 1 100%;
   padding: 5px 30px 5px 10px;
   overflow: hidden;
+  z-index: 1;
 }
 
 .video__function__marquee::after {
@@ -6083,7 +6084,6 @@ tt {
   right: 0;
   left: 0;
   margin: auto;
-  z-index: 2;
 }
 
 .table__title span {
@@ -6659,6 +6659,12 @@ tt {
 }
 
 @media screen and (max-width: 996px) {
+  .order__chips li {
+    margin: 0 20px;
+  }
+}
+
+@media screen and (max-width: 599px) {
   .order__chips li {
     margin: 0 5px;
   }
@@ -7304,6 +7310,15 @@ tt {
   background: linear-gradient(to top, #001940 0%, #000) 100%;
 }
 
+@media screen and (max-width: 996px) {
+  .road .totalCount__item {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding-right: 30px;
+  }
+}
+
 .road .totalCount__item li {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -7432,6 +7447,12 @@ tt {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   height: 50%;
+}
+
+@media screen and (max-width: 996px) {
+  .road__group__info .ballBox {
+    height: 33.33%;
+  }
 }
 
 .road__group__info .ballBox i {
