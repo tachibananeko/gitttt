@@ -86,11 +86,11 @@
                 }
             }
             @include mw_xs {
-                grid-template-rows: 60vw 1fr minmax(200px, 360px);
+                grid-template-rows: 60vw 1fr minmax(200px, 1fr);
 
                 // 選擇桌次打開狀態
                 @at-root .--tableOpen .frame__main__inside {
-                    grid-template-rows: 60vw 1fr 1fr minmax(200px, 250px);
+                    grid-template-rows: 60vw 1fr 1fr minmax(200px, 1fr);
                 }
             }
             
