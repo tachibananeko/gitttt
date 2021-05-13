@@ -359,6 +359,10 @@
         padding: 5px;
         order: -2;
 
+        @include mw_xs{
+            padding: 2px 5px;
+        }
+
         ul {
             @include d_f(flex, center, center);
             padding: 3px 5px;
@@ -429,7 +433,7 @@
                 font-size: 30px;
             }
             @include mw_xs {
-                font-size: 20px;
+                font-size: 25px;
             }
         }
 
@@ -464,6 +468,10 @@
         .odd {
             font-size: 14px;
             text-shadow: 2px 1px map-get($txt_color, shadow);
+
+            @include mw_xs{
+                font-size: 12px;
+            }
         }
 
         .txt {
@@ -476,6 +484,10 @@
             color: map-get($txt_color, yellow);
             font-size: 14px;
             text-shadow: 2px 1px map-get($txt_color, shadow);
+
+            @include mw_xs {
+                font-size: 12px;
+            }
 
             @at-root .area_p .limit{
                 text-align: right;
@@ -728,9 +740,10 @@
 
     // 卡號all.order__cardAll
     &__cardAll {
-        @include pos_abs(35px, unset, unset, 0);
+        @include pos_abs(30px, unset, unset, 0);
         @include scrollbar(hidden, auto);
-        height: calc(100% - 35px);
+        width: 100%;
+        height: calc(100% - 30px);
         background: map-get($bg_color, black);
 
         table {
@@ -940,7 +953,7 @@
             }
         }
         @include mw_md{
-            width: 50%;
+            width: calc(100% / 2 - 2px);
             max-width: 250px;
             &:not(.--on) {
                 display: flex;

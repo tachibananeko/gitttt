@@ -41,6 +41,9 @@
         grid-template-rows: 50px minmax(0, 1fr);
         grid-template-areas:"nav"
                             "inside";
+        @include mw_xs{
+            grid-template-rows: 40px minmax(0, 1fr);
+        }
 
         // .frame__main__nav
         &__nav{

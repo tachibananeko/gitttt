@@ -184,7 +184,6 @@
 .tip_btn{
     @include btn_set(auto, 30px, map-get($btn_color, orange));
     @include border(1px, map-get($border_color, primary));
-    @include mr_distance;
     padding: 0 10px;
     border: 1px solid map-get($bg_color, secondary);
     border-radius: 3px;

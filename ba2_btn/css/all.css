@@ -4102,6 +4102,13 @@ tt {
       grid-template-areas: "nav" "inside";
 }
 
+@media screen and (max-width: 599px) {
+  .frame__main {
+    -ms-grid-rows: 40px minmax(0, 1fr);
+        grid-template-rows: 40px minmax(0, 1fr);
+  }
+}
+
 .frame__main__nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4948,12 +4955,6 @@ tt {
   margin-right: 20px;
 }
 
-@media screen and (max-width: 599px) {
-  .back_btn {
-    margin-right: 10px;
-  }
-}
-
 @media (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (pointer: fine) and (max-resolution: 2dppx), screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (-moz-touch-enabled: 0) {
   .back_btn:hover {
     -webkit-filter: brightness(150%);
@@ -4969,12 +4970,6 @@ tt {
 .channel {
   margin-right: 20px;
   height: 30px;
-}
-
-@media screen and (max-width: 599px) {
-  .channel {
-    margin-right: 10px;
-  }
 }
 
 .channel__item {
@@ -5137,12 +5132,6 @@ tt {
   position: relative;
 }
 
-@media screen and (max-width: 599px) {
-  .handle_btn {
-    margin-right: 10px;
-  }
-}
-
 .handle_btn::after {
   position: absolute;
   top: calc(100% + 5px);
@@ -5185,12 +5174,6 @@ tt {
   border-radius: 3px;
   overflow: hidden;
   display: none;
-}
-
-@media screen and (max-width: 599px) {
-  .tableph_btn {
-    margin-right: 10px;
-  }
 }
 
 @media screen and (max-width: 996px) {
@@ -5456,16 +5439,9 @@ tt {
   -o-border-image: linear-gradient(to right, #f2bd79 0%, #ffffc5 50%, #f2bd79 100%) 1;
      border-image: -webkit-gradient(linear, left top, right top, from(#f2bd79), color-stop(50%, #ffffc5), to(#f2bd79)) 1;
      border-image: linear-gradient(to right, #f2bd79 0%, #ffffc5 50%, #f2bd79 100%) 1;
-  margin-right: 20px;
   padding: 0 10px;
   border: 1px solid #fbe2b0;
   border-radius: 3px;
-}
-
-@media screen and (max-width: 599px) {
-  .tip_btn {
-    margin-right: 10px;
-  }
 }
 
 .tip_btn::before {
@@ -6352,6 +6328,12 @@ tt {
           order: -2;
 }
 
+@media screen and (max-width: 599px) {
+  .order__info {
+    padding: 2px 5px;
+  }
+}
+
 .order__info ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6477,7 +6459,7 @@ tt {
   .order__area .area_t,
   .order__area .area_bp,
   .order__area .area_pp {
-    font-size: 20px;
+    font-size: 25px;
   }
 }
 
@@ -6528,6 +6510,12 @@ tt {
   text-shadow: 2px 1px rgba(23, 13, 14, 0.5);
 }
 
+@media screen and (max-width: 599px) {
+  .order__area .odd {
+    font-size: 12px;
+  }
+}
+
 .order__area .txt {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6548,6 +6536,12 @@ tt {
   color: #fefdb3;
   font-size: 14px;
   text-shadow: 2px 1px rgba(23, 13, 14, 0.5);
+}
+
+@media screen and (max-width: 599px) {
+  .order__area .limit {
+    font-size: 12px;
+  }
 }
 
 .area_p .limit {
@@ -7228,14 +7222,15 @@ tt {
 
 .order__cardAll {
   position: absolute;
-  top: 35px;
+  top: 30px;
   bottom: unset;
   right: unset;
   left: 0;
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  height: calc(100% - 35px);
+  width: 100%;
+  height: calc(100% - 30px);
   background: #000;
 }
 
@@ -7556,7 +7551,7 @@ tt {
 
 @media screen and (max-width: 1024px) {
   .detail__box {
-    width: 50%;
+    width: calc(100% / 2 - 2px);
     max-width: 250px;
   }
   .detail__box:not(.--on) {
