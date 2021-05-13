@@ -61,7 +61,6 @@
             flex: 1 1 100%;
             padding: 5px 30px 5px 10px;
             overflow: hidden;
-            z-index: 1;
 
             &::after{
                 @include pos_abs(5px, 0, unset, unset);
@@ -412,6 +411,9 @@
             @include mw_lg {
                 font-size: 50px;
             }
+            @include mw_xs {
+                font-size: 40px;
+            }
         }
 
         .area_t,
@@ -424,6 +426,9 @@
 
             @include mw_lg {
                 font-size: 30px;
+            }
+            @include mw_xs {
+                font-size: 20px;
             }
         }
 
@@ -489,7 +494,7 @@
             @include pos_abs(0, 5px, unset, unset);
             @include border(0 0 1px, map-get($border_color, secondary));
             min-width: 50px;
-            padding: 3px 10px;
+            padding: 2px 10px;
             background: map-get($bg_color, black);
             border-radius: 0 0 5px 5px;
             color: map-get($txt_color, primary);
@@ -502,7 +507,7 @@
             @include border(1px, map-get($border_color, primary));
             min-width: 50px;
             height: 25px;
-            padding: 3px 5px;
+            padding: 2px 5px;
             background: map-get($bg_color, black);
             color: map-get($txt_color, primary);
             font-size: 14px;
@@ -540,6 +545,7 @@
         background: map-get($bg_color, darkblue_vl);
 
         @include mw_ms{
+            height: 60px;
             justify-content: center;
             order: -1;
         }
@@ -651,7 +657,9 @@
         order: -3;
 
         @include mw_md{
+            height: 30px;
             background: map-get($bg_color, darkblue_vl);
+            padding-top: 0;
         }
 
         >li {
@@ -911,6 +919,10 @@
         height: 100%;
         background: map-get($bg_color, black);
         pointer-events: auto;
+
+        &:last-child {
+            margin-left: auto;
+        }
 
         @include mw_lg {
             width: 100%;

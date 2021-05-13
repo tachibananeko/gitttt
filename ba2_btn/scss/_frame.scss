@@ -74,7 +74,7 @@
                                     "order"
                                     "road";
                 grid-template-columns: minmax(0, 1fr);
-                grid-template-rows: 50vw 1fr 1fr;
+                grid-template-rows: 50vw 1fr minmax(200px, 250px);
 
                 // 選擇桌次打開狀態
                 @at-root .--tableOpen .frame__main__inside {
@@ -82,18 +82,23 @@
                                         "table"
                                         "order"
                                         "road";
-                    grid-template-rows: 50vw 1fr 1fr 1fr;
+                    grid-template-rows: 50vw 1fr 1fr minmax(200px, 250px);
                 }
             }
             @include mw_xs {
-                grid-template-rows: 70vw 1fr 1fr;
+                grid-template-rows: 60vw 1fr minmax(200px, 360px);
+
+                // 選擇桌次打開狀態
+                @at-root .--tableOpen .frame__main__inside {
+                    grid-template-rows: 60vw 1fr 1fr minmax(200px, 250px);
+                }
             }
             
             .video {
                 grid-area: video;
                 
                 background-color: map-get($bg_color, black);
-
+                z-index: 1;
                 @include mw_ms{
                     grid-area: 1 / 1 / 2 / 2;
                 }
@@ -106,7 +111,7 @@
                 z-index: 2;
 
                 @include mw_ms {
-                    grid-area: 2 / 1 / 3 / 2;
+                    grid-area: auto;
                     display: none;
 
                     // 選擇桌次打開狀態
@@ -124,7 +129,7 @@
 
                     // 選擇桌次打開狀態
                     @at-root .--tableOpen .order {
-                        grid-area: 3 / 1 / 4 / 2;
+                        grid-area: auto;
                     }
                 }                
             }
@@ -139,7 +144,7 @@
 
                     // 選擇桌次打開狀態
                     @at-root .--tableOpen .road {
-                        grid-area: 4 / 1 / 5 / 2;
+                        grid-area: auto;
                     }
                 }
             }
