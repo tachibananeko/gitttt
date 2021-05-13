@@ -20,11 +20,14 @@
         @include d_f(flex, center, flex-start);
         position: relative;
         height: 100%;
+        border-radius: 3px;
+        overflow: hidden;
 
         @include mw_ms {
             display: none;
             height: auto;
             flex-direction: column;
+            border-radius: 0;
         }
     }
 
@@ -33,7 +36,9 @@
     &__1st {
         @extend %hand;
         @include btn_set(60px, 100%, map-get($btn_color, secondary));
-        @include border(1px, map-get($border_color, primary));
+        border: 1px solid map-get($bg_color, secondary);
+        border-radius: 3px;
+        overflow: hidden;
         @include mw_ms {
             height: 30px;
         }
@@ -95,10 +100,13 @@
 // ph選擇桌次
 .tableph_btn{
     @include btn_set(auto, 30px, map-get($btn_color, primary));
-    @include border(1px, map-get($border_color, primary));
     @include mr_distance;
     padding: 0 25px 0 10px;
     font-weight: bold;
+    border: 1px solid map-get($bg_color, secondary);
+    border-radius: 3px;
+    overflow: hidden;
+    
     display: none;
 
     @include mw_ms{
@@ -127,7 +135,7 @@
 
     .triangle {
         @include pos_abs(0, 5px, 0, unset);
-        @include triangle(10px, map-get($bg_color, black), bottom);
+        @include triangle(12px, map-get($bg_color, black), bottom);
         display: inline-block;
         margin: auto;
         animation: shake 2s infinite;
@@ -177,6 +185,8 @@
     @include border(1px, map-get($border_color, primary));
     @include mr_distance;
     padding: 0 10px;
+    border: 1px solid map-get($bg_color, secondary);
+    border-radius: 3px;
 
     &::before {
         @include btn_hoverlight03;

@@ -106,8 +106,10 @@
         .PR_btn{
             @include btn_set(auto, 30px, map-get($btn_color, green));
             @include pos_abs (unset, unset, calc(100% + 10px), 380px);
-            @include border(1px, map-get($border_color, green));
             padding: 0 10px;
+            border: 1px solid map-get($bg_color, lightgreen);
+            border-radius: 3px;
+            overflow: hidden;
             z-index: 2;
 
             @include mw_md{
@@ -170,9 +172,13 @@
         position: relative;
         width: 100%;
         flex: none;
-        height: 30px;
+        height: 20px;
         background: map-get($bg_color, primary_vl);
         overflow: hidden;
+
+        @include mw_lg{
+            height: 30px;
+        }
 
         &::before{
             @include pos_abs(0, unset, 0, calc(50% + 50px));
@@ -215,6 +221,7 @@
             @include btn_txt(center, map-get($txt_color, yellow), map-get($txt_color, shadow));
             @include pos_abs(0, 0, 0, 0);
             margin: auto;
+            transform: translateZ(0);
         }
 
         span{
