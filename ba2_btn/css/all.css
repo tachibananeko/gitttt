@@ -4182,7 +4182,6 @@ tt {
   -ms-grid-column: 1;
   grid-area: video;
   background-color: #000;
-  z-index: 1;
 }
 
 @media screen and (max-width: 996px) {
@@ -5013,8 +5012,6 @@ tt {
   background: -webkit-gradient(linear, left top, right top, from(#001940), to(#004889));
   background: linear-gradient(to right, #001940 0%, #004889 100%);
   border: 1px solid #fbe2b0;
-  border-radius: 3px;
-  overflow: hidden;
 }
 
 @media screen and (max-width: 996px) {
@@ -5120,6 +5117,8 @@ tt {
 
 .channel__1st {
   display: none;
+  border-radius: 3px;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 996px) {
@@ -5739,6 +5738,7 @@ tt {
           flex: 1 1 100%;
   padding: 5px 30px 5px 10px;
   overflow: hidden;
+  z-index: 1;
 }
 
 .video__function__marquee::after {

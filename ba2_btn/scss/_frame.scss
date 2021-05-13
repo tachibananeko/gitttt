@@ -98,7 +98,6 @@
                 grid-area: video;
                 
                 background-color: map-get($bg_color, black);
-                z-index: 1;
                 @include mw_ms{
                     grid-area: 1 / 1 / 2 / 2;
                 }

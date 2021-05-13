@@ -37,8 +37,7 @@
         @extend %hand;
         @include btn_set(60px, 100%, map-get($btn_color, secondary));
         border: 1px solid map-get($bg_color, secondary);
-        border-radius: 3px;
-        overflow: hidden;
+        
         @include mw_ms {
             height: 30px;
         }
@@ -64,6 +63,8 @@
     // ph當前頻道 .channel__1st
     &__1st {
         display: none;
+        border-radius: 3px;
+        overflow: hidden;
         @include mw_ms {
             display: block;
             height: 30px;
