@@ -977,6 +977,7 @@
 
         @include mw_lg {
             width: 100%;
+            height: calc(100% - 30px);
 
             &:not(.--on) {
                 display: none;
@@ -984,6 +985,8 @@
         }
         @include mw_ms{
             width: calc(100% / 2 - 2px);
+            height: 100%;
+            
             &:not(.--on) {
                 display: flex;
             }
@@ -1032,7 +1035,6 @@
 
     // pad版title按鈕.detail__change
     &__change {
-        @extend %hand;
         @include border(1px 0, map-get($border_color, secondary));
         width: 100%;
         height: 35px;
@@ -1043,32 +1045,37 @@
             @include d_f(flex, unset, flex-start);
         }
 
-        // @include mw_ms{
-        //     display: none;
-        // }
+        @include mw_ms{
+            display: none;
+        }
 
-        // // 電投有卡 電投無卡 網投無卡
-        // @at-root .--telType .detail__change,
-        // .--noOrder .detail__change {
-        //     display: none;
-        // }
+        // 電投有卡 電投無卡 網投無卡
+        @at-root .--telType .detail__change,
+        .--noOrder .detail__change {
+            display: none;
+        }
 
         li {
+            @extend %hand;
             @include btn_set(50%, 100%, map-get($btn_color, secondary_vl));
             line-height: 35px;
             text-align: center;
 
-            // 手指效果
-            @include hoverHandler {
-                background: map-get($btn_color, primary_vl);
-                color: map-get($txt_color, secondary);
+            &::after{
+                @include btn_txt(center, map-get($txt_color, primary), transparent);
             }
-        }
 
-        li.--on {
-            width: 80%;
-            background: map-get($btn_color, primary_vl);
-            color: map-get($txt_color, secondary);
+            .hover_item {
+                @include btn_hoveritem(map-get($btn_color, primary_vl));
+            }
+
+            // _on效果
+            @include btn_on(map-get($txt_color, secondary)){
+                width: 80%;
+            }
+
+            // 手指效果
+            @include btn_hoverHandler(1px 0, map-get($txt_color, secondary));
         }
     }
 

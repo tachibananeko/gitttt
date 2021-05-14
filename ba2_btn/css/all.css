@@ -450,7 +450,8 @@ tt {
 .order .cardTitle > li::after,
 .road .totalCount,
 .detail__box__title span::after,
-.detail__change,
+.detail__change li,
+.detail__change li::after,
 .goodroadList__item,
 .goodroadList__item__go i::after {
   cursor: pointer;
@@ -458,7 +459,7 @@ tt {
   transition: all .2s ease-in-out;
 }
 
-.tableno__btn.--on, .cardno > li.--on, .menu__main ul li.--on:not(.--PR), .channel li.--on, .channel__1st.--on, .table__group li.--on, .order .cardTitle > li.--on {
+.tableno__btn.--on, .cardno > li.--on, .menu__main ul li.--on:not(.--PR), .channel li.--on, .channel__1st.--on, .table__group li.--on, .order .cardTitle > li.--on, .detail__change li.--on {
   cursor: default;
 }
 
@@ -7648,6 +7649,7 @@ tt {
 @media screen and (max-width: 1180px) {
   .detail__box {
     width: 100%;
+    height: calc(100% - 30px);
   }
   .detail__box:not(.--on) {
     display: none;
@@ -7657,6 +7659,7 @@ tt {
 @media screen and (max-width: 996px) {
   .detail__box {
     width: calc(100% / 2 - 2px);
+    height: 100%;
   }
   .detail__box:not(.--on) {
     display: -webkit-box;
@@ -7769,6 +7772,17 @@ tt {
   }
 }
 
+@media screen and (max-width: 996px) {
+  .detail__change {
+    display: none;
+  }
+}
+
+.--telType .detail__change,
+.--noOrder .detail__change {
+  display: none;
+}
+
 .detail__change li {
   position: relative;
   width: 50%;
@@ -7779,25 +7793,77 @@ tt {
   text-align: center;
 }
 
-@media (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (pointer: fine) and (max-resolution: 2dppx), screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (-moz-touch-enabled: 0) {
-  .detail__change li:hover {
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #f2bd79), to(#563d29));
-    background: linear-gradient(to bottom, #f2bd79 50%, #563d29 100%);
-    color: #240913;
-  }
+.detail__change li::after {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  content: attr(data-txt);
+  position: relative;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  text-shadow: 2px 1px transparent;
+  pointer-events: none;
+  white-space: nowrap;
 }
 
-.detail__change li:active {
+.detail__change li .hover_item {
+  position: absolute;
+  top: 0;
+  bottom: unset;
+  right: unset;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #f2bd79), to(#563d29));
   background: linear-gradient(to bottom, #f2bd79 50%, #563d29 100%);
-  color: #240913;
+  opacity: 0;
+  -webkit-transition: all .3s .1s ease-in-out;
+  transition: all .3s .1s ease-in-out;
 }
 
 .detail__change li.--on {
   width: 80%;
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, #f2bd79), to(#563d29));
-  background: linear-gradient(to bottom, #f2bd79 50%, #563d29 100%);
+}
+
+.detail__change li.--on::after {
   color: #240913;
+}
+
+.detail__change li.--on .hover_item {
+  opacity: 1;
+}
+
+@media (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (pointer: fine) and (max-resolution: 2dppx), screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (-moz-touch-enabled: 0) {
+  .detail__change li:hover {
+    border-width: 1px 0;
+  }
+  .detail__change li:hover::after {
+    color: #240913;
+  }
+  .detail__change li:hover .hover_item {
+    opacity: 1;
+  }
+}
+
+.detail__change li:active {
+  border-width: 1px 0;
+}
+
+.detail__change li:active::after {
+  color: #240913;
+}
+
+.detail__change li:active .hover_item {
+  -webkit-transition: none;
+  transition: none;
+  opacity: 1;
 }
 
 .detail .goodroad_btn,
