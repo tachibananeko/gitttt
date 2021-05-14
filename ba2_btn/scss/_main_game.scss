@@ -73,7 +73,6 @@
             span{
                 flex: 0 0 100%;
                 white-space: nowrap;
-                animation: marquee_move 25s linear infinite;
             }
 
             @keyframes marquee_move {
@@ -346,6 +345,44 @@
     }
 }
 
+// 下注區與珠路共用 會員資訊
+.memberInfo {
+    @include d_f(flex, center, space-between);
+    @include border(1px 0, map-get($border_color, secondary));
+    padding: 3px 10px;
+    background: map-get($bg_color, darkblue);
+    font-size: 14px;
+    order: -3;
+
+    // 768以下會員資訊
+    @at-root .order .memberInfo{
+        display: none;
+        @include mw_md{
+            display: flex;
+        }
+    }
+    // 1024以上會員資訊
+    @at-root .road .memberInfo {
+        @include mw_md{
+            display: none;
+        }
+    }
+
+    li {
+        &::before {
+            content: attr(data-txt);
+            color: map-get($txt-color, yellow);
+            margin-right: 5px;
+        }
+
+        @include mw_xs {
+            &:last-child {
+                display: none;
+            }
+        }
+    }
+}
+
 // 下注區與卡號
 .order{
     @include d_f(flex, unset, flex-end);
@@ -582,8 +619,8 @@
 
 
             &.--on{
-                width: 65px;
-                height: 65px;
+                width: 70px;
+                height: 70px;
                 
                 @include mw_xs {
                     width: 50px;
@@ -593,8 +630,13 @@
 
             // 手指效果
             @include hoverHandler {
-                width: 50px;
-                height: 50px;
+                width: 70px;
+                height: 70px;
+
+                @include mw_xs {
+                    width: 50px;
+                    height: 50px;
+                }
             }
         }
     }
@@ -674,7 +716,7 @@
         padding: 5px 5px 0;
         background: map-get($bg_color, black);
         font-size: 0;
-        order: -3;
+        order: -4;
 
         @include mw_md{
             height: 30px;
@@ -779,34 +821,6 @@
 .road{
     @include d_f(flex, unset, flex-start);
     flex-direction: column;
-
-    // 會員資訊
-    .memberInfo{
-        @include d_f(flex, center, space-around);
-        @include border(1px 0, map-get($border_color, secondary));
-        padding: 3px 10px;
-        background: map-get($bg_color, darkblue);
-        font-size: 14px;
-
-        @include mw_xs{
-            flex-direction: column;
-            align-items: flex-start;
-        }
-        
-        li{
-            &::before{
-                content: attr(data-txt);
-                color: map-get($txt-color, yellow);
-                margin-right: 5px;
-            }
-
-            @include mw_xs {
-                &:last-child {
-                    display: none;
-                }
-            }
-        }
-    }
 
     // 結果統計
     .totalCount{
@@ -972,12 +986,6 @@
             height: 35px;
             flex: none;
             background: map-get($btn_color, secondary_vl);
-
-            @include mw_xl{
-                @at-root .detail div:type-of-child(1) .detail__box__title {
-                    border-right-width: 1px;
-                }
-            }
 
             @include mw_lg{
                 display: none;
@@ -1196,5 +1204,10 @@
 }
 
 // 限紅.limitList
+.limitList{
 
+    li{
+        @include border(0 0 1px, map-get($border_color, gold));
+    }
+}
 

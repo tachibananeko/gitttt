@@ -4955,6 +4955,12 @@ tt {
   margin-right: 20px;
 }
 
+@media screen and (max-width: 599px) {
+  .back_btn {
+    margin-right: 10px;
+  }
+}
+
 @media (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (pointer: fine) and (max-resolution: 2dppx), screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (-moz-touch-enabled: 0) {
   .back_btn:hover {
     -webkit-filter: brightness(150%);
@@ -4970,6 +4976,12 @@ tt {
 .channel {
   margin-right: 20px;
   height: 30px;
+}
+
+@media screen and (max-width: 599px) {
+  .channel {
+    margin-right: 10px;
+  }
 }
 
 .channel__item {
@@ -5132,6 +5144,12 @@ tt {
   position: relative;
 }
 
+@media screen and (max-width: 599px) {
+  .handle_btn {
+    margin-right: 10px;
+  }
+}
+
 .handle_btn::after {
   position: absolute;
   top: calc(100% + 5px);
@@ -5174,6 +5192,12 @@ tt {
   border-radius: 3px;
   overflow: hidden;
   display: none;
+}
+
+@media screen and (max-width: 599px) {
+  .tableph_btn {
+    margin-right: 10px;
+  }
 }
 
 @media screen and (max-width: 996px) {
@@ -5734,8 +5758,6 @@ tt {
       -ms-flex: 0 0 100%;
           flex: 0 0 100%;
   white-space: nowrap;
-  -webkit-animation: marquee_move 25s linear infinite;
-          animation: marquee_move 25s linear infinite;
 }
 
 @-webkit-keyframes marquee_move {
@@ -6301,6 +6323,59 @@ tt {
   opacity: 1;
 }
 
+.memberInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  border: 1px solid #000;
+  border-width: 1px 0;
+  -o-border-image: linear-gradient(to right, transparent 5%, #37c6ff 20%, #63faff 60%, #37c6ff 80%, transparent 100%) 1;
+     border-image: -webkit-gradient(linear, left top, right top, color-stop(5%, transparent), color-stop(20%, #37c6ff), color-stop(60%, #63faff), color-stop(80%, #37c6ff), to(transparent)) 1;
+     border-image: linear-gradient(to right, transparent 5%, #37c6ff 20%, #63faff 60%, #37c6ff 80%, transparent 100%) 1;
+  padding: 3px 10px;
+  background: linear-gradient(-137deg, #001940 0%, #000) 100%;
+  font-size: 14px;
+  -webkit-box-ordinal-group: -2;
+      -ms-flex-order: -3;
+          order: -3;
+}
+
+.order .memberInfo {
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .order .memberInfo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .road .memberInfo {
+    display: none;
+  }
+}
+
+.memberInfo li::before {
+  content: attr(data-txt);
+  color: #fefdb3;
+  margin-right: 5px;
+}
+
+@media screen and (max-width: 599px) {
+  .memberInfo li:last-child {
+    display: none;
+  }
+}
+
 .order {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -6689,8 +6764,8 @@ tt {
 }
 
 .order__chips li.--on {
-  width: 65px;
-  height: 65px;
+  width: 70px;
+  height: 70px;
 }
 
 @media screen and (max-width: 599px) {
@@ -6702,14 +6777,28 @@ tt {
 
 @media (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (pointer: fine) and (max-resolution: 2dppx), screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (-moz-touch-enabled: 0) {
   .order__chips li:hover {
+    width: 70px;
+    height: 70px;
+  }
+}
+
+@media screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2) and (max-width: 599px), screen and (pointer: fine) and (max-resolution: 2dppx) and (max-width: 599px), screen and (-moz-touch-enabled: 0) and (max-width: 599px) {
+  .order__chips li:hover {
     width: 50px;
     height: 50px;
   }
 }
 
 .order__chips li:active {
-  width: 50px;
-  height: 50px;
+  width: 70px;
+  height: 70px;
+}
+
+@media screen and (max-width: 599px) {
+  .order__chips li:active {
+    width: 50px;
+    height: 50px;
+  }
 }
 
 .order__function {
@@ -6966,9 +7055,9 @@ tt {
   padding: 5px 5px 0;
   background: #000;
   font-size: 0;
-  -webkit-box-ordinal-group: -2;
-      -ms-flex-order: -3;
-          order: -3;
+  -webkit-box-ordinal-group: -3;
+      -ms-flex-order: -4;
+          order: -4;
 }
 
 @media screen and (max-width: 1024px) {
@@ -7277,49 +7366,6 @@ tt {
           flex-direction: column;
 }
 
-.road .memberInfo {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  border: 1px solid #000;
-  border-width: 1px 0;
-  -o-border-image: linear-gradient(to right, transparent 5%, #37c6ff 20%, #63faff 60%, #37c6ff 80%, transparent 100%) 1;
-     border-image: -webkit-gradient(linear, left top, right top, color-stop(5%, transparent), color-stop(20%, #37c6ff), color-stop(60%, #63faff), color-stop(80%, #37c6ff), to(transparent)) 1;
-     border-image: linear-gradient(to right, transparent 5%, #37c6ff 20%, #63faff 60%, #37c6ff 80%, transparent 100%) 1;
-  padding: 3px 10px;
-  background: linear-gradient(-137deg, #001940 0%, #000) 100%;
-  font-size: 14px;
-}
-
-@media screen and (max-width: 599px) {
-  .road .memberInfo {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-  }
-}
-
-.road .memberInfo li::before {
-  content: attr(data-txt);
-  color: #fefdb3;
-  margin-right: 5px;
-}
-
-@media screen and (max-width: 599px) {
-  .road .memberInfo li:last-child {
-    display: none;
-  }
-}
-
 .road .totalCount {
   position: relative;
 }
@@ -7589,12 +7635,6 @@ tt {
           flex: none;
   background: -webkit-gradient(linear, left bottom, left top, from(#001940), to(#004889));
   background: linear-gradient(to top, #001940 0%, #004889 100%);
-}
-
-@media screen and (max-width: 1280px) {
-  .detail div:type-of-child(1) .detail__box__title {
-    border-right-width: 1px;
-  }
 }
 
 @media screen and (max-width: 1180px) {
@@ -7999,5 +8039,13 @@ tt {
 
 .orderInfo__btn:active {
   opacity: 0.5;
+}
+
+.limitList li {
+  border: 1px solid #000;
+  border-width: 0 0 1px;
+  -o-border-image: linear-gradient(to right, transparent 5%, #f2d77a 20%, #ffffc5 60%, #f2d77a 80%, transparent 100%) 1;
+     border-image: -webkit-gradient(linear, left top, right top, color-stop(5%, transparent), color-stop(20%, #f2d77a), color-stop(60%, #ffffc5), color-stop(80%, #f2d77a), to(transparent)) 1;
+     border-image: linear-gradient(to right, transparent 5%, #f2d77a 20%, #ffffc5 60%, #f2d77a 80%, transparent 100%) 1;
 }
 /*# sourceMappingURL=all.css.map */

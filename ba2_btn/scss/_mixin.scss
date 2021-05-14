@@ -452,9 +452,9 @@ $breakpoints: (
 }
 @mixin mr_distance {
 	margin-right: distance();
-	// @include mw_xs{
-	// 	margin-right: distance(2);
-	// }
+	@include mw_xs{
+		margin-right: distance(2);
+	}
 }
 
 
