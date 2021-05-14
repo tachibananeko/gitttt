@@ -350,7 +350,7 @@
 .memberInfo {
     @include d_f(flex, center, space-between);
     @include border(1px 0, map-get($border_color, secondary));
-    padding: 3px 10px;
+    padding: 5px 10px;
     background: map-get($bg_color, darkblue);
     font-size: 14px;
     order: -3;
@@ -386,7 +386,7 @@
 
 // 下注區與卡號
 .order{
-    @include d_f(flex, unset, flex-end);
+    @include d_f(flex, unset, flex-start);
     position: relative;
     height: 100%;
     flex-direction: column;
@@ -708,8 +708,8 @@
         }
     }
 
-    // 卡號按鈕.order__cardTitle
-    &__cardTitle {
+    // 卡號按鈕.cardTitle
+    .cardTitle {
         @include scrollbar(auto, hidden);
         @include d_f(flex, center, flex-start);
         height: 35px;
@@ -781,13 +781,23 @@
         }
     }
 
-    // 卡號all.order__cardAll
-    &__cardAll {
+    // 卡號all.cardAll
+    .cardAll {
         @include pos_abs(30px, unset, unset, 0);
         @include scrollbar(hidden, auto);
         width: 100%;
         height: calc(100% - 30px);
         background: map-get($bg_color, black);
+
+        display: none;
+
+        // all展開
+        @at-root .--cardOpen .cardAll{
+            display: block;
+        }
+        @at-root .--telType.--cardOpen .cardAll{
+            position: static;
+        }
 
         table {
             width: 100%;
@@ -943,9 +953,14 @@
 
 // 詳細資訊
 .detail{
-    @include d_f(flex, unset, space-between);
+    @include d_f(flex, flex-end, space-between);
     flex-wrap: wrap;
     pointer-events: none;
+
+    // all展開
+    &.--cardOpen{
+        display: none;
+    }
 
     // .detail__box
     &__box{
@@ -967,7 +982,7 @@
                 display: none;
             }
         }
-        @include mw_md{
+        @include mw_ms{
             width: calc(100% / 2 - 2px);
             &:not(.--on) {
                 display: flex;
@@ -977,25 +992,6 @@
         @include mw_ms {
             max-width: 250px;
             background: map-get($bg_color, black_alpha);
-        }
-
-        // 電投有卡 電投無卡 網投無卡
-        @at-root .--telType .detail__box,
-        .--noOrder .detail__box {
-            width: 100%;
-
-            &.--neworder {
-                display: none;
-            }
-
-            @include mw_lg {
-                &:not(.--on) {
-                    display: flex;
-                }
-            }
-            @include mw_ms {
-                width: 50%;
-            }
         }
 
         // title統一樣式.detail__box__title
@@ -1036,6 +1032,7 @@
 
     // pad版title按鈕.detail__change
     &__change {
+        @extend %hand;
         @include border(1px 0, map-get($border_color, secondary));
         width: 100%;
         height: 35px;
@@ -1046,15 +1043,15 @@
             @include d_f(flex, unset, flex-start);
         }
 
-        @include mw_ms{
-            display: none;
-        }
+        // @include mw_ms{
+        //     display: none;
+        // }
 
-        // 電投有卡 電投無卡 網投無卡
-        @at-root .--telType .detail__change,
-        .--noOrder .detail__change {
-            display: none;
-        }
+        // // 電投有卡 電投無卡 網投無卡
+        // @at-root .--telType .detail__change,
+        // .--noOrder .detail__change {
+        //     display: none;
+        // }
 
         li {
             @include btn_set(50%, 100%, map-get($btn_color, secondary_vl));
@@ -1244,6 +1241,10 @@
     height: 100%;
     background: map-get($bg_color, darkblue_vl);
 
+    @include mw_ms{
+        background: map-get($bg_color, black_alpha);
+    }
+
     li{
         @include border(0 0 1px, map-get($border_color, gold));
         padding: 20px 30px;
@@ -1287,3 +1288,39 @@
     }
 }
 
+// 電網投各種狀態============================================
+// .order內層細項設定
+.--telType [class^="order__"],
+.--telType .memberInfo{
+    display: none;
+}
+
+
+// .detail內層細項設定
+.--telType .--limit,
+.--noOrder .--goodroad {
+    width: 100%;
+
+    @include mw_lg {
+        &:not(.--on) {
+            display: flex;
+        }
+    }
+    @include mw_ms {
+        width: 50%;
+    }
+}
+.--telType:not(.--noCard) .--limit{
+    height: calc(100% - 35px);
+
+    @include mw_md {
+        height: 100%;
+    }
+}
+.frame:not(.--telType):not(.--noOrder) .--limit,
+.--telType .--goodroad,
+.--telType .--neworder,
+.--noOrder .--limit,
+.--noOrder .--neworder{
+    display: none;
+}
