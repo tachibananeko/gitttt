@@ -28,7 +28,7 @@
 
         百2 .--ba2
     -->
-    <div class="frame">
+    <div class="frame ">
         <!-- 左邊menu -->
         <!-- 打開人頭內按鈕 .--active -->
         <aside class="frame__menu">
@@ -592,7 +592,7 @@
 
                     <!-- 好路追注 -->
                     <!-- pad當前選項加上.--on -->
-                    <div class="detail__box --goodroad --on" style="display: none;">
+                    <div class="detail__box --goodroad --on">
                         <div class="detail__box__title">
                             <span data-txt="好路提示"></span>
                             <button class="goodroad_btn"></button>
@@ -654,13 +654,20 @@
                     <!-- 限紅 -->
                     <div class="detail__box --limit">
                         <div class="detail__box__title">
-                            <span data-txt="限紅"></span>
+                            <span data-txt="本桌限紅"></span>
+                            <button class="close_btn"></button>
                         </div>
                         <ul class="limitList">
-                            <li>10~36,000</li>
-                            <li data-txt="和">10~36,000</li>
-                            <li data-txt="莊對">10~36,000</li>
-                            <li data-txt="閒對">10~36,000</li>
+                            <li data-txt="限紅">10~36,000</li>
+                            <li data-txt="和" class="bg_tie_gradual">
+                                10~36,000
+                            </li>
+                            <li data-txt="莊對" class="bg_bank_gradual">
+                                10~36,000
+                            </li>
+                            <li data-txt="閒對" class="bg_play_gradual">
+                                10~36,000
+                            </li>
                         </ul>
                     </div>
                     <!-- 限紅 end -->

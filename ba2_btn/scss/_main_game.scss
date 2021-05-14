@@ -114,6 +114,7 @@
             @include mw_md{
                 bottom: 0;
                 left: 10px;
+                border-radius: 3px 3px 0 0;
             }
 
             &::before{
@@ -968,14 +969,33 @@
         }
         @include mw_md{
             width: calc(100% / 2 - 2px);
-            max-width: 250px;
             &:not(.--on) {
                 display: flex;
             }
         }
 
-        @include mw_ms{
+        @include mw_ms {
+            max-width: 250px;
             background: map-get($bg_color, black_alpha);
+        }
+
+        // 電投有卡 電投無卡 網投無卡
+        @at-root .--telType .detail__box,
+        .--noOrder .detail__box {
+            width: 100%;
+
+            &.--neworder {
+                display: none;
+            }
+
+            @include mw_lg {
+                &:not(.--on) {
+                    display: flex;
+                }
+            }
+            @include mw_ms {
+                width: 50%;
+            }
         }
 
         // title統一樣式.detail__box__title
@@ -986,6 +1006,7 @@
             height: 35px;
             flex: none;
             background: map-get($btn_color, secondary_vl);
+            font-size: 18px;
 
             @include mw_lg{
                 display: none;
@@ -993,6 +1014,14 @@
 
             @include mw_ms {
                 display: flex;
+                font-size: 14px;
+            }
+
+            @at-root .--telType .detail__box__title,
+            .--noOrder .detail__box__title{
+                @include mw_lg{
+                    display: block;
+                }
             }
 
             span {
@@ -1018,6 +1047,12 @@
         }
 
         @include mw_ms{
+            display: none;
+        }
+
+        // 電投有卡 電投無卡 網投無卡
+        @at-root .--telType .detail__change,
+        .--noOrder .detail__change {
             display: none;
         }
 
@@ -1205,9 +1240,50 @@
 
 // 限紅.limitList
 .limitList{
+    @include scrollbar(hidden, auto);
+    height: 100%;
+    background: map-get($bg_color, darkblue_vl);
 
     li{
         @include border(0 0 1px, map-get($border_color, gold));
+        padding: 20px 30px;
+        font-size: 18px;
+
+        @include mw_ms{
+            padding: 10px;
+            font-size: 14px;
+        }
+
+        &:first-child{
+            color: map-get($txt_color, yellow);
+            text-align: center;
+            &::before{
+                @include mr_distance;
+                content: attr(data-txt);
+            }
+        }
+
+        &:not(:first-child)::before{
+            @include mr_distance;
+            content: attr(data-txt);
+            display: inline-block;
+            min-width: 50px;
+            padding: 5px;
+            background: map-get($bg_color, tie);
+            border: 1px solid map-get($bg_color, secondary);
+            border-radius: 3px;
+            text-align: center;
+
+            @include mw_ms {
+                min-width: 30px;
+            }
+        }
+        &.bg_bank_gradual::before {
+            background: map-get($bg_color, bank);
+        }
+        &.bg_play_gradual::before {
+            background: map-get($bg_color, play);
+        }
     }
 }
 

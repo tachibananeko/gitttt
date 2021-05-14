@@ -142,7 +142,6 @@
 
                 @include mw_ms {
                     min-height: 350px;
-                    grid-area: 3 / 1 / 4 / 2;
 
                     // 選擇桌次打開狀態
                     @at-root .--tableOpen .road {
@@ -174,6 +173,12 @@
     grid-template-areas:"video details"
                         "table details"
                         "road road";
+    
+    @include mw_ms{
+        grid-template-areas:"video"
+                            "road";
+        grid-template-rows: 60vw minmax(200px, 1fr);
+    }
 }
 // 內層配置 電投有卡 
 .--telType .order {
