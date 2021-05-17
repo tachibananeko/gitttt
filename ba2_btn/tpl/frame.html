@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="format-detection" content="telephone=no" />
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js' integrity='sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==' crossorigin='anonymous'></script>
     <title>Welcome</title>
 
     <link rel="stylesheet" href="../style/all.min.css">
@@ -14,8 +16,9 @@
     <link rel="icon" href="/favicon_icon.ico">
     <link rel="apple-touch-icon" type="image/png" href="/favicon_icon.png">
     <link rel="apple-touch-icon-precomposed" href="/favicon_icon.png">
-    
+
 </head>
+
 <body ontouchstart="">
     <!-- 
         電投有卡.--telType 
@@ -27,7 +30,7 @@
         選擇桌次展開.--tableOpen
         卡片all展開.--cardOpen
     -->
-    <div class="frame">
+    <div class="frame " id="frame">
         <!-- 左邊menu -->
         <!-- 打開人頭內按鈕 .--active -->
         <aside class="frame__menu">
@@ -61,10 +64,10 @@
                     </li>
                 </ul>
                 <!-- 廠商按鈕 end -->
-    
+
                 <!-- 基本按鈕 -->
                 <!-- 當前頁面.--on -->
-                <ul class="--myself">
+                <ul class="--myself" id="myself">
                     <li data-txt="槍手桌號" class="--PR">
                         MW2000
                     </li>
@@ -98,6 +101,9 @@
                     <li data-txt="電投無卡">
                         <span class=" hover_item"></span>
                     </li>
+                    <li data-txt="網投有卡">
+                        <span class=" hover_item"></span>
+                    </li>
                     <li data-txt="網投無卡">
                         <span class=" hover_item"></span>
                     </li>
@@ -109,7 +115,7 @@
         <!-- 左邊menu end -->
 
 
-        
+
 
 
         <!-- iframe放置區 -->
@@ -171,7 +177,7 @@
             <!-- 上方menu end -->
 
 
-            
+
 
             <!-- 主內容 -->
             <div class="frame__main__inside">
@@ -206,7 +212,7 @@
                         <!-- 跑馬燈 end -->
 
                         <!-- 視訊放大 -->
-                        <button class="videobig_btn"></button>
+                        <button class="videobig_btn" id="videobig_btn"></button>
                         <!-- 視訊放大 end -->
 
                         <!-- 選擇卡片呼叫公關 -->
@@ -226,7 +232,7 @@
                 <!-- 視訊 end -->
 
 
-    
+
                 <!-- 選擇桌次 -->
                 <!-- 當前桌--on 包台--i_ex 快速桌--i_fast  -->
                 <div class="table">
@@ -303,7 +309,7 @@
                 <!-- 選擇桌次 end -->
 
 
-    
+
                 <!-- 下注區與卡號 -->
                 <div class="order">
                     <!-- 768以下會員資訊 -->
@@ -450,8 +456,8 @@
                     <!-- 下注按鈕 end -->
 
                     <!-- 卡號按鈕 -->
-                    <ul class="cardTitle">
-                        <li class="--on" data-txt="TA-9nn2">
+                    <ul class="cardTitle" id="cardTitle">
+                        <li class="--on" data-txt="All">
                             <span class="hover_item"></span>
                             <i></i>
                         </li>
@@ -505,7 +511,7 @@
                 <!-- 下注區與卡號 end -->
 
 
-    
+
                 <!-- 珠路 -->
                 <div class="road">
                     <!-- 1024以上會員資訊 -->
@@ -582,7 +588,7 @@
                 <!-- 珠路 end -->
 
 
-    
+
                 <!-- 詳細資訊 -->
                 <div class="detail">
 
@@ -746,4 +752,7 @@
         </main>
     </div>
 </body>
+
+<script src="../script/tpl.js"></script>
+
 </html>
