@@ -22,14 +22,12 @@
         電投無卡.--telType+.--noCard
         網投有卡 無需class
         網投無卡.--noOrder
+
         視訊放大 在上方狀態後加上.--bigTv
-
-        桌次展開.--tableOpen
-        卡片展開.--cardOpen
-
-        百2 .--ba2
+        選擇桌次展開.--tableOpen
+        卡片all展開.--cardOpen
     -->
-    <div class="frame --telType">
+    <div class="frame">
         <!-- 左邊menu -->
         <!-- 打開人頭內按鈕 .--active -->
         <aside class="frame__menu">
@@ -199,7 +197,6 @@
                         <!-- 跑馬燈 end -->
 
                         <!-- 視訊放大 -->
-                        <!-- 視訊縮小 --small -->
                         <button class="videobig_btn"></button>
                         <!-- 視訊放大 end -->
 
@@ -582,7 +579,7 @@
 
                     <!-- pad切換title -->
                     <!-- 當前選項加上.--on -->
-                    <ul class="detail__change">
+                    <ul class="detail__padChange">
                         <li data-txt="好路追注" class="--on">
                             <span class="hover_item"></span>
                             <button class="goodroad_btn"></button>
@@ -592,6 +589,18 @@
                         </li>
                     </ul>
                     <!-- pad切換title end -->
+
+                    <!-- ph切換title -->
+                    <!-- 當前選項加上.--on -->
+                    <ul class="detail__phChange">
+                        <li data-txt="好路追注">
+                            <span class="hover_item"></span>
+                        </li>
+                        <li data-txt="最新投注">
+                            <span class="hover_item"></span>
+                        </li>
+                    </ul>
+                    <!-- ph切換title end -->
 
                     <!-- 好路追注 -->
                     <!-- pad當前選項加上.--on -->
