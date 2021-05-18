@@ -6643,12 +6643,12 @@ tt {
 
 .order__area .uptable_btn {
   position: relative;
-  width: 190px;
-  height: 150px;
-  background: url(../images/start_btn.png) no-repeat center/contain;
+  width: 100px;
+  height: 45px;
+  background: url(../images/uptable_btn.png) no-repeat center/contain;
   position: absolute;
   top: unset;
-  bottom: 50px;
+  bottom: 50%;
   right: 0;
   left: 0;
   margin: auto;
@@ -6671,10 +6671,22 @@ tt {
   background: linear-gradient(#f2bd79, #fefdb3 50%, #f2bd79 90%);
   -webkit-background-clip: text;
   background-clip: text;
-  font-size: 30px;
+  font-size: 25px;
   -webkit-text-fill-color: transparent;
+  line-height: 45px;
   font-weight: bold;
   text-transform: uppercase;
+  margin: auto;
+}
+
+@media (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (pointer: fine) and (max-resolution: 2dppx), screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (-moz-touch-enabled: 0) {
+  .order__area .uptable_btn:hover::before {
+    text-shadow: 0 0 5px #fefdb3;
+  }
+}
+
+.order__area .uptable_btn:active::before {
+  text-shadow: 0 0 5px #fefdb3;
 }
 
 .order__area .area_b,
@@ -6979,7 +6991,7 @@ tt {
   }
 }
 
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 996px) {
   .order__chips li {
     width: 40px;
     height: 40px;
@@ -6992,7 +7004,7 @@ tt {
   height: 70px;
 }
 
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 996px) {
   .order__chips li.--on {
     width: 50px;
     height: 50px;
@@ -7006,7 +7018,7 @@ tt {
   }
 }
 
-@media screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2) and (max-width: 599px), screen and (pointer: fine) and (max-resolution: 2dppx) and (max-width: 599px), screen and (-moz-touch-enabled: 0) and (max-width: 599px) {
+@media screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2) and (max-width: 996px), screen and (pointer: fine) and (max-resolution: 2dppx) and (max-width: 996px), screen and (-moz-touch-enabled: 0) and (max-width: 996px) {
   .order__chips li:hover {
     width: 50px;
     height: 50px;
@@ -7018,7 +7030,7 @@ tt {
   height: 70px;
 }
 
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 996px) {
   .order__chips li:active {
     width: 50px;
     height: 50px;

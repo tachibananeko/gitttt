@@ -505,8 +505,8 @@
 
         // 上桌按鈕
         .uptable_btn{
-            @include btn_set(190px, 150px, url(../images/start_btn.png) no-repeat center / contain);
-            @include pos_abs(unset, 0, 50px, 0);
+            @include btn_set(100px, 45px, url(../images/uptable_btn.png) no-repeat center / contain);
+            @include pos_abs(unset, 0, 50%, 0);
             margin: auto;
             z-index: 1;
             
@@ -515,12 +515,20 @@
             }
             &::before,
             &::after{
-                @include pos_abs(0, 0, 0, 0)
-                @include bg_txt(map-get($bg_color, gold), 30px);
+                @include pos_abs(0, 0, 0, 0);
+                @include bg_txt(map-get($bg_color, gold), 25px);
+                line-height: 45px;
                 font-weight: bold;
                 text-transform: uppercase;
+                margin: auto;
             }
-            
+
+            // 手指效果
+            @include hoverHandler{
+                &::before{
+                    text-shadow: 0 0 5px map-get($txt_color, yellow);
+                }
+            }
         }
 
         .area_b,
@@ -706,7 +714,7 @@
                 margin: 0 20px;
             }
 
-            @include mw_xs {
+            @include mw_ms {
                 width: 40px;
                 height: 40px;
                 margin: 0 5px;
@@ -717,7 +725,7 @@
                 width: 70px;
                 height: 70px;
                 
-                @include mw_xs {
+                @include mw_ms {
                     width: 50px;
                     height: 50px;
                 }
@@ -728,7 +736,7 @@
                 width: 70px;
                 height: 70px;
 
-                @include mw_xs {
+                @include mw_ms {
                     width: 50px;
                     height: 50px;
                 }
