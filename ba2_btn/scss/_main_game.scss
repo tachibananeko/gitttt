@@ -141,11 +141,44 @@
 
         // 開始遊戲按鈕
         .start_btn{
-            @include btn_set(190px, 150px, url(../images/start_btn.png) no-repeat center);
+            @include btn_set(190px, 150px, url(../images/start_btn.png) no-repeat center / contain);
+            @include pos_abs(unset, 0, 0, 0);
+            margin: auto;
+
+            display: none;
+
+            @at-root .--noOrder .start_btn{
+                display: block;
+            }
+            
+            @include mw_xs{
+                bottom: -30px;
+                transform: scale(.8);
+            }
+
+            &::before{
+                text-shadow: 2px 2px 3px map-get($txt_color, shadow);
+            }
+            &::before,
+            &::after{
+                @include pos_abs(54px, unset, unset, 0);
+                content: attr(data-txt);
+                width: 100%;
+                line-height: 52px;
+                font-size: 30px;
+                font-weight: bold;
+                text-transform: uppercase;
+                background: map-get($bg_color, gold);
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
 
             // 手指效果
             @include hoverHandler{
-                
+                &::before{
+                    text-shadow: 0 0 3px map-get($txt_color, yellow);
+                }
             }
         }
 

@@ -82,7 +82,7 @@ $border_color: ();
         win: #37c6ff,
         bank: #ff302a,
         play: #0068ed,
-        tie: #009245
+        tie: #009245,
     );
 
     // 背景色
@@ -97,6 +97,7 @@ $border_color: ();
         bank_gradual: linear-gradient(to right, #9b0109 0%, #000) 100%,
         play_gradual: linear-gradient(to right, #004889 0%, #000) 100%,
         tie_gradual: linear-gradient(to right, #113924 0%, #000) 100%,
+        gold: linear-gradient(#f2bd79, #fefdb3 50%, #f2bd79 90%),
         white: #fff,
         gray:#B3B3B3,
         black: #000,
