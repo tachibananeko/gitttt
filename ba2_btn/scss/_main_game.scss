@@ -162,16 +162,11 @@
             &::before,
             &::after{
                 @include pos_abs(54px, unset, unset, 0);
-                content: attr(data-txt);
+                @include bg_txt(map-get($bg_color, gold), 30px);
                 width: 100%;
                 line-height: 52px;
-                font-size: 30px;
                 font-weight: bold;
                 text-transform: uppercase;
-                background: map-get($bg_color, gold);
-                -webkit-background-clip: text;
-                background-clip: text;
-                -webkit-text-fill-color: transparent;
             }
 
             // 手指效果
@@ -502,10 +497,31 @@
     // 下注桌布.order__area
     &__area {
         @include d_f(flex, flex-start, flex-start);
+        position: relative;
         flex-wrap: wrap;
         flex: 1 1 100%;
         background: map-get($bg_color, order_area);
         border: 1px solid map-get($bg_color, black);
+
+        // 上桌按鈕
+        .uptable_btn{
+            @include btn_set(190px, 150px, url(../images/start_btn.png) no-repeat center / contain);
+            @include pos_abs(unset, 0, 50px, 0);
+            margin: auto;
+            z-index: 1;
+            
+            &::before{
+                text-shadow: 2px 2px 3px map-get($txt_color, shadow);
+            }
+            &::before,
+            &::after{
+                @include pos_abs(0, 0, 0, 0)
+                @include bg_txt(map-get($bg_color, gold), 30px);
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+            
+        }
 
         .area_b,
         .area_p,
@@ -829,6 +845,7 @@
             &::after {
                 @include btn_txt(center, map-get($txt_color, primary), transparent);
                 font-size: 14px;
+                white-space: nowrap;
             }
 
             .hover_item {
@@ -1282,6 +1299,28 @@
             flex: 0 0 45px;
             height: 90%;
             border-right: 1px solid map-get($bg_color, lightblue);
+            font-weight: bold;
+
+            @include mw_lg{
+                flex: 0 0 80px;
+                font-size: 18px;
+            }
+
+            @include mw_xs{
+                font-size: 14px;
+                flex: 0 0 45px;
+            }
+
+            // 網投無卡
+            @at-root .--noOrder .goodroadList__item__tb{
+                flex: 0 0 80px;
+                font-size: 18px;
+
+                @include mw_xs{
+                    font-size: 14px;
+                    flex: 0 0 45px;
+                }
+            }
         }
 
         // .goodroadList__item__txt
@@ -1298,10 +1337,21 @@
             flex: 0 0 50px;
             padding: 5px;
 
+            // 網投無卡
+            @at-root .--noOrder .goodroadList__item__go{
+                flex: 0 0 100px;
+                height: 40px;
+
+                @include mw_ms{
+                    flex: 0 0 50px;
+                    height: auto;
+                }
+            }
+
             i {
                 @include btn_set(100%, 100%, map-get($btn_color, primary));
                 display: block;
-                padding: 0 7px;
+                padding: 0 5px;
                 border: 1px solid map-get($bg_color, secondary);
                 border-radius: 3px;
 

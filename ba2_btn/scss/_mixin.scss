@@ -55,10 +55,13 @@
 
 // 漸層背景字
 @mixin bg_txt($bg, $size) {
+	content: attr(data-txt);
 	color: transparent;
 	background: $bg;
 	-webkit-background-clip: text;
+	background-clip: text;
 	font-size: $size;
+	-webkit-text-fill-color: transparent;
 }
 
 // 三角形
@@ -182,7 +185,7 @@
 	color: $color;
 	text-shadow: 2px 1px $shadow;
 	pointer-events: none;
-	white-space: nowrap;
+	// white-space: nowrap;
 }
 // 內部span漸層
 @mixin btn_hoveritem($bg_img) {

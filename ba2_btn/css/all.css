@@ -2313,7 +2313,6 @@ tt {
   color: #fff;
   text-shadow: 2px 1px transparent;
   pointer-events: none;
-  white-space: nowrap;
   font-weight: bold;
 }
 
@@ -2497,7 +2496,6 @@ tt {
   color: #fff;
   text-shadow: 2px 1px rgba(23, 13, 14, 0.5);
   pointer-events: none;
-  white-space: nowrap;
   font-size: 24px;
 }
 
@@ -2731,7 +2729,6 @@ tt {
   color: #fff;
   text-shadow: 2px 1px transparent;
   pointer-events: none;
-  white-space: nowrap;
   font-size: 14px;
 }
 
@@ -2969,7 +2966,6 @@ tt {
   color: #fff;
   text-shadow: 2px 1px rgba(23, 13, 14, 0.5);
   pointer-events: none;
-  white-space: nowrap;
 }
 
 .PR__btn .hover_item {
@@ -3131,7 +3127,6 @@ tt {
   color: #240913;
   text-shadow: 2px 1px transparent;
   pointer-events: none;
-  white-space: nowrap;
   margin-right: 5px;
 }
 
@@ -3207,7 +3202,6 @@ tt {
   color: #fff;
   text-shadow: 2px 1px rgba(23, 13, 14, 0.5);
   pointer-events: none;
-  white-space: nowrap;
 }
 
 .othpage__btn .hover_item {
@@ -3311,7 +3305,6 @@ tt {
   color: #fff;
   text-shadow: 2px 1px transparent;
   pointer-events: none;
-  white-space: nowrap;
 }
 
 .--plural .details__title__txt:nth-child(2) {
@@ -3519,7 +3512,6 @@ tt {
   color: #240913;
   text-shadow: 2px 1px transparent;
   pointer-events: none;
-  white-space: nowrap;
 }
 
 .details .goodroad__item:nth-child(even) {
@@ -3700,11 +3692,14 @@ tt {
   bottom: 0;
   right: 0;
   left: 0;
+  content: attr(data-txt);
   color: transparent;
   background: -webkit-gradient(linear, left bottom, left top, color-stop(60%, #f2bd79), to(#563d29));
   background: linear-gradient(to top, #f2bd79 60%, #563d29 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   font-size: 24px;
+  -webkit-text-fill-color: transparent;
   content: attr(data-txt);
   margin: auto;
   text-align: center;
@@ -3995,7 +3990,6 @@ tt {
   color: #fff;
   text-shadow: 2px 1px rgba(23, 13, 14, 0.5);
   pointer-events: none;
-  white-space: nowrap;
   font-size: 18px;
 }
 
@@ -4797,7 +4791,6 @@ tt {
   color: #fff;
   text-shadow: 2px 1px transparent;
   pointer-events: none;
-  white-space: nowrap;
   width: auto;
   height: auto;
 }
@@ -5138,7 +5131,6 @@ tt {
   color: #fff;
   text-shadow: 2px 1px transparent;
   pointer-events: none;
-  white-space: nowrap;
 }
 
 .channel li .hover_item, .channel__1st .hover_item {
@@ -5316,7 +5308,6 @@ tt {
   height: 100%;
   text-shadow: 2px 1px transparent;
   pointer-events: none;
-  white-space: nowrap;
 }
 
 .tableph_btn .hover_item {
@@ -5579,7 +5570,6 @@ tt {
   color: #fff;
   text-shadow: 2px 1px rgba(23, 13, 14, 0.5);
   pointer-events: none;
-  white-space: nowrap;
 }
 
 .tip_btn .hover_item {
@@ -5937,7 +5927,6 @@ tt {
   color: #fff;
   text-shadow: 2px 1px rgba(23, 13, 14, 0.5);
   pointer-events: none;
-  white-space: nowrap;
 }
 
 .video__function .PR_btn .hover_item {
@@ -6064,16 +6053,17 @@ tt {
   right: unset;
   left: 0;
   content: attr(data-txt);
-  width: 100%;
-  line-height: 52px;
-  font-size: 30px;
-  font-weight: bold;
-  text-transform: uppercase;
+  color: transparent;
   background: -webkit-gradient(linear, left top, left bottom, from(#f2bd79), color-stop(50%, #fefdb3), color-stop(90%, #f2bd79));
   background: linear-gradient(#f2bd79, #fefdb3 50%, #f2bd79 90%);
   -webkit-background-clip: text;
   background-clip: text;
+  font-size: 30px;
   -webkit-text-fill-color: transparent;
+  width: 100%;
+  line-height: 52px;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 @media (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (pointer: fine) and (max-resolution: 2dppx), screen and (pointer: fine) and (-webkit-max-device-pixel-ratio: 2), (-moz-touch-enabled: 0) {
@@ -6264,7 +6254,6 @@ tt {
   color: #fefdb3;
   text-shadow: 2px 1px rgba(23, 13, 14, 0.5);
   pointer-events: none;
-  white-space: nowrap;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -6393,7 +6382,6 @@ tt {
   color: #fff;
   text-shadow: 2px 1px transparent;
   pointer-events: none;
-  white-space: nowrap;
   font-weight: bold;
 }
 
@@ -6643,6 +6631,7 @@ tt {
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
+  position: relative;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -webkit-box-flex: 1;
@@ -6650,6 +6639,42 @@ tt {
           flex: 1 1 100%;
   background: #224d4d;
   border: 1px solid #000;
+}
+
+.order__area .uptable_btn {
+  position: relative;
+  width: 190px;
+  height: 150px;
+  background: url(../images/start_btn.png) no-repeat center/contain;
+  position: absolute;
+  top: unset;
+  bottom: 50px;
+  right: 0;
+  left: 0;
+  margin: auto;
+  z-index: 1;
+}
+
+.order__area .uptable_btn::before {
+  text-shadow: 2px 2px 3px rgba(23, 13, 14, 0.5);
+}
+
+.order__area .uptable_btn::before, .order__area .uptable_btn::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  content: attr(data-txt);
+  color: transparent;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f2bd79), color-stop(50%, #fefdb3), color-stop(90%, #f2bd79));
+  background: linear-gradient(#f2bd79, #fefdb3 50%, #f2bd79 90%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-size: 30px;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .order__area .area_b,
@@ -7061,7 +7086,6 @@ tt {
   color: #fff;
   text-shadow: 2px 1px rgba(23, 13, 14, 0.5);
   pointer-events: none;
-  white-space: nowrap;
   font-size: 24px;
 }
 
@@ -7321,8 +7345,8 @@ tt {
   color: #fff;
   text-shadow: 2px 1px transparent;
   pointer-events: none;
-  white-space: nowrap;
   font-size: 14px;
+  white-space: nowrap;
 }
 
 .order .cardTitle > li .hover_item {
@@ -7904,7 +7928,6 @@ tt {
   color: #fff;
   text-shadow: 2px 1px transparent;
   pointer-events: none;
-  white-space: nowrap;
 }
 
 .detail__padChange {
@@ -7966,7 +7989,6 @@ tt {
   color: #fff;
   text-shadow: 2px 1px transparent;
   pointer-events: none;
-  white-space: nowrap;
 }
 
 .detail__padChange li .hover_item {
@@ -8081,7 +8103,6 @@ tt {
   color: #fff;
   text-shadow: 2px 1px transparent;
   pointer-events: none;
-  white-space: nowrap;
 }
 
 .detail__phChange li .hover_item {
@@ -8285,6 +8306,41 @@ tt {
           flex: 0 0 45px;
   height: 90%;
   border-right: 1px solid #37c6ff;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 1180px) {
+  .goodroadList__item__tb {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 80px;
+            flex: 0 0 80px;
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 599px) {
+  .goodroadList__item__tb {
+    font-size: 14px;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 45px;
+            flex: 0 0 45px;
+  }
+}
+
+.--noOrder .goodroadList__item__tb {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 80px;
+          flex: 0 0 80px;
+  font-size: 18px;
+}
+
+@media screen and (max-width: 599px) {
+  .--noOrder .goodroadList__item__tb {
+    font-size: 14px;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 45px;
+            flex: 0 0 45px;
+  }
 }
 
 .goodroadList__item__txt {
@@ -8312,6 +8368,22 @@ tt {
   padding: 5px;
 }
 
+.--noOrder .goodroadList__item__go {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100px;
+          flex: 0 0 100px;
+  height: 40px;
+}
+
+@media screen and (max-width: 996px) {
+  .--noOrder .goodroadList__item__go {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50px;
+            flex: 0 0 50px;
+    height: auto;
+  }
+}
+
 .goodroadList__item__go i {
   position: relative;
   width: 100%;
@@ -8319,7 +8391,7 @@ tt {
   background: -webkit-gradient(linear, left top, right top, color-stop(60%, #f2bd79), to(#563d29));
   background: linear-gradient(to right, #f2bd79 60%, #563d29 100%);
   display: block;
-  padding: 0 7px;
+  padding: 0 5px;
   border: 1px solid #fbe2b0;
   border-radius: 3px;
 }
@@ -8353,7 +8425,6 @@ tt {
   color: #240913;
   text-shadow: 2px 1px transparent;
   pointer-events: none;
-  white-space: nowrap;
 }
 
 .goodroadList__item:nth-child(even) {
