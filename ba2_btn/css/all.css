@@ -4143,7 +4143,7 @@ tt {
   padding: 0 10px;
   background: -webkit-gradient(linear, left top, left bottom, from(#004889), to(#001940));
   background: linear-gradient(to bottom, #004889 0%, #001940 100%);
-  z-index: 2;
+  z-index: 4;
 }
 
 .frame__main__inside {
