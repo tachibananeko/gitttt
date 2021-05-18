@@ -134,8 +134,19 @@
             i{
                 @include btn_i(map-get($bg_color, i_green));
             }
+
             // 手指效果
             @include btn_hoverHandler(1px, map-get($txt_color, primary));
+        }
+
+        // 開始遊戲按鈕
+        .start_btn{
+            @include btn_set(190px, 150px, url(../images/start_btn.png) no-repeat center);
+
+            // 手指效果
+            @include hoverHandler{
+                
+            }
         }
 
         // 連線訊號燈.video__function__speed
@@ -270,7 +281,7 @@
         align-content: flex-start;
         flex-wrap: wrap;
         background: map-get($bg_color, black_alpha);
-        padding: 5px 10px;
+        padding: 5px;
 
         @include mw_lg{
             @include pos_abs(30px, unset, unset, 0);
@@ -285,20 +296,23 @@
         @include mw_ms {
             position: static;
             display: flex;
-            padding: 5px;
         }
 
         li{
             @extend %hand;
-            @include btn_set(115px, 35px, map-get($btn_color, secondary));
+            @include btn_set(125px, 35px, map-get($btn_color, secondary));
             border-radius: 3px;
             border: 2px solid map-get($bg_color, lightblue);
             margin: 0 10px 5px;
 
-            @include mw_ms {
+            @include mw_lg {
                 width: 110px;
+            }
+
+            @include mw_ms {
                 margin: 0 5px 5px;
             }
+
 
             &::before{
                 @include btn_hoverlight03;
@@ -384,7 +398,7 @@
     padding: 5px 10px;
     background: map-get($bg_color, darkblue);
     font-size: 14px;
-    order: -3;
+    order: -4;
 
     // 768以下會員資訊
     @at-root .order .memberInfo{
@@ -748,7 +762,7 @@
         padding: 5px 5px 0;
         background: map-get($bg_color, darkblue_vl);
         font-size: 0;
-        order: -4;
+        order: -3;
 
         @include mw_ms{
             height: 30px;
@@ -821,6 +835,11 @@
         background: map-get($bg_color, black);
 
         display: none;
+
+        @include mw_ms{
+            top: 60px;
+            height: calc(100% - 60px);
+        }
 
         // 卡片all展開
         @at-root .--cardOpen .cardAll{

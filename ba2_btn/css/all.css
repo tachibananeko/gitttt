@@ -4300,8 +4300,8 @@ tt {
 @media screen and (max-width: 996px) {
   .--telType .frame__main__inside {
         grid-template-areas: "video" "order" "road";
-    -ms-grid-rows: 60vw 30px minmax(200px, 1fr);
-        grid-template-rows: 60vw 30px minmax(200px, 1fr);
+    -ms-grid-rows: 60vw 60px minmax(200px, 350px);
+        grid-template-rows: 60vw 60px minmax(200px, 350px);
   }
   .--telType.--tableOpen .frame__main__inside {
         grid-template-areas: "video" "order" "table" "road";
@@ -6022,6 +6022,13 @@ tt {
   opacity: 1;
 }
 
+.video__function .start_btn {
+  position: relative;
+  width: 190px;
+  height: 150px;
+  background: url(../images/start_btn.png) no-repeat center;
+}
+
 .video__function__speed {
   position: absolute;
   top: unset;
@@ -6247,7 +6254,7 @@ tt {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   background: rgba(0, 0, 0, 0.7);
-  padding: 5px 10px;
+  padding: 5px;
 }
 
 @media screen and (max-width: 1180px) {
@@ -6273,13 +6280,12 @@ tt {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    padding: 5px;
   }
 }
 
 .table__group li {
   position: relative;
-  width: 115px;
+  width: 125px;
   height: 35px;
   background: -webkit-gradient(linear, left top, right top, from(#001940), to(#004889));
   background: linear-gradient(to right, #001940 0%, #004889 100%);
@@ -6288,9 +6294,14 @@ tt {
   margin: 0 10px 5px;
 }
 
-@media screen and (max-width: 996px) {
+@media screen and (max-width: 1180px) {
   .table__group li {
     width: 110px;
+  }
+}
+
+@media screen and (max-width: 996px) {
+  .table__group li {
     margin: 0 5px 5px;
   }
 }
@@ -6472,9 +6483,9 @@ tt {
   padding: 5px 10px;
   background: linear-gradient(-137deg, #001940 0%, #000) 100%;
   font-size: 14px;
-  -webkit-box-ordinal-group: -2;
-      -ms-flex-order: -3;
-          order: -3;
+  -webkit-box-ordinal-group: -3;
+      -ms-flex-order: -4;
+          order: -4;
 }
 
 .order .memberInfo {
@@ -7187,9 +7198,9 @@ tt {
   background: -webkit-gradient(linear, left bottom, left top, from(#001940), to(#000)) 100%;
   background: linear-gradient(to top, #001940 0%, #000) 100%;
   font-size: 0;
-  -webkit-box-ordinal-group: -3;
-      -ms-flex-order: -4;
-          order: -4;
+  -webkit-box-ordinal-group: -2;
+      -ms-flex-order: -3;
+          order: -3;
 }
 
 @media screen and (max-width: 996px) {
@@ -7453,6 +7464,13 @@ tt {
   height: calc(100% - 30px);
   background: #000;
   display: none;
+}
+
+@media screen and (max-width: 996px) {
+  .order .cardAll {
+    top: 60px;
+    height: calc(100% - 60px);
+  }
 }
 
 .--cardOpen .cardAll {

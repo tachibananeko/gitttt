@@ -177,7 +177,7 @@
         grid-template-areas:"video"
                             "order"
                             "road";
-        grid-template-rows: 60vw 30px minmax(200px, 1fr);
+        grid-template-rows: 60vw 60px minmax(200px, 350px);
 
         // 選擇桌次展開
         @at-root .--telType.--tableOpen .frame__main__inside{
