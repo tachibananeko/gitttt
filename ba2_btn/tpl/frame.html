@@ -153,7 +153,7 @@
                 <!-- 疑難排解 end -->
 
                 <!-- ph選擇桌次 -->
-                <button class="tableph_btn" data-txt="MW2010">
+                <button class="tableph_btn" data-txt="MW2010" id="tablephBtn">
                     <span class="hover_item"></span>
                     <i></i>
                     <span class="triangle"></span>
@@ -240,11 +240,11 @@
 
                 <!-- 選擇桌次 -->
                 <!-- 當前桌--on 包台--i_ex 快速桌--i_fast  -->
-                <div class="table">
-                    <div class="table__title" data-txt="選擇桌次">
+                <div class="table" id="tableBody">
+                    <div class="table__title" id="tableTitle" data-txt="選擇桌次">
                         <span></span>
                     </div>
-                    <ul class="table__group">
+                    <ul class="table__group" id="tableGroup">
                         <li data-txt="MW2001" class="--on">
                             <span class="hover_item"></span>
                             <i></i>
@@ -604,12 +604,12 @@
 
                     <!-- pad切換title -->
                     <!-- 當前選項加上.--on -->
-                    <ul class="detail__padChange">
+                    <ul class="detail__padChange" id="padChange">
                         <li data-txt="好路追注" class="--on">
                             <span class="hover_item"></span>
                             <button class="goodroad_btn"></button>
                         </li>
-                        <li data-txt="最新投注">
+                        <li data-txt="最新投注" class="">
                             <span class="hover_item"></span>
                         </li>
                     </ul>
@@ -617,10 +617,13 @@
 
                     <!-- ph切換title -->
                     <!-- 當前選項加上.--on -->
-                    <ul class="detail__phChange">
+                    <ul class="detail__phChange" id="phChange">
                         <li data-txt="好路追注">
                             <span class="hover_item"></span>
                         </li>
+                        <!-- <li data-txt="限紅">
+                            <span class="hover_item"></span>
+                        </li> -->
                         <li data-txt="最新投注">
                             <span class="hover_item"></span>
                         </li>
@@ -629,11 +632,11 @@
 
                     <!-- 好路追注 -->
                     <!-- pad當前選項加上.--on -->
-                    <div class="detail__box --goodroad --on">
+                    <div class="detail__box --goodroad --on" id="padList01">
                         <div class="detail__box__title">
                             <span data-txt="好路提示"></span>
                             <button class="goodroad_btn"></button>
-                            <button class="close_btn"></button>
+                            <button class="close_btn" id="closeBtn01"></button>
                         </div>
                         <ul class="goodroadList">
                             <li class="goodroadList__item">
@@ -689,10 +692,10 @@
                     <!-- 好路追注 end -->
 
                     <!-- 限紅 -->
-                    <div class="detail__box --limit">
+                    <div class="detail__box --limit" id="padList02">
                         <div class="detail__box__title">
                             <span data-txt="本桌限紅"></span>
-                            <button class="close_btn"></button>
+                            <button class="close_btn" id="closeBtn02"></button>
                         </div>
                         <ul class="limitList">
                             <li data-txt="限紅">10~36,000</li>
@@ -710,10 +713,10 @@
                     <!-- 限紅 end -->
 
                     <!-- 最新投注 -->
-                    <div class="detail__box --neworder">
+                    <div class="detail__box --neworder" id="padList03">
                         <div class="detail__box__title">
                             <span data-txt="最新投注"></span>
-                            <button class="close_btn"></button>
+                            <button class="close_btn" id="closeBtn03"></button>
                         </div>
                         <ul class="orderInfo">
                             <li>
