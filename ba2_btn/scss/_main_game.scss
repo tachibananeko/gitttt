@@ -389,13 +389,13 @@
     // 768以下會員資訊
     @at-root .order .memberInfo{
         display: none;
-        @include mw_md{
+        @include mw_ms{
             display: flex;
         }
     }
     // 1024以上會員資訊
     @at-root .road .memberInfo {
-        @include mw_md{
+        @include mw_ms{
             display: none;
         }
     }

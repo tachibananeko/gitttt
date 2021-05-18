@@ -4194,12 +4194,12 @@ tt {
 
 @media screen and (max-width: 599px) {
   .frame__main__inside {
-    -ms-grid-rows: 60vw 1fr minmax(200px, 400px);
-        grid-template-rows: 60vw 1fr minmax(200px, 400px);
+    -ms-grid-rows: 60vw 1fr minmax(200px, 350px);
+        grid-template-rows: 60vw 1fr minmax(200px, 350px);
   }
   .--tableOpen .frame__main__inside {
-    -ms-grid-rows: 60vw 1fr 1fr minmax(200px, 400px);
-        grid-template-rows: 60vw 1fr 1fr minmax(200px, 400px);
+    -ms-grid-rows: 60vw 1fr 1fr minmax(200px, 350px);
+        grid-template-rows: 60vw 1fr 1fr minmax(200px, 350px);
   }
 }
 
@@ -4305,17 +4305,17 @@ tt {
   }
   .--telType.--tableOpen .frame__main__inside {
         grid-template-areas: "video" "order" "table" "road";
-    -ms-grid-rows: 60vw 30px 130px minmax(200px, 400px);
-        grid-template-rows: 60vw 30px 130px minmax(200px, 400px);
+    -ms-grid-rows: 60vw 30px 130px minmax(200px, 350px);
+        grid-template-rows: 60vw 30px 130px minmax(200px, 350px);
   }
   .--telType.--cardOpen .frame__main__inside {
-    -ms-grid-rows: 60vw 200px minmax(200px, 400px);
-        grid-template-rows: 60vw 200px minmax(200px, 400px);
+    -ms-grid-rows: 60vw 200px minmax(200px, 350px);
+        grid-template-rows: 60vw 200px minmax(200px, 350px);
   }
   .--telType.--cardOpen.--tableOpen .frame__main__inside {
         grid-template-areas: "video" "order" "table" "road";
-    -ms-grid-rows: 60vw 200px 130px minmax(200px, 400px);
-        grid-template-rows: 60vw 200px 130px minmax(200px, 400px);
+    -ms-grid-rows: 60vw 200px 130px minmax(200px, 350px);
+        grid-template-rows: 60vw 200px 130px minmax(200px, 350px);
   }
 }
 
@@ -4328,14 +4328,14 @@ tt {
   .--noCard .frame__main__inside,
   .--noOrder .frame__main__inside {
         grid-template-areas: "video" "road";
-    -ms-grid-rows: 60vw minmax(200px, 400px);
-        grid-template-rows: 60vw minmax(200px, 400px);
+    -ms-grid-rows: 60vw minmax(200px, 350px);
+        grid-template-rows: 60vw minmax(200px, 350px);
   }
   .--noCard.--tableOpen .frame__main__inside,
   .--noOrder.--tableOpen .frame__main__inside {
         grid-template-areas: "video" "table" "road";
-    -ms-grid-rows: 60vw 130px minmax(200px, 400px);
-        grid-template-rows: 60vw 130px minmax(200px, 400px);
+    -ms-grid-rows: 60vw 130px minmax(200px, 350px);
+        grid-template-rows: 60vw 130px minmax(200px, 350px);
   }
 }
 
@@ -6481,7 +6481,7 @@ tt {
   display: none;
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 996px) {
   .order .memberInfo {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -6489,7 +6489,7 @@ tt {
   }
 }
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 996px) {
   .road .memberInfo {
     display: none;
   }
