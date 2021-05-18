@@ -4,7 +4,7 @@ let status = true;
 $('#frame li').click(function() {
     let data = this.getAttribute("data-txt");
     switch (data) {
-        case '電頭有卡':
+        case '電投有卡':
             remove()
             $('#frame').addClass('frame --telType');
             break;
