@@ -215,8 +215,13 @@
         background: map-get($bg_color, primary_vl);
         overflow: hidden;
 
+        @at-root .--bigTv .table__title{
+            @extend %hand;
+        }
+
         @include mw_lg{
             height: 30px;
+            cursor: pointer;
         }
 
         &::before{
@@ -227,6 +232,7 @@
             animation: shake 2s infinite;
             z-index: 1;
 
+            // 選擇桌次展開
             @at-root .--tableOpen .table__title::before{
                 transform: rotateX(180deg);
                 animation: shake_up 2s infinite;
@@ -891,6 +897,7 @@
         width: 100%;
         height: calc(100% - 30px);
         background: map-get($bg_color, black);
+        z-index: 2;
 
         display: none;
 
@@ -1179,14 +1186,16 @@
         }
     }
 
-    // ph切換title.detail__padChange
+    // ph切換title.detail__phChange
     &__phChange{
-        @include pos_abs(0, unset, 0, 0);
+        @include pos_abs(0, 0, 0, unset);
+        @include d_f(flex, center, center);
+        flex-direction: column;
         width: 35px;
         height: 150px;
         border: 1px solid map-get($bg_color, secondary);
-        border-width: 1px 1px 1px 0;
-        border-radius: 0 5px 5px 0;
+        border-width: 1px 0 1px 1px;
+        border-radius: 5px 0 0 5px;
         margin: auto;
         pointer-events: auto;
         overflow: hidden;
@@ -1194,7 +1203,7 @@
         display: none;
 
         @include mw_ms{
-            display: block;
+            display: flex;
         }
 
         @include mw_xs{
@@ -1204,7 +1213,7 @@
         
         li{
             @extend %hand;
-            @include btn_set(100%, 50%, map-get($btn_color, secondary));
+            @include btn_set(100%, 100%, map-get($btn_color, secondary));
             font-size: 14px;
             writing-mode: vertical-lr;
 
@@ -1345,6 +1354,11 @@
             flex: 0 0 50px;
             padding: 5px;
 
+            @include mw_lg{
+                flex: 0 0 100px;
+                height: 40px;
+            }
+
             // 網投無卡
             @at-root .--noOrder .goodroadList__item__go{
                 flex: 0 0 100px;
@@ -1401,7 +1415,7 @@
 
     // .orderInfo__txt
     &__txt {
-        padding: 10px 5px;
+        padding: 10px;
         color: map-get($txt_color, primary);
 
         >li+li {
@@ -1421,6 +1435,7 @@
     // .orderInfo__btn
     &__btn {
         @include btn_set(40%, 100%, map-get($bg_color, secondary));
+        max-width: 80px;
         border-radius: 3px;
         color: map-get($txt_color, secondary);
         font-size: 14px;
@@ -1509,6 +1524,17 @@
         width: 50%;
     }
 }
+
+// 網投有卡
+.frame:not(.--telType):not(.--noOrder) .detail__box{
+    @include mw_lg {
+        height: calc(100% - 35px);
+    }
+
+    @include mw_ms {
+        height: 100%;
+    }
+}
 // 電投有卡
 .--telType:not(.--noCard) .--limit{
     height: calc(100% - 35px);
@@ -1517,15 +1543,24 @@
         height: 100%;
     }
 }
+
 // 網投有卡
 .frame:not(.--telType):not(.--noOrder) .--limit,
+.frame:not(.--telType):not(.--noOrder) .--title_limit,
 // 電投有卡 電投無卡 網投無卡
 .--telType .--goodroad,
+.--telType .--title_goodroad,
 .--telType .--neworder,
+.--telType .--title_neworder,
 .--noOrder .--limit,
-.--noOrder .--neworder{
+.--noOrder .--title_limit,
+.--noOrder .--neworder,
+.--noOrder .--title_neworder,
+.--telType .detail__padChange,
+.--noOrder .detail__padChange{
     display: none;
 }
+
 // 電投有卡 電投無卡 網投無卡
 .--telType .detail__box__title,
 .--noOrder .detail__box__title{
@@ -1533,12 +1568,6 @@
         display: block;
     }
 }
-// 電投有卡 電投無卡 網投無卡
-.--telType .detail__padChange,
-.--noOrder .detail__padChange {
-    display: none;
-}
-
 
 // 視訊放大狀態============================================
 // .table內層細項設定
@@ -1559,6 +1588,7 @@
 
         display: none;
 
+        // 選擇桌次展開
         @at-root .--bigTv.--tableOpen .table__group{
             display: flex;
         }
@@ -1607,7 +1637,6 @@
     .cardAll{
         @include pos_abs(-20px, unset, unset, 0)
         height: calc(100% + 20px);
-        z-index: 2;
     }
 }
 // 電投有卡
