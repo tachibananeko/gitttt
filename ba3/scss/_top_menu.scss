@@ -1,0 +1,251 @@
+
+// 返回按鈕
+.back_btn{
+    @include btn_set(30px, 30px, url(../images/icon_back.svg) no-repeat center / contain);
+    @include mr_distance;
+    
+    // 手指效果
+    @include hoverHandler{
+        filter: brightness(150%);
+    }
+}
+
+// 視訊頻道
+.channel {
+    @include mr_distance;
+    height: 30px;
+    
+    // .channel__item
+    &__item {
+        @include d_f(flex, center, flex-start);
+        position: relative;
+        height: 100%;
+        border-radius: 3px;
+        overflow: hidden;
+
+        @include mw_ms {
+            display: none;
+            height: auto;
+            flex-direction: column;
+            border-radius: 0;
+        }
+    }
+
+    // .channel__1st
+    li,
+    &__1st {
+        @extend %hand;
+        @include btn_set(60px, 100%, map-get($btn_color, secondary));
+        border: 1px solid map-get($bg_color, secondary);
+        
+        @include mw_ms {
+            height: 30px;
+        }
+        &::before {
+            @include btn_hoverlight03;
+        }
+        &::after {
+            @include btn_txt(center, map-get($txt_color, primary), transparent);
+        }
+        .hover_item {
+            @include btn_hoveritem(map-get($btn_color, primary));
+            &::before {
+                @include btn_hoverlight03;
+            }
+        }
+        
+        // _on效果
+        @include btn_on(map-get($txt_color, secondary));
+        // 手指效果
+        @include btn_hoverHandler(0 0, map-get($txt_color, secondary));
+    }
+
+    // ph當前頻道 .channel__1st
+    &__1st {
+        display: none;
+        border-radius: 3px;
+        overflow: hidden;
+        @include mw_ms {
+            display: block;
+            height: 30px;
+        }
+    }
+}
+
+// 疑難排解
+.handle_btn{
+    @include btn_set(30px, 30px, url(../images/icon_err.svg) no-repeat center / contain);
+    @include mr_distance;
+    position: relative;
+
+    &::after{
+        @include pos_abs(calc(100% + 5px), unset, unset, 0);
+        @include border(1px, map-get($border_color, primary ));
+        content: attr(data-txt);
+        background: map-get($bg_color , black_alpha );
+        padding: 3px 5px;
+        font-size: 14px;
+        white-space: nowrap;
+        visibility: hidden;
+    }
+
+    // 手指效果
+    @include hoverHandler{
+        
+        &::after{
+            visibility: visible;
+        }
+    }
+}
+
+// ph選擇桌次
+.tableph_btn{
+    @include btn_set(auto, 30px, map-get($btn_color, primary));
+    @include mr_distance;
+    padding: 0 25px 0 10px;
+    font-weight: bold;
+    border: 1px solid map-get($bg_color, secondary);
+    border-radius: 3px;
+    overflow: hidden;
+    
+    display: none;
+
+    @include mw_ms{
+        display: block;
+    }
+
+    &::before {
+        @include btn_hoverlight03;
+    }
+
+    &::after {
+        @include btn_txt(center, map-get($txt_color, black), transparent);
+    }
+
+    .hover_item {
+        @include btn_hoveritem(map-get($btn_color, secondary));
+
+        &::before {
+            @include btn_hoverlight03;
+        }
+    }
+
+    i {
+        @include btn_i(map-get($bg_color, i_gold));
+    }
+
+    .triangle {
+        @include pos_abs(0, 5px, 0, unset);
+        @include triangle(12px, map-get($bg_color, black), bottom);
+        display: inline-block;
+        margin: auto;
+        animation: shake 2s infinite;
+
+        @include mw_ms {
+            content: '';
+        }
+
+        @keyframes shake {
+            10%,
+            30%,
+            50%,
+            70%,
+            90% {
+                -webkit-transform: translateY(-3px);
+                transform: translateY(-3px);
+            }
+
+            0%,
+            20%,
+            40%,
+            60%,
+            80%,
+            100% {
+                -webkit-transform: translateY(3px);
+                transform: translateY(3px);
+            }
+        }
+    }
+
+    // 手指效果
+    @include btn_hoverHandler(1px, map-get($txt_color, primary)){
+        i {
+            @include btn_i(map-get($bg_color, i_blue));
+        }
+        .triangle{
+            border-top-color: map-get($bg_color, white);
+        }
+    };
+
+    
+}
+
+// 打賞
+.tip_btn{
+    @include btn_set(auto, 30px, map-get($btn_color, orange));
+    @include border(1px, map-get($border_color, primary));
+    padding: 0 10px;
+    border: 1px solid map-get($bg_color, secondary);
+    border-radius: 3px;
+
+    &::before {
+        @include btn_hoverlight03;
+    }
+
+    &::after {
+        @include btn_txt(center, map-get($txt_color, primary), map-get($txt_color, shadow));
+    }
+
+    .hover_item {
+        @include btn_hoveritem(map-get($btn_color, lightorange));
+        box-shadow: 0 0 1px map-get($bg_color, secondary) inset,
+            0 0 3px map-get($bg_color, secondary) inset;
+
+        &::before {
+            @include btn_hoverlight03;
+        }
+    }
+
+    i {
+        @include btn_i(map-get($bg_color, i_gold));
+    }
+
+    // 手指效果
+    @include btn_hoverHandler(1px, map-get($txt_color, primary));
+}
+
+// 全螢幕
+.zoom_btn{
+    @include btn_set(auto, 30px, url(../images/icon_zoomin.svg) no-repeat left center / 20px);
+    padding-left: 25px;
+    margin-left: auto;
+    color: map-get($txt_color, gray);
+    font-weight: bold;
+
+    @include coarse{
+        display: none;
+    }
+
+    // .zoom_btn__txt
+    &__txt{
+        &.--in{
+            display: none;
+        }
+    }
+
+    // 縮小螢幕
+    &.--zoomout{
+        background-image: url(../images/icon_zoomout.svg);
+        .zoom_btn__txt{
+            display: none;
+        }
+        .--in{
+            display: block;
+        }
+    }
+    
+    // 手指效果
+    @include hoverHandler{
+        opacity: 0.7;
+    }
+}

@@ -1,0 +1,733 @@
+
+
+/* 左邊按鈕 */
+
+
+
+/* 桌號按鈕 */
+.tableno {
+    display: flex;
+    width: 500px;
+    padding: 20px;
+    background-color: #000;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    &__btn{
+        @include btn_set(115px, 35px, map-get($btn_color, secondary));
+        border-radius: 3px;
+        border: 2px solid map-get($bg_color, lightblue);
+        margin: 0 10px 10px;
+        &::before{
+            @include btn_hoverlight03;
+        }
+        &::after {
+            @include btn_txt(center, map-get($txt_color, primary), transparent);
+            font-weight: bold;
+        }
+        .hover_item {
+            @include btn_hoveritem(map-get($btn_color, primary));
+            box-shadow: 0 0 3px map-get($bg_color, secondary) inset,
+            0 0 6px map-get($bg_color, secondary) inset;
+            &::before {
+                @include btn_hoverlight03;
+            }
+        }
+        // 狀態
+        &.--i_vip::after {
+            width: calc(100% - 5px);
+            padding-left: 5px;
+            justify-content: flex-start;
+        }
+        >i {
+            position: absolute;
+            display: block;
+            width: 30px;
+            height: 13px;
+            top: 0;
+            bottom: 0;
+            right: 10px;
+            margin: auto;
+        }
+        &.--i_vip>i {
+            background: url(../images/icon_vip.svg) no-repeat center / contain;
+        }
+        &.--i_ex>i::before,
+        &.--i_fast>i::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: url(../images/icon_ex.svg) no-repeat center / contain;
+            top: 0;
+            bottom: 0;
+            right: -20px;
+            margin: auto;
+        }
+        &.--i_fast>i::after {
+            background-image: url(../images/icon_fast.svg);
+        }
+        &.--i_ex.--i_fast>i::before,
+        &.--i_ex.--i_fast>i::after {
+            content: '';
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            top: -8px;
+            bottom: auto;
+            right: -15px;
+        }
+
+        &.--i_ex.--i_fast>i::after {
+            top: 8px;
+        }        
+
+        // _on效果
+        @include btn_on(map-get($txt_color, secondary)){
+            border-color: map-get($bg_color, lightyellow);
+        }
+
+        // 手指效果
+        @include btn_hoverHandler(2px, map-get($txt_color, secondary)){
+            border-color: map-get($bg_color, lightyellow);
+        }
+    }
+}
+
+/* 投注按鈕 */
+.function {
+    display: flex;
+    width: 400px;
+    padding: 10px;
+    justify-content: center;
+    &__btn{
+        @include btn_set(140px, 60px, #0f2f66);
+        @include border(2px, map-get($border_color, blue));
+        &::before{
+            @include btn_hoverlight04;
+        }
+        &::after{
+            @include btn_txt(center, map-get($txt_color, primary), map-get($txt_color, shadow));
+            font-size: 24px;
+        }
+        .hover_item{
+            @include btn_hoveritem(#001940);
+            &::before {
+                @include btn_hoverlight04;
+            }
+        }
+        i{
+            @include btn_i(#37c6ffb3);
+        }
+
+        // 續押
+        &.--repeat {
+            background: #115f24;
+            border-image: map-get($border_color, green);
+            .hover_item {
+                background: #0f361e;
+            }
+            i {
+                @include btn_i(#caff71b3);
+            }
+        }
+
+        // 取消
+        &.--cancel {
+            background: #c11615;
+            border-image: map-get($border_color, red);
+            .hover_item {
+                background: #650008;
+            }
+            i {
+                @include btn_i(#ffe1f9b3);
+            }
+        }
+
+        // 手指效果
+        @include btn_hoverHandler(2px, map-get($txt_color, primary));
+    }
+}
+
+/* 視訊品質 */
+// .channel {
+//     height: 30px;
+//     border-radius: 5px;
+//     &__item{
+//         display: flex;
+//         height: 100%;
+//         border-radius: 5px;
+//         >li{
+//             @extend %hand;
+//             @include btn_set(70px, 100%, map-get($btn_color, secondary));
+//             @include border(1px, map-get($border_color, primary));
+//             &::before {
+//                 @include btn_hoverlight03;
+//             }
+//             &::after{
+//                 @include btn_txt(center, map-get($txt_color, primary), transparent);
+//             }
+//             .hover_item{
+//                 @include btn_hoveritem(map-get($btn_color, primary));
+//                 &::before {
+//                     @include btn_hoverlight03;
+//                 }
+//             }
+
+//             // _on效果
+//             @include btn_on(map-get($txt_color, secondary));
+            
+//             // 手指效果
+//             @include btn_hoverHandler(0 0, map-get($txt_color, secondary));
+//         }
+//     }
+// }
+
+/* 卡號 */
+.cardno {
+    display: flex;
+    height: 30px;
+    border-radius: 5px 5px 0 0;
+    font-size: 0;
+    >li{
+        @extend %hand;
+        @include btn_set(auto, 100%, map-get($btn_color, secondary));
+        @include border(1px, map-get($border_color, primary));
+        min-width: 80px;
+        padding: 0 5px;
+        border-width: 1px 1px 0;
+        +li{
+            border-left: none;
+        }
+        &::before {
+            @include btn_hoverlight03;
+        }
+        &::after{
+            @include btn_txt(center, map-get($txt_color, primary), transparent);
+            font-size: 14px;
+        }
+        .hover_item{
+            @include btn_hoveritem(map-get($btn_color, primary));
+            &::before{
+                @include btn_hoverlight03;
+            }
+        }
+        i{
+            @include btn_i(#37c6ffb3);
+        }
+
+        // _on效果
+        @include btn_on(map-get($txt_color, secondary)){
+            i {
+                @include btn_i(#fbe2b0b3);
+            }
+        };
+        
+        // 手指效果
+        @include btn_hoverHandler(1px 1px 0, map-get($txt_color, secondary)){
+            i {
+                @include btn_i(#fbe2b0b3);
+            }
+        };
+    }
+}
+
+/* 公關功能 */
+.PR {
+    height: 30px;
+    border-radius: 5px;
+    font-size: 0;
+    &__btn{
+        @include btn_set(auto, 100%, map-get($btn_color, green));
+        @include border(1px, map-get($border_color, green));
+        padding: 0 20px;
+        &::before{
+            @include btn_hoverlight03;
+        }
+        &::after{
+            @include btn_txt(center, map-get($txt_color, primary), map-get($txt_color, shadow));
+        }
+        .hover_item{
+            @include btn_hoveritem(map-get($btn_color, lightgreen));
+            box-shadow: 0 0 1px map-get($bg_color, secondary) inset,
+                        0 0 3px map-get($bg_color, secondary) inset;
+            &::before {
+                @include btn_hoverlight03;
+            }
+        }
+        i{
+            @include btn_i(#caff71b3);
+        }
+
+        // 打賞
+        &.--tips {
+            @include border(1px, map-get($border_color, primary));
+            background: map-get($btn_color, orange);
+            
+            .hover_item {
+                background: map-get($btn_color, lightorange);
+            }
+        }
+
+        // 手指效果
+        @include btn_hoverHandler(1px, map-get($txt_color, primary));
+    }
+
+
+
+    // 槍手桌號
+    &__table{
+        @include d_f(inline-flex, center, center);
+        @include btn_set(auto, 30px, map-get($btn_color, primary));
+        @include border(1px, map-get($border_color, primary));
+        padding-left: 5px;
+        flex-direction: row-reverse;
+        
+        &::before{
+            @include btn_hoverlight03;
+        }
+        &::after{
+            @include btn_txt(center, map-get($txt_color, secondary), transparent);
+            margin-right: 5px;
+        }
+
+        &__num{
+            @include d_f(flex, center, center);
+            position: relative;
+            height: 100%;
+            padding: 0 10px;
+            background-color: map-get($bg_color, black);
+            color: map-get($txt_color, primary);
+            font-weight: bold;
+            li + li::before{
+                content: ',\00a0';
+            }
+        }
+    }
+}
+
+/* 另開功能分頁 */
+.othpage {
+    width: 680px;
+    height: 30px;
+    border-radius: 5px;
+    font-size: 0;
+    &__btn{
+        @include btn_set(calc(100% / 4), 100%, map-get($btn_color, lightgreen));
+        @include border(1px, map-get($border_color, primary));
+        &::before{
+            @include btn_hoverlight02;
+        }
+        &::after{
+            @include btn_txt(center, map-get($txt_color, primary), map-get($txt_color, shadow));
+        }
+        .hover_item{
+            @include btn_hoveritem(map-get($btn_color, green));
+            box-shadow: 0 0 1px map-get($bg_color, secondary) inset,
+            0 0 3px map-get($bg_color, secondary) inset;
+            &::before {
+                @include btn_hoverlight02;
+            }
+        }
+
+        // 手指效果
+        @include btn_hoverHandler(1px 0, map-get($txt_color, primary));
+
+    }
+}
+
+.details {
+    width: 200px;
+    margin-bottom: 50px;
+
+
+    &__title {
+        @include d_f(flex, center, center);
+        @include border(1px 0, map-get($border_color, secondary));
+        height: 35px;
+        background: map-get($btn_color, secondary_vl);
+
+        &__txt {
+            position: relative;
+
+            &::after {
+                @include btn_txt(center, map-get($txt_color, primary), transparent);
+            }
+
+            @at-root .--plural .details__title__txt:nth-child(2) {
+                display: none;
+            }
+        }
+    }
+
+    // 最新投注
+    &__info {
+        @include scrollbar(hidden, auto);
+        height: 200px;
+
+        >li+li {
+            @include border(1px 0 0, map-get($border_color, secondary));
+        }
+
+        &__txt {
+            padding: 10px 5px;
+            color: map-get($txt_color, primary);
+
+            >li+li {
+                margin-top: 5px;
+            }
+
+            li:not(:first-child) {
+                font-size: 14px;
+
+            }
+
+            li:last-child {
+                @include d_f(flex, center, space-between);
+            }
+        }
+
+        &__btn {
+            @include btn_set(40%, 100%, map-get($bg_color, secondary));
+            border-radius: 3px;
+            color: map-get($txt_color, secondary);
+            font-size: 14px;
+
+            // 手指效果
+            @include hoverHandler {
+                opacity: 0.5;
+            }
+        }
+    }
+
+    // 好路追注
+    .goodroad {
+        @include scrollbar(hidden, auto);
+        height: 250px;
+        padding: 10px 5px;
+        margin-bottom: 20px;
+
+        &__item {
+            @include d_f(flex, center, center);
+            @extend %hand;
+            position: relative;
+            height: 55px;
+            padding: 2px;
+            background: #001940;
+            border-radius: 5px;
+            color: map-get($txt_color, primary);
+            font-size: 14px;
+            margin-bottom: 5px;
+            overflow: hidden;
+
+            &::before {
+                content: '';
+                position: absolute;
+                display: flex;
+                width: calc(100% - 4px);
+                height: calc(100% - 4px);
+                background: map-get($btn_color, secondary_vl);
+            }
+
+            .hover_item {
+                @include btn_hoveritem(map-get($btn_color, lightblue_vl));
+            }
+
+            &__tb {
+                @include d_f(flex, center, center);
+                position: relative;
+                flex: 0 0 55px;
+                height: 90%;
+                border-right: 1px solid #37c6ff;
+            }
+
+            &__txt {
+                @include d_f(flex, center, center);
+                position: relative;
+                flex: 1 1 100%;
+                height: 100%;
+            }
+
+            &__go {
+                position: relative;
+                flex: 0 0 55px;
+                padding: 5px;
+
+                i {
+                    @include btn_set(100%, 100%, map-get($btn_color, primary));
+                    display: block;
+                    padding: 0 7px;
+                    border: 1px solid map-get($bg_color, secondary);
+                    border-radius: 3px;
+
+                    &::before {
+                        @include btn_hoverlight02;
+                    }
+
+                    &::after {
+                        @include btn_txt(center, map-get($txt_color, secondary), transparent);
+                    }
+                }
+            }
+
+            // 雙
+            &:nth-child(even) {
+                background: #37c6ff;
+
+                &::before {
+                    background: map-get($btn_color, lightblue_vl);
+                }
+
+                .hover_item {
+                    @include btn_hoveritem(map-get($btn_color, secondary_vl));
+                }
+            }
+
+            // 手指效果
+            @include btn_hoverHandler(1px 0, map-get($txt_color, primary));
+        }
+    }
+}
+
+
+
+
+// 大廳桌
+.lobbyTb{
+    @extend %txtshadow;
+    width: 600px;
+    border-radius: 5px;
+    color: map-get($txt_color, primary);
+    font-size: 14px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    // 大廳狀態
+    i {
+        position: relative;
+        margin-left: auto;
+    }
+
+    &.--i_vip i {
+        width: 40px;
+        height: 100%;
+        background: url(../images/icon_ba3lobby_vip.svg) no-repeat center top / contain;
+    }
+
+    &.--i_ex i::before,
+    &.--i_fast i::after {
+        @include pos_abs(0, calc(100% + 5px), 0, unset);
+        content: '';
+        width: 20px;
+        height: 20px;
+        background: url(../images/icon_ex.svg) no-repeat center / contain;        
+        margin: auto;
+    }
+
+    &.--i_fast i::after {
+        background-image: url(../images/icon_fast.svg);
+        right: calc(100% + 35px);
+    }
+    &.--i_fast:not(.--i_vip):not(.--i_ex) i::after {
+        right: calc(100% + 5px);
+    }
+
+
+    // title區
+    &__title{
+        @include d_f(flex, center, flex-start);
+        position: relative;
+        height: 35px;
+        padding: 0 10px;
+        background: map-get($bg_color, primary_vl);
+        overflow: hidden;
+        &::before{
+            @include pos_abs(0, unset, unset, 0);
+            content: '';
+            width: 100%;
+            height: 2000%;
+            background: linear-gradient(-137deg, #004889 0%, #001940) 100%;
+            background-size: 25px 25px;
+            pointer-events: none;
+            transform: rotate(-45deg);
+            transform-origin: 2% 5%;
+            opacity: .4;
+        }
+
+        &__limit{
+            @extend %txtshadow;
+            position: relative;
+            &::before{
+                content: attr(data-info);
+                margin-right: 5px;
+            }
+        }
+        &__no {
+            @include pos_abs(-120%, 0, auto, 0);
+            width: 33%;
+            height: 200%;
+            border-radius: 20px;
+            border: 2px solid map-get($bg_color, secondary);
+            font-weight: bold;
+            margin: auto;
+            overflow: hidden;
+            &::before {
+                @include pos_abs(0, unset, unset, 0);
+                content: '';
+                width: 100%;
+                height: 2000%;
+                background: map-get($bg_color, darkblue);
+                background-size: 25px 25px;
+                pointer-events: none;
+                transform: rotate(-45deg);
+                transform-origin: 8% 6%;                
+            }
+            &::after{
+                @include pos_abs(unset, 0, 0, 0);
+                @include bg_txt(map-get($bg_color, secondary_vl), 24px);
+                content: attr(data-txt);
+                margin: auto;
+                text-align: center;
+                text-shadow: none;
+            }
+        }
+
+        &__time{
+            @include d_f(flex, center, center);
+            position: relative;
+            height: 80%;
+            padding: 0 5px;
+            background: map-get($bg_color, darkblue);
+            border-radius: 27px;
+            border: 1px solid map-get($bg_color, secondary);
+            color: map-get($txt_color, primary);
+            font-size: 18px;
+            
+            &::before{
+                @include d_f(flex, center, center);
+                content: none;
+                position: relative;
+                width: 25px;
+                height: 25px;
+                background: url(../images/icon_time.svg) no-repeat center / contain;
+            }
+            &:empty{
+                background:none;
+                border: none;
+            }
+            &:empty::before {
+                content: '';
+            }
+        }
+    }
+
+    // 珠路區
+    &__road {
+        @include border(1px 0, map-get($border_color, secondary));
+        position: relative;
+        background: map-get($bg_color, white);
+
+        >div:not(.lobbyTb__road__img):not(.lobbyTb__road__loading) {
+            @include pos_abs(0, 0, 0, 0);
+            width: 100%;
+            height: 100%;
+        }
+
+        &__loading {
+            @include load_set(.7, map-get($bg_color, lightblue));
+            padding-bottom: calc(100% * .17847);
+        }
+
+        &__limit {
+            @include d_f(flex, center, center);
+            @extend %transition;
+            flex-direction: column;
+            padding: 10px;
+            background: map-get($bg_color, black_alpha);
+            opacity: 0;
+
+            &::before {
+                content: attr(data-info);
+                display: block;
+                font-size: 18px;
+                text-align: center;
+            }
+
+            ul {
+                @include d_f(flex, flex-start, center);
+                width: 100%;
+                height: 80%;
+                flex-direction: column;
+                flex-wrap: wrap;
+
+                li {
+                    margin: 1% 0;
+                }
+            }
+        }
+
+        @include hoverHandler {
+            .lobbyTb__road__limit {
+                opacity: 1;
+            }
+        }
+    }
+
+    // foot區
+    &__foot{
+        @include d_f(flex, center, space-between);
+        height: 35px;
+        padding-left: 10px;
+        background: map-get($bg_color, primary_vl);
+        &__info{
+            @include d_f(flex, center, flex-start);
+            flex: none;
+            height: 100%;
+            >li{
+                font-size: 14px;
+                &::after {
+                    content: attr(data-info);
+                    background: #000;
+                    padding: 3px 5px;
+                    border-radius: 3px;
+                    color: map-get($txt_color, primary);
+                    margin-left: 5px;
+                }
+                +li{
+                    margin-left: 20px;
+                }
+                &:nth-child(1){
+                    color: map-get($txt_color, bank);
+                }
+                &:nth-child(2) {
+                    color: map-get($txt_color, play);
+                }
+                &:nth-child(3) {
+                    color: map-get($txt_color, tie);
+                }                
+            }
+        }
+
+        &__btn{
+            @include btn_set(20%, 100%, map-get($btn_color, lightblue));
+            @include border(1px 0, map-get($border_color, secondary));
+            flex: none;
+            &::before {
+                @include btn_hoverlight03;
+            }
+            &::after {
+                @include btn_txt(center, map-get($txt_color, primary), map-get($txt_color, shadow));
+                font-size: 18px;
+            }
+
+            .hover_item {
+                @include btn_hoveritem(map-get($btn_color, secondary));
+
+                &::before {
+                    @include btn_hoverlight03;
+                }
+            }
+
+            // 手指效果
+            @include btn_hoverHandler(1px 0, map-get($txt_color, primary));
+        }
+    }
+}

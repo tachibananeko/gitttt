@@ -1,0 +1,300 @@
+
+.menu__info{    
+    @include mw_md{
+        @include d_f(inline-flex, center, center);
+        width: 50px;
+        height: 100%;
+        flex: none;
+        box-shadow: 3px 2px 3px map-get($bg_color, black_alpha);
+        z-index: 1;
+    }
+    &__logo {
+        padding-bottom: 80%;
+        background: url(../images/icon_logo.png) no-repeat center 10px / 60%;
+        @include mw_md {
+            display: none;
+        }
+    }
+
+    &_btn{
+        width: 100%;
+        height: 25px;
+        background: url(../images/icon_member.svg) no-repeat center;
+        margin-bottom: 10px;
+        @include mw_md{
+            height: 100%;
+            margin-bottom: 0;
+        }
+        
+    }
+
+    &__txt{
+        position: relative;
+        max-width: 300px;
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+        margin-bottom: 20px;
+        transition: bottom .5s ease-in-out,
+        opacity .5s .4s ease-in-out;
+
+        @include mw_md {
+            @include border(0 0 1px, map-get($border_color, secondary));
+            position: fixed;
+            padding: 50px 5px 5px;
+            background: url(../images/icon_logo.png) no-repeat center 10px / 40px map-get($bg_color, black_alpha);
+            bottom: -100%;
+            left: 0;
+            right: 0;
+            margin: auto;
+            text-shadow: 1px 1px map-get($txt_color, secondary);
+            opacity: 0;
+
+            @at-root .--active .menu__info__txt {
+                bottom: 50px;
+                opacity: 1;
+            }
+        }
+        .name{
+            display: block;
+            position: relative;
+            max-width: calc(100% - 20px);
+            padding: 3px 5px;
+            font-size: 14px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            margin: auto auto 5px;
+            // &::after{
+            //     @extend %transition;
+            //     @include pos_abs(0, unset, unset, 0);
+            //     content: '';
+            //     width: calc(100% - 2px);
+            //     height: calc(100% - 2px);
+            //     border: 1px solid transparent;
+            // }
+            @include mw_lg{
+                max-width: calc(100% - 10px);
+            }
+            @include mw_md{
+                @include d_f(flex, center, flex-start);
+                max-width: 100%;
+                white-space: normal;
+                word-break: break-word;
+
+                &::before{
+                    content: '';
+                    flex: none;
+                    width: 15px;
+                    height: 15px;
+                    background: url(../images/icon_miniMem.svg) no-repeat center / contain;
+                    margin-right: 10px;
+                }
+            }
+
+            // 手指效果
+            @include hoverHandler{
+                max-width: none;
+                display: inline-block;
+                background: map-get($bg_color, black_alpha);
+                margin: auto auto 1px 10px;
+                // &::after{
+                //     border: 1px solid map-get($bg_color, secondary);
+                // }
+
+                @include mw_lg {
+                    margin-left: 5px;
+                }
+                @include mw_md {
+                    display: flex;
+                    background: transparent;
+                    margin: auto auto 5px;
+                }
+            }
+        }
+
+        .amount{
+            @extend %hand;
+            @include d_f(flex, center, space-between);
+            position: relative;
+            width: calc(100% - 20px);
+            padding: 3px 5px;
+            background: map-get($bg_color, black);
+            border: 1px solid transparent;
+            color: map-get($txt_color, yellow);
+            font-size: 12px;
+            margin: auto;
+
+            @include mw_lg {
+                width: 100%;
+                padding: 3px 5px;
+                flex-direction: column-reverse;
+            }
+            @include mw_md{
+                background: transparent;
+                font-size: 14px;
+                flex-direction: row;
+                justify-content: flex-start;
+
+                &::before {
+                    content: '';
+                    flex: none;
+                    width: 15px;
+                    height: 15px;
+                    background: url(../images/icon_miniMoney.svg) no-repeat center / contain;
+                    margin-right: 10px;
+                }
+            }
+
+            &::after{
+                content: '';
+                width: 8px;
+                height: 8px;
+                flex: none;
+                border-width: 2px;
+                border-color:transparent #fff #fff #fff;
+                display: inline-block;
+                border-style:solid;
+                border-radius: 50%;
+                animation: load .5s linear infinite;
+                @include mw_lg {
+                    margin-bottom: 5px;
+                }
+                @include mw_md{
+                    margin: 0 0 0 5px;
+                }
+
+                @keyframes load {
+                    from {
+                        transform: rotate(0deg);
+                    }
+
+                    to {
+                        transform: rotate(360deg);
+                    }
+                }
+            }
+
+            // 手指效果
+            @include hoverHandler{
+                border: 1px solid map-get($bg_color, secondary);
+            }
+        }
+    }
+}
+
+.menu__main {
+    @include scrollbar(auto, hidden);
+    @include mw_md{
+        @include d_f(inline-flex, center, flex-start);
+    }
+    ul{
+        @include mw_md {
+            @include d_f(inline-flex, center, flex-start);
+            flex: none;
+            height: 100%;
+        }
+
+        li {
+            height: 100%;
+            font-size: 14px;
+        }
+
+        // 一般 btn
+        li:not(.--PR) {
+            @extend %hand;
+            @include d_f(inline-flex, center, flex-start);
+            @include btn_set(100%, auto, transparent);
+            padding: 10px;
+
+            @include mw_lg {
+                width: 80px;
+                flex-direction: column;
+                padding: 5px;
+                font-size: 12px;
+            }
+            
+            &::after {
+                @include btn_txt(center, map-get($txt_color, primary), transparent);
+                width: auto;
+                height: auto;
+            }
+
+            .hover_item {
+                @include btn_hoveritem(map-get($btn_color, primary));
+                @include border(1px 0, map-get($border_color, primary));
+
+                &::before {
+                    @include btn_hoverlight03;
+
+                    @include mw_lg {
+                        content: none;
+                    }
+                }
+
+                @include mw_md {
+                    @include btn_hoveritem(map-get($btn_color, primary_vl));
+                }
+
+            }
+            
+            // _on效果
+            @include btn_on(map-get($txt_color, secondary)) {
+                i {
+                    filter: none;
+                }
+            }
+
+            // 手指效果
+            @include btn_hoverHandler(1px 0, map-get($txt_color, secondary)) {
+                i {
+                    filter: none;
+                }
+            }
+        }
+        
+        i[class^="icon_"] {
+            position: relative;
+            width: 20px;
+            height: 20px;
+            filter: brightness(0) invert(1);
+            margin-right: 10px;
+
+            @include mw_lg {
+                margin: auto auto 5px;
+            }
+        }
+
+        // 槍手桌號
+        li.--PR {
+            width: calc(100% - 20px);
+            padding-bottom: 5px;
+            background: map-get($bg_color, black);
+            border-radius: 3px;
+            font-weight: bold;
+            text-align: center;
+            margin: auto auto 20px;
+            overflow: hidden;
+
+            @include mw_lg {
+                width: 100%;
+                border-radius: 0;
+                font-size: 14px;
+            }
+            @include mw_md {
+                width: 80px;
+                height: 100%;
+                margin: 0;
+            }
+
+            &::before {
+                content: attr(data-txt);
+                display: block;
+                height: 50%;
+                background: map-get($bg_color, secondary_vl);
+                border: 1px solid map-get($bg_color, black);
+                color: map-get($txt_color, secondary);
+                margin-bottom: 5px;
+            }
+        }
+    }
+}
