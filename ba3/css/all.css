@@ -2063,7 +2063,7 @@ tt {
 }
 
 .txt_gray {
-  color: #B3B3B3 !important;
+  color: #b3b3b3 !important;
 }
 
 .txt_shadow {
@@ -2148,7 +2148,7 @@ tt {
 }
 
 .bg_gray {
-  background: #B3B3B3 !important;
+  background: #b3b3b3 !important;
 }
 
 .bg_black {
@@ -3833,7 +3833,7 @@ tt {
   background: url(../images/icon_zoomin.svg) no-repeat left center/20px;
   padding-left: 25px;
   margin-left: auto;
-  color: #B3B3B3;
+  color: #b3b3b3;
   font-weight: bold;
 }
 
@@ -5907,7 +5907,7 @@ tt {
 .road__group__info {
   width: 25px;
   height: 100%;
-  background: #B3B3B3;
+  background: #b3b3b3;
 }
 
 .road__group__info .ballBox {

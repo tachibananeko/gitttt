@@ -15,6 +15,11 @@
             flex: none;
             padding: 5px 10px;
             background: map-get($bg_color, brown_gradual_vl);
+
+            @include mw_xs{
+                padding-bottom: 0;
+            }
+
             .txt{
                 @include d_f(flex, center, space-between);
                 font-size: 14px;
@@ -26,6 +31,7 @@
                 }
                 @include mw_ms {
                     font-size: 12px;
+                    margin-bottom: 0;
                 }
             }
             .time{
@@ -672,6 +678,11 @@
         flex: 1 1 100%;
         background: map-get($bg_color, order_area);
         border: 1px solid map-get($bg_color, black);
+
+        // 免佣桌布
+        &.--nocon{
+            background: map-get($bg_color, nocon_area);
+        }
         
         .area_b,
         .area_p,
@@ -1309,7 +1320,7 @@
     .goodroad_btn,
     .close_btn {
         @include btn_set(20px, 20px, url(../images/icon_setting.svg) no-repeat center / contain);
-        @include pos_abs(0, unset, 0, 10px);
+        @include pos_abs(0, unset, 0, 5px);
         filter: brightness(200%);
         margin: auto;
 
@@ -1325,10 +1336,16 @@
 
     // 好路提示關閉按鈕
     .close_btn{
+        width: 15px;
+        height: 15px;
         background-image: url(../images/icon_x.svg);
         left: auto;
-        right: 10px;
+        right: 5px;
         display: none;
+
+        @at-root .--on + .close_btn {
+            filter: invert(1);
+        }
 
         @include mw_md{
             display: block;
@@ -1384,7 +1401,7 @@
                 font-size: 18px;
             }
 
-            @include mw_xs{
+            @include mw_ms{
                 font-size: 14px;
                 flex: 0 0 45px;
             }
@@ -1402,11 +1419,15 @@
         &__go {
             position: relative;
             flex: 0 0 50px;
-            padding: 5px;
+            padding: 0 5px;
 
             @include mw_lg{
                 flex: 0 0 100px;
                 height: 40px;
+            }
+
+            @include mw_ms{
+                flex: 0 0 50px;
             }
 
             i {
@@ -1501,17 +1522,24 @@
 
     li:nth-child(6n+1){
         @include border(0 0 1px, map-get($border_color, primary));
-        padding: 3px 5px;
+        padding: 3px 10px;
         text-align: center;
     }
     li:not(:nth-child(6n+1)){
-        padding: 5px;
+        @include d_f(flex, center, space-between);
+        padding: 5px 10px;
         background: map-get($bg_color, black);
         color: map-get($txt_color, primary);
         font-weight: bold;
 
         &:nth-child(odd){
             background: map-get($bg_color, darkgray);
+        }
+
+        &::after{
+            content: attr(data-txt);
+            color: map-get($txt_color, white);
+            font-weight: normal;
         }
 
     }

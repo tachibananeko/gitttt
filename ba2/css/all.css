@@ -2151,7 +2151,7 @@ tt {
 }
 
 .bg_gray {
-  background: #B3B3B3 !important;
+  background: #b3b3b3 !important;
 }
 
 .bg_darkgray {
@@ -2190,6 +2190,10 @@ tt {
 
 .bg_order_area {
   background: #224d4d !important;
+}
+
+.bg_nocon_area {
+  background: #482989 !important;
 }
 
 .bg_bank {
@@ -5501,6 +5505,12 @@ ul.--api i {
   background: linear-gradient(to top, #563d29 30%, #000 100%);
 }
 
+@media screen and (max-width: 599px) {
+  .video__function__info {
+    padding-bottom: 0;
+  }
+}
+
 .video__function__info .txt {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -5523,6 +5533,7 @@ ul.--api i {
 @media screen and (max-width: 996px) {
   .video__function__info .txt {
     font-size: 12px;
+    margin-bottom: 0;
   }
 }
 
@@ -6721,6 +6732,10 @@ ul.--api i {
   border: 1px solid #000;
 }
 
+.order__area.--nocon {
+  background: #482989;
+}
+
 .order__area .area_b,
 .order__area .area_p,
 .order__area .area_t,
@@ -7368,7 +7383,7 @@ ul.--api i {
 .road__group__info {
   width: 25px;
   height: 100%;
-  background: #B3B3B3;
+  background: #b3b3b3;
 }
 
 .road__group__info .ballBox {
@@ -7913,7 +7928,7 @@ span.--on::after {
   top: 0;
   bottom: 0;
   right: unset;
-  left: 10px;
+  left: 5px;
   -webkit-filter: brightness(200%);
           filter: brightness(200%);
   margin: auto;
@@ -7939,10 +7954,17 @@ span.--on::after {
 }
 
 .detail .close_btn {
+  width: 15px;
+  height: 15px;
   background-image: url(../images/icon_x.svg);
   left: auto;
-  right: 10px;
+  right: 5px;
   display: none;
+}
+
+.--on + .close_btn {
+  -webkit-filter: invert(1);
+          filter: invert(1);
 }
 
 @media screen and (max-width: 1024px) {
@@ -8038,7 +8060,7 @@ span.--on::after {
   }
 }
 
-@media screen and (max-width: 599px) {
+@media screen and (max-width: 996px) {
   .goodroadList__item__tb {
     font-size: 14px;
     -webkit-box-flex: 0;
@@ -8069,7 +8091,7 @@ span.--on::after {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 50px;
           flex: 0 0 50px;
-  padding: 5px;
+  padding: 0 5px;
 }
 
 @media screen and (max-width: 1180px) {
@@ -8078,6 +8100,14 @@ span.--on::after {
         -ms-flex: 0 0 100px;
             flex: 0 0 100px;
     height: 40px;
+  }
+}
+
+@media screen and (max-width: 996px) {
+  .goodroadList__item__go {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50px;
+            flex: 0 0 50px;
   }
 }
 
@@ -8268,12 +8298,21 @@ span.--on::after {
   -o-border-image: linear-gradient(to right, transparent 5%, #f2d77a 20%, #ffffc5 60%, #f2d77a 80%, transparent 100%) 1;
      border-image: -webkit-gradient(linear, left top, right top, color-stop(5%, transparent), color-stop(20%, #f2d77a), color-stop(60%, #ffffc5), color-stop(80%, #f2d77a), to(transparent)) 1;
      border-image: linear-gradient(to right, transparent 5%, #f2d77a 20%, #ffffc5 60%, #f2d77a 80%, transparent 100%) 1;
-  padding: 3px 5px;
+  padding: 3px 10px;
   text-align: center;
 }
 
 .orderTotal li:not(:nth-child(6n+1)) {
-  padding: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 5px 10px;
   background: #000;
   color: #fbe2b0;
   font-weight: bold;
@@ -8281,6 +8320,12 @@ span.--on::after {
 
 .orderTotal li:not(:nth-child(6n+1)):nth-child(odd) {
   background: #0f0f0f;
+}
+
+.orderTotal li:not(:nth-child(6n+1))::after {
+  content: attr(data-txt);
+  color: #fff;
+  font-weight: normal;
 }
 
 .--bigTv .table__title {
