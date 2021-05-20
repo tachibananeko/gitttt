@@ -556,7 +556,7 @@
             @include border(1px 0, map-get($border_color, primary));
             overflow: hidden;
 
-            @include mw_lg{
+            @include mw_ms{
                 width: calc(100% / 2);
                 &:nth-child(2){
                     display: none;
@@ -1088,7 +1088,7 @@
         @include d_f(flex, unset, flex-start);
         flex-direction: column;
         width: calc(100% / 2 - 1px);
-        height: 100%;
+        height: calc(100% - 35px);
         background: map-get($bg_color, black);
         pointer-events: auto;
         z-index: 1;
@@ -1548,11 +1548,8 @@
     flex-wrap: wrap;
 
     .more_function{
+        width: 40%;
         order: 0;
-    }
-
-    .live__txt{
-        width: 450px;
     }
 
     &__area{
