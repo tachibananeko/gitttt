@@ -7563,7 +7563,7 @@ ul.--api i {
       -ms-flex-direction: column;
           flex-direction: column;
   width: calc(100% / 2 - 1px);
-  height: calc(100% - 35px);
+  height: 100%;
   background: #000;
   pointer-events: auto;
   z-index: 1;
@@ -7576,6 +7576,7 @@ ul.--api i {
 @media screen and (max-width: 1180px) {
   .detail__box {
     width: 100%;
+    height: calc(100% - 35px);
   }
   .detail__box:not(.--on) {
     display: none;

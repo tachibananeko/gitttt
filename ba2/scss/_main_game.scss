@@ -1089,7 +1089,7 @@
         @include d_f(flex, unset, flex-start);
         flex-direction: column;
         width: calc(100% / 2 - 1px);
-        height: calc(100% - 35px);
+        height: 100%;
         background: map-get($bg_color, black);
         pointer-events: auto;
         z-index: 1;
@@ -1100,6 +1100,7 @@
 
         @include mw_lg {
             width: 100%;
+            height: calc(100% - 35px);
 
             &:not(.--on) {
                 display: none;
