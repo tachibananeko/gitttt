@@ -4428,8 +4428,7 @@ tt {
 }
 
 .frame__main__inside .detail {
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
+  -ms-grid-row: 3;
   -ms-grid-column: 2;
   grid-area: details;
   z-index: 3;
@@ -4445,75 +4444,6 @@ tt {
   }
 }
 
-.--telType .frame__main__inside {
-      grid-template-areas: "video details" "table details" "road road";
-}
-
-@media screen and (max-width: 996px) {
-  .--telType .frame__main__inside {
-        grid-template-areas: "video" "order" "road";
-    -ms-grid-rows: 60vw 60px minmax(200px, 350px);
-        grid-template-rows: 60vw 60px minmax(200px, 350px);
-  }
-  .--telType.--tableOpen .frame__main__inside {
-        grid-template-areas: "video" "order" "table" "road";
-    -ms-grid-rows: 60vw 30px 130px minmax(200px, 350px);
-        grid-template-rows: 60vw 30px 130px minmax(200px, 350px);
-  }
-  .--telType.--cardOpen .frame__main__inside {
-    -ms-grid-rows: 60vw 200px minmax(200px, 350px);
-        grid-template-rows: 60vw 200px minmax(200px, 350px);
-  }
-  .--telType.--cardOpen.--tableOpen .frame__main__inside {
-        grid-template-areas: "video" "order" "table" "road";
-    -ms-grid-rows: 60vw 200px 130px minmax(200px, 350px);
-        grid-template-rows: 60vw 200px 130px minmax(200px, 350px);
-  }
-}
-
-.--noCard .frame__main__inside,
-.--noOrder .frame__main__inside {
-      grid-template-areas: "video details" "table details" "road road";
-}
-
-@media screen and (max-width: 996px) {
-  .--noCard .frame__main__inside,
-  .--noOrder .frame__main__inside {
-        grid-template-areas: "video" "road";
-    -ms-grid-rows: 60vw minmax(200px, 350px);
-        grid-template-rows: 60vw minmax(200px, 350px);
-  }
-  .--noCard.--tableOpen .frame__main__inside,
-  .--noOrder.--tableOpen .frame__main__inside {
-        grid-template-areas: "video" "table" "road";
-    -ms-grid-rows: 60vw 130px minmax(200px, 350px);
-        grid-template-rows: 60vw 130px minmax(200px, 350px);
-  }
-}
-
-.--telType .order {
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 2;
-  -ms-grid-column: 2;
-  -ms-grid-column-span: 1;
-  grid-area: 1 / 2 / 3 / 3;
-}
-
-@media screen and (max-width: 996px) {
-  .--telType .order {
-    -ms-grid-row: 2;
-    -ms-grid-row-span: 1;
-    -ms-grid-column: 1;
-    -ms-grid-column-span: 1;
-    grid-area: 2 / 1 / 3 / 2;
-  }
-}
-
-.--noCard .order,
-.--noOrder .order {
-  display: none;
-}
-
 .--bigTv .frame__main__inside {
   -ms-grid-rows: 550px 20px 200px 30px;
       grid-template-rows: 550px 20px 200px 30px;
@@ -4522,45 +4452,7 @@ tt {
       grid-template-areas: "video" "table" "order" "road";
 }
 
-.--telType.--bigTv .frame__main__inside {
-  -ms-grid-rows: 550px 20px 30px;
-      grid-template-rows: 550px 20px 30px;
-  -ms-grid-columns: 100%;
-      grid-template-columns: 100%;
-      grid-template-areas: "video" "table" "road";
-}
-
-.--telType.--bigTv.--cardOpen .frame__main__inside,
-.--telType.--bigTv.--tableOpen .frame__main__inside {
-  -ms-grid-rows: 550px 20px 100px 30px;
-      grid-template-rows: 550px 20px 100px 30px;
-      grid-template-areas: "video" "table" "order" "road";
-}
-
-.--telType.--bigTv .frame__main__inside .order {
-  grid-area: auto;
-}
-
-.--noCard.--bigTv .frame__main__inside,
-.--noOrder.--bigTv .frame__main__inside {
-  -ms-grid-rows: 550px 20px;
-      grid-template-rows: 550px 20px;
-  -ms-grid-columns: 100%;
-      grid-template-columns: 100%;
-      grid-template-areas: "video" "table";
-}
-
-.--noCard.--bigTv.--tableOpen .frame__main__inside,
-.--noOrder.--bigTv.--tableOpen .frame__main__inside {
-  -ms-grid-rows: 550px 120px;
-      grid-template-rows: 550px 120px;
-}
-
-.--bigTv .detail,
-.--bigTv.--noCard .order,
-.--bigTv.--noCard .road,
-.--bigTv.--noOrder .order,
-.--bigTv.--noOrder .road {
+.--bigTv .detail {
   display: none;
 }
 

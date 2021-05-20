@@ -1,4 +1,4 @@
-// 各種狀態關鍵字 >> 電網投各種狀態
+
 .frame{
     display: grid;
     width: 100%;
@@ -165,86 +165,11 @@
 
 
 
-// 電網投各種狀態
-// ============================================
-// 主要區塊配置 電投有卡
-.--telType .frame__main__inside{
-    grid-template-areas:"video details"
-                        "table details"
-                        "road road";
-
-    @include mw_ms{
-        grid-template-areas:"video"
-                            "order"
-                            "road";
-        grid-template-rows: 60vw 60px minmax(200px, 350px);
-
-        // 選擇桌次展開
-        @at-root .--telType.--tableOpen .frame__main__inside{
-            grid-template-areas:"video"
-                                "order"
-                                "table"
-                                "road";
-            grid-template-rows: 60vw 30px 130px minmax(200px, 350px);
-        }
-
-        
-        // 卡片all展開
-        @at-root .--telType.--cardOpen .frame__main__inside{
-            grid-template-rows: 60vw 200px minmax(200px, 350px);
-        }
-
-        // 卡片all展開 + 選擇桌次展開
-        @at-root .--telType.--cardOpen.--tableOpen .frame__main__inside{
-            grid-template-areas:"video"
-                                "order"
-                                "table"
-                                "road";
-            grid-template-rows: 60vw 200px 130px minmax(200px, 350px);
-        }
-    }
-}
-// 主要區塊配置 電投無卡 網投無卡
-.--noCard .frame__main__inside,
-.--noOrder .frame__main__inside {
-    grid-template-areas:"video details"
-                        "table details"
-                        "road road";
-    
-    @include mw_ms{
-        grid-template-areas:"video"
-                            "road";
-        grid-template-rows: 60vw minmax(200px, 350px);
-
-        // 選擇桌次展開
-        @at-root .--noCard.--tableOpen .frame__main__inside,
-        .--noOrder.--tableOpen .frame__main__inside{
-            grid-template-areas:"video"
-                                "table"
-                                "road";
-            grid-template-rows: 60vw 130px minmax(200px, 350px);
-        }
-    }
-}
-
-// 內層配置 電投有卡 
-.--telType .order {
-    grid-area: 1 / 2 / 3 / 3;
-
-    @include mw_ms{
-        grid-area: 2 / 1 / 3 / 2;
-    }
-}
-// 內層配置 電投無卡 網投無卡
-.--noCard .order,
-.--noOrder .order {
-    display: none;
-}
 
 
 
 // 視訊放大
-// 主要區塊配置 網投有卡
+// 主要區塊配置
 .--bigTv .frame__main__inside {
     grid-template-rows: 550px 20px 200px 30px;
     grid-template-columns: 100%;
@@ -253,51 +178,9 @@
                         "order"
                         "road";
 }
-// 主要區塊配置 電投有卡
-.--telType.--bigTv .frame__main__inside{
-    grid-template-rows: 550px 20px 30px;
-    grid-template-columns: 100%;
-    grid-template-areas:"video"
-                        "table"
-                        "road";
-    
-    // 卡片all展開
-    // 選擇桌次展開
-    @at-root .--telType.--bigTv.--cardOpen .frame__main__inside,
-    .--telType.--bigTv.--tableOpen .frame__main__inside{
-        grid-template-rows: 550px 20px 100px 30px;
-        grid-template-areas:"video"
-                            "table"
-                            "order"
-                            "road";
-    }
-    
-    .order {
-        grid-area: auto;
-    }
-}
 
-// 主要區塊配置 電投無卡 網投無卡
-.--noCard.--bigTv .frame__main__inside,
-.--noOrder.--bigTv .frame__main__inside {
-    grid-template-rows: 550px 20px;
-    grid-template-columns: 100%;
-    grid-template-areas:"video"
-                        "table";
-
-    // 選擇桌次展開
-    @at-root .--noCard.--bigTv.--tableOpen .frame__main__inside,
-    .--noOrder.--bigTv.--tableOpen .frame__main__inside{
-        grid-template-rows: 550px 120px;
-    }
-}
-// 內層配置 電投有卡 網投有卡 電投無卡 網投無卡
-.--bigTv .detail,
-// 內層配置 電投無卡 網投無卡
-.--bigTv.--noCard .order,
-.--bigTv.--noCard .road,
-.--bigTv.--noOrder .order,
-.--bigTv.--noOrder .road{
+// 內層配置
+.--bigTv .detail{
     display: none;
 }
 
