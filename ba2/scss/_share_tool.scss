@@ -37,6 +37,7 @@ $border_color: ();
         white: #fff,
         black: #000,
         gray:#B3B3B3,
+        darkgray:#0f0f0f,
         brown: #240913,
         darkbrown: #140a0c,
         brown_gradual:linear-gradient(to right, #f2bd79 0%, #563d29 70%, #000 100%),
@@ -60,6 +61,7 @@ $border_color: ();
         black:linear-gradient(to right, #333 50%, #000 80%),
         lightblack:linear-gradient(to right, #666 50%, #000 80%),
         brown:linear-gradient(to right, #563d29 50%, #000 100%),
+        brown_vl:linear-gradient(to top, #3e3123 20%, #000 100%),
         blue:linear-gradient(to right, #005fd7 0%, #0b0e25 100%),
         lightblue:linear-gradient(to right, #00a0ed 0%, #111269 100%),
         green:linear-gradient(to right, #00d345 0%, #110024 100%),
@@ -70,7 +72,7 @@ $border_color: ();
         lightorange:linear-gradient(to right, #ff901d 0%, #991b10 100%),
         purple:linear-gradient(to right, #8260fa 0%, #000 100%),
         lightpurple:linear-gradient(to right, #c69aff 0%, #19004d 100%),
-        gold:linear-gradient(to right, #fbe2b0 0%, #563d29 100%)
+        gold:linear-gradient(to right, #f2d77a 0%, #ffffc5 20%, #f2d77a 100%)
     );
 
     // 裝飾線色

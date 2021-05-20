@@ -295,36 +295,43 @@
                 <!-- 下注區與卡號 -->
                 <div class="order">
 
-                    <!-- 免佣+多桌+好路按鈕 -->
-                    <!-- 傳統模式 第一顆按鈕移除.--nocon 替換data-txt="傳統模式"  -->
-                    <div class="otherpage">
-                        <button class="otherpage__btn --nocon" data-txt="免佣模式">
-                            <span class="hover_item"></span>
-                        </button>
-                        <button class="otherpage__btn --more_tb" data-txt="多桌模式">
-                            <span class="hover_item"></span>
-                        </button>
-                        <button class="otherpage__btn --good_road" data-txt="好路追注">
-                            <span class="hover_item"></span>
-                        </button>
+                    <!-- 百2功能按鈕與熱況直播 -->
+                    <div class="more_function">
+                        <!-- 免佣+多桌+好路按鈕 -->
+                        <!-- 傳統模式 第一顆按鈕移除.--nocon 替換data-txt="傳統模式"  -->
+                        <div class="otherpage">
+                            <button class="otherpage__btn --nocon" data-txt="免佣模式">
+                                <span class="hover_item"></span>
+                            </button>
+                            <button class="otherpage__btn --more_tb" data-txt="多桌模式">
+                                <span class="hover_item"></span>
+                            </button>
+                            <button class="otherpage__btn --good_road" data-txt="好路追注">
+                                <span class="hover_item"></span>
+                            </button>
+                        </div>
+                        <!-- 免佣+多桌+好路按鈕 end -->
+                        <!-- 熱況直播 -->
+                        <div class="live">
+                            <ul class="live__txt" data-txt="LIVE">
+                                <li>or**** 下注5,000,000</li>
+                                <li>or**** 下注5,000,000</li>
+                                <li>or**** 下注8,000,000</li>
+                            </ul>
+                        </div>
+                        <!-- 熱況直播 end -->
                     </div>
-                    <!-- 免佣+多桌+好路按鈕 end -->
-
-                    <!-- 熱況直播 -->
-                    <div class="live">
-                        <ul class="live__txt" data-txt="LIVE">
-                            <li>or**** 下注5,000,000</li>
-                            <li>or**** 下注5,000,000</li>
-                            <li>or**** 下注8,000,000</li>
-                        </ul>
-                    </div>
-                    <!-- 熱況直播 end -->
+                    <!-- 百2功能按鈕與熱況直播 end -->
 
                     <!-- 996以下會員資訊 -->
                     <ul class="memberInfo">
                         <li data-txt="未結算交易額">500,000 / 10</li>
                         <li data-txt="本局派彩金額">500,000</li>
-                        <li class="memberInfo_btn">隱藏限額</li>
+
+                        <!-- 顯示限額 class加上.--active data-txt="顯示限額" -->
+                        <li class="hideLimit_btn" data-txt="隱藏限額">
+                            <span class="hover_item"></span>
+                        </li>
                     </ul>
                     <!-- 996以下會員資訊 end -->
 
@@ -536,11 +543,11 @@
                     <!-- pad切換title -->
                     <!-- 當前選項加上.--on -->
                     <ul class="detail__padChange" id="padChange">
-                        <li data-txt="好路追注" class="--on">
+                        <li data-txt="好路追注">
                             <span class="hover_item"></span>
                             <button class="goodroad_btn"></button>
                         </li>
-                        <li data-txt="最新投注">
+                        <li data-txt="最新投注" class="--on">
                             <span class="hover_item"></span>
                         </li>
                         <li data-txt="下注統計">
@@ -555,10 +562,7 @@
                         <li data-txt="好路追注">
                             <span class="hover_item"></span>
                         </li>
-                        <li data-txt="下注統計">
-                            <span class="hover_item"></span>
-                        </li>
-                        <li data-txt="最新投注">
+                        <li data-txt01="最新投注" data-txt02="下注統計">
                             <span class="hover_item"></span>
                         </li>
                     </ul>
@@ -566,7 +570,7 @@
 
                     <!-- 好路追注 -->
                     <!-- pad當前選項加上.--on -->
-                    <div class="detail__box --goodroad --on" id="padList01">
+                    <div class="detail__box --on" id="padList01">
                         <div class="detail__box__title">
                             <span data-txt="好路提示"></span>
                             <button class="goodroad_btn"></button>
@@ -626,9 +630,12 @@
                     <!-- 好路追注 end -->
 
                     <!-- 最新投注 + 下注統計 -->
-                    <div class="detail__box --neworder" id="padList03">
-                        <div class="detail__box__title">
-                            <span data-txt="最新投注"></span>
+                    <div class="detail__box" id="padList03">
+                        
+                        <!-- 當前選項span加上.--on -->
+                        <div class="detail__box__title --plural">
+                            <span data-txt="最新投注" class="--on"></span>
+                            <span data-txt="下注統計"></span>
                             <button class="close_btn" id="closeBtn03"></button>
                         </div>
 
@@ -674,19 +681,19 @@
                         <!-- 最新投注 end -->
 
                         <!-- 下注統計 -->
-                        <ul class="orderTotal">
+                        <ul class="orderTotal" style="display: none;">
                             <li>已確認</li>
-                            <li data-txt="莊">0</li>
-                            <li data-txt="閒">0</li>
-                            <li data-txt="和">0</li>
-                            <li data-txt="莊對">0</li>
-                            <li data-txt="閒對">0</li>
+                            <li data-txt="0" class="txt_bank">莊</li>
+                            <li data-txt="0" class="txt_play">閒</li>
+                            <li data-txt="0" class="txt_tie">和</li>
+                            <li data-txt="0" class="txt_bank">莊對</li>
+                            <li data-txt="0" class="txt_play">閒對</li>
                             <li>待確認</li>
-                            <li data-txt="莊">0</li>
-                            <li data-txt="閒">0</li>
-                            <li data-txt="和">0</li>
-                            <li data-txt="莊對">0</li>
-                            <li data-txt="閒對">0</li>
+                            <li data-txt="0" class="txt_bank">莊</li>
+                            <li data-txt="0" class="txt_play">閒</li>
+                            <li data-txt="0" class="txt_tie">和</li>
+                            <li data-txt="0" class="txt_bank">莊對</li>
+                            <li data-txt="0" class="txt_play">閒對</li>
                         </ul>
                         <!-- 下注統計 end -->
                     </div>
