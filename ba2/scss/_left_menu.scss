@@ -1,5 +1,11 @@
+.frame__menu{
+    @include mw_md{
+        background: map-get($bg_color, primary_vl);
+    }
+}
 
-.menu__info{    
+// 客戶資訊
+.menu__info{
     @include mw_md{
         @include d_f(inline-flex, center, center);
         width: 50px;
@@ -8,26 +14,35 @@
         box-shadow: 3px 2px 3px map-get($bg_color, black_alpha);
         z-index: 1;
     }
+
+    // .menu__info__logo
     &__logo {
         padding-bottom: 80%;
         background: url(../images/icon_logo.png) no-repeat center 10px / 60%;
+        
         @include mw_md {
             display: none;
         }
     }
 
+    // .menu__info_btn
     &_btn{
         width: 100%;
         height: 25px;
         background: url(../images/icon_member.svg) no-repeat center;
         margin-bottom: 10px;
+        cursor: default!important;
+
         @include mw_md{
             height: 100%;
+            background-color: map-get($bg_color, darkbrown);
+            cursor: pointer!important;
             margin-bottom: 0;
         }
         
     }
 
+    // .menu__info__txt
     &__txt{
         position: relative;
         max-width: 300px;
@@ -50,12 +65,8 @@
             opacity: 0;
 
             @at-root .--active .menu__info__txt {
-                bottom: 50px;
+                bottom: 245px;
                 opacity: 1;
-            }
-
-            @at-root .--ba2 .frame__menu.--active .menu__info__txt {
-                bottom: 289px;
             }
         }
         .name{
@@ -124,7 +135,6 @@
             padding: 3px 5px;
             background: map-get($bg_color, black);
             border: 1px solid transparent;
-            color: map-get($txt_color, yellow);
             font-size: 12px;
             margin: auto;
 
@@ -186,6 +196,7 @@
     }
 }
 
+// 分頁按鈕
 .menu__main {
     @include scrollbar(auto, hidden);
     @include mw_md{
@@ -199,16 +210,12 @@
         }
 
         li {
-            height: 100%;
-            font-size: 14px;
-        }
-
-        // 一般 btn
-        li:not(.--PR) {
             @extend %hand;
             @include d_f(inline-flex, center, flex-start);
             @include btn_set(100%, auto, transparent);
+            height: 100%;
             padding: 10px;
+            font-size: 14px;
 
             @include mw_lg {
                 width: 80px;
@@ -224,15 +231,11 @@
             }
 
             .hover_item {
-                @include btn_hoveritem(map-get($btn_color, primary));
-                @include border(1px 0, map-get($border_color, primary));
+                @include btn_hoveritem(map-get($btn_color, secondary));
+                @include border(1px 0, map-get($border_color, secondary));
 
                 &::before {
-                    @include btn_hoverlight03;
-
-                    @include mw_lg {
-                        content: none;
-                    }
+                    @include btn_hoverlight01(200%);
                 }
 
                 @include mw_md {
@@ -244,14 +247,19 @@
             // _on效果
             @include btn_on(map-get($txt_color, secondary)) {
                 i {
-                    filter: none;
+                    filter: brightness(200%);
                 }
             }
 
             // 手指效果
             @include btn_hoverHandler(1px 0, map-get($txt_color, secondary)) {
                 i {
-                    filter: none;
+                    filter: brightness(200%);
+
+                    // api btn
+                    @at-root ul.--api i{
+                        filter: none!important;
+                    }
                 }
             }
         }
@@ -260,7 +268,6 @@
             position: relative;
             width: 20px;
             height: 20px;
-            filter: brightness(0) invert(1);
             margin-right: 10px;
 
             @include mw_lg {
@@ -268,23 +275,8 @@
             }
         }
 
-        // api btn
-        &.--api li {
-            display: none;
-
-            @at-root .--ba2 .frame__menu .--api li {
-                display: inline-flex;
-            }
-
-            i[class^="icon_"] {
-                display: inline-block;
-                filter: none;
-            }
-            
-        }
-
-        // ba2 一般 btn收進去(放這邊才能吃到滑過)
-        @at-root .--ba2 ul.--myself {
+        // 一般 btn收進去
+        &.--myself {
             transition: bottom .5s, opacity .5s .4s;
 
             @include mw_md {
@@ -299,7 +291,7 @@
                 margin: auto;
                 opacity: 0;
 
-                @at-root .--ba2 .frame__menu.--active ul.--myself {
+                @at-root .--active ul.--myself {
                     bottom: 50px;
                     opacity: 1;
                 }
@@ -310,52 +302,14 @@
                     justify-content: flex-start;
                     flex-direction: row;
                     font-size: 14px;
-                    &::after {
-                        color: map-get($txt_color, yellow);
-                    }
                 }
+                
                 i[class^="icon_"] {
                     width: 15px;
                     height: 15px;
                     margin: 0 10px 0 0;
-                    filter: invert(84%) sepia(41%) saturate(285%) hue-rotate(5deg) brightness(109%) contrast(103%);
+                    filter: brightness(150%);
                 }
-            }
-        }
-
-        // 槍手桌號
-        li.--PR {
-            width: calc(100% - 20px);
-            padding-bottom: 5px;
-            background: map-get($bg_color, black);
-            border-radius: 3px;
-            font-weight: bold;
-            text-align: center;
-            margin: auto auto 20px;
-            overflow: hidden;
-            @at-root .--ba2 li.--PR  {
-                display: none;
-            }
-
-            @include mw_lg {
-                width: 100%;
-                border-radius: 0;
-                font-size: 14px;
-            }
-            @include mw_md {
-                width: 80px;
-                height: 100%;
-                margin: 0;
-            }
-
-            &::before {
-                content: attr(data-txt);
-                display: block;
-                height: 50%;
-                background: map-get($bg_color, secondary_vl);
-                border: 1px solid map-get($bg_color, black);
-                color: map-get($txt_color, secondary);
-                margin-bottom: 5px;
             }
         }
     }

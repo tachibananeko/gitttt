@@ -270,11 +270,9 @@ $icon: (
 	'backlobby',
 	'history',
 	'rule',
-	'card',
-	'line',
+	'info',
 	'logout',
 	'back',
-	'road_set',
 	'bank_tw',
 	'play_tw',
 	'bank_cn',
@@ -297,6 +295,8 @@ $icon: (
 	'groad08',
 	'rwm',
 	'ibo',
+	'cockfight',
+	'a5',
 );
 
 @each $name in $icon {
@@ -397,6 +397,7 @@ $breakpoints: (
 		@content;
 	}
 }
+
 // 僅在pc顯示
 @mixin fine {
 	@media (pointer: fine) and (max-resolution: 2dppx),

@@ -1,4 +1,5 @@
 
+// 客戶資訊
 .menu__info{    
     @include mw_md{
         @include d_f(inline-flex, center, center);
@@ -8,6 +9,8 @@
         box-shadow: 3px 2px 3px map-get($bg_color, black_alpha);
         z-index: 1;
     }
+
+    // .menu__info__logo
     &__logo {
         padding-bottom: 80%;
         background: url(../images/icon_logo.png) no-repeat center 10px / 60%;
@@ -16,18 +19,24 @@
         }
     }
 
+    // .menu__info_btn
     &_btn{
+        @extend %no_hand;
         width: 100%;
         height: 25px;
         background: url(../images/icon_member.svg) no-repeat center;
+        cursor: default!important;
         margin-bottom: 10px;
+
         @include mw_md{
             height: 100%;
+            cursor: pointer!important;
             margin-bottom: 0;
         }
         
     }
 
+    // .menu__info__txt
     &__txt{
         position: relative;
         max-width: 300px;
@@ -182,6 +191,7 @@
     }
 }
 
+// 分頁按鈕
 .menu__main {
     @include scrollbar(auto, hidden);
     @include mw_md{

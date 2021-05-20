@@ -1,8 +1,9 @@
 
-// 視訊上物件.video__function
+// 視訊上物件
 .video{
     position: relative;
 
+    // .video__function
     &__function{
         @include pos_abs(0, 0, 0, 0);
         @include d_f(flex, flex-start, flex-start);
@@ -17,8 +18,13 @@
             .txt{
                 @include d_f(flex, center, space-between);
                 font-size: 14px;
-                font-weight: bold;
                 margin-bottom: 10px;
+
+                li:first-child{
+                    font-size: 16px;
+                    font-weight: bold;
+                }
+
                 @include mw_ms {
                     font-size: 12px;
                 }
@@ -434,14 +440,14 @@
     font-size: 14px;
     order: -4;
 
-    // 768以下會員資訊
+    // 996以下會員資訊
     @at-root .order .memberInfo{
         display: none;
         @include mw_ms{
             display: flex;
         }
     }
-    // 1024以上會員資訊
+    // 996以上會員資訊
     @at-root .road .memberInfo {
         @include mw_ms{
             display: none;
@@ -452,7 +458,7 @@
         &::before {
             content: attr(data-txt);
             color: map-get($txt-color, yellow);
-            margin-right: 5px;
+            margin-right: 10px;
         }
 
         @include mw_xs {

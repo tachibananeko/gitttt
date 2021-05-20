@@ -37,6 +37,7 @@
         @extend %hand;
         @include btn_set(60px, 100%, map-get($btn_color, secondary));
         border: 1px solid map-get($bg_color, secondary);
+        font-weight: bold;
         
         @include mw_ms {
             height: 30px;

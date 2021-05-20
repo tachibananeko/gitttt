@@ -21,11 +21,6 @@
 
 <body ontouchstart="">
     <!-- 
-        電投有卡.--telType 
-        電投無卡.--telType+.--noCard
-        網投有卡 無需class
-        網投無卡.--noOrder
-
         視訊放大 在上方狀態後加上.--bigTv
         選擇桌次展開.--tableOpen
         卡片all展開.--cardOpen
@@ -54,13 +49,13 @@
                         <span class="hover_item"></span>
                         <i class="icon_ibo"></i>
                     </li>
-                    <li data-txt="百家樂">
+                    <li data-txt="鬥雞">
                         <span class="hover_item"></span>
-                        <i class="icon_ibo"></i>
+                        <i class="icon_cockfight"></i>
                     </li>
-                    <li data-txt="百家樂">
+                    <li data-txt="A5彩票">
                         <span class="hover_item"></span>
-                        <i class="icon_ibo"></i>
+                        <i class="icon_a5"></i>
                     </li>
                 </ul>
                 <!-- 廠商按鈕 end -->
@@ -68,45 +63,25 @@
                 <!-- 基本按鈕 -->
                 <!-- 當前頁面.--on -->
                 <ul class="--myself" id="myself">
-                    <li data-txt="槍手桌號" class="--PR">
-                        MW2000
-                    </li>
                     <li data-txt="返回大廳">
                         <span class="hover_item"></span>
                         <i class="icon_backlobby"></i>
                     </li>
-                    <li data-txt="投注明細">
+                    <li data-txt="交易紀錄">
                         <span class="hover_item"></span>
                         <i class="icon_history"></i>
+                    </li>
+                    <li data-txt="會員資料">
+                        <span class="hover_item"></span>
+                        <i class="icon_info"></i>
                     </li>
                     <li data-txt="遊戲規則">
                         <span class="hover_item"></span>
                         <i class="icon_rule"></i>
                     </li>
-                    <li data-txt="選擇卡片">
-                        <span class="hover_item"></span>
-                        <i class="icon_card"></i>
-                    </li>
-                    <li data-txt="選擇線路">
-                        <span class=" hover_item"></span>
-                        <i class="icon_line"></i>
-                    </li>
                     <li data-txt="登出">
                         <span class=" hover_item"></span>
                         <i class="icon_logout"></i>
-                    </li>
-                    <li></li>
-                    <li data-txt="電投有卡">
-                        <span class=" hover_item"></span>
-                    </li>
-                    <li data-txt="電投無卡">
-                        <span class=" hover_item"></span>
-                    </li>
-                    <li data-txt="網投有卡">
-                        <span class=" hover_item"></span>
-                    </li>
-                    <li data-txt="網投無卡">
-                        <span class=" hover_item"></span>
                     </li>
                 </ul>
                 <!-- 基本按鈕 end -->
@@ -130,7 +105,7 @@
 
                 <!-- 視訊頻道 -->
                 <div class="channel">
-                    <button class="channel__1st" data-txt="CHT">
+                    <button class="channel__1st --on" data-txt="CHT">
                         <span class="hover_item"></span>
                     </button>
                     <!-- 768以下 輸入inline style display: flex; -->
@@ -160,13 +135,6 @@
                 </button>
                 <!-- ph選擇桌次 end -->
 
-                <!-- 打賞 -->
-                <button class="tip_btn" data-txt="打賞">
-                    <span class="hover_item"></span>
-                    <i></i>
-                </button>
-                <!-- 打賞 end -->
-
                 <!-- 全螢幕 -->
                 <!-- 縮小螢幕 --zoomout -->
                 <button class="zoom_btn">
@@ -193,7 +161,7 @@
                         <!-- 桌次資訊 -->
                         <div class="video__function__info">
                             <ul class="txt">
-                                <li class="txt_yellow">MW2001</li>
+                                <li class="txt_white">MW2001</li>
                                 <li>靴1</li>
                                 <li>局10</li>
                             </ul>
@@ -216,16 +184,20 @@
                         <button class="videobig_btn" id="videobig_btn"></button>
                         <!-- 視訊放大 end -->
 
-                        <!-- 選擇卡片呼叫公關 -->
-                        <button class="PR_btn" data-txt="選擇卡片">
-                            <span class="hover_item"></span>
-                            <i></i>
-                        </button>
+                        <!-- 呼叫公關+打賞+飛牌 -->
+                        <div class="PR">
+                            <button class="PR__btn" data-txt="呼叫公關">
+                                <span class="hover_item"></span>
+                                <i></i>
+                            </button>
+                            <button class="PR__btn --tips" data-txt="打賞">
+                                <span class="hover_item"></span>
+                            </button>
+                            <button class="PR__btn --fly ba3_none" data-txt="飛牌">
+                                <span class="hover_item"></span>
+                            </button>
+                        </div>
                         <!-- 選擇卡片呼叫公關 end -->
-
-                        <!-- 開始遊戲按鈕 -->
-                        <button class="start_btn" data-txt="開始遊戲"></button>
-                        <!-- 開始遊戲按鈕 end -->
 
                         <!-- 連線訊號燈 -->
                         <!-- 訊號慢 .--slow -->
@@ -239,21 +211,26 @@
 
 
                 <!-- 選擇桌次 -->
-                <!-- 當前桌--on 包台--i_ex 快速桌--i_fast  -->
+                <!-- 當前桌.--on vip桌.--i_ex 包台.--i_ex 快速桌.--i_fast  -->
                 <div class="table" id="tableBody">
-                    <div class="table__title" id="tableTitle" data-txt="選擇桌次">
+                    <div class="table__title" id="tableTitle" data-txt="馬上體驗">
                         <span></span>
+
+                        <ul class="table__title__detail">
+                            <li data-txt="總桌次">30</li>
+                            <li data-txt="已開桌次">30</li>
+                        </ul>
                     </div>
                     <ul class="table__group" id="tableGroup">
                         <li data-txt="MW2001" class="--on">
                             <span class="hover_item"></span>
                             <i></i>
                         </li>
-                        <li data-txt="MW2002" class="--i_ex --i_fast">
+                        <li data-txt="MW2002" class="--i_vip --i_ex --i_fast">
                             <span class="hover_item"></span>
                             <i></i>
                         </li>
-                        <li data-txt="MW2003" class="--i_ex">
+                        <li data-txt="MW2003" class="--i_vip">
                             <span class="hover_item"></span>
                             <i></i>
                         </li>
@@ -317,32 +294,43 @@
 
                 <!-- 下注區與卡號 -->
                 <div class="order">
-                    <!-- 768以下會員資訊 -->
-                    <ul class="memberInfo">
-                        <li data-txt="出碼/存碼">500,000 / 10</li>
-                        <li data-txt="目前餘額">500,000</li>
-                        <li data-txt="目前公關">gama</li>
-                    </ul>
-                    <!-- 768以下會員資訊 end -->
 
-                    <!-- 下注資訊 -->
-                    <div class="order__info">
-                        <ul>
-                            <li data-txt="卡號:">TA-12345678</li>
-                            <li data-txt="上下數:">0</li>
-                            <li data-txt="洗碼:">0</li>
-                            <li data-txt="卡靴:">0</li>
+                    <!-- 免佣+多桌+好路按鈕 -->
+                    <!-- 傳統模式 第一顆按鈕移除.--nocon 替換data-txt="傳統模式"  -->
+                    <div class="otherpage">
+                        <button class="otherpage__btn --nocon" data-txt="免佣模式">
+                            <span class="hover_item"></span>
+                        </button>
+                        <button class="otherpage__btn --more_tb" data-txt="多桌模式">
+                            <span class="hover_item"></span>
+                        </button>
+                        <button class="otherpage__btn --good_road" data-txt="好路追注">
+                            <span class="hover_item"></span>
+                        </button>
+                    </div>
+                    <!-- 免佣+多桌+好路按鈕 end -->
+
+                    <!-- 熱況直播 -->
+                    <div class="live">
+                        <ul class="live__txt" data-txt="LIVE">
+                            <li>or**** 下注5,000,000</li>
+                            <li>or**** 下注5,000,000</li>
+                            <li>or**** 下注8,000,000</li>
                         </ul>
                     </div>
-                    <!-- 下注資訊 end -->
+                    <!-- 熱況直播 end -->
+
+                    <!-- 996以下會員資訊 -->
+                    <ul class="memberInfo">
+                        <li data-txt="未結算交易額">500,000 / 10</li>
+                        <li data-txt="本局派彩金額">500,000</li>
+                        <li class="memberInfo_btn">隱藏限額</li>
+                    </ul>
+                    <!-- 996以下會員資訊 end -->
 
                     <!-- 下注桌布 -->
                     <!-- 不能下注的.area_xx 加上.--nobet遮罩 -->
                     <div class="order__area">
-
-                        <!-- 上桌按鈕 -->
-                        <button class="uptable_btn" data-txt="上桌"></button>
-                        <!-- 上桌按鈕 end -->
 
                         <div class="area_b txt_bank">
                             <!-- 下注閃爍 -->
@@ -353,8 +341,7 @@
                             <div class="txt">莊</div>
                             <div class="limit" data-min="20" data-max="200,000">~</div>
 
-                            <!-- 下注金額籌碼 -->
-                            <div class="total_amount">0</div>
+                            <!-- 下注金額籌碼 -->                         
                             <div class="amount" style="display: none;">
                                 0
                                 <button class="amount_btn"></button>
@@ -371,8 +358,7 @@
                             <div class="txt">閒</div>
                             <div class="limit" data-min="20" data-max="200,000">~</div>
 
-                            <!-- 下注金額籌碼 -->
-                            <div class="total_amount">0</div>
+                            <!-- 下注金額籌碼 -->                         
                             <div class="amount" style="display: none;">
                                 0
                                 <button class="amount_btn"></button>
@@ -389,8 +375,7 @@
                             <div class="txt">莊對</div>
                             <div class="limit" data-min="20" data-max="200,000">~</div>
 
-                            <!-- 下注金額籌碼 -->
-                            <div class="total_amount">0</div>
+                            <!-- 下注金額籌碼 -->                         
                             <div class="amount" style="display: none;">
                                 0
                                 <button class="amount_btn"></button>
@@ -407,8 +392,7 @@
                             <div class="txt">和</div>
                             <div class="limit" data-min="20" data-max="200,000">~</div>
 
-                            <!-- 下注金額籌碼 -->
-                            <div class="total_amount">0</div>
+                            <!-- 下注金額籌碼 -->                         
                             <div class="amount" style="display: none;">
                                 0
                                 <button class="amount_btn"></button>
@@ -425,8 +409,7 @@
                             <div class="txt">閒對</div>
                             <div class="limit" data-min="20" data-max="200,000">~</div>
 
-                            <!-- 下注金額籌碼 -->
-                            <div class="total_amount">0</div>
+                            <!-- 下注金額籌碼 -->                         
                             <div class="amount" style="display: none;">
                                 0
                                 <button class="amount_btn"></button>
@@ -452,71 +435,15 @@
                     <div class="order__function">
                         <button class="function_btn" data-txt="確定">
                             <span class="hover_item"></span>
-                            <i></i>
                         </button>
                         <button class="function_btn --repeat" data-txt="續押">
                             <span class="hover_item"></span>
-                            <i></i>
                         </button>
                         <button class="function_btn --cancel" data-txt="取消">
                             <span class="hover_item"></span>
-                            <i></i>
                         </button>
                     </div>
                     <!-- 下注按鈕 end -->
-
-                    <!-- 卡號按鈕 -->
-                    <ul class="cardTitle" id="cardTitle">
-                        <li data-txt="All">
-                            <span class="hover_item"></span>
-                            <i></i>
-                        </li>
-                        <li data-txt="TA-9nn2">
-                            <span class="hover_item"></span>
-                            <i></i>
-                        </li>
-                        <li data-txt="TA-9nn2">
-                            <span class="hover_item"></span>
-                            <i></i>
-                        </li>
-                        <li data-txt="TA-nnnnnnnn">
-                            <span class="hover_item"></span>
-                            <i></i>
-                        </li>
-                        <li data-txt="TA-nnnnnnnn">
-                            <span class="hover_item"></span>
-                            <i></i>
-                        </li>
-                    </ul>
-                    <!-- 卡號按鈕 -->
-
-                    <!-- 卡號all -->
-                    <div class="cardAll">
-                        <table>
-                            <tr>
-                                <th class="w15">座位</th>
-                                <th class="w25">卡號</th>
-                                <th class="w25">餘額</th>
-                                <th class="w20">上下數</th>
-                                <th class="w15">小費</th>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>ORT1-123456</td>
-                                <td>10,000</td>
-                                <td>0</td>
-                                <td>0</td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>ORT1-123456</td>
-                                <td>10,000</td>
-                                <td>0</td>
-                                <td>0</td>
-                            </tr>
-                        </table>
-                    </div>
-                    <!-- 卡號all end -->
                 </div>
                 <!-- 下注區與卡號 end -->
 
@@ -526,9 +453,13 @@
                 <div class="road">
                     <!-- 1024以上會員資訊 -->
                     <ul class="memberInfo">
-                        <li data-txt="出碼/存碼">500,000 / 10</li>
-                        <li data-txt="目前餘額">500,000</li>
-                        <li data-txt="目前公關">gama</li>
+                        <li data-txt="未結算交易額">500,000 / 10</li>
+                        <li data-txt="本局派彩金額">500,000</li>
+
+                        <!-- 顯示限額 class加上.--active data-txt="顯示限額" -->
+                        <li class="hideLimit_btn" data-txt="隱藏限額">
+                            <span class="hover_item"></span>
+                        </li>
                     </ul>
                     <!-- 1024以上會員資訊 end -->
 
@@ -609,7 +540,10 @@
                             <span class="hover_item"></span>
                             <button class="goodroad_btn"></button>
                         </li>
-                        <li data-txt="最新投注" class="">
+                        <li data-txt="最新投注">
+                            <span class="hover_item"></span>
+                        </li>
+                        <li data-txt="下注統計">
                             <span class="hover_item"></span>
                         </li>
                     </ul>
@@ -621,9 +555,9 @@
                         <li data-txt="好路追注">
                             <span class="hover_item"></span>
                         </li>
-                        <!-- <li data-txt="限紅">
+                        <li data-txt="下注統計">
                             <span class="hover_item"></span>
-                        </li> -->
+                        </li>
                         <li data-txt="最新投注">
                             <span class="hover_item"></span>
                         </li>
@@ -691,33 +625,14 @@
                     </div>
                     <!-- 好路追注 end -->
 
-                    <!-- 限紅 -->
-                    <div class="detail__box --limit" id="padList02">
-                        <div class="detail__box__title">
-                            <span data-txt="本桌限紅"></span>
-                            <button class="close_btn" id="closeBtn02"></button>
-                        </div>
-                        <ul class="limitList">
-                            <li data-txt="限紅">10~36,000</li>
-                            <li data-txt="和" class="bg_tie_gradual">
-                                10~36,000
-                            </li>
-                            <li data-txt="莊對" class="bg_bank_gradual">
-                                10~36,000
-                            </li>
-                            <li data-txt="閒對" class="bg_play_gradual">
-                                10~36,000
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- 限紅 end -->
-
-                    <!-- 最新投注 -->
+                    <!-- 最新投注 + 下注統計 -->
                     <div class="detail__box --neworder" id="padList03">
                         <div class="detail__box__title">
                             <span data-txt="最新投注"></span>
                             <button class="close_btn" id="closeBtn03"></button>
                         </div>
+
+                        <!-- 最新投注 -->
                         <ul class="orderInfo">
                             <li>
                                 <ul class="orderInfo__txt">
@@ -756,8 +671,26 @@
                                 </ul>
                             </li>
                         </ul>
+                        <!-- 最新投注 end -->
+
+                        <!-- 下注統計 -->
+                        <ul class="orderTotal">
+                            <li>已確認</li>
+                            <li data-txt="莊">0</li>
+                            <li data-txt="閒">0</li>
+                            <li data-txt="和">0</li>
+                            <li data-txt="莊對">0</li>
+                            <li data-txt="閒對">0</li>
+                            <li>待確認</li>
+                            <li data-txt="莊">0</li>
+                            <li data-txt="閒">0</li>
+                            <li data-txt="和">0</li>
+                            <li data-txt="莊對">0</li>
+                            <li data-txt="閒對">0</li>
+                        </ul>
+                        <!-- 下注統計 end -->
                     </div>
-                    <!-- 最新投注 end -->
+                    <!-- 最新投注 + 下注統計 end -->
                 </div>
                 <!-- 詳細資訊 end -->
             </div>

@@ -1,8 +1,9 @@
 
-// 視訊上物件.video__function
+// 視訊上物件
 .video{
     position: relative;
 
+    // .video__function
     &__function{
         @include pos_abs(0, 0, 0, 0);
         @include d_f(flex, flex-start, flex-start);
@@ -13,12 +14,16 @@
             @include border(0 0 1px, map-get($border_color , secondary));
             flex: none;
             padding: 5px 10px;
-            background: map-get($bg_color , darkblue_vl);
+            background: map-get($bg_color, brown_gradual_vl);
             .txt{
                 @include d_f(flex, center, space-between);
                 font-size: 14px;
-                font-weight: bold;
                 margin-bottom: 10px;
+
+                li:first-child{
+                    font-size: 16px;
+                    font-weight: bold;
+                }
                 @include mw_ms {
                     font-size: 12px;
                 }
@@ -26,7 +31,6 @@
             .time{
                 min-width: 150px;
                 display: block;
-                color: map-get($txt_color, yellow);
                 font-weight: bold;
                 text-align: center;
                 
@@ -67,10 +71,12 @@
                 content: 'NEWS';
                 padding: 2px 3px;
                 background: map-get($bg_color, red);
+                color: map-get($txt_color, white);
                 font-size: 12px;
             }
             span{
                 flex: 0 0 100%;
+                color: map-get($txt_color, white);
                 white-space: nowrap;
                 z-index: 0;
             }
@@ -102,78 +108,57 @@
 
 
         // 選擇卡片呼叫公關
-        .PR_btn{
-            @include btn_set(auto, 30px, map-get($btn_color, green));
-            @include pos_abs (unset, unset, calc(100% + 10px), 380px);
-            padding: 0 10px;
-            border: 1px solid map-get($bg_color, lightgreen);
-            border-radius: 3px;
+        .PR {
+            position: absolute;
+            height: 30px;
+            border-radius: 5px;
+            font-size: 0;
+            bottom: calc(100% + 10px);
+            left: 320px;
+            white-space: nowrap;
             overflow: hidden;
-            z-index: 2;
+            z-index: 4;
 
-            @include mw_md{
-                bottom: 0;
-                left: 10px;
-                border-radius: 3px 3px 0 0;
-            }
+            &__btn{
+                @include btn_set(100px, 100%, map-get($btn_color, lightgreen));
+                @include border(1px 0, map-get($border_color, primary));
 
-            &::before{
-                @include btn_hoverlight03;
-            }
-            &::after{
-                @include btn_txt(center, map-get($txt_color, primary), map-get($txt_color, shadow));
-            }
-            .hover_item{
-                @include btn_hoveritem(map-get($btn_color, lightgreen));
-                box-shadow: 0 0 1px map-get($bg_color, secondary) inset,
-                            0 0 3px map-get($bg_color, secondary) inset;
-                &::before {
-                    @include btn_hoverlight03;
-                }
-            }
-            i{
-                @include btn_i(map-get($bg_color, i_green));
-            }
-
-            // 手指效果
-            @include btn_hoverHandler(1px, map-get($txt_color, primary));
-        }
-
-        // 開始遊戲按鈕
-        .start_btn{
-            @include btn_set(190px, 150px, url(../images/start_btn.png) no-repeat center / contain);
-            @include pos_abs(unset, 0, 0, 0);
-            margin: auto;
-
-            display: none;
-
-            @at-root .--noOrder .start_btn{
-                display: block;
-            }
-            
-            @include mw_xs{
-                bottom: -30px;
-                transform: scale(.8);
-            }
-
-            &::before{
-                text-shadow: 2px 2px 3px map-get($txt_color, shadow);
-            }
-            &::before,
-            &::after{
-                @include pos_abs(54px, unset, unset, 0);
-                @include bg_txt(map-get($bg_color, gold), 30px);
-                width: 100%;
-                line-height: 52px;
-                font-weight: bold;
-                text-transform: uppercase;
-            }
-
-            // 手指效果
-            @include hoverHandler{
                 &::before{
-                    text-shadow: 0 0 3px map-get($txt_color, yellow);
+                    @include btn_hoverlight02;
                 }
+                &::after{
+                    @include btn_txt(center, map-get($txt_color, primary), map-get($txt_color, shadow));
+                    width: calc(100% - 10px);
+                    margin: auto;
+                }
+                .hover_item{
+                    @include btn_hoveritem(map-get($btn_color, green));
+                    box-shadow: 0 0 1px map-get($bg_color, secondary) inset,
+                                0 0 3px map-get($bg_color, secondary) inset;
+                    &::before {
+                        @include btn_hoverlight02;
+                    }
+                }
+                // 打賞
+                &.--tips {
+                    background: map-get($btn_color, orange);
+
+                    .hover_item {
+                        background: map-get($btn_color, lightorange);
+                    }
+                }
+
+                // 飛牌
+                &.--fly {
+                    background: map-get($btn_color, lightblue);
+
+                    .hover_item {
+                        background: map-get($btn_color, blue);
+                    }
+                }
+
+                // 手指效果
+                @include btn_hoverHandler(1px 0, map-get($txt_color, primary));
             }
         }
 
@@ -181,6 +166,7 @@
         &__speed{
             @include pos_abs(unset, 0, 0, unset);
             padding: 5px 10px 5px 5px;
+            color: map-get($txt_color, white);
             font-size: 14px;
             text-shadow: 1px 1px map-get($txt_color, shadow);
 
@@ -201,18 +187,20 @@
 }
 
 
-// 選擇桌次.table__title
+// 選擇桌次
 .table{
     @include d_f(flex, flex-start, flex-start);
     position: relative;
     flex-direction: column;
 
+    // .table__title
     &__title{
+        @include d_f(flex, center, flex-start);
         position: relative;
         width: 100%;
         flex: none;
         height: 20px;
-        background: map-get($bg_color, primary_vl);
+        background: map-get($bg_color, brown_gradual);
         overflow: hidden;
 
         @at-root .--bigTv .table__title{
@@ -225,7 +213,7 @@
         }
 
         &::before{
-            @include pos_abs(0, unset, 0, calc(50% + 50px));
+            @include pos_abs(0, unset, 0, 10px);
             @include triangle(10px, map-get($bg_color, secondary), bottom);
             content: none;
             margin: auto;
@@ -289,21 +277,40 @@
         }
         &::after{
             @include btn_txt(center, map-get($txt_color, yellow), map-get($txt_color, shadow));
-            @include pos_abs(0, 0, 0, 0);
+            @include pos_abs(0, unset, 0, 30px);
+            width: auto;
+            font-size: 14px;
             margin: auto;
             transform: translateZ(0);
         }
 
         span{
             display: block;
-            width: 200px;
-            height: 60px;
-            background: map-get($bg_color, darkblue_vl);
-            border-left: 1px solid map-get($bg_color, secondary);
-            border-right: 1px solid map-get($bg_color, secondary);
-            transform: perspective(150px) rotateX(-45deg);
-            transform-origin: 50% 0;
-            margin: auto;
+            width: 100px;
+            height: 30px;
+            background: map-get($bg_color, darkbrown);
+            transform: perspective(70px) rotateX(-45deg);
+            transform-origin: 0 100%;
+        }
+
+        // .table__title__detail
+        &__detail{
+            @include d_f(inline-flex, center, flex-end);
+            padding-right: 10px;
+            color: map-get($txt_color, white);
+            font-size: 14px;
+            margin-left: auto;
+            text-shadow: 2px 1px map-get($txt_color, shadow);
+
+            li{
+                margin-right: 20px;
+            }
+            li::before{
+                content: attr(data-txt);
+                color: map-get($txt_color, primary);
+                font-weight: bold;
+                margin-right: 10px;
+            }
         }
     }
 
@@ -334,13 +341,13 @@
 
         li{
             @extend %hand;
-            @include btn_set(125px, 35px, map-get($btn_color, secondary));
+            @include btn_set(125px, 35px, map-get($btn_color, primary));
             border-radius: 3px;
-            border: 2px solid map-get($bg_color, lightblue);
+            border: 2px solid map-get($bg_color, secondary);
             margin: 0 10px 5px;
 
             @include mw_lg {
-                width: 110px;
+                width: 115px;
             }
 
             @include mw_ms {
@@ -349,18 +356,18 @@
 
 
             &::before{
-                @include btn_hoverlight03;
+                @include btn_hoverlight02;
             }
             &::after {
-                @include btn_txt(center, map-get($txt_color, primary), transparent);
+                @include btn_txt(center, map-get($txt_color, secondary), transparent);
                 font-weight: bold;
             }
             .hover_item {
-                @include btn_hoveritem(map-get($btn_color, primary));
+                @include btn_hoveritem(map-get($btn_color, brown));
                 box-shadow: 0 0 3px map-get($bg_color, secondary) inset,
                 0 0 6px map-get($bg_color, secondary) inset;
                 &::before {
-                    @include btn_hoverlight03;
+                    @include btn_hoverlight02;
                 }
             }
             // 狀態
@@ -372,12 +379,17 @@
             >i {
                 position: absolute;
                 display: block;
-                width: 30px;
-                height: 13px;
+                width: 35px;
+                height: 16px;
                 top: 0;
                 bottom: 0;
                 right: 10px;
                 margin: auto;
+
+                @include mw_lg{
+                    width: 30px;
+                    height: 13px;
+                }
             }
             &.--i_vip>i {
                 background: url(../images/icon_vip.svg) no-repeat center / contain;
@@ -413,14 +425,10 @@
             }        
 
             // _on效果
-            @include btn_on(map-get($txt_color, secondary)){
-                border-color: map-get($bg_color, lightyellow);
-            }
+            @include btn_on(map-get($txt_color, primary));
 
             // 手指效果
-            @include btn_hoverHandler(2px, map-get($txt_color, secondary)){
-                border-color: map-get($bg_color, lightyellow);
-            }
+            @include btn_hoverHandler(2px, map-get($txt_color, primary));
         }
     }
 }
@@ -428,31 +436,32 @@
 // 下注區與珠路共用 會員資訊
 .memberInfo {
     @include d_f(flex, center, space-between);
-    @include border(1px 0, map-get($border_color, secondary));
-    padding: 5px 10px;
-    background: map-get($bg_color, darkblue);
+    background: map-get($bg_color, primary_vl);
+    color: map-get($txt_color, white);
     font-size: 14px;
-    order: -4;
 
-    // 768以下會員資訊
+    // 996以下會員資訊
     @at-root .order .memberInfo{
         display: none;
         @include mw_ms{
             display: flex;
         }
     }
-    // 1024以上會員資訊
+    // 996以上會員資訊
     @at-root .road .memberInfo {
         @include mw_ms{
             display: none;
         }
     }
 
-    li {
+    li:not(:last-child) {
+        padding: 5px 10px;
+
         &::before {
             content: attr(data-txt);
-            color: map-get($txt-color, yellow);
-            margin-right: 5px;
+            color: map-get($txt-color, primary);
+            font-weight: bold;
+            margin-right: 10px;
         }
 
         @include mw_xs {
@@ -461,43 +470,148 @@
             }
         }
     }
+
+    .hideLimit_btn{
+        @include btn_set(auto, 100%, map-get($btn_color, primary_vl));
+        padding: 0 10px 0 30px;
+        
+        &::before{
+            @include pos_abs(0, unset, 0, 5px);
+            content: '';
+            width: 20px;
+            background: url(../images/icon_hidelimit.svg) no-repeat center / 80%;
+            z-index: 1;
+        }
+
+        &.--active::before{
+            background-image: url(../images/icon_hidelimit_on.svg);
+        }
+
+        &::after{
+            @include btn_txt(center, map-get($txt_color, secondary), transparent);
+            font-weight: bold;
+        }
+
+        .hover_item{
+            @include btn_hoveritem(map-get($btn_color, primary_vl_re));
+        }
+            
+        // 手指效果
+        @include btn_hoverHandler(0 0, map-get($txt_color, secondary ));
+    }
 }
 
-// 下注區與卡號
+// 下注區
 .order{
     @include d_f(flex, unset, flex-start);
     position: relative;
     height: 100%;
     flex-direction: column;
     
-    // 下注資訊.order__info
-    &__info {
-        background: map-get($bg_color, primary_vl);
+    // 免佣+多桌+好路按鈕.otherpage
+    .otherpage{
+        width: 100%;
+        height: 40px;
+        flex: none;
         padding: 5px;
-        order: -2;
+        background: map-get($bg_color, primary_vl);
+        font-size: 0;
 
-        @include mw_xs{
-            padding: 2px 5px;
+        &__btn{
+            @include btn_set(calc(100% / 3), 100%, map-get($btn_color, lightgreen));
+            @include border(1px 0, map-get($border_color, primary));
+            overflow: hidden;
+
+            &:first-child{
+                border-radius: 3px 0 0 3px;
+            }
+            &:last-child{
+                border-radius: 0 3px 3px 0;
+            }
+
+            &::before{
+                @include btn_hoverlight02;
+            }
+            &::after{
+                @include btn_txt(center, map-get($txt_color, primary), map-get($txt_color, shadow));
+            }
+
+            .hover_item{
+                @include btn_hoveritem(map-get($btn_color, green));
+                box-shadow: 0 0 1px map-get($bg_color, secondary) inset,
+                0 0 3px map-get($bg_color, secondary) inset;
+                &::before {
+                    @include btn_hoverlight02;
+                }
+            }
+
+            // 免佣
+            &.--nocon {
+                background-image: map-get($btn_color, purple);
+                .hover_item {
+                    background-image: map-get($btn_color, lightpurple);
+                }
+            }
+
+            // 多桌
+            &.--more_tb {
+                background-image: map-get($btn_color, orange);
+                .hover_item {
+                    background-image: map-get($btn_color, lightorange);
+                }
+            }
+
+            // 好路追注
+            &.--good_road {
+                background-image: map-get($btn_color, lightgreen);
+                .hover_item {
+                    background-image: map-get($btn_color, green);
+                }
+            }
+
+            // 手指效果
+            @include btn_hoverHandler(1px 0, map-get($txt_color, primary));
         }
+    }
 
-        ul {
-            @include d_f(flex, center, center);
-            padding: 3px 5px;
+    // 熱況直播
+    .live{
+        padding: 5px;
+        background: map-get($bg_color, darkbrown);
+
+        // .live__txt
+        &__txt{
+            @include d_f(flex, center, flex-end);
+            position: relative;
+            padding-right: 60px;
             background: map-get($bg_color, black);
-            font-size: 12px;
-        }
+            font-size: 14px;
+            white-space: nowrap;
+            overflow: hidden;
 
-        li {
-            &::before {
-                content: attr(data-txt);
-            }
-
-            &:not(:last-child)::after {
+            &:before{
+                @include pos_abs(0, -5px, 0, unset);
                 content: '';
-                border-left: 1px solid map-get($bg_color, white);
-                margin: 0 5px;
+                width: 60px;
+                background: map-get($btn_color, primary);
+                margin: auto;
+                transform: skewX(-30deg);
+                
+            }
+
+            &::after{
+                @include pos_abs(unset, 5px, unset, unset);
+                content: attr(data-txt);
+                color: map-get($txt_color, secondary);
+                font-weight: bold;
+                font-size: 16px;
+            }
+
+            li + li{
+                margin-left: 20px;
             }
         }
+
     }
 
     // 下注桌布.order__area
@@ -508,35 +622,7 @@
         flex: 1 1 100%;
         background: map-get($bg_color, order_area);
         border: 1px solid map-get($bg_color, black);
-
-        // 上桌按鈕
-        .uptable_btn{
-            @include btn_set(100px, 45px, url(../images/uptable_btn.png) no-repeat center / contain);
-            @include pos_abs(unset, 0, 50%, 0);
-            margin: auto;
-            z-index: 1;
-            
-            &::before{
-                text-shadow: 2px 2px 3px map-get($txt_color, shadow);
-            }
-            &::before,
-            &::after{
-                @include pos_abs(0, 0, 0, 0);
-                @include bg_txt(map-get($bg_color, gold), 25px);
-                line-height: 45px;
-                font-weight: bold;
-                text-transform: uppercase;
-                margin: auto;
-            }
-
-            // 手指效果
-            @include hoverHandler{
-                &::before{
-                    text-shadow: 0 0 5px map-get($txt_color, yellow);
-                }
-            }
-        }
-
+        
         .area_b,
         .area_p,
         .area_t,
@@ -627,7 +713,7 @@
         }
 
         .limit {
-            color: map-get($txt_color, yellow);
+            color: map-get($txt_color, primary);
             font-size: 14px;
             text-shadow: 2px 1px map-get($txt_color, shadow);
 
@@ -647,18 +733,6 @@
             &::after {
                 content: attr(data-max);
             }
-        }
-
-        .total_amount {
-            @include pos_abs(0, 5px, unset, unset);
-            @include border(0 0 1px, map-get($border_color, secondary));
-            min-width: 50px;
-            padding: 2px 10px;
-            background: map-get($bg_color, black);
-            border-radius: 0 0 5px 5px;
-            color: map-get($txt_color, primary);
-            font-size: 14px;
-            text-align: center;
         }
 
         .amount {
@@ -701,7 +775,7 @@
         @include d_f(flex, center, space-around);
         flex: none;
         height: 70px;
-        background: map-get($bg_color, darkblue_vl);
+        background: map-get($bg_color, primary_vl);
 
         @include mw_ms{
             height: 50px;
@@ -756,190 +830,55 @@
         flex: none;
         height: 10%;
         min-height: 40px;
-        background: map-get($bg_color, black);
+        padding: 5px;
+        background: map-get($bg_color, darkbrown);
 
-        .function_btn {
-            @include btn_set(calc(100% / 3), 100%, map-get($bg_color, blue));
-            @include border(2px, map-get($border_color, blue));
+        .function_btn{
+            @include btn_set(calc(100% / 3), 100%, map-get($btn_color, lightblue));
+            @include border(1px 0, map-get($border_color, primary));
+            overflow: hidden;
 
-            &::before {
-                @include btn_hoverlight04;
+            &:first-child{
+                border-radius: 5px 0 0 5px;
+                
             }
 
-            &::after {
+            &::before{
+                @include btn_hoverlight01(200%);
+            }
+            &::after{
                 @include btn_txt(center, map-get($txt_color, primary), map-get($txt_color, shadow));
                 font-size: 24px;
+                
             }
-
-            .hover_item {
-                @include btn_hoveritem(map-get($bg_color, middblue));
-
+            .hover_item{
+                @include btn_hoveritem(map-get($btn_color, blue));
+                box-shadow: 0 0 3px map-get($bg_color, secondary) inset,
+                            0 0 6px map-get($bg_color, secondary) inset;
                 &::before {
-                    @include btn_hoverlight04;
+                    @include btn_hoverlight01(200%);
                 }
             }
-
-            i {
-                @include btn_i(map-get($bg_color, i_blue));
-            }
-
             // 續押
             &.--repeat {
-                background: map-get($bg_color, green);
-                border-image: map-get($border_color, green);
-
+                background: map-get($btn_color, lightgreen);
                 .hover_item {
-                    background: map-get($bg_color, darkgreen);
-                }
-
-                i {
-                    @include btn_i(map-get($bg_color, i_green));
+                    background: map-get($btn_color, green);
                 }
             }
 
             // 取消
             &.--cancel {
-                background: map-get($bg_color, red);
-                border-image: map-get($border_color, red);
-
+                background: map-get($btn_color, lightred);
+                border-radius: 0 5px 5px 0;
                 .hover_item {
-                    background: map-get($bg_color, darkred);
-                }
-
-                i {
-                    @include btn_i(map-get($bg_color, i_red));
+                    background: map-get($btn_color, red);
                 }
             }
 
             // 手指效果
-            @include btn_hoverHandler(2px, map-get($txt_color, primary));
+            @include btn_hoverHandler(1px 0, map-get($txt_color, primary));
         }
-    }
-
-    // 卡號按鈕.cardTitle
-    .cardTitle {
-        @include scrollbar(auto, hidden);
-        @include d_f(flex, center, flex-start);
-        height: 35px;
-        flex: none;
-        padding: 5px 5px 0;
-        background: map-get($bg_color, darkblue_vl);
-        font-size: 0;
-        order: -3;
-
-        @include mw_ms{
-            height: 30px;
-            padding-top: 0;
-        }
-
-        >li {
-            @extend %hand;
-            @include btn_set(auto, 100%, map-get($btn_color, secondary));
-            padding: 0 5px;
-            border: 1px solid map-get($bg_color, secondary);
-            border-bottom: none;
-
-            +li {
-                border-left: none;
-            }
-
-            &:first-child{
-                min-width: 50px;
-                border-top-left-radius: 5px;
-            }
-
-            &:last-child {
-                border-top-right-radius: 5px;
-            }
-
-            &::before {
-                @include btn_hoverlight03;
-            }
-
-            &::after {
-                @include btn_txt(center, map-get($txt_color, primary), transparent);
-                font-size: 14px;
-                white-space: nowrap;
-            }
-
-            .hover_item {
-                @include btn_hoveritem(map-get($btn_color, primary));
-
-                &::before {
-                    @include btn_hoverlight03;
-                }
-            }
-
-            i {
-                @include btn_i(map-get($bg_color, i_blue));
-            }
-
-            // _on效果
-            @include btn_on(map-get($txt_color, secondary)) {
-                i {
-                    @include btn_i(map-get($bg_color, i_gold));
-                }
-            }
-
-            // 手指效果
-            @include btn_hoverHandler(1px 1px 0, map-get($txt_color, secondary)) {
-                i {
-                    @include btn_i(map-get($bg_color, i_gold));
-                }
-            }
-        }
-    }
-
-    // 卡號all.cardAll
-    .cardAll {
-        @include pos_abs(30px, unset, unset, 0);
-        @include scrollbar(hidden, auto);
-        width: 100%;
-        height: calc(100% - 30px);
-        background: map-get($bg_color, black);
-        z-index: 2;
-
-        display: none;
-
-        @include mw_ms{
-            top: 60px;
-            height: calc(100% - 60px);
-        }
-
-        // 卡片all展開
-        @at-root .--cardOpen .cardAll{
-            display: block;
-        }
-        @at-root .--telType.--cardOpen .cardAll{
-            position: static;
-        }
-
-        table {
-            width: 100%;
-            font-size: 12px;
-            text-align: center;
-        }
-
-        tr+tr {
-            border-top: 1px solid map-get($bg_color, secondary);
-        }
-
-        td,
-        th {
-            padding: 10px 0;
-        }
-
-        td:first-child {
-            font-size: 18px;
-            font-weight: normal;
-        }
-
-        th {
-            background: map-get($bg_color, darkblue_vl_re);
-            color: map-get($txt_color, yellow);
-            font-size: 14px;
-        }
-
     }
 }
 
@@ -956,7 +895,7 @@
         &__item{
             @include d_f(flex, center, space-around);
             padding: 3px 10px;
-            background: map-get($bg_color, darkblue_vl);
+            background: map-get($bg_color, darkbrown);
 
             @include mw_ms{
                 justify-content: space-between;
@@ -1003,7 +942,7 @@
         &__percent {
             @include pos_abs(0, 0, 0, 0);
             @include d_f(flex, center, center);
-            background: map-get($bg_color, darkblue_vl);
+            background: map-get($bg_color, darkbrown);
             margin: auto;
 
             // 無統計資料
@@ -1013,6 +952,7 @@
             li{
                 @include d_f(flex, center, center);
                 height: 100%;
+                color: map-get($txt_color, white);
                 text-shadow: 2px 1px map-get($txt_color, shadow);
             }
             &.--none li{

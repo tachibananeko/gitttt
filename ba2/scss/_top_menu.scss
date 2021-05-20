@@ -6,7 +6,7 @@
     
     // 手指效果
     @include hoverHandler{
-        filter: brightness(150%);
+        filter: brightness(200%);
     }
 }
 
@@ -20,6 +20,7 @@
         @include d_f(flex, center, flex-start);
         position: relative;
         height: 100%;
+        border: 1px solid map-get($bg_color, secondary);
         border-radius: 3px;
         overflow: hidden;
 
@@ -35,14 +36,14 @@
     li,
     &__1st {
         @extend %hand;
-        @include btn_set(60px, 100%, map-get($btn_color, secondary));
-        border: 1px solid map-get($bg_color, secondary);
+        @include btn_set(60px, 100%, map-get($btn_color, darkbrown));
+        font-weight: bold;
         
         @include mw_ms {
             height: 30px;
         }
         &::before {
-            @include btn_hoverlight03;
+            @include btn_hoverlight02;
         }
         &::after {
             @include btn_txt(center, map-get($txt_color, primary), transparent);
@@ -50,19 +51,20 @@
         .hover_item {
             @include btn_hoveritem(map-get($btn_color, primary));
             &::before {
-                @include btn_hoverlight03;
+                @include btn_hoverlight02;
             }
         }
         
         // _on效果
         @include btn_on(map-get($txt_color, secondary));
         // 手指效果
-        @include btn_hoverHandler(0 0, map-get($txt_color, secondary));
+        @include btn_hoverHandler(1px, map-get($txt_color, secondary));
     }
 
     // ph當前頻道 .channel__1st
     &__1st {
         display: none;
+        border: 1px solid map-get($bg_color, secondary);
         border-radius: 3px;
         overflow: hidden;
         @include mw_ms {
@@ -115,28 +117,24 @@
     }
 
     &::before {
-        @include btn_hoverlight03;
+        @include btn_hoverlight02;
     }
 
     &::after {
-        @include btn_txt(center, map-get($txt_color, black), transparent);
+        @include btn_txt(center, map-get($txt_color, secondary), transparent);
     }
 
     .hover_item {
-        @include btn_hoveritem(map-get($btn_color, secondary));
+        @include btn_hoveritem(map-get($btn_color, brown));
 
         &::before {
-            @include btn_hoverlight03;
+            @include btn_hoverlight02;
         }
-    }
-
-    i {
-        @include btn_i(map-get($bg_color, i_gold));
     }
 
     .triangle {
         @include pos_abs(0, 5px, 0, unset);
-        @include triangle(12px, map-get($bg_color, black), bottom);
+        @include triangle(12px, map-get($bg_color, darkbrown), bottom);
         display: inline-block;
         margin: auto;
         animation: shake 2s infinite;
@@ -169,49 +167,12 @@
 
     // 手指效果
     @include btn_hoverHandler(1px, map-get($txt_color, primary)){
-        i {
-            @include btn_i(map-get($bg_color, i_blue));
-        }
         .triangle{
-            border-top-color: map-get($bg_color, white);
+            border-top-color: map-get($bg_color, secondary);
         }
     };
 
     
-}
-
-// 打賞
-.tip_btn{
-    @include btn_set(auto, 30px, map-get($btn_color, orange));
-    @include border(1px, map-get($border_color, primary));
-    padding: 0 10px;
-    border: 1px solid map-get($bg_color, secondary);
-    border-radius: 3px;
-
-    &::before {
-        @include btn_hoverlight03;
-    }
-
-    &::after {
-        @include btn_txt(center, map-get($txt_color, primary), map-get($txt_color, shadow));
-    }
-
-    .hover_item {
-        @include btn_hoveritem(map-get($btn_color, lightorange));
-        box-shadow: 0 0 1px map-get($bg_color, secondary) inset,
-            0 0 3px map-get($bg_color, secondary) inset;
-
-        &::before {
-            @include btn_hoverlight03;
-        }
-    }
-
-    i {
-        @include btn_i(map-get($bg_color, i_gold));
-    }
-
-    // 手指效果
-    @include btn_hoverHandler(1px, map-get($txt_color, primary));
 }
 
 // 全螢幕
@@ -219,7 +180,7 @@
     @include btn_set(auto, 30px, url(../images/icon_zoomin.svg) no-repeat left center / 20px);
     padding-left: 25px;
     margin-left: auto;
-    color: map-get($txt_color, gray);
+    color: map-get($txt_color, primary);
     font-weight: bold;
 
     @include coarse{
@@ -246,6 +207,6 @@
     
     // 手指效果
     @include hoverHandler{
-        opacity: 0.7;
+        filter: brightness(200%);
     }
 }

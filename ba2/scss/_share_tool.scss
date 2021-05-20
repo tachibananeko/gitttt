@@ -1,6 +1,6 @@
 // 版本
 // $model: ba2;
-$model: ba3;
+$model: ba2;
 
 // 用到的樣式取出來做全域變數
 $order_color: ();
@@ -35,18 +35,31 @@ $border_color: ();
         secondary_vl:linear-gradient(to bottom, #f2bd79 0%, #3e3123 100%),
         gold:linear-gradient(to bottom, #f2d77a 0%, #ffffc5 20%, #f2d77a 100%),
         white: #fff,
+        black: #000,
+        gray:#B3B3B3,
         brown: #240913,
+        darkbrown: #140a0c,
+        brown_gradual:linear-gradient(to right, #f2bd79 0%, #563d29 70%, #000 100%),
+        brown_gradual_vl:linear-gradient(to top, #563d29 30%, #000 100%),
+        red: #c11615,
+        green: #115f24,
+        lightgreen: #00d345,
+        order_area: #224d4d,
+        bank: #ff302a,
+        play: #0068ed,
+        tie: #009245,
         black_alpha: rgba(0, 0, 0, 0.7)
     );
 
     // 按鈕色
     $btn_color: (
         primary:linear-gradient(to right, #f2bd79 60%, #563d29 100%),
-        secondary:linear-gradient(to right, #f2bd79 0%, #563d29 60%, #000 100%),
+        primary_vl:linear-gradient(to top, #f2bd79 20%, #563d29 100%),
+        primary_vl_re:linear-gradient(to bottom, #f2bd79 20%, #563d29 100%),
+        secondary:linear-gradient(to right, #f2bd79 0%, #563d29 70%, #000 100%),
         black:linear-gradient(to right, #333 50%, #000 80%),
         lightblack:linear-gradient(to right, #666 50%, #000 80%),
         brown:linear-gradient(to right, #563d29 50%, #000 100%),
-        darkbrown:linear-gradient(to top, #42210b 0%, #000 100%),
         blue:linear-gradient(to right, #005fd7 0%, #0b0e25 100%),
         lightblue:linear-gradient(to right, #00a0ed 0%, #111269 100%),
         green:linear-gradient(to right, #00d345 0%, #110024 100%),
@@ -57,7 +70,7 @@ $border_color: ();
         lightorange:linear-gradient(to right, #ff901d 0%, #991b10 100%),
         purple:linear-gradient(to right, #8260fa 0%, #000 100%),
         lightpurple:linear-gradient(to right, #c69aff 0%, #19004d 100%),
-        gold:linear-gradient(to right, #f2bd79 0%, #563d29 100%)
+        gold:linear-gradient(to right, #fbe2b0 0%, #563d29 100%)
     );
 
     // 裝飾線色
