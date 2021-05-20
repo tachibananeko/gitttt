@@ -632,6 +632,7 @@
         &__txt{
             @include d_f(flex, center, flex-end);
             position: relative;
+            height: 100%;
             padding-right: 60px;
             background: map-get($bg_color, black);
             font-size: 14px;
@@ -639,7 +640,7 @@
             overflow: hidden;
 
             &:before{
-                @include pos_abs(0, -5px, 0, unset);
+                @include pos_abs(0, -10px, 0, unset);
                 content: '';
                 width: 60px;
                 background: map-get($btn_color, primary);
