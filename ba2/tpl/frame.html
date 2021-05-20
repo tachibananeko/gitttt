@@ -348,7 +348,7 @@
                             <div class="txt">莊</div>
                             <div class="limit" data-min="20" data-max="200,000">~</div>
 
-                            <!-- 下注金額籌碼 -->                         
+                            <!-- 下注金額籌碼 -->
                             <div class="amount" style="display: none;">
                                 0
                                 <button class="amount_btn"></button>
@@ -365,7 +365,7 @@
                             <div class="txt">閒</div>
                             <div class="limit" data-min="20" data-max="200,000">~</div>
 
-                            <!-- 下注金額籌碼 -->                         
+                            <!-- 下注金額籌碼 -->
                             <div class="amount" style="display: none;">
                                 0
                                 <button class="amount_btn"></button>
@@ -382,7 +382,7 @@
                             <div class="txt">莊對</div>
                             <div class="limit" data-min="20" data-max="200,000">~</div>
 
-                            <!-- 下注金額籌碼 -->                         
+                            <!-- 下注金額籌碼 -->
                             <div class="amount" style="display: none;">
                                 0
                                 <button class="amount_btn"></button>
@@ -399,7 +399,7 @@
                             <div class="txt">和</div>
                             <div class="limit" data-min="20" data-max="200,000">~</div>
 
-                            <!-- 下注金額籌碼 -->                         
+                            <!-- 下注金額籌碼 -->
                             <div class="amount" style="display: none;">
                                 0
                                 <button class="amount_btn"></button>
@@ -416,7 +416,7 @@
                             <div class="txt">閒對</div>
                             <div class="limit" data-min="20" data-max="200,000">~</div>
 
-                            <!-- 下注金額籌碼 -->                         
+                            <!-- 下注金額籌碼 -->
                             <div class="amount" style="display: none;">
                                 0
                                 <button class="amount_btn"></button>
@@ -543,11 +543,11 @@
                     <!-- pad切換title -->
                     <!-- 當前選項加上.--on -->
                     <ul class="detail__padChange" id="padChange">
-                        <li data-txt="好路追注">
+                        <li data-txt="好路追注" class="--on">
                             <span class="hover_item"></span>
                             <button class="goodroad_btn"></button>
                         </li>
-                        <li data-txt="最新投注" class="--on">
+                        <li data-txt="最新投注">
                             <span class="hover_item"></span>
                         </li>
                         <li data-txt="下注統計">
@@ -557,7 +557,6 @@
                     <!-- pad切換title end -->
 
                     <!-- ph切換title -->
-                    <!-- 當前選項加上.--on -->
                     <ul class="detail__phChange" id="phChange">
                         <li data-txt="好路追注">
                             <span class="hover_item"></span>
@@ -630,17 +629,17 @@
                     <!-- 好路追注 end -->
 
                     <!-- 最新投注 + 下注統計 -->
-                    <div class="detail__box" id="padList03">
-                        
+                    <div class="detail__box" id="padList02">
+
                         <!-- 當前選項span加上.--on -->
-                        <div class="detail__box__title --plural">
+                        <div class="detail__box__title --plural" id="detailBoxTitle">
                             <span data-txt="最新投注" class="--on"></span>
                             <span data-txt="下注統計"></span>
-                            <button class="close_btn" id="closeBtn03"></button>
+                            <button class="close_btn" id="closeBtn02"></button>
                         </div>
 
                         <!-- 最新投注 -->
-                        <ul class="orderInfo">
+                        <ul class="orderInfo " id="padList021">
                             <li>
                                 <ul class="orderInfo__txt">
                                     <li>卡號1002001</li>
@@ -681,7 +680,7 @@
                         <!-- 最新投注 end -->
 
                         <!-- 下注統計 -->
-                        <ul class="orderTotal" style="display: none;">
+                        <ul class="orderTotal" style="display: none;" id="padList022">
                             <li>已確認</li>
                             <li data-txt="0" class="txt_bank">莊</li>
                             <li data-txt="0" class="txt_play">閒</li>

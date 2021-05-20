@@ -38,8 +38,58 @@ $('#videobig_btn').click(function() {
     $('#frame').toggleClass('--bigTv')
 })
 
-//小於1024拿掉class ==> --bigTv
-// padList 加上none
+
+// 確認資訊狀態
+let listStatus = 0;
+
+function cKlistStatus() {
+    let winW = $(window).width();
+    $('#padList01 ,#padList02').removeClass('--on');
+    if (winW > 1180) {
+        switch (listStatus) {
+            case 0:
+            case 1:
+                $('#detailBoxTitle>span').removeClass('--on')
+                $('#detailBoxTitle>span:eq(0)').addClass('--on')
+                caseA();
+                break;
+            case 2:
+                $('#detailBoxTitle>span').removeClass('--on')
+                $('#detailBoxTitle>span:eq(1)').addClass('--on')
+                caseB();
+                break;
+        }
+    } else {
+        $('#padChange li').removeClass('--on');
+        switch (listStatus) {
+            case 0:
+                $('#padList01,#padChange li:eq(0)').addClass('--on');
+                break;
+            case 1:
+                $('#padChange li:eq(1)').addClass('--on');
+                caseA();
+                break;
+            case 2:
+                $('#padChange li:eq(2)').addClass('--on');
+                caseB();
+                break;
+        }
+    }
+
+    function caseA() {
+        $('#padList02').addClass('--on');
+        $('#padList022').css('display', 'none');
+        $('#padList021').css('display', 'block');
+    }
+
+    function caseB() {
+        $('#padList02').addClass('--on');
+        $('#padList02').addClass('--on');
+        $('#padList021').css('display', 'none');
+        $('#padList022').css('display', 'block');
+    }
+
+}
 
 $(window).resize(function() {
     start()
@@ -48,12 +98,12 @@ $(window).resize(function() {
 function start() {
     let winW = $(window).width()
     if (winW < 996) {
-        $('#padList01,#padList02,#padList03').css('display', 'none')
+        $('#padList01,#padList02').css('display', 'none')
         $('#frame').removeClass('--tableOpen')
         $('#frame').removeClass('--bigTv');
 
     } else {
-        $('#padList01,#padList02,#padList03').css('display', '')
+        $('#padList01,#padList02').css('display', '')
         $('#padList01').addClass('--on')
     }
 
@@ -65,14 +115,15 @@ function start() {
             $('#frame').removeClass('--tableOpen')
         })
     }
+    cKlistStatus()
 }
 
 start()
 
+
 $('#tablephBtn').click(function() {
     $('#frame').toggleClass('--tableOpen');
 })
-
 
 // 卡號資訊切換
 $('#cardTitle li').click(function() {
@@ -90,20 +141,58 @@ $('#cardTitle li').click(function() {
 })
 
 // 詳細資訊切換
+// 小畫面 996以下
+$('#phChange li').click(function() {
+    var index = $('#phChange li').index(this)
+    switch (index) {
+        case 0:
+            $('#padList01').addClass('--on')
+            $('#padList01').css('display', 'flex')
+            listStatus = 0;
+            break;
+        case 1:
+            $('#padList02').addClass('--on')
+            $('#padList02').css('display', 'flex')
+            listStatus = 1;
+            break;
+    }
+    cKlistStatus()
+})
+
+
+// 小畫面 1180以下
 $('#padChange li').click(function() {
     $('#padChange li').removeClass('--on');
     $(this).addClass('--on');
-
-    var index = $('#padChange li').index(this)
-    $('#padList01,#padList03').removeClass('--on')
+    let index = $('#padChange li').index(this)
     switch (index) {
         case 0:
-            $('#padList01').addClass('--on');
+            listStatus = 0;
             break;
         case 1:
-            $('#padList03').addClass('--on');
+            listStatus = 1;
+            break;
+        case 2:
+            listStatus = 2;
             break;
     }
+    cKlistStatus()
+})
+
+// 大畫面 大於1180
+$('#detailBoxTitle>span').click(function() {
+    $('#detailBoxTitle>span').removeClass('--on')
+    $(this).addClass('--on')
+    let data = this.getAttribute("data-txt");
+    switch (data) {
+        case '最新投注':
+            listStatus = 1;
+            break;
+        case '下注統計':
+            listStatus = 2;
+            break;
+    }
+    cKlistStatus()
 })
 
 
@@ -113,24 +202,4 @@ $('#closeBtn01').click(function() {
 
 $('#closeBtn02').click(function() {
     $('#padList02').css('display', 'none')
-})
-
-$('#closeBtn03').click(function() {
-    $('#padList03').css('display', 'none')
-})
-
-$('#phChange li').click(function() {
-    let data = this.getAttribute("data-txt");
-    $('#phChange li').removeClass('--on')
-    switch (data) {
-        case '好路追注':
-            $('#padList01').css('display', 'flex');
-            break;
-        case '限紅':
-            $('#padList02').css('display', 'flex');
-            break;
-        case '最新投注':
-            $('#padList03').css('display', 'flex');
-            break;
-    }
 })
